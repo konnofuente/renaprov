@@ -1,0 +1,113 @@
+module.exports = {
+  content: [
+    "./src/**/*.{html,js,ts,jsx,tsx}",
+    "app/**/*.{ts,tsx}",
+    "components/**/*.{ts,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        "blue-600": "var(--blue-600)",
+        "blue-gray600": "var(--blue-gray600)",
+        "blue-gray900": "var(--blue-gray900)",
+        defaultalert: "var(--defaultalert)",
+        defaultwhite: "var(--defaultwhite)",
+        "foundation-bluedark": "var(--foundation-bluedark)",
+        "foundation-bluedark-active": "var(--foundation-bluedark-active)",
+        "foundation-bluedark-hover": "var(--foundation-bluedark-hover)",
+        "foundation-bluedarker": "var(--foundation-bluedarker)",
+        "foundation-bluelight-active": "var(--foundation-bluelight-active)",
+        "foundation-bluenormal": "var(--foundation-bluenormal)",
+        "foundation-greydarker": "var(--foundation-greydarker)",
+        "foundation-greylight-hover": "var(--foundation-greylight-hover)",
+        foundationbluelight: "var(--foundationbluelight)",
+        "foundationgreylight-active": "var(--foundationgreylight-active)",
+        foundationgreynormal: "var(--foundationgreynormal)",
+        grayswhite: "var(--grayswhite)",
+        "indigo-500": "var(--indigo-500)",
+        "indigo-600": "var(--indigo-600)",
+        "light-text": "var(--light-text)",
+        white: "var(--white)",
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+      },
+      fontFamily: {
+        "body-XS": "var(--body-XS-font-family)",
+        "button-l": "var(--button-l-font-family)",
+        "button-m": "var(--button-m-font-family)",
+        "caption-m": "var(--caption-m-font-family)",
+        "heading-1-m": "var(--heading-1-m-font-family)",
+        "heading-h1": "var(--heading-h1-font-family)",
+        "m3-label-large": "var(--m3-label-large-font-family)",
+        "m3-title-large-emphasized":
+          "var(--m3-title-large-emphasized-font-family)",
+        "text-regular-normal": "var(--text-regular-normal-font-family)",
+        "text-small-link": "var(--text-small-link-font-family)",
+        "text-small-normal": "var(--text-small-normal-font-family)",
+        sans: [
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+          '"Noto Color Emoji"',
+        ],
+      },
+      boxShadow: { "shadow-dark-XL": "var(--shadow-dark-XL)" },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
+    },
+    container: { center: true, padding: "2rem", screens: { "2xl": "1400px" } },
+  },
+  plugins: [],
+  darkMode: ["class"],
+};
