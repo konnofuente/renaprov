@@ -1,0 +1,136 @@
+---
+description: main rule
+alwaysApply: false
+---
+You are developing the official website of **RENAPROV FINANCE SA**, a microfinance institution based in Cameroon.
+The goal is to build a **modern, smooth, SEO-friendly, and fully responsive** website that highlights RENAPROV’s services, subsidiaries, and financial advantages.
+The design should communicate **trust, accessibility, and proximity** while emphasizing **financial and social benefits**.
+
+---
+
+## 🧠 **Tech Stack**
+
+* **Frontend:** React (TypeScript if possible)
+* **Styling:** Tailwind CSS
+* **Animations:** Framer Motion
+* **SEO Management:** React Helmet or manual meta tags
+* **Structure:** Modular and reusable component architecture
+
+---
+
+## 🔧 **General Development Guidelines**
+
+### 1. React Best Practices
+
+* Use **functional components only** (hooks-based, no class components).
+* Split the UI into **clean, reusable components** with meaningful names.
+* Maintain a **clean folder structure**:
+
+  ```
+  src/
+    components/
+    pages/
+    assets/
+    layouts/
+    utils/
+  ```
+* Keep state management light (useState, useEffect).
+* Avoid unnecessary re-renders and repetitive logic.
+
+---
+
+### 2. Tailwind CSS Rules
+
+* Keep class names clean, consistent, and readable.
+* Always ensure **responsive design** for mobile, tablet, and desktop using Tailwind breakpoints (`sm`, `md`, `lg`, `xl`).
+* Use **flex** or **grid** layouts based on context.
+* Maintain good spacing, padding, and visual hierarchy.
+
+---
+
+### 3. Framer Motion Integration
+
+* Every section or key UI element must have a **smooth animation** (fade-in, slide, stagger, or scale).
+* Keep animations **subtle and consistent**, avoiding visual overload.
+* Use `motion.div` and `variants` for complex section transitions.
+* Default page load transitions should feel **professional and fluid**.
+
+---
+
+### 4. SEO Optimization
+
+* Use **semantic HTML5 structure**: `<header>`, `<main>`, `<section>`, `<footer>`.
+* Apply **proper heading hierarchy** (`<h1>`, `<h2>`, `<h3>`).
+* Integrate **keywords related to microfinance, financial inclusion, and RENAPROV**.
+* Add **meta titles, descriptions, and OG tags** per page (e.g. *“RENAPROV – Trusted Microfinance in Cameroon”*).
+* Highlight key phrases using `<strong>` tags.
+* Optimize all images (lazy loading, proper size, and format).
+
+---
+
+### 5. Accessibility (a11y)
+
+* Add meaningful `alt` text for all images.
+* Maintain proper contrast levels (AA compliance).
+* Ensure all buttons and links are keyboard-accessible.
+* Avoid text embedded in images whenever possible.
+
+---
+
+### 6. Responsive Design
+
+* Every section must be fully tested on **mobile**, **tablet**, and **desktop**.
+* Layouts must adapt smoothly without breaking content flow or hierarchy.
+* Use **mobile-first design principles**.
+
+---
+
+### 7. Animation & Interaction
+
+* Add smooth transitions (fade, slide, scale) on scroll or hover.
+* Hero and slider components must have **professional, dynamic transitions**.
+* Maintain consistent animation timing and easing across the site.
+
+---
+
+### 8. Code Quality & Maintenance
+
+* Indentation: **2 spaces**.
+* Components in **PascalCase**.
+* Variables and files in **camelCase**.
+* Comment complex or non-obvious logic.
+* Reuse and centralize shared styles or components.
+* Avoid inline CSS except for dynamic styling.
+
+---
+
+### 9. Performance & UX
+
+* Ensure **fast loading speed** (use SVGs and optimized images).
+* Buttons and CTAs must be **visible, consistent, and action-oriented**.
+* Use readable font sizes (min 16px) and maintain clear spacing.
+* Maintain a **clear visual hierarchy** (titles, subtitles, text blocks).
+
+---
+
+### 10. Content & Tone
+
+* The tone should be **professional yet approachable**.
+* Focus on **trust, reliability, and accessibility**.
+* Use clear and concise wording.
+* Highlight **financial empowerment, inclusion, and innovation**.
+
+---
+
+## ✨ **Implementation Workflow Example**
+
+When the AI builds a section:
+
+1. Create a React component (e.g. `/components/SectionName.jsx`).
+2. Wrap it inside a `motion.section` for animation.
+3. Add proper headers (`<h2>` for main section titles, `<p>` for descriptions).
+4. Apply Tailwind classes for responsive design.
+5. Use a Framer Motion animation variant (e.g. fade-in with stagger).
+6. Verify semantic structure and SEO tags.
+
+

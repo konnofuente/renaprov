@@ -1,5 +1,5 @@
 import { CircleCheck as CheckCircle2Icon } from "lucide-react";
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Button } from "../../../../components/ui/button";
 
 const bulletPoints = [
@@ -19,8 +19,53 @@ const bulletPoints = [
 ];
 
 export const ExperienceSubsection = (): JSX.Element => {
+  const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true);
+          // Start counting animation
+          let currentCount = 0;
+          const targetCount = 30;
+          const duration = 3000; // 3 seconds
+          const increment = targetCount / (duration / 16); // 60fps
+
+          const timer = setInterval(() => {
+            currentCount += increment;
+            if (currentCount >= targetCount) {
+              setCount(targetCount);
+              clearInterval(timer);
+            } else {
+              setCount(Math.floor(currentCount));
+            }
+          }, 16);
+
+          return () => clearInterval(timer);
+        }
+      },
+      { threshold: 0.3 } // Trigger when 30% of the section is visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [isVisible]);
+
   return (
-    <section className="flex flex-col lg:flex-row items-center gap-8 sm:gap-10 md:gap-12 lg:gap-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[60px] py-8 sm:py-10 md:py-12 lg:py-[60px] w-full bg-foundationbluelight">
+    <section 
+      ref={sectionRef}
+      className="flex flex-col lg:flex-row items-center gap-8 sm:gap-10 md:gap-12 lg:gap-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[60px] py-8 sm:py-10 md:py-12 lg:py-[60px] w-full bg-foundationbluelight"
+    >
       <div className="flex flex-col items-start justify-center gap-4 sm:gap-5 md:gap-6 flex-1 w-full">
         <div className="w-full h-48 sm:h-56 md:h-64 lg:h-72 shadow-shadow-dark-XL rounded-[5px] bg-cover bg-[50%_50%] bg-gray-200" />
 
@@ -34,7 +79,7 @@ export const ExperienceSubsection = (): JSX.Element => {
         <div className="flex flex-col items-start gap-6 md:gap-8 w-full">
           <div className="flex flex-col items-start gap-2 w-full">
             <h2 className="[font-family:'Bricolage_Grotesque',Helvetica] font-extrabold text-foundation-bluenormal text-4xl sm:text-5xl md:text-6xl lg:text-[64px] tracking-[0] leading-tight md:leading-[70.4px]">
-              + 30 ANNÉES
+              + {count} ANNÉES
             </h2>
 
             <p className="[font-family:'Bricolage_Grotesque',Helvetica] font-extrabold text-foundationgreynormal text-3xl sm:text-4xl md:text-5xl tracking-[0] leading-tight md:leading-[52.8px]">

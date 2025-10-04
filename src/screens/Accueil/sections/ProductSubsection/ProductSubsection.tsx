@@ -1,5 +1,4 @@
 import { CircleCheck as CheckCircle2Icon } from "lucide-react";
-import React from "react";
 import { Button } from "../../../../components/ui/button";
 
 const products = [
