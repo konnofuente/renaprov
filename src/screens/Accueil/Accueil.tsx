@@ -1,4 +1,3 @@
-import React from "react";
 import { SEO } from "../../components/SEO";
 import { AdvantagesSubsection } from "./sections/AdvantagesSubsection";
 import { CallToActionSubsection } from "./sections/CallToActionSubsection";
