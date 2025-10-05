@@ -1,5 +1,5 @@
 import { CircleCheck as CheckCircle2Icon } from "lucide-react";
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "../../../../components/ui/button";
 
 const bulletPoints = [
@@ -67,11 +67,55 @@ export const ExperienceSubsection = (): JSX.Element => {
       className="flex flex-col lg:flex-row items-center gap-8 sm:gap-10 md:gap-12 lg:gap-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[60px] py-8 sm:py-10 md:py-12 lg:py-[60px] w-full bg-foundationbluelight"
     >
       <div className="flex flex-col items-start justify-center gap-4 sm:gap-5 md:gap-6 flex-1 w-full">
-        <div className="w-full h-48 sm:h-56 md:h-64 lg:h-72 shadow-shadow-dark-XL rounded-[5px] bg-cover bg-[50%_50%] bg-gray-200" />
+         <div className="w-full h-48 sm:h-56 md:h-64 lg:h-72 shadow-shadow-dark-XL rounded-[5px] overflow-hidden relative">
+            <img 
+              src="/renaprov%2030%20ans%20experience.png" 
+              alt="RENAPROV 30 ans d'expérience"
+              className="absolute top-0 left-0 w-full h-full"
+              style={{ 
+                objectFit: 'cover',
+                width: '100%',
+                height: '100%',
+                margin: 0,
+                padding: 0,
+                display: 'block'
+              }}
+            />
+         </div>
 
         <div className="h-48 sm:h-56 md:h-64 lg:h-72 gap-4 sm:gap-5 md:gap-6 flex items-start w-full">
-          <div className="flex-1 h-full shadow-shadow-dark-XL rounded-[5px] bg-cover bg-[50%_50%] bg-gray-200" />
-          <div className="flex-1 h-full rounded-[5px] bg-cover bg-[50%_50%] bg-gray-200" />
+
+          <div className="flex-1 h-full rounded-[5px] overflow-hidden relative">
+            <img 
+              src="/renaprov%2030%20ans%20experience%202.png" 
+              alt="RENAPROV 30 ans d'expérience 3"
+              className="absolute top-0 left-0 w-full h-full"
+              style={{ 
+                objectFit: 'cover',
+                width: '100%',
+                height: '100%',
+                margin: 0,
+                padding: 0,
+                display: 'block'
+              }}
+            />
+          </div>
+
+          <div className="flex-1 h-full rounded-[5px] overflow-hidden relative">
+            <img 
+              src="/renaprov%2030%20ans%20experience%203.png" 
+              alt="RENAPROV 30 ans d'expérience 3"
+              className="absolute top-0 left-0 w-full h-full"
+              style={{ 
+                objectFit: 'cover',
+                width: '100%',
+                height: '100%',
+                margin: 0,
+                padding: 0,
+                display: 'block'
+              }}
+            />
+          </div>
         </div>
       </div>
 

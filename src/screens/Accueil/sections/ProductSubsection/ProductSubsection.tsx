@@ -37,6 +37,8 @@ const products = [
       },
     ],
     imagePosition: "left",
+    imageSrc: "/MASO-Solidarité-assistance-et-opportunités-pour-tous.png",
+    imageAlt: "MASO - Solidarité, assistance et opportunités pour tous"
   },
   {
     id: "ora",
@@ -52,6 +54,8 @@ const products = [
       },
     ],
     imagePosition: "right",
+    imageSrc: "/ORA-Épargnez-aujourdhui-concrétisez-vos-projets-demain.png",
+    imageAlt: "ORA - Épargnez aujourd'hui, concrétisez vos projets demain"
   },
 ];
 
@@ -70,7 +74,13 @@ export const ProductSubsection = (): JSX.Element => {
               product.imagePosition === "right" ? "lg:flex-row-reverse" : "lg:flex-row"
             }`}
           >
-            <div className="w-full lg:w-[594px] h-[300px] sm:h-[350px] md:h-[400px] lg:h-[420px] flex-shrink-0 bg-gray-200 rounded-lg" />
+            <div className="w-full lg:w-[594px] h-[300px] sm:h-[350px] md:h-[400px] lg:h-[420px] flex-shrink-0 rounded-lg overflow-hidden">
+              <img 
+                src={product.imageSrc}
+                alt={product.imageAlt}
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
 
             <div className="flex flex-col items-start gap-4 md:gap-[17px] flex-1 w-full lg:max-w-[577px]">
               <div className="flex flex-col items-start gap-3 md:gap-[15px] w-full">
