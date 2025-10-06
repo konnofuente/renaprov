@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -12,7 +11,7 @@ const advantagesData = [
     imageAlt: "Gérez votre argent à votre rythme",
   },
   {
-    number: "2", 
+    number: "2",
     title: "Profitez de services financiers avantageux",
     description:
       "En tant que client RENAPROV, vous accédez à des offres exclusives et à des programmes qui boostent votre pouvoir d'achat et vos projets.",
@@ -21,7 +20,7 @@ const advantagesData = [
   },
   {
     number: "3",
-    title: "Transparence totale", 
+    title: "Transparence totale",
     description:
       "Ouvrir un compte est simple et abordable, avec des frais transparents et adaptés à tous les budgets.",
     imageSrc: "/benef 1.png",
@@ -56,7 +55,7 @@ export const AdvantagesSubsection = (): JSX.Element => {
         Bénéfices clients
       </h2>
 
-      <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-10 md:gap-12 lg:gap-[53px] w-[70%] max-w-[1200px]">
+      <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-10 md:gap-12 lg:gap-[53px] w-full max-w-[1200px] mx-auto">
         <AnimatePresence mode="wait">
           <motion.img
             key={currentSlide}
@@ -71,10 +70,10 @@ export const AdvantagesSubsection = (): JSX.Element => {
         </AnimatePresence>
 
         <div className="flex flex-col w-full lg:w-[578px] items-start gap-6 md:gap-[31px]">
-          <div className="flex flex-col items-start gap-6 md:gap-[27px] w-full">
+          <div className="flex flex-col items-start gap-6 md:gap-[27px] w-full flex-1">
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-[10px] w-full">
               <AnimatePresence mode="wait">
-                <motion.div 
+                <motion.div
                   key={currentSlide}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -88,16 +87,16 @@ export const AdvantagesSubsection = (): JSX.Element => {
                 </motion.div>
               </AnimatePresence>
 
-              <div className="flex-1 gap-4 flex flex-col items-start justify-center min-h-[120px] sm:min-h-[140px] md:min-h-[160px] lg:min-h-[180px]">
-                <div className="gap-6 flex flex-col items-start justify-center w-full">
+              <div className="flex-1 gap-4 flex flex-col items-start justify-center">
+                <div className="gap-6 flex flex-col items-start justify-center w-full h-full">
                   <AnimatePresence mode="wait">
-                    <motion.h3 
+                    <motion.h3
                       key={currentSlide}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -20 }}
                       transition={{ duration: 0.4, ease: "easeInOut" }}
-                      className="[font-family:'Bricolage_Grotesque',Helvetica] text-foundationbluelight text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight md:leading-[57.6px] font-bold tracking-[0] line-clamp-2 overflow-hidden text-left"
+                      className="[font-family:'Bricolage_Grotesque',Helvetica] text-foundationbluelight text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight md:leading-[57.6px] font-bold tracking-[0] line-clamp-2 overflow-hidden text-ellipsis text-left"
                     >
                       {currentAdvantage.title}
                     </motion.h3>
@@ -107,33 +106,35 @@ export const AdvantagesSubsection = (): JSX.Element => {
             </div>
 
             <AnimatePresence mode="wait">
-              <motion.p 
+              <motion.p
                 key={currentSlide}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4, ease: "easeInOut", delay: 0.1 }}
-                className="h-auto [font-family:'Arial-Regular',Helvetica] font-normal text-[#ffffff] text-lg sm:text-xl md:text-2xl lg:text-[28px] tracking-[0] leading-relaxed md:leading-[normal] line-clamp-3 overflow-hidden"
+                className="[font-family:'Arial-Regular',Helvetica] font-normal text-[#ffffff] text-lg sm:text-xl md:text-2xl lg:text-[28px] tracking-[0] leading-relaxed md:leading-[normal] line-clamp-3 overflow-hidden h-[4.5rem] sm:h-[5rem] md:h-[5.5rem] lg:h-[6rem]"
               >
                 {currentAdvantage.description}
               </motion.p>
             </AnimatePresence>
           </div>
 
-          <div className="flex w-full items-center justify-between gap-4">
+          <div className="flex w-full items-center justify-between gap-4 mt-4">
             <div className="flex items-center gap-3 sm:gap-4 md:gap-[13px]">
               {advantagesData.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
                   className={`w-6 h-6 sm:w-7 sm:h-7 md:w-[30px] md:h-[30px] rounded-full transition-colors duration-200 ${
-                    index === currentSlide ? "bg-[#00acee]" : "bg-grayswhite hover:bg-gray-300"
+                    index === currentSlide
+                      ? "bg-[#00acee]"
+                      : "bg-grayswhite hover:bg-gray-300"
                   }`}
                 />
               ))}
             </div>
 
-            <button 
+            <button
               onClick={nextSlide}
               className="relative w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] flex-shrink-0 hover:opacity-80 transition-opacity duration-200 bg-[#00acee] rounded-full flex items-center justify-center"
             >
