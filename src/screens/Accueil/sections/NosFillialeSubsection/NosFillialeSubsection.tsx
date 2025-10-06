@@ -35,6 +35,13 @@ const subsidiaries = [
       "Société de gestion et d’investissement qui accompagne le développement économique à travers des solutions financières adaptées.",
     imageUrl: "/logo Royal FMRoyal FM.png",
   },
+  {
+    category: "Investissement",
+    title: "Royal FM",
+    description:
+      "Société de gestion et d’investissement qui accompagne le développement économique à travers des solutions financières adaptées.",
+    imageUrl: "/logo Royal FMRoyal FM.png",
+  },
 ];
 
 export const NosFillialeSubsection = (): JSX.Element => {
