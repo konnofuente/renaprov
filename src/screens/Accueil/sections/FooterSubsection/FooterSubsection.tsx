@@ -41,7 +41,11 @@ export const FooterSubsection = (): JSX.Element => {
       <div className="flex-col max-w-screen-xl items-start gap-10 sm:gap-12 md:gap-16 lg:gap-20 w-full flex">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 items-start gap-8 sm:gap-10 w-full">
           <div className="flex flex-col items-start col-span-1 sm:col-span-2 md:col-span-1">
-            <img className="w-[180px] sm:w-[200px] md:w-[217.46px] h-auto" alt="Image removebg" />
+            <img
+              src="/logo.png"
+              className="w-[180px] sm:w-[200px] md:w-[217.46px] h-auto"
+              alt="Image removebg"
+            />
           </div>
 
           <div className="flex flex-col w-full items-start gap-3 sm:gap-4">

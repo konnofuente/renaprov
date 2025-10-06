@@ -18,7 +18,7 @@ export const HeaderSubsection = (): JSX.Element => {
     // Smooth scroll to section
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -28,9 +28,9 @@ export const HeaderSubsection = (): JSX.Element => {
         <div className="flex items-center justify-between h-16 sm:h-18 md:h-20">
           {/* Logo and Company Name */}
           <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-            <img 
-              src="/logo.png" 
-              alt="RENAPROV FINANCE SA - Logo" 
+            <img
+              src="/logo.png"
+              alt="RENAPROV FINANCE SA - Logo"
               className="w-12 h-8 sm:w-16 sm:h-10 md:w-20 md:h-12 object-contain"
             />
             <div className="hidden sm:block max-w-[200px] md:max-w-[280px]">
@@ -41,7 +41,11 @@ export const HeaderSubsection = (): JSX.Element => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8" role="navigation" aria-label="Navigation principale">
+          <nav
+            className="hidden lg:flex items-center space-x-6 xl:space-x-8"
+            role="navigation"
+            aria-label="Navigation principale"
+          >
             {navigationItems.map((item, index) => (
               <a
                 key={index}
@@ -59,11 +63,11 @@ export const HeaderSubsection = (): JSX.Element => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center">
-            <Button 
-              className="px-4 sm:px-6 lg:px-8 py-2 sm:py-3 bg-foundation-bluenormal hover:bg-foundation-bluedark-hover rounded-full transition-all duration-200 shadow-md hover:shadow-lg"
-              onClick={() => handleNavClick('#contact')}
+            <Button
+              className="w-auto bg-foundation-bluenormal hover:bg-foundation-bluedark-hover text-white font-semibold px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg min-h-[48px] sm:min-h-[52px] md:min-h-[56px] flex items-center justify-center"
+              onClick={() => handleNavClick("#contact")}
             >
-              <span className="font-semibold text-white text-sm lg:text-base">
+              <span className="w-full text-center leading-tight">
                 Ouvrir mon compte
               </span>
             </Button>
@@ -83,7 +87,11 @@ export const HeaderSubsection = (): JSX.Element => {
         {/* Mobile Navigation Menu */}
         {mobileMenuOpen && (
           <div className="lg:hidden border-t border-foundation-greydarker/10 bg-foundationbluelight">
-            <nav className="px-4 py-4 space-y-2" role="navigation" aria-label="Navigation mobile">
+            <nav
+              className="px-4 py-4 space-y-2"
+              role="navigation"
+              aria-label="Navigation mobile"
+            >
               {navigationItems.map((item, index) => (
                 <a
                   key={index}
@@ -98,11 +106,11 @@ export const HeaderSubsection = (): JSX.Element => {
                 </a>
               ))}
               <div className="pt-4 border-t border-foundation-greydarker/10">
-                <Button 
-                  className="w-full px-6 py-3 bg-foundation-bluenormal hover:bg-foundation-bluedark-hover rounded-full"
-                  onClick={() => handleNavClick('#contact')}
+                <Button
+                  className="w-full bg-foundation-bluenormal hover:bg-foundation-bluedark-hover text-white font-semibold px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg min-h-[48px] sm:min-h-[52px] md:min-h-[56px] flex items-center justify-center"
+                  onClick={() => handleNavClick("#contact")}
                 >
-                  <span className="font-semibold text-white text-base">
+                  <span className="w-full text-center leading-tight">
                     Ouvrir mon compte
                   </span>
                 </Button>
