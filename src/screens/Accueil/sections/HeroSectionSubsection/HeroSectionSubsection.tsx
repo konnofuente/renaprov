@@ -31,6 +31,30 @@ const slides = [
     fallbackImage: "/hero1.png",
     cta: "Nos solutions",
   },
+  {
+    title: "Bienvenu a RENAPROV",
+    description:
+      "La microfinance qui fait la difference , ouvrez un compte en quelques minutes et profitez de services adaptés à votre quotidien.",
+    image: "/Bienvenu a RENAPROV.png",
+    fallbackImage: "/hero1.png",
+    cta: "Ouvrir mon compte aujourd’hui",
+  },
+  {
+    title: "Rendes-vous en Agence",
+    description:
+      "Nos équipes vous accueillent dans toutes nos agences pour vous conseiller et vous aider à atteindre vos objectifs financiers.",
+    image: "/Rendes-vous en Agence.png",
+    fallbackImage: "/hero1.png",
+    cta: "Ouvrir mon compte aujourd’hui",
+  },
+  {
+    title: "Rejoignez - nous",
+    description:
+      "Faites partie de la communauté RENAPROV et profitez d’un réseau solide qui soutient vos ambitions. Que vous soyez entrepreneur, salarié ou étudiant.",
+    image: "/Rejoignez - nous.png",
+    fallbackImage: "/hero1.png",
+    cta: "Ouvrir mon compte aujourd’hui",
+  },
 ];
 
 // Unified soft animation variants for the entire hero section

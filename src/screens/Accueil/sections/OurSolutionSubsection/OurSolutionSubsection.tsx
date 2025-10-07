@@ -14,22 +14,22 @@ const productCards = [
   {
     title: "Compte courant",
     description: "Gérez vos finances en toute simplicité.",
-    image: "",
+    image: "/Compte courant.png",
   },
   {
     title: "Compte épargne",
     description: "Épargnez et faites fructifier vos revenus.",
-    image: "",
+    image: "/Compte épargne.png",
   },
   {
     title: "MASO",
     description: "De locataire à propriétaire, concrétisez votre rêve",
-    image: "",
+    image: "/MASO.png",
   },
   {
     title: "ORA",
     description: "Objectif Rendement préparez vos projets pas à pas.",
-    image: "",
+    image: "/ORA.png",
   },
 ];
 
