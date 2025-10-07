@@ -64,7 +64,7 @@ export const ExperienceSubsection = (): JSX.Element => {
   return (
     <section
       ref={sectionRef}
-      className="flex flex-col lg:flex-row items-center gap-8 sm:gap-10 md:gap-12 lg:gap-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[60px] py-8 sm:py-10 md:py-12 lg:py-[60px] w-full bg-foundationbluelight"
+      className="flex flex-col lg:flex-row items-center gap-8 sm:gap-10 md:gap-12 lg:gap-20 px-6 sm:px-6 md:px-8 lg:px-12 xl:px-[60px] py-8 sm:py-10 md:py-12 lg:py-[60px] w-full bg-foundationbluelight"
     >
       <div className="flex flex-col items-start justify-center gap-4 sm:gap-5 md:gap-6 flex-1 w-full">
         <div className="w-full h-48 sm:h-56 md:h-64 lg:h-72 shadow-shadow-dark-XL rounded-[5px] overflow-hidden relative">

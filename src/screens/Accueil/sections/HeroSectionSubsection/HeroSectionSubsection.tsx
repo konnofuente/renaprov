@@ -11,7 +11,7 @@ const slides = [
     title: "Un compte simple et sécurisé, accessible à tous",
     description:
       "Chez RENAPROV, ouvrez un compte en quelques minutes et profitez de services adaptés à votre quotidien : dépôts, retraits, transferts et épargne, où que vous soyez.",
-    image: "/Un%20compte%20simple%20et%20sécurisé,%20accessible%20à%20tous.png",
+    image: "/Un compte simple et sécurisé, accessible à tous.png",
     fallbackImage: "/hero1.png",
     cta: "Ouvrir mon compte aujourd'hui",
   },
@@ -19,7 +19,7 @@ const slides = [
     title: "De locataire à propriétaire grâce à RENAPROV",
     description:
       "Constituez votre épargne à votre rythme avec nos solutions flexibles et sécurisées. Réalisez vos rêves avec RENAPROV.",
-    image: "/De%20locataire%20à%20propriétaire%20grâce%20à%20RENAPROV.png",
+    image: "/De locataire à propriétaire grâce à RENAPROV.png",
     fallbackImage: "/hero1.png",
     cta: "Découvrir MASO",
   },
@@ -27,8 +27,7 @@ const slides = [
     title: "Faites grandir vos projets, nous finançons vos ambitions",
     description:
       "Profitez d'une gamme complète de services bancaires conçus pour simplifier votre vie financière au quotidien.",
-    image:
-      "/Faites%20grandir%20vos%20projets,%20nous%20finançons%20vos%20ambitions.png",
+    image: "/Faites grandir vos projets, nous finançons vos ambitions.png",
     fallbackImage: "/hero1.png",
     cta: "Nos solutions",
   },
@@ -173,7 +172,7 @@ export const HeroSectionSubsection = (): JSX.Element => {
       </Button>
       {/* MASO Promotion Banner */}
       <div className="w-full flex justify-center mt-4 sm:mt-5 md:mt-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 w-full">
           <div className="bg-gradient-to-r from-foundation-bluenormal to-foundation-bluedarker py-4 sm:py-5 md:py-6 rounded-[20px]">
             <div className="px-4 sm:px-6 lg:px-8">
               <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 sm:gap-6">
@@ -202,7 +201,7 @@ export const HeroSectionSubsection = (): JSX.Element => {
       </div>
 
       {/* Main Hero Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-16 xl:py-20">
+      <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-16 xl:py-20">
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={currentSlide}

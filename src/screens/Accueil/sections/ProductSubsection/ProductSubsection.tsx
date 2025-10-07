@@ -61,7 +61,7 @@ const products = [
 
 export const ProductSubsection = (): JSX.Element => {
   return (
-    <section className="flex flex-col items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[60px] py-8 sm:py-10 md:py-12 lg:py-[63px] w-full bg-white gap-8 sm:gap-10 md:gap-12 lg:gap-[63px]">
+    <section className="flex flex-col items-center justify-between px-6 sm:px-6 md:px-8 lg:px-12 xl:px-[60px] py-8 sm:py-10 md:py-12 lg:py-[63px] w-full bg-white gap-8 sm:gap-10 md:gap-12 lg:gap-[63px]">
       <h2 className="w-full max-w-[1320px] bg-[linear-gradient(148deg,rgba(0,172,238,1)_0%,rgba(1,27,38,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent] [font-family:'Bricolage_Grotesque',Helvetica] font-bold text-3xl sm:text-4xl md:text-5xl text-center tracking-[-0.96px] leading-tight md:leading-[56.6px]">
         Nos Produits
       </h2>

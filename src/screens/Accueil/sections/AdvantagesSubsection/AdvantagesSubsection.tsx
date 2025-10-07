@@ -50,7 +50,7 @@ export const AdvantagesSubsection = (): JSX.Element => {
   const currentAdvantage = advantagesData[currentSlide];
 
   return (
-    <section className="flex flex-col items-center justify-center gap-10 sm:gap-12 md:gap-16 lg:gap-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-12 sm:py-16 md:py-20 lg:py-[94px] w-full bg-[#011b25]">
+    <section className="flex flex-col items-center justify-center gap-10 sm:gap-12 md:gap-16 lg:gap-20 px-6 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-12 sm:py-16 md:py-20 lg:py-[94px] w-full bg-[#011b25]">
       <h2 className="w-full max-w-[707px] [font-family:'Bricolage_Grotesque',Helvetica] text-foundationbluelight text-3xl sm:text-4xl md:text-5xl text-center leading-tight md:leading-[57.6px] font-bold tracking-[0] px-4">
         Bénéfices clients
       </h2>
@@ -112,7 +112,7 @@ export const AdvantagesSubsection = (): JSX.Element => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4, ease: "easeInOut", delay: 0.1 }}
-                className="[font-family:'Arial-Regular',Helvetica] font-normal text-[#ffffff] text-lg sm:text-xl md:text-2xl lg:text-[28px] tracking-[0] leading-relaxed md:leading-[normal] line-clamp-3 overflow-hidden h-[4.5rem] sm:h-[5rem] md:h-[5.5rem] lg:h-[6rem]"
+                className="[font-family:'Arial-Regular',Helvetica] font-normal text-[#ffffff] text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[28px] tracking-[0] leading-relaxed md:leading-[normal] h-[5rem] sm:h-[5.5rem] md:h-[6rem] lg:h-[6.5rem] overflow-hidden"
               >
                 {currentAdvantage.description}
               </motion.p>

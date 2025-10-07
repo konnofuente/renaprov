@@ -90,7 +90,7 @@ export const OurSolutionSubsection = (): JSX.Element => {
   const isNextDisabled = currentSlide >= maxSlide;
 
   return (
-    <section className="w-full bg-white flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-12 md:py-16 lg:py-20">
+    <section className="w-full bg-white flex flex-col items-center px-6 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-12 md:py-16 lg:py-20">
       {/* Header Section - Simplifié */}
       <div className="w-full max-w-7xl flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-12 mb-8 sm:mb-12 md:mb-16">
         <div className="w-full lg:max-w-2xl">
@@ -171,7 +171,7 @@ export const OurSolutionSubsection = (): JSX.Element => {
         </div>
 
         {/* Navigation Section - Optimisée */}
-        <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
+        <div className="w-full flex flex-row items-center justify-between gap-4 sm:gap-6 mx-auto">
           {/* Pagination Dots */}
           <div className="flex items-center gap-3">
             {Array.from({ length: maxSlide + 1 }).map((_, index) => (
