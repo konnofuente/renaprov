@@ -1,0 +1,64 @@
+name: Deploy to Hostinger
+
+on:
+  push:
+    branches: [ dev ]
+  pull_request:
+    branches: [ dev ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Run build
+      run: npm run build
+      
+    - name: Run tests (if available)
+      run: npm test --if-present
+      
+    - name: Deploy to Hostinger via FTP
+      if: github.ref == 'refs/heads/dev' && github.event_name == 'push'
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.HOSTINGER_FTP_HOST }}
+        username: ${{ secrets.HOSTINGER_FTP_USERNAME }}
+        password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
+        port: ${{ secrets.HOSTINGER_FTP_PORT }}
+        protocol: ftp
+        local-dir: ./dist/
+        server-dir: ${{ secrets.HOSTINGER_FTP_PATH }}
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/.env*
+          **/README.md
+          **/.github/**
+          **/src/**
+          **/public/**
+          **/package*.json
+          **/vite.config.*
+          **/tailwind.config.*
+          **/tsconfig.*
+          **/deploy.sh
+          **/CI-CD-SETUP-GUIDE.md
+          **/env.example
+          
+    - name: Notify deployment success
+      if: github.ref == 'refs/heads/dev' && github.event_name == 'push'
+      run: |
+        echo "✅ Deployment to Hostinger completed successfully!"
+        echo "🌐 Website should be live at: ${{ secrets.HOSTINGER_DOMAIN }}/subdomain/dev-renaprov"
