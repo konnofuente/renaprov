@@ -444,4 +444,51 @@
   .nav-buttons-container {
     @apply flex gap-2 sm:gap-3 md:gap-4 px-2;
   }
+
+  /* Value Card Styles */
+  .value-card {
+    @apply flex flex-col w-full sm:w-[363px] bg-foundation-bluedarker rounded-[17px] 
+           overflow-hidden shadow-[0px_4px_8px_#00000040] border-0;
+  }
+
+  .value-card-content {
+    @apply flex flex-col items-start gap-4 sm:gap-6 md:gap-8 lg:gap-[27px] 
+           p-6 sm:p-8 md:p-10 lg:p-[42px_29px];
+  }
+
+  .value-card-icon {
+    @apply w-[72px] h-[72px];
+  }
+
+  .value-card-text {
+    @apply flex flex-col gap-3 sm:gap-4 lg:gap-[15px] w-full;
+  }
+
+  .value-card-title {
+    @apply font-bold text-white text-lg sm:text-xl md:text-2xl tracking-[0] leading-tight;
+    font-family: "Bricolage_Grotesque", Helvetica;
+  }
+
+  .value-card-description {
+    @apply font-normal text-white text-sm sm:text-base tracking-[0] leading-relaxed;
+    font-family: "Roboto", Helvetica;
+  }
+
+  /* Section Header Styles */
+  .section-header {
+    @apply flex flex-col w-full max-w-[1280px] items-center;
+  }
+
+  .section-title {
+    @apply bg-gradient-to-r from-[rgba(0,172,238,1)] to-[rgba(1,27,38,1)] 
+           bg-clip-text text-transparent font-bold text-3xl sm:text-4xl md:text-5xl 
+           text-center tracking-[-0.96px] leading-tight sm:leading-tight md:leading-[56.6px];
+    font-family: "Bricolage_Grotesque", Helvetica;
+  }
+
+  /* Values Grid */
+  .values-grid {
+    @apply flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-[49px] 
+           w-full max-w-[1280px];
+  }
 }

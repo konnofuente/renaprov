@@ -1,4 +1,3 @@
-import React from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
 
 const valuesData = [
@@ -24,32 +23,37 @@ const valuesData = [
 
 export const MapSection = (): JSX.Element => {
   return (
-    <section className="flex flex-col w-full items-center gap-[71px] py-[91px] px-[103px] bg-white">
+    <section className="flex flex-col w-full items-center gap-8 md:gap-16 lg:gap-[71px] py-12 md:py-16 lg:py-[91px] px-4 md:px-8 lg:px-[103px] bg-white">
       <div className="flex flex-col w-full max-w-[1280px] items-center">
-        <h2 className="bg-[linear-gradient(148deg,rgba(0,172,238,1)_0%,rgba(1,27,38,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent] [font-family:'Bricolage_Grotesque',Helvetica] font-bold text-transparent text-5xl text-center tracking-[-0.96px] leading-[56.6px] whitespace-nowrap">
+        <h2 className="bg-gradient-to-br from-blue-400 to-slate-800 bg-clip-text text-transparent font-bold text-3xl md:text-4xl lg:text-5xl text-center tracking-tight leading-tight">
           Nos valeurs
         </h2>
       </div>
 
-      <div className="flex flex-wrap items-center justify-center gap-[49px] w-full max-w-[1280px]">
+      <div
+        className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 w-full"
+        style={{
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+        }}
+      >
         {valuesData.map((value, index) => (
           <Card
             key={index}
-            className="flex flex-col w-[363px] bg-foundation-bluedarker rounded-[17px] overflow-hidden shadow-[0px_4px_8px_#00000040] border-0"
+            className="h-[280px] md:h-[284px] flex flex-col w-full items-center justify-between bg-foundation-bluedarker rounded-[17px] overflow-hidden shadow-lg"
           >
-            <CardContent className="flex flex-col items-start gap-[27px] p-[42px_29px]">
+            <CardContent className="flex flex-col items-start gap-4 md:gap-6 p-4 md:p-6 lg:p-8 h-full justify-between">
               <img
-                className="w-[72px] h-[72px]"
+                className="w-12 h-12 md:w-16 md:h-16 lg:w-[71px] lg:h-[71px]"
                 alt={`${value.title} icon`}
                 src={value.icon}
               />
 
-              <div className="flex flex-col gap-[15px] w-full">
-                <h3 className="font-m3-headline-medium-emphasized font-[number:var(--m3-headline-medium-emphasized-font-weight)] text-white text-[length:var(--m3-headline-medium-emphasized-font-size)] tracking-[var(--m3-headline-medium-emphasized-letter-spacing)] leading-[var(--m3-headline-medium-emphasized-line-height)] [font-style:var(--m3-headline-medium-emphasized-font-style)]">
+              <div className="flex flex-col gap-3 md:gap-4 w-full flex-1">
+                <h3 className="text-lg md:text-xl font-semibold text-white leading-tight">
                   {value.title}
                 </h3>
 
-                <p className="font-body-small font-[number:var(--body-small-font-weight)] text-white text-[length:var(--body-small-font-size)] tracking-[var(--body-small-letter-spacing)] leading-[var(--body-small-line-height)] [font-style:var(--body-small-font-style)]">
+                <p className="text-xs md:text-sm text-white leading-relaxed flex-1">
                   {value.description}
                 </p>
               </div>
