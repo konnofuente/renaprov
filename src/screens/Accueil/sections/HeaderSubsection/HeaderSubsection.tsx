@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Button } from "../../../../components/ui/button";
 import { Menu, X } from "lucide-react";
+import { useNavigation } from "../../../../contexts/NavigationContext";
 
 const navigationItems = [
-  { label: "Accueil", href: "#accueil" },
-  { label: "À propos", href: "#apropos" },
+  { label: "Accueil", page: "accueil" as const },
+  { label: "À propos", page: "about" as const },
   { label: "Notre mission", href: "#mission" },
   { label: "Produits", href: "#produits" },
   { label: "Notre réseau", href: "#reseau" },
@@ -12,6 +13,7 @@ const navigationItems = [
 
 export const HeaderSubsection = (): JSX.Element => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { setCurrentPage } = useNavigation();
 
   const handleNavClick = (href: string) => {
     setMobileMenuOpen(false);
@@ -20,6 +22,11 @@ export const HeaderSubsection = (): JSX.Element => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const handlePageNavigation = (page: "accueil" | "about") => {
+    setMobileMenuOpen(false);
+    setCurrentPage(page);
   };
 
   return (
@@ -47,17 +54,19 @@ export const HeaderSubsection = (): JSX.Element => {
             aria-label="Navigation principale"
           >
             {navigationItems.map((item, index) => (
-              <a
+              <button
                 key={index}
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick(item.href);
+                onClick={() => {
+                  if ("page" in item && item.page) {
+                    handlePageNavigation(item.page);
+                  } else if ("href" in item && item.href) {
+                    handleNavClick(item.href);
+                  }
                 }}
                 className="font-medium text-black hover:text-foundation-bluenormal transition-colors duration-200 text-sm xl:text-base"
               >
                 {item.label}
-              </a>
+              </button>
             ))}
           </nav>
 
@@ -93,17 +102,19 @@ export const HeaderSubsection = (): JSX.Element => {
               aria-label="Navigation mobile"
             >
               {navigationItems.map((item, index) => (
-                <a
+                <button
                   key={index}
-                  href={item.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick(item.href);
+                  onClick={() => {
+                    if ("page" in item && item.page) {
+                      handlePageNavigation(item.page);
+                    } else if ("href" in item && item.href) {
+                      handleNavClick(item.href);
+                    }
                   }}
-                  className="block px-3 py-2 text-base font-medium text-black hover:bg-white/20 rounded-md transition-colors duration-200"
+                  className="block w-full text-left px-3 py-2 text-base font-medium text-black hover:bg-white/20 rounded-md transition-colors duration-200"
                 >
                   {item.label}
-                </a>
+                </button>
               ))}
               <div className="pt-4 border-t border-foundation-greydarker/10">
                 <Button
