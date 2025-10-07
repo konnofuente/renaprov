@@ -9,6 +9,7 @@ import { FooterSubsection } from "../Accueil/sections/FooterSubsection";
 import { CallToActionSubsection } from "../Accueil/sections/CallToActionSubsection";
 import { OurAgencySubsection } from "../Accueil/sections/OurAgencySubsection";
 import { HeaderSubsection } from "../Accueil/sections/HeaderSubsection";
+import { MapSection } from "./sections/MapSection";
 
 export const AboutHistory = (): JSX.Element => {
   return (
@@ -24,7 +25,7 @@ export const AboutHistory = (): JSX.Element => {
         <StatsSection />
         <TimelineSection />
         <MessageSection />
-        <ValuesSection />
+        <MapSection />
         <TeamSection />
         <OurAgencySubsection />
         <CallToActionSubsection />

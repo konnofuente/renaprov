@@ -76,8 +76,8 @@
   --m3-title-large-emphasized-font-weight: 500;
   --m3-title-large-emphasized-letter-spacing: 0px;
   --m3-title-large-emphasized-line-height: 28px;
-  --shadow-dark-XL: 0px 0px 10px 0px rgba(0, 0, 0, 0.07), 0px 20px 25px -5px
-    rgba(0, 0, 0, 0.1);
+  --shadow-dark-XL: 0px 0px 10px 0px rgba(0, 0, 0, 0.07),
+    0px 20px 25px -5px rgba(0, 0, 0, 0.1);
   --text-regular-normal-font-family: "Roboto", Helvetica;
   --text-regular-normal-font-size: 16px;
   --text-regular-normal-font-style: normal;
@@ -109,6 +109,12 @@
 
 .animate-fade-up {
   animation: fade-up 1s var(--animation-delay, 0s) ease forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s var(--animation-delay, 0s) ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .animate-marquee {
@@ -170,6 +176,18 @@
   to {
     opacity: 1;
     transform: none;
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -286,5 +304,144 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* Timeline Card Styles */
+  .timeline-card {
+    @apply w-full h-[280px] sm:h-[300px] md:h-[320px] lg:h-[353px] rounded-[11px] overflow-hidden 
+           bg-gradient-to-b from-[rgba(0,172,238,1)] to-[rgba(1,27,38,1)] border-0 
+           shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] mx-2;
+  }
+
+  /* Responsive card widths with proper padding */
+  .timeline-card {
+    max-width: calc(
+      100% - 16px
+    ); /* Mobile: prend toute la largeur moins padding */
+  }
+
+  @media (min-width: 640px) {
+    .timeline-card {
+      max-width: 300px; /* sm: 300px */
+    }
+  }
+
+  @media (min-width: 768px) {
+    .timeline-card {
+      max-width: 320px; /* md: 320px */
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .timeline-card {
+      max-width: 332px; /* lg: 332px */
+    }
+  }
+
+  .timeline-card-content {
+    @apply p-4 sm:p-5 md:p-6 lg:p-[25px] pt-5 sm:pt-6 md:pt-8 lg:pt-[30px] h-full flex flex-col;
+  }
+
+  .timeline-card-title {
+    @apply font-bold text-white text-base sm:text-lg md:text-xl lg:text-[20px] 
+           tracking-[0] leading-tight sm:leading-tight md:leading-tight lg:leading-6 
+           mb-4 sm:mb-6 md:mb-8 lg:mb-[50px] flex-shrink-0;
+    font-family: "Bricolage_Grotesque", Helvetica;
+  }
+
+  .timeline-card-items {
+    @apply flex flex-col gap-2 sm:gap-3 md:gap-4 lg:gap-[18px] flex-1 justify-start;
+  }
+
+  .timeline-item {
+    @apply flex items-start gap-3 sm:gap-4 lg:gap-[16px];
+  }
+
+  .timeline-item-icon {
+    @apply flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 flex items-center justify-center mt-0.5;
+  }
+
+  .timeline-item-text {
+    @apply font-normal text-white text-sm tracking-[0] leading-tight sm:leading-tight 
+           md:leading-tight lg:leading-[14px] flex-1;
+    font-family: "Roboto", Helvetica;
+  }
+
+  /* Carousel Container */
+  .carousel-container {
+    @apply w-full max-w-[1232px] relative px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16;
+  }
+
+  .carousel-track {
+    @apply flex items-start justify-center gap-4 xl:gap-6 2xl:gap-9 transition-transform duration-300 ease-in-out;
+  }
+
+  /* Mobile: single card takes full width */
+  @media (max-width: 767px) {
+    .carousel-track {
+      @apply justify-center px-4;
+    }
+  }
+
+  /* Tablet: 2 cards with proper spacing */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .carousel-track {
+      @apply gap-4 sm:gap-6;
+    }
+  }
+
+  /* Desktop: 3 cards with proper spacing */
+  @media (min-width: 1024px) and (max-width: 1535px) {
+    .carousel-track {
+      @apply gap-4 xl:gap-6;
+    }
+  }
+
+  /* Large Desktop: 4 cards with proper spacing */
+  @media (min-width: 1536px) {
+    .carousel-track {
+      @apply gap-6 2xl:gap-9;
+    }
+  }
+
+  /* Navigation Styles */
+  .carousel-nav-button {
+    @apply h-9 w-9 sm:h-10 sm:w-10 md:h-12 md:w-12 rounded-full border-2 border-gray-200 
+           bg-white shadow-lg hover:shadow-xl transition-all duration-200 
+           disabled:opacity-50 disabled:cursor-not-allowed hover:border-foundation-bluenormal;
+  }
+
+  .carousel-nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+
+  .pagination-dot {
+    @apply relative rounded-full transition-all duration-300 focus:outline-none 
+           focus:ring-2 focus:ring-foundation-bluenormal focus:ring-offset-2;
+  }
+
+  .pagination-dot.active {
+    @apply bg-foundation-bluenormal w-4 sm:w-6 md:w-8 h-2 sm:h-3;
+  }
+
+  .pagination-dot.inactive {
+    @apply bg-black opacity-20 hover:opacity-40 w-2 sm:w-3 h-2 sm:h-3;
+  }
+
+  /* Navigation container adjustments for mobile */
+  .navigation-container {
+    @apply flex flex-row items-center justify-between gap-2 sm:gap-4 md:gap-6 w-full max-w-[1253px] px-4 sm:px-6 md:px-8;
+  }
+
+  /* Pagination dots container */
+  .pagination-container {
+    @apply flex items-center gap-1 sm:gap-2 md:gap-3 px-2;
+  }
+
+  /* Navigation buttons container */
+  .nav-buttons-container {
+    @apply flex gap-2 sm:gap-3 md:gap-4 px-2;
   }
 }
