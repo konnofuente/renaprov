@@ -1,0 +1,2 @@
+export { HospitalLaMamuSection } from "./HospitalLaMamuSection";
+

@@ -1,4 +1,7 @@
-import { SubsidiariesShowcase } from "./sections/SubsidiariesShowcase";
+import { InstitutBissaiSection } from "./sections/InstitutBissaiSection";
+import { HospitalLaMamuSection } from "./sections/HospitalLaMamuSection";
+import { SocagiSection } from "./sections/SocagiSection";
+import { ORASection } from "./sections/ORASection";
 import { NetworkProximity } from "./sections/NetworkProximity";
 import { FooterSubsection } from "../Accueil/sections/FooterSubsection";
 import { CallToActionSubsection } from "../Accueil/sections/CallToActionSubsection";
@@ -20,7 +23,12 @@ export const Mission = (): JSX.Element => {
         <HeroSection />
         <NetworkProximity />
         <OurAgencySubsection />
-        <SubsidiariesShowcase />
+
+        <InstitutBissaiSection />
+        <HospitalLaMamuSection />
+        <SocagiSection />
+        <ORASection />
+
         <CallToActionSubsection />
         <FooterSubsection />
       </main>

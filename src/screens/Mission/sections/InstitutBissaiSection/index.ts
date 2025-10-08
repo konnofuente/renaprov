@@ -1,0 +1,2 @@
+export { InstitutBissaiSection } from "./InstitutBissaiSection";
+

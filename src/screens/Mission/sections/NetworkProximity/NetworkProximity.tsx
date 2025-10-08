@@ -1,5 +1,3 @@
-import React from "react";
-
 export const NetworkProximity = (): JSX.Element => {
   const iconRows = Array(6)
     .fill(null)
@@ -9,7 +7,7 @@ export const NetworkProximity = (): JSX.Element => {
         .map((_, colIndex) => ({
           left: `left-${colIndex * 8}`,
           key: `icon-${rowIndex}-${colIndex}`,
-        })),
+        }))
     );
 
   const images = [
@@ -31,7 +29,7 @@ export const NetworkProximity = (): JSX.Element => {
   ];
 
   return (
-    <section className="flex items-center gap-[60px] px-20 py-[60px] bg-foundationbluelight relative">
+    <section className="flex items-center gap-[60px] px-20 bg-foundationbluelight relative">
       <div className="inline-flex flex-col items-start gap-4 absolute top-[242px] left-5">
         {iconRows.map((row, rowIndex) => (
           <div key={`row-${rowIndex}`} className="relative w-44 h-4">
@@ -51,7 +49,9 @@ export const NetworkProximity = (): JSX.Element => {
         {images.map((image, index) => (
           <div
             key={`image-${index}`}
-            className={`flex items-start gap-2.5 ${image.containerClass} ${index === 1 ? "" : "flex-1 grow"}`}
+            className={`flex items-start gap-2.5 ${image.containerClass} ${
+              index === 1 ? "" : "flex-1 grow"
+            }`}
           >
             <div
               className={`${image.imageClass} bg-[url(${image.url})] h-96 rounded-[20px] bg-cover bg-[50%_50%]`}
