@@ -309,7 +309,7 @@ export const OurAgencySubsection = (): JSX.Element => {
                       </div>
 
                       <div className="relative w-full min-h-[46px] sm:min-h-[50px] md:min-h-[54px] lg:min-h-[58px] xl:min-h-[62px]">
-                        <div className="h-auto flex items-center justify-start bg-[linear-gradient(148deg,rgba(0,172,238,1)_0%,rgba(1,27,38,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent] font-m3-title-large-emphasized font-[number:var(--m3-title-large-emphasized-font-weight)] text-transparent text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl tracking-[var(--m3-title-large-emphasized-letter-spacing)] leading-tight whitespace-nowrap overflow-hidden text-ellipsis">
+                        <div className="h-auto flex items-center justify-start bg-[linear-gradient(148deg,rgba(0,172,238,1)_0%,rgba(1,27,38,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent] font-m3-title-large-emphasized font-[number:var(--m3-title-large-emphasized-font-weight)] text-transparent text-[22px] leading-[28px] tracking-[var(--m3-title-large-emphasized-letter-spacing)] whitespace-nowrap overflow-hidden text-ellipsis">
                           {agency.name}
                         </div>
                         <div className="mt-2 w-full h-auto flex items-center justify-start [font-family:'Roboto',Helvetica] font-normal text-foundationgreylight-active text-[10px] sm:text-xs md:text-sm lg:text-base tracking-[-0.18px] leading-relaxed">
