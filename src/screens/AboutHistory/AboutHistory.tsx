@@ -2,7 +2,6 @@ import { HeroSection } from "./sections/HeroSection";
 import { StatsSection } from "./sections/StatsSection";
 import { TimelineSection } from "./sections/TimelineSection";
 import { MessageSection } from "./sections/MessageSection";
-import { ValuesSection } from "./sections/ValuesSection";
 import { TeamSection } from "./sections/TeamSection";
 import { SEO } from "../../components/SEO";
 import { FooterSubsection } from "../Accueil/sections/FooterSubsection";

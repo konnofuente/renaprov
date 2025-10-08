@@ -6,7 +6,7 @@ import { useNavigation } from "../../../../contexts/NavigationContext";
 const navigationItems = [
   { label: "Accueil", page: "accueil" as const },
   { label: "À propos", page: "about" as const },
-  { label: "Notre mission", href: "#mission" },
+  { label: "mission", href: "mission" as const },
   { label: "Produits", href: "#produits" },
   { label: "Notre réseau", href: "#reseau" },
 ];
