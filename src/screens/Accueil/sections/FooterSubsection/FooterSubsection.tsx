@@ -134,9 +134,14 @@ export const FooterSubsection = (): JSX.Element => {
                 Copyright © 2025 RENAPROV All rights reserved.
               </div>
 
-              <div className="w-fit font-text-small-link font-[number:var(--text-small-link-font-weight)] text-foundation-bluelight-active text-xs sm:text-[length:var(--text-small-link-font-size)] tracking-[var(--text-small-link-letter-spacing)] leading-[var(--text-small-link-line-height)] underline [font-style:var(--text-small-link-font-style)]">
-                Design by Space kola
-              </div>
+              <a
+                href="https://camairetech.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-fit font-text-small-link font-[number:var(--text-small-link-font-weight)] text-foundation-bluelight-active text-xs sm:text-[length:var(--text-small-link-font-size)] tracking-[var(--text-small-link-letter-spacing)] leading-[var(--text-small-link-line-height)] underline [font-style:var(--text-small-link-font-style)] hover:text-blue-300 transition-colors duration-200"
+              >
+                Design by CamaireTech
+              </a>
             </div>
 
             <div className="inline-flex items-start gap-3">

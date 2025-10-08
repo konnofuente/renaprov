@@ -1,23 +1,28 @@
-import React from "react";
-
 export const MessageSection = (): JSX.Element => {
   return (
-    <section className="relative w-full bg-[linear-gradient(148deg,rgba(0,172,238,1)_0%,rgba(1,27,38,1)_43%)] overflow-hidden">
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-8 px-4 py-16 lg:px-20 lg:py-0 min-h-[642px]">
-        <div className="flex-shrink-0 w-full lg:w-auto">
+    <section
+      className="relative w-full bg-[linear-gradient(148deg,rgba(0,172,238,1)_0%,rgba(1,27,38,1)_43%)] overflow-hidden"
+      aria-labelledby="message-heading"
+    >
+      <div className="flex flex-col md:flex-row items-center gap-4 sm:gap-6 md:gap-8 lg:gap-12 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-8 sm:py-12 md:py-16 lg:py-20 min-h-[400px] sm:min-h-[450px] md:min-h-[500px] lg:min-h-[600px] xl:min-h-[700px]">
+        <div className="flex-shrink-0 w-full md:w-auto">
           <img
-            className="w-full lg:w-[669px] h-auto lg:h-[642px] object-cover"
-            alt="Whatsapp image"
-            src="/whatsapp-image-2025-09-14-at-14-11-20-1.png"
+            className="w-full sm:w-[300px] md:w-[400px] lg:w-[500px] xl:w-[669px] aspect-[669/642] object-cover rounded-lg shadow-lg"
+            alt="Portrait de Mr M. Emmanuel Noël Bissai, Directeur Général de RENAPROV"
+            src="/frame-2087326088-removebg-preview.png"
           />
         </div>
 
-        <div className="flex flex-col gap-8 max-w-[600px] lg:max-w-[468px] relative">
-          <h2 className="[font-family:'Bricolage_Grotesque',Helvetica] font-bold text-grayswhite text-3xl lg:text-[52px] tracking-[0] leading-tight lg:leading-[62.4px]">
-            Mr M. Emmanuel Noël Bissai
+        <div className="flex flex-col gap-4 sm:gap-6 md:gap-8 lg:gap-10 w-full max-w-[500px] sm:max-w-[550px] md:max-w-[600px] lg:max-w-[500px] xl:max-w-[600px] flex-1 ">
+          <h2
+            id="message-heading"
+            className="font-bold text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[52px] leading-[120%]"
+          >
+            <span className="block">Mr M. Emmanuel</span>
+            <span className="block">Noël Bissai</span>
           </h2>
 
-          <p className="font-text-medium-normal font-[number:var(--text-medium-normal-font-weight)] text-grayswhite text-[length:var(--text-medium-normal-font-size)] tracking-[var(--text-medium-normal-letter-spacing)] leading-[var(--text-medium-normal-line-height)] [font-style:var(--text-medium-normal-font-style)]">
+          <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-relaxed w-full">
             Depuis près de trois décennies, Renaprov s&apos;engage à rester
             proche de ses clients et à leur proposer des solutions financières
             solidaires. Notre ambition est de consolider cette proximité en
@@ -27,8 +32,8 @@ export const MessageSection = (): JSX.Element => {
           </p>
 
           <img
-            className="absolute bottom-0 right-0 w-[150px] lg:w-[225px] h-auto lg:h-60 opacity-80"
-            alt="Capa"
+            className="absolute bottom-0 right-2 sm:right-4 md:right-6 lg:right-8 xl:right-12 w-[40px] sm:w-[60px] md:w-[80px] lg:w-[100px] xl:w-[120px] opacity-50 hover:opacity-70 transition-opacity duration-300 z-10"
+            alt="Décoration graphique RENAPROV"
             src="/capa-1.svg"
           />
         </div>
