@@ -26,7 +26,7 @@ export const HospitalLaMamuSection = (): JSX.Element => {
             </div>
 
             {/* Title */}
-            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-grayswhite">
+            <h2 className="text-[56px] font-bold leading-tight text-grayswhite">
               Complexe Hospitalier La Mamu
             </h2>
 
