@@ -12,11 +12,11 @@ const AppContent: React.FC = () => {
 
   switch (currentPage) {
     case "accueil":
-      return <Mission />;
-    // return <Accueil />;
+      return <Accueil />;
     case "about":
       return <AboutHistory />;
     case "mission":
+      return <Mission />;
     default:
       return <Accueil />;
   }
