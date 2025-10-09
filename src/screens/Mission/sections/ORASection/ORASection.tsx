@@ -39,7 +39,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({
     primary:
       "bg-foundation-bluenormal hover:bg-foundation-bluedark-hover text-grayswhite",
     secondary:
-      "bg-grayswhite hover:bg-foundation-greylight text-foundationbluenormal",
+      "bg-grayswhite hover:bg-foundation-greylight text-foundation-bluenormal",
   };
 
   return (
@@ -135,13 +135,10 @@ export const ORASection = (): JSX.Element => {
 
             <div className="flex flex-col gap-6 md:gap-8">
               <p
-                className={`${designTokens.typography.body} text-foundation-greylight`}
+                className={`${designTokens.typography.body}  text-foundation-greylight-hover `}
               >
-                ORA est notre système d'épargne collective qui permet aux
-                membres de cotiser petit à petit pour réaliser leurs projets. Un
-                mécanisme d'épargne solidaire et accessible qui favorise
-                l'inclusion financière et l'autonomie économique des
-                communautés.
+                Un établissement moderne offrant des soins accessibles et de
+                qualité, avec une approche humaine et proche des patients.
               </p>
 
               <div

@@ -39,7 +39,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({
     primary:
       "bg-foundation-bluenormal hover:bg-foundation-bluedark-hover text-white",
     secondary:
-      "bg-grayswhite hover:bg-foundation-greylight text-foundationbluenormal",
+      "bg-grayswhite hover:bg-foundation-greylight text-foundation-bluenormal",
   };
 
   return (

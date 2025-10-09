@@ -5,7 +5,7 @@ import { MapPin, Phone } from "lucide-react";
 // Design tokens pour la cohérence
 const designTokens = {
   spacing: {
-    section: "px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16",
+    section: "",
     content: "gap-6 md:gap-8 lg:gap-12",
     buttons: "gap-4 md:gap-6",
   },
@@ -60,19 +60,19 @@ interface ContactInfoProps {
 
 const ContactInfo: React.FC<ContactInfoProps> = ({ location, phone }) => {
   return (
-    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 mb-6">
-      <div className="flex items-center gap-2">
-        <MapPin className="w-5 h-5 text-foundation-bluenormal" />
+    <div className="flex flex-row items-center gap-3 sm:gap-6 mb-6 overflow-hidden">
+      <div className="flex items-center gap-2 flex-shrink-0">
+        <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-foundation-bluenormal flex-shrink-0" />
         <span
-          className={`${designTokens.typography.caption} text-foundationbluelight`}
+          className={`${designTokens.typography.caption} text-foundationbluelight whitespace-nowrap`}
         >
           {location}
         </span>
       </div>
-      <div className="flex items-center gap-2 border-b border-foundationbluelight pb-1">
-        <Phone className="w-5 h-5 text-foundation-bluenormal" />
+      <div className="flex items-center gap-2 border-b border-foundationbluelight pb-1 flex-shrink-0">
+        <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-foundation-bluenormal flex-shrink-0" />
         <span
-          className={`${designTokens.typography.caption} text-foundationbluelight`}
+          className={`${designTokens.typography.caption} text-foundationbluelight whitespace-nowrap`}
         >
           {phone}
         </span>
@@ -81,87 +81,78 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ location, phone }) => {
   );
 };
 
-// Composant modulaire pour la galerie d'images
-const ImageGallery: React.FC = () => {
-  return (
-    <div className="w-full h-64 md:h-80 lg:h-96">
-      <div className="relative w-full h-full">
-        {/* Image principale comme arrière-plan */}
-        <img
-          className="absolute inset-0 w-full h-full rounded-lg md:rounded-xl object-cover"
-          alt="Complexe Hospitalier La Mamu"
-          src="/image-3-1.png"
-        />
-
-        {/* Première image superposée - décalée vers le bas et à droite */}
-        <img
-          className="absolute bottom-2 right-2 w-[48%] h-1/2 rounded-lg object-cover shadow-lg transform translate-y-16 translate-x-8"
-          alt="Complexe Hospitalier La Mamu - Services"
-          src="/image-2.png"
-        />
-
-        {/* Deuxième image superposée - décalée vers le bas et à droite */}
-        <img
-          className="absolute bottom-2 left-2 w-[48%] h-1/2 rounded-lg object-cover shadow-lg transform translate-y-16 translate-x-8"
-          alt="Complexe Hospitalier La Mamu - Équipements"
-          src="/image-4.png"
-        />
-      </div>
-    </div>
-  );
-};
-
 export const HospitalLaMamuSection = (): JSX.Element => {
   return (
-    <section
-      className={`flex flex-col w-full items-center justify-between ${designTokens.spacing.section} ${designTokens.layout.section} bg-foundation-bluedarker`}
-    >
-      <div className={`flex flex-col w-full ${designTokens.layout.container}`}>
-        <article className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Contenu principal */}
-          <div className="flex flex-col order-2 lg:order-1">
-            <header className="flex flex-col gap-6 md:gap-8">
+    <section className="bg-foundation-bluedarker py-12 sm:py-16 lg:py-24 px-6 sm:px-8 md:px-12 lg:px-16 xl:px-0">
+      <article className="max-w-[1236px] mx-auto flex flex-col lg:flex-row gap-8 lg:gap-[75px] items-center">
+        {/* Contenu principal */}
+        <div className="w-full lg:max-w-[600px] space-y-6 sm:space-y-8 lg:space-y-[45px] order-2 lg:order-1">
+          <header className=" space-y-[17px] ">
+            <div>
               <ContactInfo
                 location="Quartier X, Ville Y"
                 phone="+237 XXX XXX XXX"
               />
+            </div>
 
+            <div className="space-y-4 sm:space-y-6 lg:space-y-[24px]">
               <h2
-                className={`${designTokens.typography.heading} text-grayswhite`}
+                className={`${designTokens.typography.heading} text-grayswhite leading-tight`}
               >
                 Complexe Hospitalier La Mamu
               </h2>
-            </header>
 
-            <div className="flex flex-col gap-6 md:gap-8">
               <p
-                className={`${designTokens.typography.body} text-foundation-greylight`}
+                className={`${designTokens.typography.body}  text-foundation-greylight-hover `}
               >
                 Un établissement moderne offrant des soins accessibles et de
-                qualité, avec une approche humaine et proche des patients. Notre
-                mission est de fournir des soins médicaux de haute qualité dans
-                un environnement chaleureux et professionnel.
+                qualité, avec une approche humaine et proche des patients.
               </p>
+            </div>
+          </header>
 
-              <div
-                className={`flex flex-col sm:flex-row items-start sm:items-center ${designTokens.spacing.buttons}`}
-              >
-                <ActionButton variant="secondary">
-                  Prendre rendez-vous
-                </ActionButton>
-                <ActionButton variant="primary">
-                  Découvrir nos services
-                </ActionButton>
-              </div>
+          <div
+            className={`flex flex-col sm:flex-row items-start sm:items-center ${designTokens.spacing.buttons}`}
+          >
+            <ActionButton variant="secondary">Prendre rendez-vous</ActionButton>
+            <ActionButton variant="primary">
+              Découvrir nos services
+            </ActionButton>
+          </div>
+        </div>
+
+        {/* Galerie d'images */}
+        <div className="relative w-full lg:flex-1 order-1 lg:order-2">
+          <div className="relative overflow-hidden rounded-lg">
+            <img
+              className="w-full h-64 sm:h-80 lg:h-auto object-cover transition-transform duration-300 hover:scale-105"
+              alt="Complexe Hospitalier La Mamu"
+              src="/image-3-1.png"
+              loading="lazy"
+            />
+          </div>
+
+          {/* Images superposées - uniquement sur très grands écrans (xl et plus) */}
+          <div className="hidden xl:flex absolute gap-3 bottom-4 right-4 transform translate-y-[48px] translate-x-[48px]">
+            <div className="relative group">
+              <img
+                className="h-[200px] w-[290px] rounded-lg object-cover shadow-xl transition-transform duration-300 group-hover:scale-105 group-hover:shadow-2xl"
+                alt="Complexe Hospitalier La Mamu - Équipements"
+                src="/image-4.png"
+                loading="lazy"
+              />
+            </div>
+            <div className="relative group">
+              <img
+                className="h-[200px] w-[290px] rounded-lg object-cover shadow-xl transition-transform duration-300 group-hover:scale-105 group-hover:shadow-2xl"
+                alt="Complexe Hospitalier La Mamu - Services"
+                src="/image-2.png"
+                loading="lazy"
+              />
             </div>
           </div>
-
-          {/* Galerie d'images */}
-          <div className="order-1 lg:order-2">
-            <ImageGallery />
-          </div>
-        </article>
-      </div>
+        </div>
+      </article>
     </section>
   );
 };
