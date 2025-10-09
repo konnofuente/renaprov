@@ -36,11 +36,10 @@ const subsidiaries = [
     imageUrl: "/logo Royal FMRoyal FM.png",
   },
   {
-    category: "Investissement",
-    title: "Royal FM",
-    description:
-      "Société de gestion et d’investissement qui accompagne le développement économique à travers des solutions financières adaptées.",
-    imageUrl: "/logo Royal FMRoyal FM.png",
+    category: "Solidarite",
+    title: "Maso",
+    description: "Pour la valorisation de la solidarité africaine",
+    imageUrl: "/logo maso solidarite.png",
   },
 ];
 
@@ -103,7 +102,7 @@ export const NosFillialeSubsection = (): JSX.Element => {
           Voici nos differents
         </h2>
         <h2 className="[font-family:'Bricolage_Grotesque',Helvetica] font-bold text-foundation-bluenormal text-4xl sm:text-5xl md:text-6xl lg:text-[64px] tracking-[0] leading-tight lg:leading-[70.8px]">
-          Fillailles
+          filiales
         </h2>
       </div>
 
