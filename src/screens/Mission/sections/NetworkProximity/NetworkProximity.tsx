@@ -64,7 +64,7 @@ export const NetworkProximity = (): JSX.Element => {
   return (
     <section className="flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-12 md:py-16 lg:py-20 bg-foundationbluelight relative">
       <div className="flex flex-col w-full max-w-[1236px]">
-        <article className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <article className="grid grid-cols-1 lg:grid-cols-2  lg:gap-12 items-center">
           {/* Section des images */}
           <div className="order-1 lg:order-1 relative">
             <ImageGallery />
