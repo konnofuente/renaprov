@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "../../../../components/ui/button";
 import { MapPin, Phone } from "lucide-react";
 
@@ -33,7 +32,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({
   onClick,
 }) => {
   const baseClasses =
-    "w-auto font-semibold px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg min-h-[48px] sm:min-h-[52px] md:min-h-[56px] flex items-center justify-center";
+    "w-full sm:w-auto font-semibold px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg min-h-[48px] sm:min-h-[52px] md:min-h-[56px] flex items-center justify-center";
 
   const variantClasses = {
     primary:
@@ -60,19 +59,19 @@ interface ContactInfoProps {
 
 const ContactInfo: React.FC<ContactInfoProps> = ({ location, phone }) => {
   return (
-    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 mb-6">
-      <div className="flex items-center gap-2">
-        <MapPin className="w-5 h-5 text-foundation-bluenormal" />
+    <div className="flex flex-row items-center gap-2 sm:gap-4 md:gap-6 mb-6 overflow-x-auto scrollbar-hide">
+      <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
+        <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-foundation-bluenormal flex-shrink-0" />
         <span
-          className={`${designTokens.typography.caption} text-foundationbluelight`}
+          className={`text-xs sm:text-sm md:text-base  text-foundationbluelight whitespace-nowrap`}
         >
           {location}
         </span>
       </div>
-      <div className="flex items-center gap-2 border-b border-foundationbluelight pb-1">
-        <Phone className="w-5 h-5 text-foundation-bluenormal" />
+      <div className="flex items-center gap-1 sm:gap-2 border-b border-foundation-bluenormal-light pb-1 flex-shrink-0">
+        <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-foundation-bluenormal flex-shrink-0" />
         <span
-          className={`${designTokens.typography.caption} text-foundationbluelight`}
+          className={`text-xs sm:text-sm md:text-base  text-foundationbluelight whitespace-nowrap`}
         >
           {phone}
         </span>
@@ -93,16 +92,16 @@ const ImageGallery: React.FC = () => {
           src="/image-3-3.png"
         />
 
-        {/* Première image superposée - décalée vers le bas et à droite */}
+        {/* Première image superposée - décalée vers le bas et à droite - uniquement sur très grands écrans (xl et plus) */}
         <img
-          className="absolute bottom-2 right-2 w-[48%] h-1/2 rounded-lg object-cover shadow-lg transform translate-y-16 translate-x-8"
+          className="hidden xl:block absolute bottom-2 right-2 w-[48%] h-1/2 rounded-lg object-cover shadow-lg transform translate-y-16 translate-x-8"
           alt="ORA - Épargne Solidaire"
           src="/image-2-1.png"
         />
 
-        {/* Deuxième image superposée - décalée vers le bas et à droite */}
+        {/* Deuxième image superposée - décalée vers le bas et à droite - uniquement sur très grands écrans (xl et plus) */}
         <img
-          className="absolute bottom-2 left-2 w-[48%] h-1/2 rounded-lg object-cover shadow-lg transform translate-y-16 translate-x-8"
+          className="hidden xl:block absolute bottom-2 left-2 w-[48%] h-1/2 rounded-lg object-cover shadow-lg transform translate-y-16 translate-x-8"
           alt="ORA - Inclusion Financière"
           src="/image-4-1.png"
         />
@@ -127,7 +126,7 @@ export const ORASection = (): JSX.Element => {
               />
 
               <h2
-                className={`${designTokens.typography.heading} text-grayswhite`}
+                className={`text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold leading-tight text-grayswhite`}
               >
                 ORA , Cotiser Petit a Petit
               </h2>
@@ -135,14 +134,14 @@ export const ORASection = (): JSX.Element => {
 
             <div className="flex flex-col gap-6 md:gap-8">
               <p
-                className={`${designTokens.typography.body}  text-foundation-greylight-hover `}
+                className={`text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-foundation-greylight-hover`}
               >
                 Un établissement moderne offrant des soins accessibles et de
                 qualité, avec une approche humaine et proche des patients.
               </p>
 
               <div
-                className={`flex flex-col sm:flex-row items-start sm:items-center ${designTokens.spacing.buttons}`}
+                className={`flex flex-col sm:flex-row items-stretch sm:items-center ${designTokens.spacing.buttons}`}
               >
                 <ActionButton variant="primary">
                   Commencer à épargner

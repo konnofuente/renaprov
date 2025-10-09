@@ -33,7 +33,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({
   onClick,
 }) => {
   const baseClasses =
-    "w-auto font-semibold px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg min-h-[48px] sm:min-h-[52px] md:min-h-[56px] flex items-center justify-center";
+    "w-full sm:w-auto font-semibold px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg min-h-[48px] sm:min-h-[52px] md:min-h-[56px] flex items-center justify-center";
 
   const variantClasses = {
     primary:
@@ -97,13 +97,13 @@ export const HospitalLaMamuSection = (): JSX.Element => {
 
             <div className="space-y-4 sm:space-y-6 lg:space-y-[24px]">
               <h2
-                className={`${designTokens.typography.heading} text-grayswhite leading-tight`}
+                className={`text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold leading-tight text-grayswhite`}
               >
                 Complexe Hospitalier La Mamu
               </h2>
 
               <p
-                className={`${designTokens.typography.body}  text-foundation-greylight-hover `}
+                className={`text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-foundation-greylight-hover`}
               >
                 Un établissement moderne offrant des soins accessibles et de
                 qualité, avec une approche humaine et proche des patients.
@@ -112,7 +112,7 @@ export const HospitalLaMamuSection = (): JSX.Element => {
           </header>
 
           <div
-            className={`flex flex-col sm:flex-row items-start sm:items-center ${designTokens.spacing.buttons}`}
+            className={`flex flex-col sm:flex-row items-stretch sm:items-center ${designTokens.spacing.buttons}`}
           >
             <ActionButton variant="secondary">Prendre rendez-vous</ActionButton>
             <ActionButton variant="primary">
