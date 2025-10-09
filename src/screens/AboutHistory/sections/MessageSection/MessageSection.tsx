@@ -1,13 +1,13 @@
 export const MessageSection = (): JSX.Element => {
   return (
     <section
-      className="relative w-full bg-[linear-gradient(148deg,rgba(0,172,238,1)_0%,rgba(1,27,38,1)_43%)] overflow-hidden"
+      className="relative w-full  overflow-hidden bg-[linear-gradient(148deg,rgba(0,172,238,1)_0%,rgba(1,27,38,1)_43%)]  "
       aria-labelledby="message-heading"
     >
-      <div className="flex flex-col md:flex-row items-center gap-4 sm:gap-6 md:gap-8 lg:gap-12 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-8 sm:py-12 md:py-16 lg:py-20 min-h-[400px] sm:min-h-[450px] md:min-h-[500px] lg:min-h-[600px] xl:min-h-[700px]">
-        <div className="flex-shrink-0 w-full md:w-auto">
+      <div className="flex flex-col md:flex-row items-center gap-4 sm:gap-6 md:gap-8 lg:gap-12 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-8 sm:py-0 transform sm:translate-y-2 ">
+        <div className=" flex-shrink-0 w-full md:w-auto py-[-32px] ">
           <img
-            className="w-full sm:w-[300px] md:w-[400px] lg:w-[500px] xl:w-[669px] aspect-[669/642] object-cover rounded-lg shadow-lg"
+            className="w-full sm:w-[300px] md:w-[400px] lg:w-[500px] xl:w-[669px] aspect-[669/744] object-cover  shadow-lg"
             alt="Portrait de Mr M. Emmanuel Noël Bissai, Directeur Général de RENAPROV"
             src="/frame-2087326088-removebg-preview.png"
           />

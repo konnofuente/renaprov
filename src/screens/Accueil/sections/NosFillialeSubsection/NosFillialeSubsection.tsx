@@ -127,7 +127,7 @@ export const NosFillialeSubsection = (): JSX.Element => {
             >
               <Card className="flex flex-col w-full h-auto min-h-[350px] sm:min-h-[380px] md:min-h-[420px] lg:min-h-[450px] xl:min-h-[480px] items-start rounded-[18px] overflow-hidden shadow-[0px_0px_9px_#00000040] border-0 hover:shadow-[0px_0px_15px_#00000060] transition-shadow duration-300">
                 <CardContent className="p-0 w-full h-full flex flex-col">
-                  <div className="flex flex-col h-[211px] items-start gap-3 md:gap-3.5 lg:gap-4 pt-6 sm:pt-8 md:pt-10 lg:pt-12 xl:pt-[42px] pb-6 sm:pb-8 md:pb-10 lg:pb-12 xl:pb-[53px] px-4 sm:px-5 md:px-6 lg:px-8 xl:px-[29px] w-full bg-foundation-bluedarker">
+                  <div className="flex flex-col h-[211px] items-start gap-3 md:gap-3.5 lg:gap-4 pt-6 sm:pt-8 md:pt-10 lg:pt-12 xl:pt-[42px]  sm:pb-8 md:pb-10 lg:pb-12 xl:pb-[53px] px-4 sm:px-5 md:px-6 lg:px-8 xl:px-[29px] w-full bg-foundation-bluedarker">
                     <div className="w-fit font-m3-label-large font-[number:var(--m3-label-large-font-weight)] text-[#ffffff] text-xs sm:text-sm md:text-base lg:text-lg xl:text-[14px] tracking-[var(--m3-label-large-letter-spacing)] leading-[var(--m3-label-large-line-height)] whitespace-nowrap [font-style:var(--m3-label-large-font-style)]">
                       {subsidiary.category}
                     </div>
@@ -137,7 +137,7 @@ export const NosFillialeSubsection = (): JSX.Element => {
                         {subsidiary.title}
                       </h3>
 
-                      <p className="w-full [font-family:'Roboto',Helvetica] font-normal text-[#bdbdbd] text-[10px]  tracking-[0.40px] leading-relaxed">
+                      <p className="w-full [font-family:'Roboto',Helvetica] font-normal text-[#bdbdbd] sm:text-[10px]  text-[14px]    tracking-[0.40px] leading-relaxed">
                         {subsidiary.description}
                       </p>
                     </div>
