@@ -139,7 +139,7 @@ export const NetworkProximity = (): JSX.Element => {
         <article className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Section des images */}
           <div className="order-1 lg:order-1 relative">
-            <BackgroundIcons />
+            {/* <BackgroundIcons /> */}
             <ImageGallery />
           </div>
 
