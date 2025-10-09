@@ -13,7 +13,7 @@ import { ProductSubsection } from "./sections/ProductSubsection";
 export const Accueil = (): JSX.Element => {
   return (
     <>
-      <SEO 
+      <SEO
         title="RENAPROV - Microfinance de Confiance au Cameroun"
         description="RENAPROV FINANCE SA - Institution de microfinance au Cameroun. Services financiers accessibles, épargne, crédits, inclusion financière. Devenez propriétaire avec MASO, épargnez avec ORA."
         keywords="microfinance, Cameroun, épargne, crédit, inclusion financière, RENAPROV, MASO, ORA, compte courant, compte épargne, finance, Yaoundé, Douala"

@@ -196,24 +196,24 @@ export const HeroSectionSubsection = (): JSX.Element => {
         <ChevronRightIcon className="w-7 h-7 xl:w-8 xl:h-8 text-foundation-bluenormal" />
       </Button>
       {/* MASO Promotion Banner */}
-      <div className="w-full flex justify-center mt-4 sm:mt-5 md:mt-6">
-        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 w-full">
-          <div className="bg-gradient-to-r from-foundation-bluenormal to-foundation-bluedarker py-4 sm:py-5 md:py-6 rounded-[20px]">
-            <div className="px-4 sm:px-6 lg:px-8">
-              <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 sm:gap-6">
+      <div className="w-full flex justify-center mt-1 sm:mt-1.5 md:mt-2 lg:mt-2.5 xl:mt-3">
+        <div className="max-w-7xl mx-auto px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 w-full">
+          <div className="bg-gradient-to-r from-foundation-bluenormal to-foundation-bluedarker py-2 sm:py-2 md:py-2 lg:py-2.5 xl:py-3 rounded-[10px] sm:rounded-[12px] md:rounded-[14px] lg:rounded-[16px]">
+            <div className="px-1.5 sm:px-2 md:px-3 lg:px-4 xl:px-5">
+              <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-1 sm:gap-1.5 md:gap-2 lg:gap-2.5 xl:gap-3">
                 <div className="text-center sm:text-left flex-1 max-w-2xl">
-                  <p className="text-white font-bold text-base sm:text-lg md:text-xl lg:text-2xl leading-tight">
+                  <p className="text-white font-bold text-xs sm:text-xs md:text-sm lg:text-base xl:text-lg leading-tight">
                     Devenez propriétaire de votre future{" "}
                     <span className="font-black">Villa</span> avec MASO!
                   </p>
-                  <p className="text-white/90 text-sm sm:text-base md:text-lg mt-2 sm:mt-3">
+                  <p className="text-white/90 text-xs sm:text-xs md:text-sm lg:text-sm xl:text-base mt-0.5 sm:mt-0.5 md:mt-1 lg:mt-1 xl:mt-1.5">
                     Inscriptions ouvertes jusqu'au 31 octobre. Ne manquez pas
                     cette opportunité.
                   </p>
                 </div>
-                <div className="flex-shrink-0 w-full sm:w-auto">
+                <div className="flex-shrink-0 w-auto">
                   <Button
-                    className="w-full sm:w-auto bg-white text-foundation-bluenormal hover:bg-white/95 font-bold px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl text-base sm:text-lg md:text-xl"
+                    className="w-auto bg-white text-foundation-bluenormal hover:bg-white/95 font-bold px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 py-1 sm:py-1.5 md:py-2 lg:py-2.5 xl:py-3 transition-all duration-200 shadow-lg hover:shadow-xl text-xs sm:text-xs md:text-sm lg:text-base xl:text-lg"
                     onClick={() => goToSlide(1)}
                   >
                     Je m'inscris dès maintenant
