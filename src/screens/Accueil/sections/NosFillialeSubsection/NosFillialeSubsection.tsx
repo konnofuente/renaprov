@@ -48,18 +48,16 @@ export const NosFillialeSubsection = (): JSX.Element => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [cardsToShow, setCardsToShow] = useState(1);
 
-  // Responsive cards calculation
+  // Responsive cards calculation - 3 cartes + 1 partiellement visible
   useEffect(() => {
     const updateCardsToShow = () => {
       const width = window.innerWidth;
-      if (width < 640) {
+      if (width < 667) {
         setCardsToShow(1); // Mobile: 1 carte
-      } else if (width < 1024) {
-        setCardsToShow(2); // Tablet: 2 cartes
-      } else if (width < 1280) {
-        setCardsToShow(3); // Desktop: 3 cartes
+      } else if (width < 1299) {
+        setCardsToShow(2); // Tablet: 2 cartes (667px à 1299px)
       } else {
-        setCardsToShow(4); // Large: 4 cartes
+        setCardsToShow(3.2); // Desktop: 3 cartes + 0.2 de la 4ème (partiellement visible)
       }
     };
 
@@ -68,7 +66,7 @@ export const NosFillialeSubsection = (): JSX.Element => {
     return () => window.removeEventListener("resize", updateCardsToShow);
   }, []);
 
-  const maxSlide = Math.max(0, subsidiaries.length - cardsToShow);
+  const maxSlide = Math.max(0, subsidiaries.length - Math.floor(cardsToShow));
 
   const nextSlide = () => {
     if (currentSlide < maxSlide) {
@@ -99,7 +97,15 @@ export const NosFillialeSubsection = (): JSX.Element => {
 
   return (
     <section className="flex flex-col items-start gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 2xl:gap-20 px-6 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-10 sm:py-12 md:py-16 lg:py-20 xl:py-24 2xl:py-[87px] w-full">
-      {/* <div className="flex flex-col w-full max-w-7xl items-center" /> */}
+      {/* Titre principal comme sur l'image */}
+      <div className="w-full text-center">
+        <h2 className="[font-family:'Bricolage_Grotesque',Helvetica] font-bold text-black text-3xl sm:text-4xl md:text-5xl lg:text-[56px] tracking-[0] leading-tight lg:leading-[70.8px]">
+          Voici nos differents
+        </h2>
+        <h2 className="[font-family:'Bricolage_Grotesque',Helvetica] font-bold text-foundation-bluenormal text-4xl sm:text-5xl md:text-6xl lg:text-[64px] tracking-[0] leading-tight lg:leading-[70.8px]">
+          Fillailles
+        </h2>
+      </div>
 
       <div className="relative w-full overflow-hidden">
         <div
@@ -111,29 +117,27 @@ export const NosFillialeSubsection = (): JSX.Element => {
           {subsidiaries.map((subsidiary, index) => (
             <div
               key={index}
-              className={`flex-shrink-0 px-1 sm:px-2 flex ${
+              className={`flex-shrink-0 px-2 sm:px-3 md:px-4 flex ${
                 cardsToShow === 1
                   ? "w-full"
                   : cardsToShow === 2
                   ? "w-1/2"
-                  : cardsToShow === 3
-                  ? "w-1/3"
-                  : "w-1/4"
+                  : "w-[31.25%]" // 100% / 3.2 = 31.25% pour 3 cartes + 0.2 de la 4ème
               }`}
             >
               <Card className="flex flex-col w-full h-auto min-h-[350px] sm:min-h-[380px] md:min-h-[420px] lg:min-h-[450px] xl:min-h-[480px] items-start rounded-[18px] overflow-hidden shadow-[0px_0px_9px_#00000040] border-0 hover:shadow-[0px_0px_15px_#00000060] transition-shadow duration-300">
                 <CardContent className="p-0 w-full h-full flex flex-col">
-                  <div className="flex flex-col h-auto min-h-[140px] sm:min-h-[160px] md:min-h-[180px] lg:min-h-[200px] xl:min-h-[220px] items-start gap-3 md:gap-3.5 lg:gap-4 pt-6 sm:pt-8 md:pt-10 lg:pt-12 xl:pt-[42px] pb-6 sm:pb-8 md:pb-10 lg:pb-12 xl:pb-[53px] px-4 sm:px-5 md:px-6 lg:px-8 xl:px-[29px] w-full bg-foundation-bluedarker">
-                    <div className="w-fit font-m3-label-large font-[number:var(--m3-label-large-font-weight)] text-[#ffffff] text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl tracking-[var(--m3-label-large-letter-spacing)] leading-[var(--m3-label-large-line-height)] whitespace-nowrap [font-style:var(--m3-label-large-font-style)]">
+                  <div className="flex flex-col h-[211px] items-start gap-3 md:gap-3.5 lg:gap-4 pt-6 sm:pt-8 md:pt-10 lg:pt-12 xl:pt-[42px] pb-6 sm:pb-8 md:pb-10 lg:pb-12 xl:pb-[53px] px-4 sm:px-5 md:px-6 lg:px-8 xl:px-[29px] w-full bg-foundation-bluedarker">
+                    <div className="w-fit font-m3-label-large font-[number:var(--m3-label-large-font-weight)] text-[#ffffff] text-xs sm:text-sm md:text-base lg:text-lg xl:text-[14px] tracking-[var(--m3-label-large-letter-spacing)] leading-[var(--m3-label-large-line-height)] whitespace-nowrap [font-style:var(--m3-label-large-font-style)]">
                       {subsidiary.category}
                     </div>
 
                     <div className="flex flex-col w-full items-start gap-2 sm:gap-2.5 md:gap-3 lg:gap-3.5">
-                      <h3 className="self-stretch [font-family:'Bricolage_Grotesque',Helvetica] font-bold text-[#ffffff] text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl tracking-[0] leading-tight line-clamp-2 overflow-hidden text-ellipsis">
+                      <h3 className="self-stretch [font-family:'Bricolage_Grotesque',Helvetica] font-bold text-[#ffffff]  sm:text-xl md:text-2xl lg:text-3xl xl:text-[28px]  tracking-[0] leading-tight line-clamp-3 overflow-hidden text-ellipsis">
                         {subsidiary.title}
                       </h3>
 
-                      <p className="w-full [font-family:'Roboto',Helvetica] font-normal text-[#bdbdbd] text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg tracking-[0.40px] leading-relaxed">
+                      <p className="w-full [font-family:'Roboto',Helvetica] font-normal text-[#bdbdbd] text-[10px]  tracking-[0.40px] leading-relaxed">
                         {subsidiary.description}
                       </p>
                     </div>

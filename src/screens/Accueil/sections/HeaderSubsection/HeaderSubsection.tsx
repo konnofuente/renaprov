@@ -7,8 +7,8 @@ const navigationItems = [
   { label: "Accueil", page: "accueil" as const },
   { label: "À propos", page: "about" as const },
   { label: "Mission", page: "mission" as const },
-  { label: "Produits", href: "#produits" },
-  { label: "Notre réseau", href: "#reseau" },
+  // { label: "Produits", href: "#produits" },
+  // { label: "Notre réseau", href: "#reseau" },
 ];
 
 export const HeaderSubsection = (): JSX.Element => {
@@ -59,8 +59,6 @@ export const HeaderSubsection = (): JSX.Element => {
                 onClick={() => {
                   if ("page" in item && item.page) {
                     handlePageNavigation(item.page);
-                  } else if ("href" in item && item.href) {
-                    handleNavClick(item.href);
                   }
                 }}
                 className="font-medium text-black hover:text-foundation-bluenormal transition-colors duration-200 text-sm xl:text-base"
@@ -107,8 +105,6 @@ export const HeaderSubsection = (): JSX.Element => {
                   onClick={() => {
                     if ("page" in item && item.page) {
                       handlePageNavigation(item.page);
-                    } else if ("href" in item && item.href) {
-                      handleNavClick(item.href);
                     }
                   }}
                   className="block w-full text-left px-3 py-2 text-base font-medium text-black hover:bg-white/20 rounded-md transition-colors duration-200"

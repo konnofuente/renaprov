@@ -211,9 +211,9 @@ export const HeroSectionSubsection = (): JSX.Element => {
                     cette opportunité.
                   </p>
                 </div>
-                <div className="flex-shrink-0 w-auto">
+                <div className="flex-shrink-0 w-full sm:w-auto">
                   <Button
-                    className="w-auto bg-white text-foundation-bluenormal hover:bg-white/95 font-bold px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 py-1 sm:py-1.5 md:py-2 lg:py-2.5 xl:py-3 transition-all duration-200 shadow-lg hover:shadow-xl text-xs sm:text-xs md:text-sm lg:text-base xl:text-lg"
+                    className="w-full sm:w-auto bg-white text-foundation-bluenormal hover:bg-white/95 font-bold px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 py-1 sm:py-1.5 md:py-2 lg:py-2.5 xl:py-3 transition-all duration-200 shadow-lg hover:shadow-xl text-xs sm:text-xs md:text-sm lg:text-base xl:text-lg"
                     onClick={() => goToSlide(1)}
                   >
                     Je m'inscris dès maintenant
