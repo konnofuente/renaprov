@@ -8,6 +8,14 @@ import { Button } from "../../../../components/ui/button";
 
 const slides = [
   {
+    title: "Bienvenu a RENAPROV",
+    description:
+      "La microfinance qui fait la difference , ouvrez un compte en quelques minutes et profitez de services adaptés à votre quotidien.",
+    image: "/Bienvenu a RENAPROV.png",
+    fallbackImage: "/hero1.png",
+    cta: "Ouvrir mon compte aujourd’hui",
+  },
+  {
     title: "Un compte simple et sécurisé, accessible à tous",
     description:
       "Chez RENAPROV, ouvrez un compte en quelques minutes et profitez de services adaptés à votre quotidien : dépôts, retraits, transferts et épargne, où que vous soyez.",
@@ -31,14 +39,7 @@ const slides = [
     fallbackImage: "/hero1.png",
     cta: "Nos solutions",
   },
-  {
-    title: "Bienvenu a RENAPROV",
-    description:
-      "La microfinance qui fait la difference , ouvrez un compte en quelques minutes et profitez de services adaptés à votre quotidien.",
-    image: "/Bienvenu a RENAPROV.png",
-    fallbackImage: "/hero1.png",
-    cta: "Ouvrir mon compte aujourd’hui",
-  },
+
   {
     title: "Rendes-vous en Agence",
     description:
@@ -242,12 +243,12 @@ export const HeroSectionSubsection = (): JSX.Element => {
             className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center"
           >
             {/* Content Section */}
-            <div className="space-y-6 sm:space-y-8 md:space-y-10 order-2 lg:order-1 text-center lg:text-left">
-              <div className="space-y-4 sm:space-y-6 md:space-y-8">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foundation-bluenormal leading-tight">
+            <div className="space-y-4 sm:space-y-5 md:space-y-6 order-2 lg:order-1 text-center lg:text-left">
+              <div className="space-y-3 sm:space-y-4 md:space-y-5">
+                <h1 className="[font-family:'Bricolage_Grotesque',Helvetica] font-bold text-foundation-bluenormal text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[48px] tracking-[0] leading-tight lg:leading-[1.1] line-clamp-3">
                   {slides[currentSlide].title}
                 </h1>
-                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-foundationgreylight-active leading-relaxed max-w-3xl mx-auto lg:mx-0">
+                <p className="[font-family:'Bricolage_Grotesque',Helvetica] font-medium text-foundationgreylight-active text-sm sm:text-base lg:text-[17px] tracking-[0] leading-[1.35] lg:leading-[20.4px]">
                   {slides[currentSlide].description}
                 </p>
               </div>
@@ -283,7 +284,22 @@ export const HeroSectionSubsection = (): JSX.Element => {
 
             {/* Image Section */}
             <div className="relative order-1 lg:order-2 flex justify-center">
-              <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[650px] rounded-2xl overflow-hidden shadow-2xl bg-gray-100">
+              <div
+                className="relative  overflow-hidden shadow-2xl bg-gray-100
+              
+              
+              
+              
+              w-full xl:w-[579px] h-[200px] sm:h-[250px] md:h-[300px] xl:h-[365px] rounded-[16px] xl:rounded-[23px] object-cover
+              
+              
+              
+              
+              
+              
+              
+              "
+              >
                 <img
                   src={
                     imageError[currentSlide]
