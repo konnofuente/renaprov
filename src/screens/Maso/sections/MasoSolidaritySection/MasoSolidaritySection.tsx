@@ -1,66 +1,85 @@
 import React from "react";
 import { Button } from "../../../../components/ui/button";
 
+// Composant modulaire pour la galerie d'images (avec Flexbox)
+const ImageGallery: React.FC = () => {
+  return (
+    <div className="w-full h-[500px] flex-1">
+      {/* Container principal avec Flexbox pour organiser les images */}
+      <div className="w-full h-full flex items-center justify-center gap-2">
+        {/* Ligne du haut - Image 2 au centre */}
+        <div
+          className="w-[200px] h-96 rounded-[20px] bg-cover bg-center shadow-lg"
+          style={{
+            backgroundImage: `url("/Un%20compte%20simple%20et%20sécurisé,%20accessible%20à%20tous.png")`,
+          }}
+          role="img"
+          aria-label="Solidarité MASO - Événement communautaire"
+        />
+
+        <div
+          className="w-[200px] h-96 rounded-[20px] bg-cover bg-center shadow-lg transform -translate-y-16"
+          style={{
+            backgroundImage: `url("/Faites%20grandir%20vos%20projets,%20nous%20finançons%20vos%20ambitions.png")`,
+          }}
+          role="img"
+          aria-label="Solidarité MASO - Assistance"
+        />
+
+        <div
+          className="w-[200px] h-96 rounded-[20px] bg-cover bg-center shadow-lg transform -translate-y-8"
+          style={{
+            backgroundImage: `url("/De%20locataire%20à%20propriétaire%20grâce%20à%20RENAPROV.png")`,
+          }}
+          role="img"
+          aria-label="Solidarité MASO - Communauté"
+        />
+      </div>
+    </div>
+  );
+};
+
+// Composant modulaire pour le contenu textuel (design original)
+const ContentSection: React.FC = () => {
+  return (
+    <div className="w-full max-w-[600px] flex flex-col gap-6">
+      <header className="flex flex-col gap-2">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold leading-tight text-blue-gray900">
+          Une solidarité camerounaise qui change des vies
+        </h2>
+      </header>
+
+      <div className="flex flex-col gap-6">
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-foundationgreynormal">
+          La MASO incarne l'esprit de solidarité camerounaise en créant un réseau d'entraide 
+          qui permet à chaque membre de bénéficier de services essentiels. Cette initiative 
+          favorise l'inclusion sociale et économique en offrant des avantages concrets dans 
+          les domaines de la santé, de l'éducation et de l'assistance sociale.
+        </p>
+        
+        <Button className="bg-foundation-bluenormal hover:bg-foundation-bluedark-hover text-white font-semibold px-6 py-3 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl w-fit">
+          Découvrir nos services
+        </Button>
+      </div>
+    </div>
+  );
+};
+
 export const MasoSolidaritySection = (): JSX.Element => {
   return (
-    <section className="w-full bg-white py-12 sm:py-16 md:py-20 lg:py-24">
-      <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-          {/* Text Content */}
-          <div className="w-full lg:w-1/2">
-            <h2 className="[font-family:'Bricolage_Grotesque',Helvetica] font-bold text-foundation-bluenormal text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mb-6">
-              Une solidarité camerounaise qui change des vies
-            </h2>
-            
-            <p className="[font-family:'Bricolage_Grotesque',Helvetica] text-foundationgreylight-active text-sm sm:text-base md:text-lg leading-relaxed mb-8">
-              La MASO incarne l'esprit de solidarité camerounaise en créant un réseau d'entraide 
-              qui permet à chaque membre de bénéficier de services essentiels. Cette initiative 
-              favorise l'inclusion sociale et économique en offrant des avantages concrets dans 
-              les domaines de la santé, de l'éducation et de l'assistance sociale.
-            </p>
-
-            <Button className="bg-foundation-bluenormal hover:bg-foundation-bluedark-hover text-white font-semibold px-6 py-3 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl">
-              Découvrir nos services
-            </Button>
+    <section className="flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-12 md:py-16 lg:py-20 bg-foundationbluelight relative">
+      <div className="flex flex-col w-full max-w-[1236px]">
+        <article className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 items-center">
+          {/* Section des images */}
+          <div className="order-1 lg:order-1 relative">
+            <ImageGallery />
           </div>
 
-          {/* Image Gallery */}
-          <div className="w-full lg:w-1/2">
-            <div className="grid grid-cols-3 gap-4">
-              <div className="col-span-2">
-                <img
-                  className="w-full h-48 sm:h-56 rounded-lg object-cover"
-                  alt="Solidarité MASO - Événement communautaire"
-                  src="/Un%20compte%20simple%20et%20sécurisé,%20accessible%20à%20tous.png"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = "/hero1.png";
-                  }}
-                />
-              </div>
-              <div className="space-y-4">
-                <img
-                  className="w-full h-22 sm:h-26 rounded-lg object-cover"
-                  alt="Solidarité MASO - Assistance"
-                  src="/Faites%20grandir%20vos%20projets,%20nous%20finançons%20vos%20ambitions.png"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = "/hero1.png";
-                  }}
-                />
-                <img
-                  className="w-full h-22 sm:h-26 rounded-lg object-cover"
-                  alt="Solidarité MASO - Communauté"
-                  src="/De%20locataire%20à%20propriétaire%20grâce%20à%20RENAPROV.png"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = "/hero1.png";
-                  }}
-                />
-              </div>
-            </div>
+          {/* Section du contenu */}
+          <div className="order-2 lg:order-2">
+            <ContentSection />
           </div>
-        </div>
+        </article>
       </div>
     </section>
   );
