@@ -139,8 +139,16 @@ export const InstitutBissaiSection = (): JSX.Element => {
               <div
                 className={`flex flex-col sm:flex-row items-stretch sm:items-center ${designTokens.spacing.buttons}`}
               >
-                <ActionButton variant="primary">S'inscrire</ActionButton>
-                <ActionButton variant="secondary">
+                <ActionButton 
+                  variant="primary"
+                  onClick={() => window.open('https://institutbissai.com/', '_blank')}
+                >
+                  S'inscrire
+                </ActionButton>
+                <ActionButton 
+                  variant="secondary"
+                  onClick={() => window.open('https://institutbissai.com/', '_blank')}
+                >
                   Découvrir les formations
                 </ActionButton>
               </div>

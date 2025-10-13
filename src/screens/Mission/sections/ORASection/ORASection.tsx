@@ -128,7 +128,7 @@ export const ORASection = (): JSX.Element => {
               <h2
                 className={`text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold leading-tight text-grayswhite`}
               >
-                ORA , Cotiser Petit a Petit
+                Royal FM
               </h2>
             </header>
 
@@ -136,17 +136,25 @@ export const ORASection = (): JSX.Element => {
               <p
                 className={`text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-foundation-greylight-hover`}
               >
-                Un établissement moderne offrant des soins accessibles et de
-                qualité, avec une approche humaine et proche des patients.
+                La radio des auditeurs à Yaoundé. Royal FM vous accompagne avec des programmes variés, 
+                de l'information de qualité et une proximité avec ses auditeurs.
               </p>
 
               <div
                 className={`flex flex-col sm:flex-row items-stretch sm:items-center ${designTokens.spacing.buttons}`}
               >
-                <ActionButton variant="primary">
-                  Commencer à épargner
+                <ActionButton 
+                  variant="primary"
+                  onClick={() => window.open('https://royalfm.cm/', '_blank')}
+                >
+                  Écouter en direct
                 </ActionButton>
-                <ActionButton variant="secondary">Découvrir ORA</ActionButton>
+                <ActionButton 
+                  variant="secondary"
+                  onClick={() => window.open('https://royalfm.cm/', '_blank')}
+                >
+                  Découvrir nos programmes
+                </ActionButton>
               </div>
             </div>
           </div>

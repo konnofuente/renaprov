@@ -1,19 +1,20 @@
 import { useState } from "react";
 import { Button } from "../../../../components/ui/button";
 import { Menu, X } from "lucide-react";
-import { useNavigation } from "../../../../contexts/NavigationContext";
+import { Link, useLocation } from "react-router-dom";
 
 const navigationItems = [
-  { label: "Accueil", page: "accueil" as const },
-  { label: "À propos", page: "about" as const },
-  { label: "Mission", page: "mission" as const },
-  // { label: "Produits", href: "#produits" },
+  { label: "Accueil", path: "/" },
+  { label: "À propos", path: "/about" },
+  { label: "Mission", path: "/mission" },
+  { label: "Produits", path: "/products" },
+  { label: "MASO", path: "/maso" },
   // { label: "Notre réseau", href: "#reseau" },
 ];
 
 export const HeaderSubsection = (): JSX.Element => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { setCurrentPage } = useNavigation();
+  const location = useLocation();
 
   const handleNavClick = (href: string) => {
     setMobileMenuOpen(false);
@@ -24,9 +25,11 @@ export const HeaderSubsection = (): JSX.Element => {
     }
   };
 
-  const handlePageNavigation = (page: "accueil" | "about" | "mission") => {
-    setMobileMenuOpen(false);
-    setCurrentPage(page);
+  const isActivePath = (path: string) => {
+    if (path === "/") {
+      return location.pathname === "/" || location.pathname === "/accueil";
+    }
+    return location.pathname === path;
   };
 
   return (
@@ -34,7 +37,7 @@ export const HeaderSubsection = (): JSX.Element => {
       <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-18 md:h-20">
           {/* Logo and Company Name */}
-          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+          <Link to="/" className="flex items-center gap-2 sm:gap-3 flex-shrink-0 hover:opacity-80 transition-opacity duration-200">
             <img
               src="/logo.png"
               alt="RENAPROV FINANCE SA - Logo"
@@ -45,7 +48,7 @@ export const HeaderSubsection = (): JSX.Element => {
                 Réserve Nationale de l&apos;Épargne et de la Provision
               </h1>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav
@@ -54,17 +57,17 @@ export const HeaderSubsection = (): JSX.Element => {
             aria-label="Navigation principale"
           >
             {navigationItems.map((item, index) => (
-              <button
+              <Link
                 key={index}
-                onClick={() => {
-                  if ("page" in item && item.page) {
-                    handlePageNavigation(item.page);
-                  }
-                }}
-                className="font-medium text-black hover:text-foundation-bluenormal transition-colors duration-200 text-sm xl:text-base"
+                to={item.path}
+                className={`font-medium transition-colors duration-200 text-sm xl:text-base ${
+                  isActivePath(item.path)
+                    ? "text-foundation-bluenormal"
+                    : "text-black hover:text-foundation-bluenormal"
+                }`}
               >
                 {item.label}
-              </button>
+              </Link>
             ))}
           </nav>
 
@@ -100,17 +103,18 @@ export const HeaderSubsection = (): JSX.Element => {
               aria-label="Navigation mobile"
             >
               {navigationItems.map((item, index) => (
-                <button
+                <Link
                   key={index}
-                  onClick={() => {
-                    if ("page" in item && item.page) {
-                      handlePageNavigation(item.page);
-                    }
-                  }}
-                  className="block w-full text-left px-3 py-2 text-base font-medium text-black hover:bg-white/20 rounded-md transition-colors duration-200"
+                  to={item.path}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`block w-full text-left px-3 py-2 text-base font-medium rounded-md transition-colors duration-200 ${
+                    isActivePath(item.path)
+                      ? "text-foundation-bluenormal bg-white/20"
+                      : "text-black hover:bg-white/20"
+                  }`}
                 >
                   {item.label}
-                </button>
+                </Link>
               ))}
               <div className="pt-4 border-t border-foundation-greydarker/10">
                 <Button

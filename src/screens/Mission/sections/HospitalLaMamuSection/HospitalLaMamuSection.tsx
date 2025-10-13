@@ -114,8 +114,16 @@ export const HospitalLaMamuSection = (): JSX.Element => {
           <div
             className={`flex flex-col sm:flex-row items-stretch sm:items-center ${designTokens.spacing.buttons}`}
           >
-            <ActionButton variant="secondary">Prendre rendez-vous</ActionButton>
-            <ActionButton variant="primary">
+            <ActionButton 
+              variant="secondary"
+              onClick={() => window.open('https://lamamu.cm/', '_blank')}
+            >
+              Prendre rendez-vous
+            </ActionButton>
+            <ActionButton 
+              variant="primary"
+              onClick={() => window.open('https://lamamu.cm/', '_blank')}
+            >
               Découvrir nos services
             </ActionButton>
           </div>

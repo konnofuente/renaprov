@@ -4,34 +4,203 @@ import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 
 const cities = [
-  { id: "yaounde", label: "Yaounde" },
+  { id: "yaounde", label: "Yaoundé" },
   { id: "douala", label: "Douala et Environs" },
   { id: "autres", label: "Autres Villes" },
 ];
 
 const agencies = [
+  // YAOUNDÉ AGENCIES
   {
-    city: "Yaounde",
-    name: "Agence de Nkoabang",
-    address: "Ngulzamba nouvelle route",
+    city: "Yaoundé",
+    name: "Nkoabang",
+    address: "Ngulzamba Nouvelle Route",
     image: "/image-1-3.png",
   },
   {
-    city: "Yaounde",
-    name: "Mokolo Marche",
-    address: " Bata Mokolo",
+    city: "Yaoundé",
+    name: "Odza",
+    address: "Borne 12 Odza",
     image: "/image-1-3.png",
   },
   {
-    city: "Yaounde",
-    name: "Institut Universi Bissai",
-    address: "Gp Coron",
+    city: "Yaoundé",
+    name: "Centrale",
+    address: "Immeuble Jaco",
     image: "/image-1-3.png",
   },
   {
-    city: "Yaounde",
-    name: "Institut Universi Bissai",
-    address: "Gp Coron",
+    city: "Yaoundé",
+    name: "Nkomo",
+    address: "Carrefour Nkomo",
+    image: "/image-1-3.png",
+  },
+  {
+    city: "Yaoundé",
+    name: "Ekoumou",
+    address: "Mairie Ekoumou",
+    image: "/image-1-3.png",
+  },
+  {
+    city: "Yaoundé",
+    name: "Mvog-Mbi",
+    address: "Marché Mvog-Mbi",
+    image: "/image-1-3.png",
+  },
+  {
+    city: "Yaoundé",
+    name: "Biyem Assi",
+    address: "Carrefour Acacias",
+    image: "/image-1-3.png",
+  },
+  {
+    city: "Yaoundé",
+    name: "Mokolo Marché",
+    address: "Bata Mokolo",
+    image: "/image-1-3.png",
+  },
+  {
+    city: "Yaoundé",
+    name: "Elig Effa",
+    address: "Montée Elig Effa",
+    image: "/image-1-3.png",
+  },
+  {
+    city: "Yaoundé",
+    name: "Mendong",
+    address: "Entrée Simbock",
+    image: "/image-1-3.png",
+  },
+  {
+    city: "Yaoundé",
+    name: "Ngousso",
+    address: "Fabrique Ngousso",
+    image: "/image-1-3.png",
+  },
+  {
+    city: "Yaoundé",
+    name: "Elig Edzoa",
+    address: "Elig Edzoa Face Ancien Feicom",
+    image: "/image-1-3.png",
+  },
+  {
+    city: "Yaoundé",
+    name: "Messassi",
+    address: "Messassi Face Vision Confort",
+    image: "/image-1-3.png",
+  },
+  {
+    city: "Yaoundé",
+    name: "Mimboman",
+    address: "Terminus Mimboman",
+    image: "/image-1-3.png",
+  },
+
+  // DOUALA & SES ENVIRONS
+  {
+    city: "Douala",
+    name: "New Deido",
+    address: "Marché New Deido",
+    image: "/image-1-3.png",
+  },
+  {
+    city: "Douala",
+    name: "Ndokoti",
+    address: "Entrée Bellavie",
+    image: "/image-1-3.png",
+  },
+  {
+    city: "Douala",
+    name: "Boumnyebel",
+    address: "Carrefour Boumnyebel",
+    image: "/image-1-3.png",
+  },
+  {
+    city: "Édéa",
+    name: "Édéa",
+    address: "Avenue des Banques",
+    image: "/image-1-3.png",
+  },
+
+  // AUTRES VILLES
+  {
+    city: "Obala",
+    name: "Obala",
+    address: "Congelcam Obala",
+    image: "/image-1-3.png",
+  },
+  {
+    city: "Nkoteng",
+    name: "Nkoteng",
+    address: "Congelcam Obala",
+    image: "/image-1-3.png",
+  },
+  {
+    city: "Sa'a",
+    name: "Sa'a",
+    address: "Marché Sa'a",
+    image: "/image-1-3.png",
+  },
+  {
+    city: "Bafoussam",
+    name: "Bafoussam",
+    address: "Entrée Marché B",
+    image: "/image-1-3.png",
+  },
+  {
+    city: "Bertoua",
+    name: "Bertoua",
+    address: "Congelcam Bertoua",
+    image: "/image-1-3.png",
+  },
+  {
+    city: "Mbalmayo",
+    name: "Mbalmayo",
+    address: "Marché Mbalmayo",
+    image: "/image-1-3.png",
+  },
+  {
+    city: "Mfou",
+    name: "Mfou",
+    address: "Place des Fêtes de Mfou",
+    image: "/image-1-3.png",
+  },
+  {
+    city: "Buea",
+    name: "Buea",
+    address: "Molyko Presbyterian Church",
+    image: "/image-1-3.png",
+  },
+  {
+    city: "Kribi",
+    name: "Kribi",
+    address: "Montée Nkol Biteng",
+    image: "/image-1-3.png",
+  },
+  {
+    city: "Eseka",
+    name: "Eseka",
+    address: "Marché Eseka",
+    image: "/image-1-3.png",
+  },
+
+  // NOS FILIALES
+  {
+    city: "Yaoundé",
+    name: "Institut Universitaire Bissaï",
+    address: "Ekoumou, Deux Chevaux",
+    image: "/image-1-3.png",
+  },
+  {
+    city: "Yaoundé",
+    name: "Royal FM",
+    address: "Sapeur Mimboman",
+    image: "/image-1-3.png",
+  },
+  {
+    city: "Yaoundé",
+    name: "Complexe Hospitalier La Mamu",
+    address: "Ngulzamba Nouvelle Route",
     image: "/image-1-3.png",
   },
 ];
@@ -49,6 +218,18 @@ const paginationDots = [
 
 export const BranchLocator = (): JSX.Element => {
   const [selectedCity, setSelectedCity] = useState("yaounde");
+
+  // Filtrer les agences selon la ville sélectionnée
+  const filteredAgencies = agencies.filter((agency) => {
+    if (selectedCity === "yaounde") {
+      return agency.city === "Yaoundé";
+    } else if (selectedCity === "douala") {
+      return agency.city === "Douala" || agency.city === "Édéa";
+    } else if (selectedCity === "autres") {
+      return !["Yaoundé", "Douala", "Édéa"].includes(agency.city);
+    }
+    return false;
+  });
 
   return (
     <section className="flex flex-col items-center gap-[38px] px-[79px] py-[60px] bg-foundationbluelight">
@@ -86,7 +267,7 @@ export const BranchLocator = (): JSX.Element => {
 
       <div className="flex flex-col items-start gap-[22px]">
         <div className="flex items-start gap-[29px] overflow-x-auto">
-          {agencies.map((agency, index) => (
+          {filteredAgencies.map((agency, index) => (
             <Card
               key={index}
               className="flex-shrink-0 w-[313px] bg-grayswhite rounded-[10px] overflow-hidden shadow-[0px_0px_2px_#00000040] border-0"

@@ -1,0 +1,1 @@
+export { MasoPrizesSection } from "./MasoPrizesSection";

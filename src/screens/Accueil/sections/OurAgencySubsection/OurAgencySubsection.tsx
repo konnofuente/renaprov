@@ -33,20 +33,42 @@ const generateCityTabs = (
   );
 
   const tabs: CityTab[] = [];
+  const doualaCities: string[] = [];
   const otherCities: string[] = [];
 
   // Créer les onglets pour les villes avec 3+ agences
   Object.entries(cityCount).forEach(([city, count]) => {
-    if (count >= 3) {
+    if (city === "Yaoundé") {
+      // Yaoundé a beaucoup d'agences, créer un onglet dédié
+      tabs.push({
+        id: "yaounde",
+        label: "Yaoundé",
+        city: city,
+      });
+    } else if (city === "Douala" || city === "Édéa") {
+      // Grouper Douala et Édéa sous "Douala et Environs"
+      doualaCities.push(city);
+    } else if (count >= 3) {
+      // Autres villes avec 3+ agences
       tabs.push({
         id: city.toLowerCase().replace(/\s+/g, "-"),
         label: city,
         city: city,
       });
     } else {
+      // Villes avec 1-2 agences
       otherCities.push(city);
     }
   });
+
+  // Ajouter l'onglet "Douala et Environs" s'il y a des agences dans cette région
+  if (doualaCities.length > 0) {
+    tabs.push({
+      id: "douala-et-environs",
+      label: "Douala et Environs",
+      cities: doualaCities,
+    });
+  }
 
   // Ajouter l'onglet "Autres Villes" s'il y a des villes avec 1-2 agences
   if (otherCities.length > 0) {
@@ -61,65 +83,198 @@ const generateCityTabs = (
 };
 
 const agencies = [
+  // YAOUNDÉ AGENCIES
   {
-    city: "Yaounde",
-    name: "Agence de Nkoabang",
-    address: "Ngulzamba nouvelle route",
+    city: "Yaoundé",
+    name: "Nkoabang",
+    address: "Ngulzamba Nouvelle Route",
     coordinates: { lat: 3.848, lng: 11.5021 },
   },
   {
-    city: "Yaounde",
-    name: "Agence de Nkoabang",
-    address: "Ngulzamba nouvelle route",
-    coordinates: { lat: 3.848, lng: 11.5021 },
+    city: "Yaoundé",
+    name: "Odza",
+    address: "Borne 12 Odza",
+    coordinates: { lat: 3.8667, lng: 11.5167 },
   },
   {
-    city: "Yaounde",
-    name: "Agence de Nkoabang",
-    address: "Ngulzamba nouvelle route",
-    coordinates: { lat: 3.848, lng: 11.5021 },
+    city: "Yaoundé",
+    name: "Centrale",
+    address: "Immeuble Jaco",
+    coordinates: { lat: 3.85, lng: 11.51 },
   },
   {
-    city: "Yaounde",
-    name: "Agence de Nkoabang",
-    address: "Ngulzamba nouvelle route",
-    coordinates: { lat: 3.848, lng: 11.5021 },
+    city: "Yaoundé",
+    name: "Nkomo",
+    address: "Carrefour Nkomo",
+    coordinates: { lat: 3.84, lng: 11.52 },
   },
   {
-    city: "Yaounde",
-    name: "Mokolo Marche",
+    city: "Yaoundé",
+    name: "Ekoumou",
+    address: "Mairie Ekoumou",
+    coordinates: { lat: 3.87, lng: 11.53 },
+  },
+  {
+    city: "Yaoundé",
+    name: "Mvog-Mbi",
+    address: "Marché Mvog-Mbi",
+    coordinates: { lat: 3.86, lng: 11.54 },
+  },
+  {
+    city: "Yaoundé",
+    name: "Biyem Assi",
+    address: "Carrefour Acacias",
+    coordinates: { lat: 3.88, lng: 11.55 },
+  },
+  {
+    city: "Yaoundé",
+    name: "Mokolo Marché",
     address: "Bata Mokolo",
     coordinates: { lat: 3.8667, lng: 11.5167 },
   },
   {
-    city: "Yaounde",
-    name: "Institut Universi Bissai",
-    address: "Gp Coron",
-    coordinates: { lat: 3.85, lng: 11.51 },
+    city: "Yaoundé",
+    name: "Elig Effa",
+    address: "Montée Elig Effa",
+    coordinates: { lat: 3.89, lng: 11.56 },
   },
   {
+    city: "Yaoundé",
+    name: "Mendong",
+    address: "Entrée Simbock",
+    coordinates: { lat: 3.87, lng: 11.57 },
+  },
+  {
+    city: "Yaoundé",
+    name: "Ngousso",
+    address: "Fabrique Ngousso",
+    coordinates: { lat: 3.85, lng: 11.58 },
+  },
+  {
+    city: "Yaoundé",
+    name: "Elig Edzoa",
+    address: "Elig Edzoa Face Ancien Feicom",
+    coordinates: { lat: 3.84, lng: 11.59 },
+  },
+  {
+    city: "Yaoundé",
+    name: "Messassi",
+    address: "Messassi Face Vision Confort",
+    coordinates: { lat: 3.83, lng: 11.60 },
+  },
+  {
+    city: "Yaoundé",
+    name: "Mimboman",
+    address: "Terminus Mimboman",
+    coordinates: { lat: 3.82, lng: 11.61 },
+  },
+
+  // DOUALA & SES ENVIRONS
+  {
     city: "Douala",
-    name: "Agence Centre Ville",
-    address: "Carrefour Elig Edzoa",
+    name: "New Deido",
+    address: "Marché New Deido",
     coordinates: { lat: 4.0483, lng: 9.7043 },
   },
   {
     city: "Douala",
-    name: "Agence Akwa",
-    address: "Quartier Akwa",
+    name: "Ndokoti",
+    address: "Entrée Bellavie",
     coordinates: { lat: 4.05, lng: 9.7 },
   },
   {
+    city: "Douala",
+    name: "Boumnyebel",
+    address: "Carrefour Boumnyebel",
+    coordinates: { lat: 4.06, lng: 9.71 },
+  },
+  {
+    city: "Édéa",
+    name: "Édéa",
+    address: "Avenue des Banques",
+    coordinates: { lat: 3.8, lng: 10.13 },
+  },
+
+  // AUTRES VILLES
+  {
+    city: "Obala",
+    name: "Obala",
+    address: "Congelcam Obala",
+    coordinates: { lat: 4.17, lng: 11.53 },
+  },
+  {
+    city: "Nkoteng",
+    name: "Nkoteng",
+    address: "Congelcam Obala",
+    coordinates: { lat: 4.52, lng: 12.03 },
+  },
+  {
+    city: "Sa'a",
+    name: "Sa'a",
+    address: "Marché Sa'a",
+    coordinates: { lat: 4.36, lng: 11.45 },
+  },
+  {
     city: "Bafoussam",
-    name: "Agence Bafoussam",
-    address: "Centre ville",
+    name: "Bafoussam",
+    address: "Entrée Marché B",
     coordinates: { lat: 5.4737, lng: 10.4171 },
   },
   {
-    city: "Limbe",
-    name: "Agence Bafoussam",
-    address: "Centre ville",
-    coordinates: { lat: 5.4737, lng: 10.4171 },
+    city: "Bertoua",
+    name: "Bertoua",
+    address: "Congelcam Bertoua",
+    coordinates: { lat: 4.58, lng: 14.05 },
+  },
+  {
+    city: "Mbalmayo",
+    name: "Mbalmayo",
+    address: "Marché Mbalmayo",
+    coordinates: { lat: 3.52, lng: 11.50 },
+  },
+  {
+    city: "Mfou",
+    name: "Mfou",
+    address: "Place des Fêtes de Mfou",
+    coordinates: { lat: 3.95, lng: 11.60 },
+  },
+  {
+    city: "Buea",
+    name: "Buea",
+    address: "Molyko Presbyterian Church",
+    coordinates: { lat: 4.15, lng: 9.24 },
+  },
+  {
+    city: "Kribi",
+    name: "Kribi",
+    address: "Montée Nkol Biteng",
+    coordinates: { lat: 2.94, lng: 9.91 },
+  },
+  {
+    city: "Eseka",
+    name: "Eseka",
+    address: "Marché Eseka",
+    coordinates: { lat: 3.65, lng: 10.77 },
+  },
+
+  // NOS FILIALES
+  {
+    city: "Yaoundé",
+    name: "Institut Universitaire Bissaï",
+    address: "Ekoumou, Deux Chevaux",
+    coordinates: { lat: 3.87, lng: 11.53 },
+  },
+  {
+    city: "Yaoundé",
+    name: "Royal FM",
+    address: "Sapeur Mimboman",
+    coordinates: { lat: 3.82, lng: 11.61 },
+  },
+  {
+    city: "Yaoundé",
+    name: "Complexe Hospitalier La Mamu",
+    address: "Ngulzamba Nouvelle Route",
+    coordinates: { lat: 3.848, lng: 11.5021 },
   },
 ];
 
@@ -163,6 +318,11 @@ export const OurAgencySubsection = (): JSX.Element => {
 
     // Si c'est l'onglet "Autres Villes"
     if (currentTab.id === "autres" && currentTab.cities) {
+      return currentTab.cities.includes(agency.city);
+    }
+
+    // Si c'est l'onglet "Douala et Environs"
+    if (currentTab.id === "douala-et-environs" && currentTab.cities) {
       return currentTab.cities.includes(agency.city);
     }
 
@@ -251,14 +411,14 @@ export const OurAgencySubsection = (): JSX.Element => {
             key={tab.id}
             variant="ghost"
             onClick={() => handleTabClick(tab.id)}
-            className={`h-auto px-4 py-2 rounded-3xl overflow-hidden ${
+            className={`h-auto px-6 sm:px-8 md:px-10 lg:px-10 xl:px-16 py-2 sm:py-3 md:py-3 rounded-[40px] overflow-hidden ${
               activeTab === tab.id
                 ? "bg-[linear-gradient(148deg,rgba(0,172,238,1)_0%,rgba(1,27,38,1)_100%)] text-[#ffffff] shadow-none"
                 : "bg-grayswhite shadow-[0px_0px_2px_#00000040]"
             }`}
           >
             <span
-              className={`text-sm tracking-[0] leading-tight [font-family:'Roboto',Helvetica] font-medium text-center whitespace-nowrap ${
+              className={`text-sm sm:text-base md:text-lg lg:text-xl tracking-[0] leading-tight [font-family:'Roboto',Helvetica] font-medium text-center whitespace-nowrap ${
                 activeTab === tab.id
                   ? ""
                   : "bg-[linear-gradient(148deg,rgba(0,172,238,1)_0%,rgba(1,27,38,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent]"

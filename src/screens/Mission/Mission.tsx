@@ -8,6 +8,7 @@ import { CallToActionSubsection } from "../Accueil/sections/CallToActionSubsecti
 import { OurAgencySubsection } from "../Accueil/sections/OurAgencySubsection";
 import { HeaderSubsection } from "../Accueil/sections/HeaderSubsection";
 import { HeroSection } from "./sections/IntroductionBanner/IntroductionBanner";
+import { FilialesTitleSection } from "./sections/FilialesTitleSection";
 import { SEO } from "../../components/SEO";
 
 export const Mission = (): JSX.Element => {
@@ -24,6 +25,7 @@ export const Mission = (): JSX.Element => {
         <NetworkProximity />
         <OurAgencySubsection />
 
+        <FilialesTitleSection />
         <InstitutBissaiSection />
         <HospitalLaMamuSection />
         <SocagiSection />
