@@ -1,1 +1,0 @@
-export { MasoSolidaritySection } from "./MasoSolidaritySection";

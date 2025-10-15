@@ -34,9 +34,17 @@ const masoAdvantagesData = [
     imageSrc: "/benef 1.png",
     imageAlt: "Formation professionnelle MASO",
   },
+  {
+    number: "5",
+    title: "Tirages au sort exclusifs",
+    description:
+      "Participez à nos tirages au sort et gagnez des véhicules, des villas et bien plus encore.",
+    imageSrc: "/benef 1.png",
+    imageAlt: "Tirages au sort MASO",
+  },
 ];
 
-export const MasoAdvantagesSection = (): JSX.Element => {
+export const AdvantagesSubsection = (): JSX.Element => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
@@ -101,52 +109,49 @@ export const MasoAdvantagesSection = (): JSX.Element => {
                       {currentAdvantage.title}
                     </motion.h3>
                   </AnimatePresence>
-
-                  <AnimatePresence mode="wait">
-                    <motion.p
-                      key={currentSlide}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      transition={{ duration: 0.4, ease: "easeInOut", delay: 0.1 }}
-                      className="[font-family:'Bricolage_Grotesque',Helvetica] text-foundationbluelight text-sm sm:text-base md:text-lg leading-relaxed line-clamp-3 overflow-hidden text-ellipsis text-left"
-                    >
-                      {currentAdvantage.description}
-                    </motion.p>
-                  </AnimatePresence>
                 </div>
               </div>
             </div>
+
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={currentSlide}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4, ease: "easeInOut", delay: 0.1 }}
+                className="[font-family:'Arial-Regular',Helvetica] font-normal text-[#ffffff] text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[28px] tracking-[0] leading-relaxed md:leading-[normal] h-[5rem] sm:h-[5.5rem] md:h-[6rem] lg:h-[6.5rem] overflow-hidden"
+              >
+                {currentAdvantage.description}
+              </motion.p>
+            </AnimatePresence>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 w-full">
-            <div className="flex items-center gap-2">
+          <div className="flex w-full items-center justify-between gap-4 mt-4">
+            <div className="flex items-center gap-3 sm:gap-4 md:gap-[13px]">
               {masoAdvantagesData.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                  className={`w-6 h-6 sm:w-7 sm:h-7 md:w-[30px] md:h-[30px] rounded-full transition-colors duration-200 ${
                     index === currentSlide
-                      ? "bg-foundationbluelight scale-125"
-                      : "bg-gray-400 hover:bg-gray-300"
+                      ? "bg-[#00acee]"
+                      : "bg-grayswhite hover:bg-gray-300"
                   }`}
-                  aria-label={`Aller à l'avantage ${index + 1}`}
                 />
               ))}
             </div>
 
-            <motion.button
+            <button
               onClick={nextSlide}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center justify-center w-12 h-12 bg-foundation-bluenormal hover:bg-foundation-bluedark-hover rounded-full transition-all duration-200"
-              aria-label="Avantage suivant"
+              className="relative w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] flex-shrink-0 hover:opacity-80 transition-opacity duration-200 bg-[#00acee] rounded-full flex items-center justify-center"
             >
               <svg
-                className="w-6 h-6 text-white"
+                className="w-5 h-5 sm:w-6 sm:h-6 text-white"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   strokeLinecap="round"
@@ -155,7 +160,7 @@ export const MasoAdvantagesSection = (): JSX.Element => {
                   d="M9 5l7 7-7 7"
                 />
               </svg>
-            </motion.button>
+            </button>
           </div>
         </div>
       </div>

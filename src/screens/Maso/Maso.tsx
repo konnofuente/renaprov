@@ -1,14 +1,11 @@
 import { SEO } from "../../components/SEO";
-import { HeaderSubsection } from "../Accueil/sections/HeaderSubsection";
-import { FooterSubsection } from "../Accueil/sections/FooterSubsection";
-import { CallToActionSubsection } from "../Accueil/sections/CallToActionSubsection";
-import { MasoHeroSection } from "./sections/MasoHeroSection";
-import { MasoSolidaritySection } from "./sections/MasoSolidaritySection";
-import { MasoPrizesSection } from "./sections/MasoPrizesSection";
-import { MasoAdvantagesSection } from "./sections/MasoAdvantagesSection";
-import { MasoConditionsSection } from "./sections/MasoConditionsSection";
-import { MasoTestimonialsSection } from "./sections/MasoTestimonialsSection";
-import { MasoFormSection } from "./sections/MasoFormSection";
+import { AdvantagesSubsection } from "./sections/AdvantagesSubsection";
+import { CallToActionSubsection } from "./sections/CallToActionSubsection";
+import { FooterSubsection } from "./sections/FooterSubsection";
+import { HeaderSubsection } from "./sections/HeaderSubsection";
+import { HeroSectionSubsection } from "./sections/HeroSectionSubsection";
+import { OurSolutionSubsection } from "./sections/OurSolutionSubsection";
+import { ProductSubsection } from "./sections/ProductSubsection";
 
 export const Maso = (): JSX.Element => {
   return (
@@ -20,13 +17,10 @@ export const Maso = (): JSX.Element => {
       />
       <main className="flex flex-col w-full bg-[#ffffff]">
         <HeaderSubsection />
-        <MasoHeroSection />
-        <MasoSolidaritySection />
-        <MasoPrizesSection />
-        <MasoAdvantagesSection />
-        <MasoConditionsSection />
-        <MasoTestimonialsSection />
-        <MasoFormSection />
+        <HeroSectionSubsection />
+        <ProductSubsection />
+        <OurSolutionSubsection />
+        <AdvantagesSubsection />
         <CallToActionSubsection />
         <FooterSubsection />
       </main>
