@@ -6,10 +6,14 @@ import { Mission } from "./screens/Mission";
 import { Products } from "./screens/Products";
 import { Maso } from "./screens/Maso";
 import { NotFound } from "./screens/NotFound";
+import { HeaderSubsection } from "./screens/Accueil/sections/HeaderSubsection";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 export const App: React.FC = () => {
   return (
     <Router>
+      <ScrollToTop />
+      <HeaderSubsection />
       <Routes>
         <Route path="/" element={<Accueil />} />
         <Route path="/accueil" element={<Accueil />} />

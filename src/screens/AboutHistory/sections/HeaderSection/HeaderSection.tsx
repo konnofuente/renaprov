@@ -27,7 +27,7 @@ export const HeaderSection = (): JSX.Element => {
   };
 
   return (
-    <div className="flex flex-col w-full items-center justify-center bg-white border-b border-black">
+    <div className="flex flex-col w-full items-center justify-center bg-white border-b border-black sticky top-0 z-50">
       <header className="flex h-[72px] items-center justify-around px-[60px] py-0 w-full bg-transparent">
         <div className="flex items-center justify-between flex-1">
           <div className="inline-flex items-center gap-[150px]">

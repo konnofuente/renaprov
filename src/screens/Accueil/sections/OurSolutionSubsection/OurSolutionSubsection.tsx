@@ -11,25 +11,113 @@ const gradientTextClass =
   "bg-[linear-gradient(148deg,rgba(0,172,238,1)_0%,rgba(1,27,38,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent]";
 
 const productCards = [
+  // Comptes Courant
   {
-    title: "Compte courant",
-    description: "Gérez vos finances en toute simplicité.",
+    title: "Compte courant individuel",
+    description: "Gérez vos finances quotidiennes en toute simplicité avec des services complets.",
     image: "/Compte courant.png",
   },
   {
-    title: "Compte épargne",
-    description: "Épargnez et faites fructifier vos revenus.",
+    title: "Compte courant entreprise",
+    description: "Compte professionnel pour entreprises avec des services bancaires complets.",
+    image: "/Compte courant.png",
+  },
+  {
+    title: "Compte courant association",
+    description: "Compte pour associations et ONG avec des conditions préférentielles.",
+    image: "/Compte courant.png",
+  },
+  
+  // Comptes Épargne
+  {
+    title: "Compte épargne individuel",
+    description: "Épargnez pour vos projets personnels avec des taux attractifs et une gestion simplifiée.",
     image: "/Compte épargne.png",
   },
   {
-    title: "MASO",
-    description: "De locataire à propriétaire, concrétisez votre rêve",
-    image: "/MASO.png",
+    title: "Compte épargne entreprise",
+    description: "Épargne pour les entreprises et organisations avec des avantages dédiés.",
+    image: "/Compte épargne.png",
+  },
+  
+  // Comptes Spéciaux
+  {
+    title: "Compte salarié",
+    description: "Compte dédié aux employés avec des avantages et des services privilégiés.",
+    image: "/Compte courant.png",
   },
   {
-    title: "ORA",
-    description: "Objectif Rendement préparez vos projets pas à pas.",
+    title: "Compte privé",
+    description: "Compte privé avec avantages exclusifs et services personnalisés.",
+    image: "/Compte courant.png",
+  },
+  {
+    title: "Compte public",
+    description: "Compte pour les fonctionnaires avec des conditions spéciales.",
+    image: "/Compte courant.png",
+  },
+  {
+    title: "Compte pensionné",
+    description: "Compte pour les retraités avec des avantages dédiés et des services adaptés.",
+    image: "/Compte courant.png",
+  },
+  
+  // ORA - Objectif Réalisation d'Ambitions
+  {
+    title: "ORA Académie",
+    description: "Épargne pour les études supérieures et la formation professionnelle.",
     image: "/ORA.png",
+  },
+  {
+    title: "ORA Scolaire",
+    description: "Épargne pour l'éducation des enfants et les frais scolaires.",
+    image: "/ORA.png",
+  },
+  {
+    title: "ORA Habitat",
+    description: "Épargne pour l'achat de logement et les projets immobiliers.",
+    image: "/ORA.png",
+  },
+  {
+    title: "ORA Foncier",
+    description: "Épargne pour l'achat de terrain et les investissements fonciers.",
+    image: "/ORA.png",
+  },
+  {
+    title: "ORA Équipement",
+    description: "Épargne pour l'achat d'équipements professionnels et personnels.",
+    image: "/ORA.png",
+  },
+  {
+    title: "ORA Prévoyance",
+    description: "Épargne de précaution pour faire face aux imprévus de la vie.",
+    image: "/ORA.png",
+  },
+  {
+    title: "ORA Islamique",
+    description: "Épargne conforme à la charia pour les clients musulmans.",
+    image: "/ORA.png",
+  },
+  
+  // MASO
+  {
+    title: "MASO",
+    description: "De locataire à propriétaire, concrétisez votre rêve immobilier grâce à la solidarité.",
+    image: "/MASO.png",
+  },
+  
+  // SPMC
+  {
+    title: "SPMC",
+    description: "Système de Paiement Mobile Camerounais pour des transactions rapides et sécurisées.",
+    image: "/Un%20compte%20simple%20et%20sécurisé,%20accessible%20à%20tous.png",
+  },
+  
+  // Bicard
+  {
+    title: "Bicard",
+    description: "Carte de paiement multi-services pour tous vos achats et retraits.",
+    image: "/Un%20compte%20simple%20et%20sécurisé,%20accessible%20à%20tous.png",
   },
 ];
 

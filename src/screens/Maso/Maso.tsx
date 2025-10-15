@@ -2,10 +2,10 @@ import { SEO } from "../../components/SEO";
 import { AdvantagesSubsection } from "./sections/AdvantagesSubsection";
 import { CallToActionSubsection } from "./sections/CallToActionSubsection";
 import { FooterSubsection } from "./sections/FooterSubsection";
-import { HeaderSubsection } from "./sections/HeaderSubsection";
 import { HeroSectionSubsection } from "./sections/HeroSectionSubsection";
 import { OurSolutionSubsection } from "./sections/OurSolutionSubsection";
 import { ProductSubsection } from "./sections/ProductSubsection";
+import { TestimonialSection } from "../../components/TestimonialSection";
 
 export const Maso = (): JSX.Element => {
   return (
@@ -16,11 +16,11 @@ export const Maso = (): JSX.Element => {
         keywords="MASO, RENAPROV, solidarité, Cameroun, santé, éducation, assistance sociale, microfinance, inclusion financière"
       />
       <main className="flex flex-col w-full bg-[#ffffff]">
-        <HeaderSubsection />
         <HeroSectionSubsection />
         <ProductSubsection />
         <OurSolutionSubsection />
         <AdvantagesSubsection />
+        <TestimonialSection />
         <CallToActionSubsection />
         <FooterSubsection />
       </main>

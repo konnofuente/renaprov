@@ -257,25 +257,7 @@ const agencies = [
     coordinates: { lat: 3.65, lng: 10.77 },
   },
 
-  // NOS FILIALES
-  {
-    city: "Yaoundé",
-    name: "Institut Universitaire Bissaï",
-    address: "Ekoumou, Deux Chevaux",
-    coordinates: { lat: 3.87, lng: 11.53 },
-  },
-  {
-    city: "Yaoundé",
-    name: "Royal FM",
-    address: "Sapeur Mimboman",
-    coordinates: { lat: 3.82, lng: 11.61 },
-  },
-  {
-    city: "Yaoundé",
-    name: "Complexe Hospitalier La Mamu",
-    address: "Ngulzamba Nouvelle Route",
-    coordinates: { lat: 3.848, lng: 11.5021 },
-  },
+
 ];
 
 export const OurAgencySubsection = (): JSX.Element => {

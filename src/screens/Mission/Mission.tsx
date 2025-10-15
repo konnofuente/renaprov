@@ -6,10 +6,10 @@ import { NetworkProximity } from "./sections/NetworkProximity";
 import { FooterSubsection } from "../Accueil/sections/FooterSubsection";
 import { CallToActionSubsection } from "../Accueil/sections/CallToActionSubsection";
 import { OurAgencySubsection } from "../Accueil/sections/OurAgencySubsection";
-import { HeaderSubsection } from "../Accueil/sections/HeaderSubsection";
 import { HeroSection } from "./sections/IntroductionBanner/IntroductionBanner";
 import { FilialesTitleSection } from "./sections/FilialesTitleSection";
 import { SEO } from "../../components/SEO";
+import { TestimonialSection } from "../../components/TestimonialSection";
 
 export const Mission = (): JSX.Element => {
   return (
@@ -20,7 +20,6 @@ export const Mission = (): JSX.Element => {
         keywords="microfinance, Cameroun, épargne, crédit, inclusion financière, RENAPROV, MASO, ORA, compte courant, compte épargne, finance, Yaoundé, Douala"
       />
       <main className="flex flex-col w-full">
-        <HeaderSubsection />
         <HeroSection />
         <NetworkProximity />
         <OurAgencySubsection />
@@ -31,6 +30,7 @@ export const Mission = (): JSX.Element => {
         <SocagiSection />
         <ORASection />
 
+        <TestimonialSection />
         <CallToActionSubsection />
         <FooterSubsection />
       </main>

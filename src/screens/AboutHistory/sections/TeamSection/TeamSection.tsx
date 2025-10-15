@@ -7,10 +7,11 @@ const teamMembers = [
     image: "..//frame-2087326088.png",
   },
   {
-    name: "Mme Bissai Stephanie",
-    title: "DIRECTEUR DE L'EXPLOITATION ET DE LA PRODUCTION",
-    image: "..//frame-2087326089.png",
+    name: "EMMANUELLE NATACHA EPSE NYA",
+    title: "ADMINISTRATEUR DIRECTEUR GÉNÉRALE",
+    image: "..//frame-2087326092.png",
   },
+
   {
     name: "MBALA NDONGO FERDINAND",
     title: "DIRECTEUR GÉNÉRAL DÉLÉGUÉ",
@@ -21,10 +22,11 @@ const teamMembers = [
     title: "DIRECTEUR GENERAL ADJOINT",
     image: "..//frame-2087326091.png",
   },
+
   {
-    name: "EMMANUELLE NATACHA EPSE NYA",
-    title: "ADMINISTRATEUR DIRECTEUR GÉNÉRALE",
-    image: "..//frame-2087326092.png",
+    name: "Mme Bissai Stephanie",
+    title: "DIRECTEUR DE L'EXPLOITATION ET DE LA PRODUCTION",
+    image: "..//frame-2087326089.png",
   },
   {
     name: "M. NYEMB MESSINGA CYRILLE",

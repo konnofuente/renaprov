@@ -1,11 +1,11 @@
 import { SEO } from "../../components/SEO";
-import { HeaderSubsection } from "../Accueil/sections/HeaderSubsection";
 import { FooterSubsection } from "../Accueil/sections/FooterSubsection";
 import { CallToActionSubsection } from "../Accueil/sections/CallToActionSubsection";
 import { HeroSection } from "./sections/HeroSection";
 import { FeatureCardsSection } from "./sections/FeatureCardsSection";
 import { ReusableSliderSection } from "./sections/ReusableSliderSection";
 import { productCategories, Product } from "./data/productsData";
+import { TestimonialSection } from "../../components/TestimonialSection";
 
 export const Products = (): JSX.Element => {
   const handleProductClick = (product: Product) => {
@@ -22,7 +22,6 @@ export const Products = (): JSX.Element => {
         keywords="produits financiers, comptes épargne, comptes courant, ORA, SPMC, Bicard, microfinance, RENAPROV, Cameroun, services bancaires"
       />
       <main className="flex flex-col w-full bg-[#ffffff]">
-        <HeaderSubsection />
         <HeroSection />
         <FeatureCardsSection />
         
@@ -37,6 +36,7 @@ export const Products = (): JSX.Element => {
           />
         ))}
         
+        <TestimonialSection />
         <CallToActionSubsection />
         <FooterSubsection />
       </main>

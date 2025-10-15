@@ -13,7 +13,7 @@ const navItems = [
 
 export const NavbarSection = (): JSX.Element => {
   return (
-    <div className="flex flex-col w-full items-center justify-center relative bg-white border-b border-black">
+    <div className="flex flex-col w-full items-center justify-center bg-white border-b border-black sticky top-0 z-50">
       <header className="h-[72px] justify-around px-[60px] py-0 w-full bg-transparent flex items-center relative">
         <div className="items-center justify-between flex-1 grow flex relative">
           <div className="inline-flex items-center gap-[150px] relative flex-[0_0_auto]">

@@ -124,33 +124,44 @@ export const NosFillialeSubsection = (): JSX.Element => {
                   : "w-[31.25%]" // 100% / 3.2 = 31.25% pour 3 cartes + 0.2 de la 4ème
               }`}
             >
-              <Card className="flex flex-col w-full h-auto min-h-[350px] sm:min-h-[380px] md:min-h-[420px] lg:min-h-[450px] xl:min-h-[480px] items-start rounded-[18px] overflow-hidden shadow-[0px_0px_9px_#00000040] border-0 hover:shadow-[0px_0px_15px_#00000060] transition-shadow duration-300">
-                <CardContent className="p-0 w-full h-full flex flex-col">
-                  <div className="flex flex-col h-[211px] items-start gap-3 md:gap-3.5 lg:gap-4 pt-6 sm:pt-8 md:pt-10 lg:pt-12 xl:pt-[42px]  sm:pb-8 md:pb-10 lg:pb-12 xl:pb-[53px] px-4 sm:px-5 md:px-6 lg:px-8 xl:px-[29px] w-full bg-foundation-bluedarker">
-                    <div className="w-fit font-m3-label-large font-[number:var(--m3-label-large-font-weight)] text-[#ffffff] text-xs sm:text-sm md:text-base lg:text-lg xl:text-[14px] tracking-[var(--m3-label-large-letter-spacing)] leading-[var(--m3-label-large-line-height)] whitespace-nowrap [font-style:var(--m3-label-large-font-style)]">
+              <Card className="flex flex-col w-full bg-foundation-bluedarker rounded-2xl overflow-hidden border-0 h-full group hover:shadow-lg transition-all duration-300">
+                <div className="relative overflow-hidden">
+                  <img
+                    className="w-full h-40 sm:h-44 md:h-48 object-contain bg-gray-50 group-hover:scale-105 transition-transform duration-300"
+                    alt={`${subsidiary.title} - RENAPROV`}
+                    src={subsidiary.imageUrl || "/hero1.png"}
+                    loading="lazy"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = "/hero1.png";
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+
+                <CardContent className="flex flex-col p-4 sm:p-5 md:p-6 flex-1">
+                  <div className="flex flex-col gap-3 flex-1">
+                    <div className="w-fit text-xs sm:text-sm font-medium text-white bg-white/20 px-2 py-1 rounded-full">
                       {subsidiary.category}
                     </div>
+                    
+                    <h3 className="font-bold text-xl sm:text-2xl md:text-3xl leading-tight text-white">
+                      {subsidiary.title}
+                    </h3>
 
-                    <div className="flex flex-col w-full items-start gap-2 sm:gap-2.5 md:gap-3 lg:gap-3.5">
-                      <h3 className="self-stretch [font-family:'Bricolage_Grotesque',Helvetica] font-bold text-[#ffffff]  sm:text-xl md:text-2xl lg:text-3xl xl:text-[28px]  tracking-[0] leading-tight line-clamp-3 overflow-hidden text-ellipsis">
-                        {subsidiary.title}
-                      </h3>
-
-                      <p className="w-full [font-family:'Roboto',Helvetica] font-normal text-[#bdbdbd] sm:text-[10px]  text-[14px]    tracking-[0.40px] leading-relaxed">
-                        {subsidiary.description}
-                      </p>
-                    </div>
+                    <p className="text-gray-300 text-sm sm:text-base leading-relaxed line-clamp-3 overflow-hidden">
+                      {subsidiary.description}
+                    </p>
                   </div>
 
-                  <div className="w-full aspect-[4/3] sm:aspect-[3/2] md:aspect-[16/10] lg:aspect-[5/3] xl:aspect-[2/1] bg-cover bg-[50%_50%] bg-gray-300">
-                    {subsidiary.imageUrl && (
-                      <img
-                        className="w-full h-full object-cover"
-                        alt={subsidiary.title}
-                        src={subsidiary.imageUrl}
-                      />
-                    )}
-                  </div>
+                  <Button
+                    variant="link"
+                    className="inline-flex items-center justify-start gap-2 p-0 h-auto mt-4 text-sm font-semibold text-white hover:text-gray-300 transition-colors duration-200"
+                    aria-label={`En savoir plus sur ${subsidiary.title}`}
+                  >
+                    <span>En savoir plus</span>
+                    <ChevronRightIcon className="w-4 h-4" />
+                  </Button>
                 </CardContent>
               </Card>
             </div>
