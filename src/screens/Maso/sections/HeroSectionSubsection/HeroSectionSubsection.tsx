@@ -79,7 +79,11 @@ const slideVariants = {
   }),
 };
 
-export const HeroSectionSubsection = (): JSX.Element => {
+interface HeroSectionSubsectionProps {
+  onOpenForm: () => void;
+}
+
+export const HeroSectionSubsection: React.FC<HeroSectionSubsectionProps> = ({ onOpenForm }): JSX.Element => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
   const [imageError, setImageError] = useState<boolean[]>(
@@ -255,24 +259,7 @@ export const HeroSectionSubsection = (): JSX.Element => {
               <div className="w-auto flex justify-center lg:justify-start">
                 <Button
                   className="w-auto  bg-foundation-bluenormal hover:bg-foundation-bluedark-hover text-white font-semibold px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg min-h-[48px] sm:min-h-[52px] md:min-h-[56px] flex items-center justify-center"
-                  onClick={() => {
-                    if (currentSlide === 0) {
-                      // Scroll to contact or open account
-                      const element = document.querySelector("#contact");
-                      if (element)
-                        element.scrollIntoView({ behavior: "smooth" });
-                    } else if (currentSlide === 1) {
-                      // Scroll to MASO section
-                      const element = document.querySelector("#produits");
-                      if (element)
-                        element.scrollIntoView({ behavior: "smooth" });
-                    } else {
-                      // Scroll to solutions
-                      const element = document.querySelector("#produits");
-                      if (element)
-                        element.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
+                  onClick={onOpenForm}
                 >
                   <span className=" w-full text-center leading-tight">
                     {slides[currentSlide].cta}

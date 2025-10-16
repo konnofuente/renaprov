@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { SEO } from "../../components/SEO";
 import { AdvantagesSubsection } from "./sections/AdvantagesSubsection";
 import { CallToActionSubsection } from "./sections/CallToActionSubsection";
@@ -10,6 +11,8 @@ import { AdhesionConditionsSection } from "./sections/AdhesionConditionsSection"
 import { MasoAdhesionForm } from "../../components/MasoAdhesionForm";
 
 export const Maso = (): JSX.Element => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
   return (
     <>
       <SEO
@@ -18,18 +21,21 @@ export const Maso = (): JSX.Element => {
         keywords="MASO, RENAPROV, solidarité, Cameroun, santé, éducation, assistance sociale, microfinance, inclusion financière"
       />
       <main className="flex flex-col w-full bg-[#ffffff]">
-        <HeroSectionSubsection />
-        <ProductSubsection />
-        <OurSolutionSubsection />
+        <HeroSectionSubsection onOpenForm={() => setIsFormOpen(true)} />
+        <ProductSubsection onOpenForm={() => setIsFormOpen(true)} />
+        <OurSolutionSubsection onOpenForm={() => setIsFormOpen(true)} />
         <AdvantagesSubsection />
-        <AdhesionConditionsSection />
-        <div id="maso-adhesion-form" className="py-12 bg-gray-50">
-          <MasoAdhesionForm />
-        </div>
+        <AdhesionConditionsSection onOpenForm={() => setIsFormOpen(true)} />
         <TestimonialSection />
         <CallToActionSubsection />
         <FooterSubsection />
       </main>
+      
+      {/* Modal Form */}
+      <MasoAdhesionForm 
+        isOpen={isFormOpen} 
+        onClose={() => setIsFormOpen(false)} 
+      />
     </>
   );
 };

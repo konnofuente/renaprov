@@ -38,7 +38,11 @@ const masoPrizes = [
   },
 ];
 
-export const OurSolutionSubsection = (): JSX.Element => {
+interface OurSolutionSubsectionProps {
+  onOpenForm: () => void;
+}
+
+export const OurSolutionSubsection: React.FC<OurSolutionSubsectionProps> = ({ onOpenForm }): JSX.Element => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [cardsToShow, setCardsToShow] = useState(3);
 
@@ -160,10 +164,11 @@ export const OurSolutionSubsection = (): JSX.Element => {
 
                     <Button
                       variant="link"
+                      onClick={onOpenForm}
                       className="inline-flex items-center justify-start gap-2 p-0 h-auto mt-4 text-sm font-semibold text-foundation-bluenormal hover:text-foundation-bluedark-hover transition-colors duration-200"
-                      aria-label={`En savoir plus sur ${prize.title}`}
+                      aria-label={`Rejoindre MASO pour ${prize.title}`}
                     >
-                      <span>En savoir plus</span>
+                      <span>Rejoindre MASO</span>
                       <ChevronRightIcon className="w-4 h-4" />
                     </Button>
                   </CardContent>

@@ -5,6 +5,7 @@ import {
 import { useState, useEffect } from "react";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
+import { useNavigate } from "react-router-dom";
 
 // CSS Classes extraites pour la maintenabilité
 const gradientTextClass =
@@ -30,6 +31,7 @@ export const ReusableSliderSection: React.FC<ReusableSliderSectionProps> = ({
   products,
   onProductClick,
 }) => {
+  const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [cardsToShow, setCardsToShow] = useState(3);
 
@@ -161,7 +163,13 @@ export const ReusableSliderSection: React.FC<ReusableSliderSectionProps> = ({
 
                     <Button
                       variant="link"
-                      onClick={() => onProductClick(product)}
+                      onClick={() => {
+                        if (product.name.toLowerCase().includes('maso')) {
+                          navigate("/maso");
+                        } else {
+                          onProductClick(product);
+                        }
+                      }}
                       className="inline-flex items-center justify-start gap-2 p-0 h-auto mt-4 text-sm font-semibold text-foundation-bluenormal hover:text-foundation-bluedark-hover transition-colors duration-200"
                       aria-label={`En savoir plus sur ${product.name}`}
                     >

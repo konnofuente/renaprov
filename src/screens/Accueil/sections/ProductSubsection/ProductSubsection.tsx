@@ -1,5 +1,6 @@
 import { CircleCheck as CheckCircle2Icon } from "lucide-react";
 import { Button } from "../../../../components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const products = [
   {
@@ -60,6 +61,7 @@ const products = [
 ];
 
 export const ProductSubsection = (): JSX.Element => {
+  const navigate = useNavigate();
   return (
     <section className="flex flex-col items-center justify-between px-6 sm:px-6 md:px-8 lg:px-12 xl:px-[60px] py-8 sm:py-10 md:py-12 lg:py-[63px] w-full bg-white gap-8 sm:gap-10 md:gap-12 lg:gap-[63px]">
       <h2 className="w-full max-w-[1320px] bg-[linear-gradient(148deg,rgba(0,172,238,1)_0%,rgba(1,27,38,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent] [font-family:'Bricolage_Grotesque',Helvetica] font-bold text-3xl sm:text-4xl md:text-5xl text-center tracking-[-0.96px] leading-tight md:leading-[56.6px]">
@@ -111,7 +113,15 @@ export const ProductSubsection = (): JSX.Element => {
                 ))}
               </div>
 
-              <Button className="w-full sm:w-auto bg-foundation-bluenormal hover:bg-foundation-bluedark-hover text-white font-semibold px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg min-h-[48px] sm:min-h-[52px] md:min-h-[56px] flex items-center justify-center">
+              <Button 
+                onClick={() => {
+                  if (product.id === "maso") {
+                    navigate("/maso");
+                  }
+                  // Pour ORA, on peut ajouter une logique spécifique plus tard
+                }}
+                className="w-full sm:w-auto bg-foundation-bluenormal hover:bg-foundation-bluedark-hover text-white font-semibold px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg min-h-[48px] sm:min-h-[52px] md:min-h-[56px] flex items-center justify-center"
+              >
                 <span className="w-full text-center leading-tight">
                   {product.id === "ora" ? "Découvrir ORA" : "Rejoindre MASO dès aujourd'hui"}
                 </span>

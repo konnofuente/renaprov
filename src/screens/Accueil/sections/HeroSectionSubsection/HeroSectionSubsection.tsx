@@ -5,6 +5,7 @@ import {
   ChevronRight as ChevronRightIcon,
 } from "lucide-react";
 import { Button } from "../../../../components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const slides = [
   {
@@ -80,6 +81,7 @@ const slideVariants = {
 };
 
 export const HeroSectionSubsection = (): JSX.Element => {
+  const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
   const [imageError, setImageError] = useState<boolean[]>(
@@ -309,7 +311,10 @@ export const HeroSectionSubsection = (): JSX.Element => {
                 <Button
                   className="w-auto  bg-foundation-bluenormal hover:bg-foundation-bluedark-hover text-white font-semibold px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg min-h-[48px] sm:min-h-[52px] md:min-h-[56px] flex items-center justify-center"
                   onClick={() => {
-                    if (currentSlide === 0) {
+                    if (currentSlide === 2) {
+                      // "Découvrir MASO" button - navigate to MASO page
+                      navigate("/maso");
+                    } else if (currentSlide === 0) {
                       // Scroll to contact or open account
                       const element = document.querySelector("#contact");
                       if (element)

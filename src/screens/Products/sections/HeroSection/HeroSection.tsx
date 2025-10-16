@@ -1,6 +1,8 @@
 import { Button } from "../../../../components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 export const HeroSection = (): JSX.Element => {
+  const navigate = useNavigate();
   return (
     <section className="flex flex-col w-full items-center justify-between px-4 sm:px-6 md:px-8 lg:px-[102px] py-8 sm:py-12 md:py-16 lg:py-[54px] bg-foundationbluelight">
       <div className="flex flex-col xl:flex-row items-start xl:items-center justify-between w-full max-w-[1236px] gap-6 sm:gap-8">
@@ -30,7 +32,10 @@ export const HeroSection = (): JSX.Element => {
             </p>
           </div>
 
-          <Button className="h-12 sm:h-[50px] px-5 sm:px-6 bg-foundation-bluenormal hover:bg-foundation-bluedark-hover rounded-[35px] [font-family:'Karla',Helvetica] font-semibold text-white text-sm sm:text-[17px] tracking-[0.20px] leading-5 w-full sm:w-auto">
+          <Button 
+            onClick={() => navigate("/maso")}
+            className="h-12 sm:h-[50px] px-5 sm:px-6 bg-foundation-bluenormal hover:bg-foundation-bluedark-hover rounded-[35px] [font-family:'Karla',Helvetica] font-semibold text-white text-sm sm:text-[17px] tracking-[0.20px] leading-5 w-full sm:w-auto"
+          >
             Adhérer dès aujourd'hui
           </Button>
         </div>

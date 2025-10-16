@@ -13,6 +13,7 @@ const subsidiaries = [
     description:
       "Un établissement de santé moderne offrant des soins de qualité et accessibles à tous.",
     imageUrl: "/logo  Complexe Hospitalier la MAMU.png",
+    websiteUrl: "https://www.hopitallamamu.com/",
   },
   {
     category: "Universite",
@@ -20,6 +21,7 @@ const subsidiaries = [
     description:
       "Un centre académique dédié à la formation de qualité et à l'excellence.",
     imageUrl: "/logo Institut Universitaire Bissai.png",
+    websiteUrl: "https://www.institutbissai.com/",
   },
   {
     category: "Immobilier",
@@ -27,13 +29,15 @@ const subsidiaries = [
     description:
       "Société de gestion et d'investissement qui accompagne le développement économique à travers des solutions financières adaptées.",
     imageUrl: "/logo La Socagi.png",
+    websiteUrl: "https://www.instagram.com/socagiofficiel_?igsh=MXhhcDJhZzFoOHdxZA==",
   },
   {
     category: "Radio",
     title: "Royal FM",
     description:
-      "Société de gestion et d’investissement qui accompagne le développement économique à travers des solutions financières adaptées.",
+      "Société de gestion et d'investissement qui accompagne le développement économique à travers des solutions financières adaptées.",
     imageUrl: "/logo Royal FMRoyal FM.png",
+    websiteUrl: "https://royalfmcameroun.com/",
   },
 
 ];
@@ -151,6 +155,7 @@ export const NosFillialeSubsection = (): JSX.Element => {
 
                   <Button
                     variant="link"
+                    onClick={() => window.open(subsidiary.websiteUrl, '_blank')}
                     className="inline-flex items-center justify-start gap-2 p-0 h-auto mt-4 text-sm font-semibold text-white hover:text-gray-300 transition-colors duration-200"
                     aria-label={`En savoir plus sur ${subsidiary.title}`}
                   >
