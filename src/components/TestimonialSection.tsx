@@ -119,7 +119,7 @@ export const TestimonialSection = (): JSX.Element => {
             <div className="bg-foundation-bluedarker p-6 sm:p-8 md:p-10 lg:p-12 xl:p-16 flex flex-col justify-center relative">
               {/* Quote Icon */}
               <Quote
-                className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-white/40 mb-4 sm:mb-6"
+                className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-white mb-4 sm:mb-6"
                 strokeWidth={1.5}
               />
 

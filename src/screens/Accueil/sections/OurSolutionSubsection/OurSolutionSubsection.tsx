@@ -64,38 +64,43 @@ const productCards = [
   
   // ORA - Objectif Réalisation d'Ambitions
   {
-    title: "ORA Académie",
-    description: "Épargne pour les études supérieures et la formation professionnelle.",
-    image: "/ORA.png",
-  },
-  {
-    title: "ORA Scolaire",
-    description: "Épargne pour l'éducation des enfants et les frais scolaires.",
-    image: "/ORA.png",
-  },
-  {
-    title: "ORA Habitat",
-    description: "Épargne pour l'achat de logement et les projets immobiliers.",
-    image: "/ORA.png",
-  },
-  {
     title: "ORA Foncier",
-    description: "Épargne pour l'achat de terrain et les investissements fonciers.",
-    image: "/ORA.png",
+    description: "Plan d'épargne permettant d'acquérir un terrain viabilisé, sécurisé, avec eau et électricité, assorti d'un titre foncier à moindre coût.",
+    image: "/ORA froncier.jpeg",
   },
   {
-    title: "ORA Équipement",
-    description: "Épargne pour l'achat d'équipements professionnels et personnels.",
+    title: "ORA Investissement",
+    description: "Plan d'épargne permettant de constituer un fond pour promouvoir son investissement et réaliser son projet.",
     image: "/ORA.png",
   },
   {
     title: "ORA Prévoyance",
-    description: "Épargne de précaution pour faire face aux imprévus de la vie.",
+    description: "Plan d'épargne permettant de constituer un fond afin de prévenir les évènements heureux ou malheureux.",
+    image: "/ORA provayance.jpeg",
+  },
+  {
+    title: "ORA Scolaire",
+    description: "Plan d'épargne à partir de 350 FCFA pour solutionner les problèmes liés à la rentrée scolaire.",
+    image: "/ORA School.jpeg",
+  },
+  {
+    title: "ORA Académique",
+    description: "Plan d'épargne à partir de 1000 FCFA pour assurer les frais de scolarité à l'Institut Universitaire BISSAÏ.",
     image: "/ORA.png",
   },
   {
+    title: "ORA Équipement",
+    description: "Plan d'épargne pour acquisition d'équipements mobiliers, informatiques, électroniques, électroménager, etc.",
+    image: "/ORA equipement.jpeg",
+  },
+  {
     title: "ORA Islamique",
-    description: "Épargne conforme à la charia pour les clients musulmans.",
+    description: "Plan d'épargne permettant de constituer une épargne non rémunérée conforme à la charia.",
+    image: "/ORA.png",
+  },
+  {
+    title: "ORA Santé",
+    description: "Plan d'épargne permettant de bénéficier à partir de 1000 FCFA/jour d'une couverture sanitaire au Complexe Hospitalier La MAMU.",
     image: "/ORA.png",
   },
   

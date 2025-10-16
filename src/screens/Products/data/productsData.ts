@@ -89,46 +89,52 @@ export const productCategories: ProductCategory[] = [
     description: "Des produits d'épargne spécialisés pour concrétiser vos projets de vie les plus importants.",
     products: [
       {
-        name: "ORA Académie",
-        description: "Épargne pour les études supérieures et la formation professionnelle.",
-        imageSrc: "/Un%20compte%20simple%20et%20sécurisé,%20accessible%20à%20tous.png",
-        imageAlt: "ORA Académie RENAPROV"
-      },
-      {
-        name: "ORA Scolaire",
-        description: "Épargne pour l'éducation des enfants et les frais scolaires.",
-        imageSrc: "/Faites%20grandir%20vos%20projets,%20nous%20finançons%20vos%20ambitions.png",
-        imageAlt: "ORA Scolaire RENAPROV"
-      },
-      {
-        name: "ORA Habitat",
-        description: "Épargne pour l'achat de logement et les projets immobiliers.",
-        imageSrc: "/De%20locataire%20à%20propriétaire%20grâce%20à%20RENAPROV.png",
-        imageAlt: "ORA Habitat RENAPROV"
-      },
-      {
         name: "ORA Foncier",
-        description: "Épargne pour l'achat de terrain et les investissements fonciers.",
-        imageSrc: "/Un%20compte%20simple%20et%20sécurisé,%20accessible%20à%20tous.png",
+        description: "Plan d'épargne permettant au client de constituer un fond qui permet au client d'acquérir un terrain viabilisé, sécurisé, avec eau et électricité, assorti d'un titre foncier à moindre coût.",
+        imageSrc: "/ORA froncier.jpeg",
         imageAlt: "ORA Foncier RENAPROV"
       },
       {
-        name: "ORA Équipement",
-        description: "Épargne pour l'achat d'équipements professionnels et personnels.",
-        imageSrc: "/Faites%20grandir%20vos%20projets,%20nous%20finançons%20vos%20ambitions.png",
-        imageAlt: "ORA Équipement RENAPROV"
+        name: "ORA Investissement",
+        description: "Plan d'épargne permettant au client de constituer un fond pour promouvoir son investissement et réaliser son projet.",
+        imageSrc: "/ORA.png",
+        imageAlt: "ORA Investissement RENAPROV"
       },
       {
         name: "ORA Prévoyance",
-        description: "Épargne de précaution pour faire face aux imprévus de la vie.",
-        imageSrc: "/Un%20compte%20simple%20et%20sécurisé,%20accessible%20à%20tous.png",
+        description: "Plan d'épargne permettant au client de constituer un fond afin de prévenir les évènements heureux ou malheureux.",
+        imageSrc: "/ORA provayance.jpeg",
         imageAlt: "ORA Prévoyance RENAPROV"
       },
       {
+        name: "ORA Scolaire",
+        description: "Plan d'épargne permettant au client de constituer un fond à partir de 350 FCFA dans le but de solutionner les problèmes liés à la rentrée scolaire.",
+        imageSrc: "/ORA School.jpeg",
+        imageAlt: "ORA Scolaire RENAPROV"
+      },
+      {
+        name: "ORA Académique",
+        description: "Plan d'épargne permettant au client de constituer un fond à partir de 1000 FCFA pour assurer les frais de scolarité pour la rentrée académique au sein de la filiale académique du groupe IUB (Institut Universitaire BISSAÏ).",
+        imageSrc: "/ORA.png",
+        imageAlt: "ORA Académique RENAPROV"
+      },
+      {
+        name: "ORA Équipement",
+        description: "Plan d'épargne permettant au client de constituer un fond pour acquisition des équipements mobiliers, informatiques, électroniques, électroménager, etc.",
+        imageSrc: "/ORA equipement.jpeg",
+        imageAlt: "ORA Équipement RENAPROV"
+      },
+      {
         name: "ORA Islamique",
-        description: "Épargne conforme à la charia pour les clients musulmans.",
-        imageSrc: "/Faites%20grandir%20vos%20projets,%20nous%20finançons%20vos%20ambitions.png",
+        description: "Plan d'épargne permettant au client de constituer une épargne non rémunérée.",
+        imageSrc: "/ORA.png",
         imageAlt: "ORA Islamique RENAPROV"
+      },
+      {
+        name: "ORA Santé",
+        description: "Plan d'épargne permettant de bénéficier à partir de 1000 fcfa/jour d'une couverture sanitaire au Complexe Hospitalier La MAMU.",
+        imageSrc: "/ORA.png",
+        imageAlt: "ORA Santé RENAPROV"
       }
     ]
   },

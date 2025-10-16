@@ -14,27 +14,27 @@ const masoPrizes = [
   {
     title: "Véhicules Personnels",
     description: "Gagnez un véhicule personnel d'une valeur de 2,000,000 XAF, grâce à votre tombola spéciale la MASO, recevez votre véhicule après 2 semaines de la cérémonie.",
-    image: "/Un compte simple et sécurisé, accessible à tous.png",
+    image: "/maso gagner vehicule.png",
   },
   {
     title: "Taxi à gagner",
     description: "Gagnez un véhicule taxi d'une valeur de 2,000,000 XAF, grâce à votre tombola spéciale la MASO, recevez votre véhicule après 2 semaines de la cérémonie.",
-    image: "/Faites grandir vos projets, nous finançons vos ambitions.png",
+    image: "/maso gagner vehicule.png",
   },
   {
     title: "Tricycle",
     description: "Gagnez un tricycle d'une valeur de 1,500,000 XAF, grâce à votre tombola spéciale la MASO, recevez votre tricycle après 2 semaines de la cérémonie.",
-    image: "/De locataire à propriétaire grâce à RENAPROV.png",
+    image: "/maso gagner tricycle.png",
   },
   {
     title: "Votre Villa",
     description: "Gagnez une villa d'une valeur de 1,000,000 XAF, grâce à votre tombola spéciale la MASO, recevez votre villa après 2 semaines de la cérémonie.",
-    image: "/Rendes-vous en Agence.png",
+    image: "/maso gagner villa.png",
   },
   {
     title: "Votre Villa",
     description: "Gagnez une villa d'une valeur de 1,000,000 XAF, grâce à votre tombola spéciale la MASO, recevez votre villa après 2 semaines de la cérémonie.",
-    image: "/Bienvenu a RENAPROV.png",
+    image: "/maso gagner villa.png",
   },
 ];
 

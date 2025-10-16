@@ -89,6 +89,23 @@ export const HeroSectionSubsection = (): JSX.Element => {
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const autoPlayRef = useRef<number | null>(null);
+  
+  // Top bar rotation state
+  const [currentOffer, setCurrentOffer] = useState(0);
+  const topBarRef = useRef<number | null>(null);
+
+  // Top bar auto-rotation
+  useEffect(() => {
+    topBarRef.current = setInterval(() => {
+      setCurrentOffer((prev) => (prev + 1) % topOffers.length);
+    }, 4000); // 4 seconds per offer
+
+    return () => {
+      if (topBarRef.current) {
+        clearInterval(topBarRef.current);
+      }
+    };
+  }, []);
 
   // Auto-play functionality
   useEffect(() => {
@@ -127,6 +144,34 @@ export const HeroSectionSubsection = (): JSX.Element => {
     setIsAutoPlaying(false);
     setTimeout(() => setIsAutoPlaying(true), 10000); // Resume after 10 seconds
   };
+
+  // Top information bar offers
+  const topOffers = [
+    {
+      title: "Devenez propriétaire de votre future Villa avec MASO!",
+      subtitle: "Inscriptions ouvertes jusqu'au 29 juin. Ne manquez pas cette opportunité.",
+      cta: "Je m'inscris dès maintenant",
+      action: () => goToSlide(2), // MASO slide
+    },
+    {
+      title: "Épargnez avec ORA pour vos projets d'avenir",
+      subtitle: "ORA Académie, Scolaire, Habitat, Équipement... Préparez vos ambitions!",
+      cta: "Découvrir ORA",
+      action: () => goToSlide(3), // Solutions slide
+    },
+    {
+      title: "Ouvrez votre compte RENAPROV en quelques minutes",
+      subtitle: "Compte courant, épargne, SPMC, Bicard... Tous nos services à portée de main!",
+      cta: "Créer mon compte",
+      action: () => goToSlide(0), // Welcome slide
+    },
+    {
+      title: "Rejoignez notre réseau d'agences partout au Cameroun",
+      subtitle: "Plus de 30 agences pour vous accompagner dans vos projets financiers.",
+      cta: "Trouver une agence",
+      action: () => goToSlide(4), // Agency slide
+    },
+  ];
 
   const handleImageError = (index: number) => {
     setImageError((prev) => {
@@ -195,31 +240,38 @@ export const HeroSectionSubsection = (): JSX.Element => {
       >
         <ChevronRightIcon className="w-7 h-7 xl:w-8 xl:h-8 text-foundation-bluenormal" />
       </Button>
-      {/* MASO Promotion Banner */}
+      {/* Rotating Top Information Bar */}
       <div className="w-full flex justify-center mt-1 sm:mt-1.5 md:mt-2 lg:mt-2.5 xl:mt-3">
         <div className="max-w-7xl mx-auto px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 w-full">
-          <div className="bg-gradient-to-r from-foundation-bluenormal to-foundation-bluedarker py-2 sm:py-2 md:py-2 lg:py-2.5 xl:py-3 rounded-[10px] sm:rounded-[12px] md:rounded-[14px] lg:rounded-[16px]">
+          <div className="bg-gradient-to-r from-foundation-bluenormal to-foundation-bluedarker py-2 sm:py-2 md:py-2 lg:py-2.5 xl:py-3 rounded-[10px] sm:rounded-[12px] md:rounded-[14px] lg:rounded-[16px] overflow-hidden">
             <div className="px-1.5 sm:px-2 md:px-3 lg:px-4 xl:px-5">
-              <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-1 sm:gap-1.5 md:gap-2 lg:gap-2.5 xl:gap-3">
-                <div className="text-center sm:text-left flex-1 max-w-2xl">
-                  <p className="text-white font-bold text-xs sm:text-xs md:text-sm lg:text-base xl:text-lg leading-tight">
-                    Devenez propriétaire de votre future{" "}
-                    <span className="font-black">Villa</span> avec MASO!
-                  </p>
-                  <p className="text-white/90 text-xs sm:text-xs md:text-sm lg:text-sm xl:text-base mt-0.5 sm:mt-0.5 md:mt-1 lg:mt-1 xl:mt-1.5">
-                    Inscriptions ouvertes jusqu'au 31 octobre. Ne manquez pas
-                    cette opportunité.
-                  </p>
-                </div>
-                <div className="flex-shrink-0 w-full sm:w-auto">
-                  <Button
-                    className="w-full sm:w-auto bg-white text-foundation-bluenormal hover:bg-white/95 font-bold px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 py-1 sm:py-1.5 md:py-2 lg:py-2.5 xl:py-3 transition-all duration-200 shadow-lg hover:shadow-xl text-xs sm:text-xs md:text-sm lg:text-base xl:text-lg"
-                    onClick={() => goToSlide(1)}
-                  >
-                    Je m'inscris dès maintenant
-                  </Button>
-                </div>
-              </div>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentOffer}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-1 sm:gap-1.5 md:gap-2 lg:gap-2.5 xl:gap-3"
+                >
+                  <div className="text-center sm:text-left flex-1 max-w-2xl">
+                    <p className="text-white font-bold text-xs sm:text-xs md:text-sm lg:text-base xl:text-lg leading-tight">
+                      {topOffers[currentOffer].title}
+                    </p>
+                    <p className="text-white/90 text-xs sm:text-xs md:text-sm lg:text-sm xl:text-base mt-0.5 sm:mt-0.5 md:mt-1 lg:mt-1 xl:mt-1.5">
+                      {topOffers[currentOffer].subtitle}
+                    </p>
+                  </div>
+                  <div className="flex-shrink-0 w-full sm:w-auto">
+                    <Button
+                      className="w-full sm:w-auto bg-white text-foundation-bluenormal hover:bg-white/95 font-bold px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 py-1 sm:py-1.5 md:py-2 lg:py-2.5 xl:py-3 transition-all duration-200 shadow-lg hover:shadow-xl text-xs sm:text-xs md:text-sm lg:text-base xl:text-lg"
+                      onClick={topOffers[currentOffer].action}
+                    >
+                      {topOffers[currentOffer].cta}
+                    </Button>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
             </div>
           </div>
         </div>

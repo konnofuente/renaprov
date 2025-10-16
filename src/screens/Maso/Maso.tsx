@@ -6,6 +6,8 @@ import { HeroSectionSubsection } from "./sections/HeroSectionSubsection";
 import { OurSolutionSubsection } from "./sections/OurSolutionSubsection";
 import { ProductSubsection } from "./sections/ProductSubsection";
 import { TestimonialSection } from "../../components/TestimonialSection";
+import { AdhesionConditionsSection } from "./sections/AdhesionConditionsSection";
+import { MasoAdhesionForm } from "../../components/MasoAdhesionForm";
 
 export const Maso = (): JSX.Element => {
   return (
@@ -20,6 +22,10 @@ export const Maso = (): JSX.Element => {
         <ProductSubsection />
         <OurSolutionSubsection />
         <AdvantagesSubsection />
+        <AdhesionConditionsSection />
+        <div id="maso-adhesion-form" className="py-12 bg-gray-50">
+          <MasoAdhesionForm />
+        </div>
         <TestimonialSection />
         <CallToActionSubsection />
         <FooterSubsection />

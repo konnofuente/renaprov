@@ -4,43 +4,27 @@ import { motion, AnimatePresence } from "framer-motion";
 const masoAdvantagesData = [
   {
     number: "1",
-    title: "-35% sur les frais de soins hospitaliers",
+    title: "-35% sur les frais de soins hospitaliers à la Mamu",
     description:
-      "Profitez de jusqu'à -35% de réduction sur vos frais de soins médicaux et hospitaliers dans nos centres partenaires.",
-    imageSrc: "/benef 1.png",
+      "Effectuez vos dépôts et retraits quand vous le souhaitez, sans contraintes, pour un contrôle total de vos finances.",
+    imageSrc: "/reduire les frais de soit hospitalier a la Mamu.png",
     imageAlt: "Réduction frais hospitaliers MASO",
   },
   {
     number: "2",
-    title: "Assistance éducative",
+    title: "Réduisez vos frais d'études et investissez dans votre avenir",
     description:
-      "Bénéficiez d'un soutien financier pour les frais de scolarité et les fournitures scolaires de vos enfants.",
-    imageSrc: "/benef 1.png",
-    imageAlt: "Assistance éducative MASO",
+      "Grâce au partenariat entre RENAPROV et l'IUB, les membres MASO bénéficient de -20% sur les frais universitaires.",
+    imageSrc: "/Réduisez vos frais détudes et investissez dans votre avenir.png",
+    imageAlt: "Réduction frais universitaires MASO",
   },
   {
     number: "3",
-    title: "Aide sociale d'urgence",
+    title: "Gagnez gros avec la Tombola MASO !",
     description:
-      "Accédez à une assistance financière rapide en cas de situation d'urgence ou de difficultés temporaires.",
-    imageSrc: "/benef 1.png",
-    imageAlt: "Aide sociale d'urgence MASO",
-  },
-  {
-    number: "4",
-    title: "Formation professionnelle",
-    description:
-      "Participez à des programmes de formation gratuits pour développer vos compétences professionnelles.",
-    imageSrc: "/benef 1.png",
-    imageAlt: "Formation professionnelle MASO",
-  },
-  {
-    number: "5",
-    title: "Tirages au sort exclusifs",
-    description:
-      "Participez à nos tirages au sort et gagnez des véhicules, des villas et bien plus encore.",
-    imageSrc: "/benef 1.png",
-    imageAlt: "Tirages au sort MASO",
+      "Chaque membre participe automatiquement à notre tombola solidaire et peut remporter des maisons, motos, financements, et bien plus.",
+    imageSrc: "/Gagnez gros avec la Tombola MASO !.png",
+    imageAlt: "Tombola MASO",
   },
 ];
 

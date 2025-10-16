@@ -3,11 +3,13 @@ import { Button } from "../../../../components/ui/button";
 import { Check } from "lucide-react";
 
 const oraProducts = [
-  "ORA SCOLAIRE",
+  "ORA FONCIER",
+  "ORA INVESTISSEMENT",
   "ORA PRÉVOYANCE", 
+  "ORA SCOLAIRE",
   "ORA ACADÉMIQUE",
-  "ORA IMMOBILIER",
   "ORA ÉQUIPEMENT",
+  "ORA ISLAMIQUE",
   "ORA SANTÉ"
 ];
 

@@ -1,0 +1,1 @@
+export { AdhesionConditionsSection } from './AdhesionConditionsSection';

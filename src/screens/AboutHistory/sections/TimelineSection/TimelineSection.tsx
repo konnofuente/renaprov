@@ -46,7 +46,7 @@ const TimelineCard: React.FC<{
   return (
     <Card className="w-full h-80 md:h-96 rounded-lg overflow-hidden bg-[linear-gradient(180deg,rgba(0,172,238,1)_0%,rgba(1,27,38,1)_100%)] border-0 shadow-lg">
       <CardContent className="p-6 md:p-8 h-full flex flex-col">
-        <h3 className="font-bold text-white text-sm md:text-base lg:text-lg leading-tight mb-6 md:mb-8 flex-shrink-0 whitespace-nowrap">
+        <h3 className="[font-family:'Bricolage_Grotesque',Helvetica] font-bold text-white text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl leading-tight mb-6 md:mb-8 flex-shrink-0">
           {timeline.year}
         </h3>
 
@@ -84,12 +84,12 @@ export const TimelineSection = (): JSX.Element => {
       const width = window.innerWidth;
       if (width < 640) {
         setCardsToShow(1); // Mobile: 1 carte
-      } else if (width < 1024) {
-        setCardsToShow(2); // Tablet: 2 cartes
+      } else if (width < 800) {
+        setCardsToShow(1); // Tablet: 1 carte (wider)
       } else if (width < 1280) {
-        setCardsToShow(3); // Desktop: 3 cartes
+        setCardsToShow(2); // Desktop: 2 cartes
       } else {
-        setCardsToShow(4); // Large: 4 cartes
+        setCardsToShow(3); // Large: 3 cartes (wider)
       }
     };
 
@@ -163,7 +163,7 @@ export const TimelineSection = (): JSX.Element => {
       </div>
 
       {/* Timeline Cards */}
-      <div className="w-full max-w-6xl">
+      <div className="w-full max-w-7xl">
         <div className="relative w-full overflow-hidden px-2">
           <div
             className="flex transition-all duration-500 ease-in-out"
