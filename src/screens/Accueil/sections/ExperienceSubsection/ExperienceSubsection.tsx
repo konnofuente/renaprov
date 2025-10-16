@@ -111,7 +111,7 @@ export const ExperienceSubsection = (): JSX.Element => {
       <div className="flex flex-col items-start justify-center gap-5 md:gap-6 flex-1 w-full">
         <div className="flex flex-col items-start gap-6 md:gap-8 w-full">
           <div className="flex flex-col items-start gap-2 w-full">
-            <h2 className="[font-family:'Bricolage_Grotesque',Helvetica] font-extrabold text-foundation-bluenormal text-4xl sm:text-5xl md:text-6xl lg:text-[64px] tracking-[0] leading-tight md:leading-[70.4px]">
+            <h2 className="[font-family:'Bricolage_Grotesque',Helvetica] font-extrabold text-yellow-500 text-4xl sm:text-5xl md:text-6xl lg:text-[64px] tracking-[0] leading-tight md:leading-[70.4px]">
               + {count} ANNÉES
             </h2>
 
