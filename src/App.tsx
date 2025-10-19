@@ -5,6 +5,7 @@ import { AboutHistory } from "./screens/AboutHistory";
 import { Mission } from "./screens/Mission";
 import { Products } from "./screens/Products";
 import { Maso } from "./screens/Maso";
+import { Renews } from "./screens/Renews";
 import { NotFound } from "./screens/NotFound";
 import { HeaderSubsection } from "./screens/Accueil/sections/HeaderSubsection";
 import { ScrollToTop } from "./components/ScrollToTop";
@@ -21,6 +22,7 @@ export const App: React.FC = () => {
         <Route path="/mission" element={<Mission />} />
         <Route path="/products" element={<Products />} />
         <Route path="/maso" element={<Maso />} />
+        <Route path="/renews" element={<Renews />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

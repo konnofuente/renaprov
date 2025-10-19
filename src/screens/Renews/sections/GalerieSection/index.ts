@@ -1,0 +1,1 @@
+export { GalerieSection } from "./GalerieSection";

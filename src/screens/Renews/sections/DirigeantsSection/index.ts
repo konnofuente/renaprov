@@ -1,0 +1,1 @@
+export { DirigeantsSection } from "./DirigeantsSection";

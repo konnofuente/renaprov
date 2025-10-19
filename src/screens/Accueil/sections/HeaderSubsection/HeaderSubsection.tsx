@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "../../../../components/ui/button";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { AccountCreationForm } from "../../../../components/AccountCreationForm";
 
 const navigationItems = [
   { label: "Accueil", path: "/" },
@@ -9,11 +10,13 @@ const navigationItems = [
   { label: "Mission", path: "/mission" },
   { label: "Produits", path: "/products" },
   { label: "MASO", path: "/maso" },
+  { label: "RENEWS", path: "/renews" },
   // { label: "Notre réseau", href: "#reseau" },
 ];
 
 export const HeaderSubsection = (): JSX.Element => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isAccountFormOpen, setIsAccountFormOpen] = useState(false);
   const location = useLocation();
 
   const handleNavClick = (href: string) => {
@@ -75,7 +78,7 @@ export const HeaderSubsection = (): JSX.Element => {
           <div className="hidden md:flex items-center">
             <Button
               className="w-auto bg-foundation-bluenormal hover:bg-foundation-bluedark-hover text-white font-semibold px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg min-h-[48px] sm:min-h-[52px] md:min-h-[56px] flex items-center justify-center"
-              onClick={() => handleNavClick("#contact")}
+              onClick={() => setIsAccountFormOpen(true)}
             >
               <span className="w-full text-center leading-tight">
                 Ouvrir mon compte
@@ -119,7 +122,10 @@ export const HeaderSubsection = (): JSX.Element => {
               <div className="pt-4 border-t border-foundation-greydarker/10">
                 <Button
                   className="w-full bg-foundation-bluenormal hover:bg-foundation-bluedark-hover text-white font-semibold px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg min-h-[48px] sm:min-h-[52px] md:min-h-[56px] flex items-center justify-center"
-                  onClick={() => handleNavClick("#contact")}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    setIsAccountFormOpen(true);
+                  }}
                 >
                   <span className="w-full text-center leading-tight">
                     Ouvrir mon compte
@@ -130,6 +136,12 @@ export const HeaderSubsection = (): JSX.Element => {
           </div>
         )}
       </div>
+      
+      {/* Account Creation Form Modal */}
+      <AccountCreationForm 
+        isOpen={isAccountFormOpen} 
+        onClose={() => setIsAccountFormOpen(false)} 
+      />
     </header>
   );
 };

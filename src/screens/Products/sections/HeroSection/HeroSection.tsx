@@ -27,8 +27,8 @@ export const HeroSection = (): JSX.Element => {
             </h1>
 
             <p className="[font-family:'Bricolage_Grotesque',Helvetica] font-medium text-foundationgreylight-active text-sm sm:text-base lg:text-[17px] tracking-[0] leading-[1.35] lg:leading-[20.4px]">
-              Une initiative de RENAPROV FINANCE SA qui redonne du pouvoir aux Camerounais grâce à la solidarité. 
-              Avec La MASO, vous bénéficiez d'avantages directs en santé, éducation, assistance sociale et bien-être.
+              Découvrez notre gamme complète de produits financiers RENAPROV : comptes épargne, comptes courant, 
+              produits ORA, SPMC, Bicard et bien plus encore pour répondre à tous vos besoins financiers.
             </p>
           </div>
 

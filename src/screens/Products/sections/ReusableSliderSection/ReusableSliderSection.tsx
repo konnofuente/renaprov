@@ -8,8 +8,29 @@ import { Card, CardContent } from "../../../../components/ui/card";
 import { useNavigate } from "react-router-dom";
 
 // CSS Classes extraites pour la maintenabilité
-const gradientTextClass =
-  "bg-[linear-gradient(148deg,rgba(0,172,238,1)_0%,rgba(1,27,38,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent]";
+const getGradientTextClass = (productType: 'renaprov' | 'coneexxe') => {
+  if (productType === 'coneexxe') {
+    return "bg-[linear-gradient(148deg,rgba(139,92,246,1)_0%,rgba(1,27,38,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent]";
+  }
+  return "bg-[linear-gradient(148deg,rgba(0,172,238,1)_0%,rgba(1,27,38,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent]";
+};
+
+const getBrandColors = (productType: 'renaprov' | 'coneexxe') => {
+  if (productType === 'coneexxe') {
+    return {
+      primary: '#8b5cf6',
+      secondary: '#a78bfa',
+      light: '#f3f4f6',
+      badge: 'bg-purple-100 text-purple-800'
+    };
+  }
+  return {
+    primary: '#00acee',
+    secondary: '#0891b2',
+    light: '#f0f9ff',
+    badge: 'bg-blue-100 text-blue-800'
+  };
+};
 
 interface Product {
   name: string;
@@ -23,6 +44,8 @@ interface ReusableSliderSectionProps {
   description: string;
   products: Product[];
   onProductClick: (product: Product) => void;
+  productType?: 'renaprov' | 'coneexxe';
+  brand?: string;
 }
 
 export const ReusableSliderSection: React.FC<ReusableSliderSectionProps> = ({
@@ -30,6 +53,8 @@ export const ReusableSliderSection: React.FC<ReusableSliderSectionProps> = ({
   description,
   products,
   onProductClick,
+  productType = 'renaprov',
+  brand = 'RENAPROV',
 }) => {
   const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -87,11 +112,22 @@ export const ReusableSliderSection: React.FC<ReusableSliderSectionProps> = ({
   const isPrevDisabled = currentSlide === 0;
   const isNextDisabled = currentSlide >= maxSlide;
 
+  // Get brand-specific styling
+  const gradientTextClass = getGradientTextClass(productType);
+  const brandColors = getBrandColors(productType);
+
   return (
     <section className="w-full bg-white flex flex-col items-center px-6 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-12 md:py-16 lg:py-20">
       {/* Header Section - Identique à l'accueil */}
       <div className="w-full max-w-7xl flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-12 mb-8 sm:mb-12 md:mb-16">
         <div className="w-full lg:max-w-2xl">
+          {/* Brand Badge */}
+          <div className="mb-4">
+            <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${brandColors.badge}`}>
+              {brand}
+            </span>
+          </div>
+          
           <h2 className="font-bold text-gray-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mb-4 sm:mb-6">
             {title.split(' ').map((word, index, array) => {
               if (index === array.length - 1) {
@@ -191,11 +227,15 @@ export const ReusableSliderSection: React.FC<ReusableSliderSectionProps> = ({
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-foundation-bluenormal focus:ring-offset-2 ${
+                className={`w-3 h-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
                   currentSlide === index
-                    ? "bg-foundation-bluenormal w-8"
+                    ? `w-8` 
                     : "bg-gray-300 hover:bg-gray-400"
                 }`}
+                style={{
+                  backgroundColor: currentSlide === index ? brandColors.primary : undefined,
+                  focusRingColor: brandColors.primary
+                }}
                 aria-label={`Aller au slide ${index + 1}`}
                 aria-current={currentSlide === index ? "true" : "false"}
               />
@@ -209,11 +249,15 @@ export const ReusableSliderSection: React.FC<ReusableSliderSectionProps> = ({
               size="icon"
               onClick={prevSlide}
               disabled={isPrevDisabled}
-              className={`h-10 w-10 sm:h-11 sm:w-11 md:h-12 md:w-12 rounded-full border-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-foundation-bluenormal focus:ring-offset-2 ${
+              className={`h-10 w-10 sm:h-11 sm:w-11 md:h-12 md:w-12 rounded-full border-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
                 isPrevDisabled
                   ? "bg-gray-100 border-gray-300 cursor-not-allowed opacity-50"
-                  : "bg-white border-gray-300 hover:border-foundation-bluenormal hover:bg-foundation-bluenormal/5"
+                  : "bg-white border-gray-300 hover:bg-gray-50"
               }`}
+              style={{
+                '--hover-border-color': brandColors.primary,
+                '--hover-bg-color': `${brandColors.primary}05`
+              } as React.CSSProperties}
               aria-label="Slide précédent"
             >
               <ChevronLeftIcon
@@ -228,11 +272,15 @@ export const ReusableSliderSection: React.FC<ReusableSliderSectionProps> = ({
               size="icon"
               onClick={nextSlide}
               disabled={isNextDisabled}
-              className={`h-10 w-10 sm:h-11 sm:w-11 md:h-12 md:w-12 rounded-full border-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-foundation-bluenormal focus:ring-offset-2 ${
+              className={`h-10 w-10 sm:h-11 sm:w-11 md:h-12 md:w-12 rounded-full border-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
                 isNextDisabled
                   ? "bg-gray-100 border-gray-300 cursor-not-allowed opacity-50"
-                  : "bg-white border-gray-300 hover:border-foundation-bluenormal hover:bg-foundation-bluenormal/5"
+                  : "bg-white border-gray-300 hover:bg-gray-50"
               }`}
+              style={{
+                '--hover-border-color': brandColors.primary,
+                '--hover-bg-color': `${brandColors.primary}05`
+              } as React.CSSProperties}
               aria-label="Slide suivant"
             >
               <ChevronRightIcon

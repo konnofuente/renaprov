@@ -9,6 +9,7 @@ const navigationItems = [
   { label: "Mission", path: "/mission" },
   { label: "Produits", path: "/products" },
   { label: "MASO", path: "/maso" },
+  { label: "RENEWS", path: "/renews" },
   // { label: "Notre réseau", href: "#reseau" },
 ];
 
