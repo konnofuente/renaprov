@@ -182,6 +182,30 @@ export const OurSolutionSubsection = (): JSX.Element => {
   const isPrevDisabled = currentSlide === 0;
   const isNextDisabled = currentSlide >= maxSlide;
 
+  // Calculate which dots to show (sliding window of 3)
+  const getVisibleDots = () => {
+    const totalSlides = maxSlide + 1;
+    const maxVisibleDots = 3;
+    
+    if (totalSlides <= maxVisibleDots) {
+      // Show all dots if total is 3 or less
+      return Array.from({ length: totalSlides }, (_, i) => i);
+    }
+    
+    // Calculate start index for sliding window
+    let startIndex = Math.max(0, currentSlide - 1);
+    let endIndex = Math.min(totalSlides - 1, startIndex + maxVisibleDots - 1);
+    
+    // Adjust if we're near the end
+    if (endIndex - startIndex < maxVisibleDots - 1) {
+      startIndex = Math.max(0, endIndex - maxVisibleDots + 1);
+    }
+    
+    return Array.from({ length: endIndex - startIndex + 1 }, (_, i) => startIndex + i);
+  };
+
+  const visibleDots = getVisibleDots();
+
   return (
     <section className="w-full bg-white flex flex-col items-center px-6 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-12 md:py-16 lg:py-20">
       {/* Header Section - Simplifié */}
@@ -267,7 +291,7 @@ export const OurSolutionSubsection = (): JSX.Element => {
         <div className="w-full flex flex-row items-center justify-between gap-4 sm:gap-6 mx-auto">
           {/* Pagination Dots */}
           <div className="flex items-center gap-3">
-            {Array.from({ length: maxSlide + 1 }).map((_, index) => (
+            {visibleDots.map((index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}

@@ -2,12 +2,12 @@ import { Button } from "../../../../components/ui/button";
 
 export const HeroSection = (): JSX.Element => {
   return (
-    <section className="flex flex-col w-full items-center justify-between px-4 sm:px-6 md:px-8 lg:px-[102px] py-8 sm:py-12 md:py-16 lg:py-[54px] bg-foundationbluelight">
+    <section className="flex flex-col w-full items-center justify-between px-4 sm:px-6 md:px-8 lg:px-[102px] py-8 sm:py-12 md:py-16 lg:py-[54px] bg-foundationbluelight min-h-[70vh] sm:min-h-auto">
       <div className="flex flex-col xl:flex-row items-start xl:items-center justify-between w-full max-w-[1236px] gap-6 sm:gap-8">
         {/* Image first on mobile/tablet, stays inline with text on desktop */}
-        <div className="w-full xl:w-auto flex-shrink-0 order-1 xl:order-2">
+        <div className="w-full xl:w-auto flex-shrink-0 order-1 xl:order-2 h-full min-h-[300px]">
           <img
-            className="w-full xl:w-[579px] h-[200px] sm:h-[250px] md:h-[300px] xl:h-[365px] rounded-[16px] xl:rounded-[23px] object-cover"
+            className="w-full xl:w-[579px] h-full min-h-[300px] rounded-[16px] xl:rounded-[23px] object-cover object-center"
             alt="Image"
             src="/image-13.png"
           />

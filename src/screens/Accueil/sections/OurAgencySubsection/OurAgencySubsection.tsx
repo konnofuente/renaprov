@@ -271,6 +271,7 @@ export const OurAgencySubsection = (): JSX.Element => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [cardsToShow, setCardsToShow] = useState(1);
+  const [currentTabSlide, setCurrentTabSlide] = useState(0);
 
   // Responsive cards calculation
   useEffect(() => {
@@ -357,9 +358,47 @@ export const OurAgencySubsection = (): JSX.Element => {
     setCurrentSlide(index);
   };
 
+  // Tab navigation functions
+  const nextTabSlide = () => {
+    const maxTabSlide = Math.max(0, cityTabsData.length - 3); // Show 3 tabs at a time on mobile
+    if (currentTabSlide < maxTabSlide) {
+      setCurrentTabSlide((prev) => prev + 1);
+    }
+  };
+
+  const prevTabSlide = () => {
+    if (currentTabSlide > 0) {
+      setCurrentTabSlide((prev) => prev - 1);
+    }
+  };
+
   // Check if buttons should be disabled
   const isPrevDisabled = currentSlide === 0;
   const isNextDisabled = currentSlide >= maxSlide;
+
+  // Calculate which dots to show (sliding window of 3)
+  const getVisibleDots = () => {
+    const totalSlides = maxSlide + 1;
+    const maxVisibleDots = 3;
+    
+    if (totalSlides <= maxVisibleDots) {
+      // Show all dots if total is 3 or less
+      return Array.from({ length: totalSlides }, (_, i) => i);
+    }
+    
+    // Calculate start index for sliding window
+    let startIndex = Math.max(0, currentSlide - 1);
+    let endIndex = Math.min(totalSlides - 1, startIndex + maxVisibleDots - 1);
+    
+    // Adjust if we're near the end
+    if (endIndex - startIndex < maxVisibleDots - 1) {
+      startIndex = Math.max(0, endIndex - maxVisibleDots + 1);
+    }
+    
+    return Array.from({ length: endIndex - startIndex + 1 }, (_, i) => startIndex + i);
+  };
+
+  const visibleDots = getVisibleDots();
 
   const openGoogleMaps = (agency: (typeof agencies)[0]) => {
     if (agency.coordinates) {
@@ -376,7 +415,7 @@ export const OurAgencySubsection = (): JSX.Element => {
     }
   };
   return (
-    <section className="w-full bg-foundationbluelight flex flex-col items-center px-6 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-8 sm:py-10 md:py-12 lg:py-16 xl:py-20 2xl:py-24 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 2xl:gap-[38px]">
+    <section id="agences" className="w-full bg-foundationbluelight flex flex-col items-center px-6 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-8 sm:py-10 md:py-12 lg:py-16 xl:py-20 2xl:py-24 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 2xl:gap-[38px]">
       {/* Titre de la section */}
       <div className="flex flex-col items-center text-center mb-4">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
@@ -512,7 +551,7 @@ export const OurAgencySubsection = (): JSX.Element => {
           <div className="flex w-full items-center justify-center">
             <div className="flex flex-row w-full items-center justify-between gap-4 sm:gap-6 md:gap-8">
               <div className="flex items-center gap-[11px] p-2.5">
-                {Array.from({ length: maxSlide + 1 }).map((_, index) => (
+                {visibleDots.map((index) => (
                   <button
                     key={index}
                     onClick={() => goToSlide(index)}

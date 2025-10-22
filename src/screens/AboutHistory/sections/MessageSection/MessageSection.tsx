@@ -4,16 +4,16 @@ export const MessageSection = (): JSX.Element => {
       className="relative w-full  overflow-hidden bg-[linear-gradient(148deg,rgba(0,172,238,1)_0%,rgba(1,27,38,1)_43%)]  "
       aria-labelledby="message-heading"
     >
-      <div className="flex flex-col md:flex-row items-center gap-4 sm:gap-6 md:gap-8 lg:gap-12 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-8 sm:py-0 transform sm:translate-y-2 ">
-        <div className=" flex-shrink-0 w-full md:w-auto py-[-32px] ">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-12 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-8 sm:py-0 transform sm:translate-y-2 max-w-7xl mx-auto">
+        <div className="flex-shrink-0 w-full md:w-auto py-[-32px] h-full min-h-[400px]">
           <img
-            className="w-full sm:w-[300px] md:w-[400px] lg:w-[500px] xl:w-[669px] aspect-[669/744] object-cover  shadow-lg"
+            className="w-full sm:w-[300px] md:w-[400px] lg:w-[500px] xl:w-[669px] h-full min-h-[400px] object-cover object-center shadow-lg"
             alt="Portrait de Mr M. Emmanuel Noël Bissai, Directeur Général de RENAPROV"
             src="/frame-2087326088-removebg-preview.png"
           />
         </div>
 
-        <div className="flex flex-col gap-4 sm:gap-6 md:gap-8 lg:gap-10 w-full max-w-[500px] sm:max-w-[550px] md:max-w-[600px] lg:max-w-[500px] xl:max-w-[600px] flex-1 ">
+        <div className="flex flex-col gap-4 sm:gap-6 md:gap-8 lg:gap-10 w-full max-w-[500px] sm:max-w-[550px] md:max-w-[600px] lg:max-w-[500px] xl:max-w-[600px] flex-1 text-center md:text-left">
           <h2
             id="message-heading"
             className="font-bold text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[52px] leading-[120%]"

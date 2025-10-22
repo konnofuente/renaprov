@@ -3,14 +3,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "../../../../components
 import { Button } from "../../../../components/ui/button";
 import { Badge } from "../../../../components/ui/badge";
 import { 
-  Building2, 
   GraduationCap, 
   Gift, 
   Calendar,
-  MapPin,
   Users,
   ArrowRight,
-  Heart,
   Stethoscope
 } from "lucide-react";
 
@@ -99,13 +96,13 @@ export const FlashNewsSection = (): JSX.Element => {
               <Card className={`overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 ${
                 news.featured ? 'bg-gradient-to-br from-white to-blue-50/30' : 'bg-white'
               }`}>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                <div className="grid items-center grid-cols-1 lg:grid-cols-2 gap-0">
                   {/* Image Section - Optimisée */}
-                  <div className="relative h-64 sm:h-80 lg:h-96 overflow-hidden">
+                  <div className="relative h-64 sm:h-80 lg:h-96 overflow-hidden rounded-lg">
                     <img
                       src={news.image}
                       alt={news.title}
-                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                      className="w-full rounded-lg h-full object-cover transition-transform duration-300 hover:scale-105"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.src = "/hero1.png";

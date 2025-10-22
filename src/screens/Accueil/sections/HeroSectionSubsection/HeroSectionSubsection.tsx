@@ -80,7 +80,11 @@ const slideVariants = {
   }),
 };
 
-export const HeroSectionSubsection = (): JSX.Element => {
+interface HeroSectionSubsectionProps {
+  onOpenAccountForm: () => void;
+}
+
+export const HeroSectionSubsection: React.FC<HeroSectionSubsectionProps> = ({ onOpenAccountForm }): JSX.Element => {
   const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
@@ -153,25 +157,31 @@ export const HeroSectionSubsection = (): JSX.Element => {
       title: "Devenez propriétaire de votre future Villa avec MASO!",
       subtitle: "Inscriptions ouvertes jusqu'au 29 juin. Ne manquez pas cette opportunité.",
       cta: "Je m'inscris dès maintenant",
-      action: () => goToSlide(2), // MASO slide
+      action: () => navigate("/maso"), // Navigate to MASO page
     },
     {
       title: "Épargnez avec ORA pour vos projets d'avenir",
       subtitle: "ORA Académie, Scolaire, Habitat, Équipement... Préparez vos ambitions!",
       cta: "Découvrir ORA",
-      action: () => goToSlide(3), // Solutions slide
+      action: () => {
+        const element = document.querySelector("#produits");
+        if (element) element.scrollIntoView({ behavior: "smooth" });
+      }, // Scroll to products section
     },
     {
       title: "Ouvrez votre compte RENAPROV en quelques minutes",
       subtitle: "Compte courant, épargne, SPMC, Bicard... Tous nos services à portée de main!",
       cta: "Créer mon compte",
-      action: () => goToSlide(0), // Welcome slide
+      action: () => onOpenAccountForm(), // Open account creation form
     },
     {
       title: "Rejoignez notre réseau d'agences partout au Cameroun",
       subtitle: "Plus de 30 agences pour vous accompagner dans vos projets financiers.",
       cta: "Trouver une agence",
-      action: () => goToSlide(4), // Agency slide
+      action: () => {
+        const element = document.querySelector("#agences");
+        if (element) element.scrollIntoView({ behavior: "smooth" });
+      }, // Scroll to agencies section
     },
   ];
 
@@ -215,7 +225,7 @@ export const HeroSectionSubsection = (): JSX.Element => {
   return (
     <section
       id="accueil"
-      className="relative w-full bg-foundationbluelight overflow-hidden"
+      className="relative w-full bg-foundationbluelight overflow-hidden min-h-[70vh] sm:min-h-auto"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
@@ -314,18 +324,11 @@ export const HeroSectionSubsection = (): JSX.Element => {
                     if (currentSlide === 2) {
                       // "Découvrir MASO" button - navigate to MASO page
                       navigate("/maso");
-                    } else if (currentSlide === 0) {
-                      // Scroll to contact or open account
-                      const element = document.querySelector("#contact");
-                      if (element)
-                        element.scrollIntoView({ behavior: "smooth" });
-                    } else if (currentSlide === 1) {
-                      // Scroll to MASO section
-                      const element = document.querySelector("#produits");
-                      if (element)
-                        element.scrollIntoView({ behavior: "smooth" });
-                    } else {
-                      // Scroll to solutions
+                    } else if (currentSlide === 0 || currentSlide === 1 || currentSlide === 4 || currentSlide === 5) {
+                      // "Ouvrir mon compte" buttons - open account creation form
+                      onOpenAccountForm();
+                    } else if (currentSlide === 3) {
+                      // "Nos solutions" button - scroll to products section
                       const element = document.querySelector("#produits");
                       if (element)
                         element.scrollIntoView({ behavior: "smooth" });

@@ -99,6 +99,30 @@ export const ConnexProductsSection: React.FC = () => {
   const isPrevDisabled = currentSlide === 0;
   const isNextDisabled = currentSlide >= maxSlide;
 
+  // Calculate which dots to show (sliding window of 3)
+  const getVisibleDots = () => {
+    const totalSlides = maxSlide + 1;
+    const maxVisibleDots = 3;
+    
+    if (totalSlides <= maxVisibleDots) {
+      // Show all dots if total is 3 or less
+      return Array.from({ length: totalSlides }, (_, i) => i);
+    }
+    
+    // Calculate start index for sliding window
+    let startIndex = Math.max(0, currentSlide - 1);
+    let endIndex = Math.min(totalSlides - 1, startIndex + maxVisibleDots - 1);
+    
+    // Adjust if we're near the end
+    if (endIndex - startIndex < maxVisibleDots - 1) {
+      startIndex = Math.max(0, endIndex - maxVisibleDots + 1);
+    }
+    
+    return Array.from({ length: endIndex - startIndex + 1 }, (_, i) => startIndex + i);
+  };
+
+  const visibleDots = getVisibleDots();
+
   return (
     <section className="w-full bg-gradient-to-br from-purple-50 to-indigo-50 py-12 sm:py-16 md:py-20">
       <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
@@ -169,7 +193,7 @@ export const ConnexProductsSection: React.FC = () => {
           <div className="flex items-center justify-between mt-8">
             {/* Pagination Dots */}
             <div className="flex items-center gap-3">
-              {Array.from({ length: maxSlide + 1 }).map((_, index) => (
+              {visibleDots.map((index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}

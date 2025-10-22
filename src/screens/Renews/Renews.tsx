@@ -4,7 +4,6 @@ import { CallToActionSubsection } from "../Accueil/sections/CallToActionSubsecti
 import { HeroSection } from "./sections/HeroSection";
 import { EditorialSection } from "./sections/EditorialSection";
 import { FlashNewsSection } from "./sections/FlashNewsSection";
-import { ActualitesSection } from "./sections/ActualitesSection";
 import { AgencesSection } from "./sections/AgencesSection";
 import { FilialesSection } from "./sections/FilialesSection";
 import { DirigeantsSection } from "./sections/DirigeantsSection";
@@ -22,7 +21,6 @@ export const Renews = (): JSX.Element => {
         <HeroSection />
         <EditorialSection />
         <FlashNewsSection />
-        <ActualitesSection />
         <AgencesSection />
         <FilialesSection />
         <DirigeantsSection />

@@ -1,39 +1,18 @@
 import { motion } from "framer-motion";
-import { Card, CardContent, CardHeader, CardTitle } from "../../../../components/ui/card";
 import { Button } from "../../../../components/ui/button";
 import { Badge } from "../../../../components/ui/badge";
 import { 
-  MapPin, 
   Calendar, 
-  Users, 
-  Building2,
   Heart,
   ArrowRight,
   Star,
   Award,
-  Home,
-  Car
+  Home
 } from "lucide-react";
 
 const actualites = [
   {
     id: 1,
-    title: "BOUMNYEBEL & NGOUSSO désormais couverts",
-    date: "2023-2024",
-    category: "Expansion",
-    icon: MapPin,
-    image: "/hero1.png",
-    description: "Au cœur de notre mission se trouve la volonté de transformer des vies en facilitant l'accès équitable aux services financiers. L'ouverture de ces nouvelles agences s'inscrit dans notre vision d'étendre notre portée.",
-    highlights: [
-      "Agence NGOUSSO ouverte le 17 Avril 2023",
-      "Agence Boumnyebel ouverte le 03 Novembre 2023",
-      "Emplacement stratégique sur la route Yaoundé-Edea",
-      "Service de proximité pour les communautés locales"
-    ],
-    featured: true
-  },
-  {
-    id: 2,
     title: "FEMME À L'HONNEUR - Journée Internationale des droits de la femme",
     date: "8 Mars 2024",
     category: "Événement",
@@ -49,7 +28,7 @@ const actualites = [
     featured: false
   },
   {
-    id: 3,
+    id: 2,
     title: "LE TRAIN DE LA SOLIDARITÉ EN MARCHE DEPUIS 2020",
     date: "2023-2024",
     category: "MASO",
@@ -65,7 +44,7 @@ const actualites = [
     featured: true
   },
   {
-    id: 4,
+    id: 3,
     title: "TOUJOURS PLUS PRÈS DE NOS PARTENAIRES - Canal 2",
     date: "2024",
     category: "Partenariat",

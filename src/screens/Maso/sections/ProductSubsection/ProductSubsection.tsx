@@ -62,15 +62,8 @@ export const ProductSubsection: React.FC<ProductSubsectionProps> = ({ onOpenForm
                 : "lg:flex-row"
             }`}
           >
-            <div className="w-full lg:w-[594px] h-[300px] sm:h-[350px] md:h-[400px] lg:h-[420px] flex-shrink-0 rounded-lg overflow-hidden">
-              <img
-                src={product.imageSrc}
-                alt={product.imageAlt}
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
-
-            <div className="flex flex-col items-start gap-4 md:gap-[17px] flex-1 w-full lg:max-w-[577px]">
+            {/* Mobile: Title first (order-1), Desktop: Content first (lg:order-1) */}
+            <div className="flex flex-col items-start gap-4 md:gap-[17px] flex-1 w-full lg:max-w-[577px] order-1 lg:order-1">
               <div className="flex flex-col items-start gap-3 md:gap-[15px] w-full">
                 <div className="flex flex-col items-start gap-2 w-full">
                   <h3 className="w-full text-2xl sm:text-3xl md:text-4xl lg:text-[40px] leading-tight md:leading-[44px] bg-[linear-gradient(148deg,rgba(0,172,238,1)_0%,rgba(1,27,38,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent] [font-family:'Bricolage_Grotesque',Helvetica] font-bold tracking-[0]">
@@ -105,6 +98,15 @@ export const ProductSubsection: React.FC<ProductSubsectionProps> = ({ onOpenForm
                   Rejoindre MASO dès aujourd&apos;hui
                 </span>
               </Button>
+            </div>
+
+            {/* Mobile: Image second (order-2), Desktop: Image second (lg:order-2) */}
+            <div className="w-full lg:w-[594px] h-[300px] sm:h-[350px] md:h-[400px] lg:h-[420px] flex-shrink-0 rounded-lg overflow-hidden order-2 lg:order-2">
+              <img
+                src={product.imageSrc}
+                alt={product.imageAlt}
+                className="w-full h-full object-cover object-center"
+              />
             </div>
           </article>
         ))}

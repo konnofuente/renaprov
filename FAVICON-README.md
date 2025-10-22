@@ -47,3 +47,4 @@ Pour régénérer les favicons :
 - Les versions PNG sont générées avec Sharp pour une qualité optimale
 - Le fichier ICO combine les tailles 16x16 et 32x32
 - Le manifest PWA permet l'installation sur mobile
+

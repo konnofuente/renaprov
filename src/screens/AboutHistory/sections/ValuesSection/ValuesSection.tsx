@@ -284,9 +284,9 @@ export const ValuesSection = (): JSX.Element => {
                 </div>
 
                 <div className="relative w-full">
-                  <div className="w-full h-[147px] bg-grayswhite rounded-[10px] overflow-hidden">
+                  <div className="w-full h-[200px] bg-grayswhite rounded-[10px] overflow-hidden">
                     <img
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-center"
                       alt={location.title}
                       src={location.image}
                     />
