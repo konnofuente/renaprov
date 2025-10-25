@@ -11,6 +11,7 @@ const navigationItems = [
   { label: "Produits", path: "/products" },
   { label: "MASO", path: "/maso" },
   { label: "RENEWS", path: "/renews" },
+  { label: "Contact", path: "/contact" },
   // { label: "Notre réseau", href: "#reseau" },
 ];
 
@@ -19,14 +20,6 @@ export const HeaderSubsection = (): JSX.Element => {
   const [isAccountFormOpen, setIsAccountFormOpen] = useState(false);
   const location = useLocation();
 
-  const handleNavClick = (href: string) => {
-    setMobileMenuOpen(false);
-    // Smooth scroll to section
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   const isActivePath = (path: string) => {
     if (path === "/") {
@@ -37,8 +30,8 @@ export const HeaderSubsection = (): JSX.Element => {
 
   return (
     <header className="w-full bg-foundationbluelight sticky top-0 z-50 shadow-sm">
-      <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-18 md:h-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 sm:h-18 md:h-20 lg:h-24">
           {/* Logo and Company Name */}
           <Link to="/" className="flex items-center gap-2 sm:gap-3 flex-shrink-0 hover:opacity-80 transition-opacity duration-200">
             <img
@@ -55,7 +48,7 @@ export const HeaderSubsection = (): JSX.Element => {
 
           {/* Desktop Navigation */}
           <nav
-            className="hidden lg:flex items-center space-x-6 xl:space-x-8"
+            className="hidden lg:flex items-center space-x-3 xl:space-x-4 2xl:space-x-6"
             role="navigation"
             aria-label="Navigation principale"
           >
@@ -63,7 +56,7 @@ export const HeaderSubsection = (): JSX.Element => {
               <Link
                 key={index}
                 to={item.path}
-                className={`font-medium transition-colors duration-200 text-sm xl:text-base ${
+                className={`font-medium transition-colors duration-200 text-xs lg:text-sm xl:text-base whitespace-nowrap ${
                   isActivePath(item.path)
                     ? "text-foundation-bluenormal"
                     : "text-black hover:text-foundation-bluenormal"

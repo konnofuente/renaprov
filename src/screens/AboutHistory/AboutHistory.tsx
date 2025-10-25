@@ -4,7 +4,6 @@ import { TimelineSection } from "./sections/TimelineSection";
 import { MessageSection } from "./sections/MessageSection";
 import { TeamSection } from "./sections/TeamSection";
 import { SEO } from "../../components/SEO";
-import { FooterSubsection } from "../Accueil/sections/FooterSubsection";
 import { CallToActionSubsection } from "../Accueil/sections/CallToActionSubsection";
 import { OurAgencySubsection } from "../Accueil/sections/OurAgencySubsection";
 import { MapSection } from "./sections/MapSection";
@@ -28,7 +27,6 @@ export const AboutHistory = (): JSX.Element => {
         <TestimonialSection />
         <OurAgencySubsection />
         <CallToActionSubsection />
-        <FooterSubsection />
       </main>
     </>
   );

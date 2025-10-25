@@ -3,6 +3,7 @@ import {
   ChevronRight as ChevronRightIcon,
 } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 
@@ -15,83 +16,92 @@ const productCards = [
   {
     title: "Compte courant individuel",
     description: "Gérez vos finances quotidiennes en toute simplicité avec des services complets.",
-    image: "/Compte courant.png",
+    image: "/service/Compte courant individuel.jpg",
+    route: "/service/compte-courant-individuel",
   },
   {
     title: "Compte courant entreprise",
     description: "Compte professionnel pour entreprises avec des services bancaires complets.",
-    image: "/Compte courant.png",
+    image: "/service/Compte courant entreprise.jpg",
+    route: "/service/compte-courant-entreprise",
   },
   {
     title: "Compte courant association",
     description: "Compte pour associations et ONG avec des conditions préférentielles.",
-    image: "/Compte courant.png",
+    image: "/service/Compte courant association.jpg",
+    route: "/service/compte-courant-association",
   },
   
   // Comptes Épargne
   {
     title: "Compte épargne individuel",
     description: "Épargnez pour vos projets personnels avec des taux attractifs et une gestion simplifiée.",
-    image: "/Compte épargne.png",
+    image: "/service/Compte epargne individuel.jpg",
+    route: "/service/compte-epargne-individuel",
   },
   {
     title: "Compte épargne entreprise",
     description: "Épargne pour les entreprises et organisations avec des avantages dédiés.",
-    image: "/Compte épargne.png",
+    image: "/service/Compte epargne entreprise.jpg",
+    route: "/service/compte-epargne-entreprise",
   },
   
   // Comptes Spéciaux
   {
     title: "Compte salarié",
     description: "Compte dédié aux employés avec des avantages et des services privilégiés.",
-    image: "/Compte courant.png",
+    image: "/service/compte salaire.jpg",
+    route: "/service/compte-cheque-salaire-pension",
   },
   {
     title: "Compte privé",
     description: "Compte privé avec avantages exclusifs et services personnalisés.",
-    image: "/Compte courant.png",
+    image: "/service/compte prive.jpg",
+    route: "/service/compte-prive",
   },
   {
     title: "Compte public",
     description: "Compte pour les fonctionnaires avec des conditions spéciales.",
-    image: "/Compte courant.png",
+    image: "/service/compte public.jpg",
+    route: "/service/compte-public",
   },
   {
     title: "Compte pensionné",
     description: "Compte pour les retraités avec des avantages dédiés et des services adaptés.",
-    image: "/Compte courant.png",
+    image: "/service/compte pensionne.jpg",
+    route: "/service/compte-pensionne",
   },
   
   // ORA - Objectif Réalisation d'Ambitions
   {
     title: "ORA Foncier",
     description: "Plan d'épargne permettant d'acquérir un terrain viabilisé, sécurisé, avec eau et électricité, assorti d'un titre foncier à moindre coût.",
-    image: "/ORA froncier.jpeg",
+    image: "/service/ORA froncier.jpeg",
   },
   {
     title: "ORA Investissement",
     description: "Plan d'épargne permettant de constituer un fond pour promouvoir son investissement et réaliser son projet.",
-    image: "/ORA.png",
+    image: "/service/Ora investissement.png",
   },
   {
     title: "ORA Prévoyance",
     description: "Plan d'épargne permettant de constituer un fond afin de prévenir les évènements heureux ou malheureux.",
-    image: "/ORA provayance.jpeg",
+    image: "/service/ORA provayance.jpeg",
   },
   {
     title: "ORA Scolaire",
     description: "Plan d'épargne à partir de 350 FCFA pour solutionner les problèmes liés à la rentrée scolaire.",
-    image: "/ORA School.jpeg",
+    image: "/service/ORA School.jpeg",
   },
   {
     title: "ORA Académique",
     description: "Plan d'épargne à partir de 1000 FCFA pour assurer les frais de scolarité à l'Institut Universitaire BISSAÏ.",
-    image: "/ORA.png",
+    image: "/service/ORA Académique.png",
   },
   {
     title: "ORA Équipement",
     description: "Plan d'épargne pour acquisition d'équipements mobiliers, informatiques, électroniques, électroménager, etc.",
-    image: "/ORA equipement.jpeg",
+    image: "/service/ORA equipement.jpeg",
   },
   {
     title: "ORA Islamique",
@@ -101,7 +111,7 @@ const productCards = [
   {
     title: "ORA Santé",
     description: "Plan d'épargne permettant de bénéficier à partir de 1000 FCFA/jour d'une couverture sanitaire au Complexe Hospitalier La MAMU.",
-    image: "/ORA.png",
+    image: "/service/Ora Sante.png",
   },
   
   // MASO
@@ -128,6 +138,7 @@ const productCards = [
 
 export const OurSolutionSubsection = (): JSX.Element => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate();
   const [cardsToShow, setCardsToShow] = useState(3);
 
   // Responsive cards calculation
@@ -276,6 +287,11 @@ export const OurSolutionSubsection = (): JSX.Element => {
                       variant="link"
                       className="inline-flex items-center justify-start gap-2 p-0 h-auto mt-4 text-sm font-semibold text-foundation-bluenormal hover:text-foundation-bluedark-hover transition-colors duration-200"
                       aria-label={`En savoir plus sur ${product.title}`}
+                      onClick={() => {
+                        if (product.route) {
+                          window.open(product.route, '_blank');
+                        }
+                      }}
                     >
                       <span>En savoir plus</span>
                       <ChevronRightIcon className="w-4 h-4" />

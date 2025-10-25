@@ -3,7 +3,6 @@ import { HospitalLaMamuSection } from "./sections/HospitalLaMamuSection";
 import { SocagiSection } from "./sections/SocagiSection";
 import { ORASection } from "./sections/ORASection";
 import { NetworkProximity } from "./sections/NetworkProximity";
-import { FooterSubsection } from "../Accueil/sections/FooterSubsection";
 import { CallToActionSubsection } from "../Accueil/sections/CallToActionSubsection";
 import { OurAgencySubsection } from "../Accueil/sections/OurAgencySubsection";
 import { HeroSection } from "./sections/IntroductionBanner/IntroductionBanner";
@@ -32,7 +31,6 @@ export const Mission = (): JSX.Element => {
 
         <TestimonialSection />
         <CallToActionSubsection />
-        <FooterSubsection />
       </main>
     </>
   );

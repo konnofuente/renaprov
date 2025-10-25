@@ -2,10 +2,8 @@ import {
   FacebookIcon,
   InstagramIcon,
   LinkedinIcon,
-  TwitterIcon,
-  YoutubeIcon,
+  TwitterIcon
 } from "lucide-react";
-import React from "react";
 
 const linksData = [
   { label: "Accueil" },
@@ -34,11 +32,10 @@ const contactData = [
 ];
 
 const socialIcons = [
-  { Icon: FacebookIcon, alt: "Facebook" },
-  { Icon: InstagramIcon, alt: "Instagram" },
-  { Icon: TwitterIcon, alt: "X" },
-  { Icon: LinkedinIcon, alt: "LinkedIn" },
-  { Icon: YoutubeIcon, alt: "YouTube" },
+  { Icon: FacebookIcon, alt: "Facebook", href: "https://www.facebook.com/renaprovonline" },
+  { Icon: InstagramIcon, alt: "Instagram", href: "https://www.instagram.com/renaprov_finance/" },
+  { Icon: TwitterIcon, alt: "X", href: "https://x.com/RenaprovS" },
+  { Icon: LinkedinIcon, alt: "LinkedIn", href: "https://www.linkedin.com/company/renaprov-finance-s-a/" },
 ];
 
 export const NewsletterSection = (): JSX.Element => {
@@ -137,6 +134,9 @@ export const NewsletterSection = (): JSX.Element => {
               {socialIcons.map((social, index) => (
                 <a
                   key={index}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-6 h-6 text-foundation-bluelight-active cursor-pointer hover:text-foundation-bluenormal transition-colors"
                   aria-label={social.alt}
                 >

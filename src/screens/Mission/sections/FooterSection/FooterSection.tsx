@@ -1,4 +1,3 @@
-import React from "react";
 import { Separator } from "../../../../components/ui/separator";
 
 const linksData = [
@@ -28,11 +27,10 @@ const contactData = [
 ];
 
 const socialIcons = [
-  { alt: "Icon facebook", src: "/icon---facebook.svg" },
-  { alt: "Icon instagram", src: "/icon---instagram.svg" },
-  { alt: "Icon x", src: "/icon---x.svg" },
-  { alt: "Icon linkedin", src: "/icon---linkedin.svg" },
-  { alt: "Icon youtube", src: "/icon---youtube.svg" },
+  { alt: "Facebook", src: "/icon---facebook.svg", href: "https://www.facebook.com/renaprovonline" },
+  { alt: "Instagram", src: "/icon---instagram.svg", href: "https://www.instagram.com/renaprov_finance/" },
+  { alt: "LinkedIn", src: "/icon---linkedin.svg", href: "https://www.linkedin.com/company/renaprov-finance-s-a/" },
+  { alt: "X (Twitter)", src: "/icon---x.svg", href: "https://x.com/RenaprovS" },
 ];
 
 export const FooterSection = (): JSX.Element => {
@@ -127,7 +125,11 @@ export const FooterSection = (): JSX.Element => {
               {socialIcons.map((icon, index) => (
                 <a
                   key={index}
+                  href={icon.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="cursor-pointer hover:opacity-80 transition-opacity"
+                  aria-label={icon.alt}
                 >
                   <img className="w-6 h-6" alt={icon.alt} src={icon.src} />
                 </a>

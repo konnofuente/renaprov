@@ -40,7 +40,7 @@ export const TeamSection = (): JSX.Element => {
     <section className="flex flex-col items-start gap-2.5 pt-[30px] pb-40 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 w-full bg-white">
       <div className="flex flex-col items-center gap-10 w-full">
         <h2 className="bg-[linear-gradient(148deg,rgba(0,172,238,1)_0%,rgba(1,27,38,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent] [font-family:'Bricolage_Grotesque',Helvetica] font-bold text-transparent text-5xl text-center tracking-[-0.96px] leading-[56.6px]">
-          En attendant les photos
+          Top Management
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-[30px_20px] w-full">

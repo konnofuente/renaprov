@@ -1,5 +1,4 @@
 import { SEO } from "../../components/SEO";
-import { FooterSubsection } from "../Accueil/sections/FooterSubsection";
 import { CallToActionSubsection } from "../Accueil/sections/CallToActionSubsection";
 import { HeroSection } from "./sections/HeroSection";
 import { EditorialSection } from "./sections/EditorialSection";
@@ -26,7 +25,6 @@ export const Renews = (): JSX.Element => {
         <DirigeantsSection />
         <GalerieSection />
         <CallToActionSubsection />
-        <FooterSubsection />
       </main>
     </>
   );

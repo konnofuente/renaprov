@@ -2,7 +2,6 @@ import { useState } from "react";
 import { SEO } from "../../components/SEO";
 import { AdvantagesSubsection } from "./sections/AdvantagesSubsection";
 import { CallToActionSubsection } from "./sections/CallToActionSubsection";
-import { FooterSubsection } from "./sections/FooterSubsection";
 import { HeroSectionSubsection } from "./sections/HeroSectionSubsection";
 import { OurSolutionSubsection } from "./sections/OurSolutionSubsection";
 import { ProductSubsection } from "./sections/ProductSubsection";
@@ -28,7 +27,6 @@ export const Maso = (): JSX.Element => {
         <AdhesionConditionsSection onOpenForm={() => setIsFormOpen(true)} />
         <TestimonialSection />
         <CallToActionSubsection />
-        <FooterSubsection />
       </main>
       
       {/* Modal Form */}

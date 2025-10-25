@@ -3,7 +3,6 @@ import { SEO } from "../../components/SEO";
 import { AdvantagesSubsection } from "./sections/AdvantagesSubsection";
 import { CallToActionSubsection } from "./sections/CallToActionSubsection";
 import { ExperienceSubsection } from "./sections/ExperienceSubsection";
-import { FooterSubsection } from "./sections/FooterSubsection";
 import { HeroSectionSubsection } from "./sections/HeroSectionSubsection";
 import { NosFillialeSubsection } from "./sections/NosFillialeSubsection";
 import { OurAgencySubsection } from "./sections/OurAgencySubsection";
@@ -32,7 +31,6 @@ export const Accueil = (): JSX.Element => {
         <TestimonialSection />
         <OurAgencySubsection />
         <CallToActionSubsection />
-        <FooterSubsection />
       </main>
       
       {/* Account Creation Form Modal */}

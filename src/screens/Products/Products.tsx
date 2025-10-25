@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SEO } from "../../components/SEO";
-import { FooterSubsection } from "../Accueil/sections/FooterSubsection";
 import { CallToActionSubsection } from "../Accueil/sections/CallToActionSubsection";
 import { HeroSection } from "./sections/HeroSection";
 import { FeatureCardsSection } from "./sections/FeatureCardsSection";
@@ -89,7 +88,6 @@ export const Products = (): JSX.Element => {
         </AnimatePresence>
         <TestimonialSection />
         <CallToActionSubsection />
-        <FooterSubsection />
       </main>
     </>
   );
