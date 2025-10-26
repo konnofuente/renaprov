@@ -16,8 +16,6 @@ import { ProcessusDemandePret } from "./screens/ServiceDetail/ProcessusDemandePr
 import { CompteCourantEntreprise } from "./screens/ServiceDetail/CompteCourantEntreprise";
 import { CompteCourantAssociation } from "./screens/ServiceDetail/CompteCourantAssociation";
 import { CompteEpargneEntreprise } from "./screens/ServiceDetail/CompteEpargneEntreprise";
-import { ComptePrive } from "./screens/ServiceDetail/ComptePrive";
-import { ComptePublic } from "./screens/ServiceDetail/ComptePublic";
 import { ComptePensionne } from "./screens/ServiceDetail/ComptePensionne";
 import { NotFound } from "./screens/NotFound";
 import { HeaderSubsection } from "./screens/Accueil/sections/HeaderSubsection";
@@ -48,8 +46,6 @@ export const App: React.FC = () => {
         <Route path="/service/compte-courant-entreprise" element={<CompteCourantEntreprise />} />
         <Route path="/service/compte-courant-association" element={<CompteCourantAssociation />} />
         <Route path="/service/compte-epargne-entreprise" element={<CompteEpargneEntreprise />} />
-        <Route path="/service/compte-prive" element={<ComptePrive />} />
-        <Route path="/service/compte-public" element={<ComptePublic />} />
         <Route path="/service/compte-pensionne" element={<ComptePensionne />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

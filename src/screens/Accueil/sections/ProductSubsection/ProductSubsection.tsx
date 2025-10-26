@@ -8,8 +8,8 @@ const products = [
     title: "MASO : Solidarité, assistance et opportunités pour tous",
     description: (
       <>
-        La <span className="font-bold">MASO de RENAPROV </span>
-        accompagne les Camerounais pour sortir du cercle vicieux de la pauvreté,
+        La <span className="font-bold">MASO de RENAPROV FINANCE S.A </span>
+        accompagne les Camerounais à sortir du cercle vicieux de la pauvreté,
         en donnant accès à des services sociaux essentiels et à des opportunités
         uniques.
       </>
@@ -18,8 +18,18 @@ const products = [
       {
         text: (
           <>
-            <span className="font-bold">Santé et Education </span>
-            <span>– Jusqua </span>
+            <span className="font-bold">Education </span>
+            <span>– Jusqu'à </span>
+            <span className="font-bold">20% de réduction</span>
+            <span> sur vos frais</span>
+          </>
+        ),
+      },
+      {
+        text: (
+          <>
+            <span className="font-bold">Santé </span>
+            <span>– Jusqu'à </span>
             <span className="font-bold">35% de réduction</span>
             <span> sur vos frais</span>
           </>
@@ -38,14 +48,14 @@ const products = [
       },
     ],
     imagePosition: "left",
-    imageSrc: "/MASO-Solidarité-assistance-et-opportunités-pour-tous.png",
+    imageSrc: "/logo maso solidarite.png",
     imageAlt: "MASO - Solidarité, assistance et opportunités pour tous",
   },
   {
     id: "ora",
     title: "ORA : Épargnez aujourd'hui, concrétisez vos projets demain",
     description:
-      "ORA est le plan d'épargne intelligent de RENAPROV qui vous permet de préparer vos projets personnels et professionnels avec sécurité et flexibilité.",
+      "ORA est le plan d'épargne de RENAPROV FINANCE S.A qui vous permet de préparer vos projets personnels et professionnels avec sécurité et flexibilité.",
     benefits: [
       {
         text: "Objectifs multiples – épargne pour terrain, études, business ou équipements",

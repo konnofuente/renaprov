@@ -9,12 +9,12 @@ import { useNavigate } from "react-router-dom";
 
 const slides = [
   {
-    title: "Bienvenu a RENAPROV",
+    title: "Bienvenu a RENAPROV FINANCE S.A",
     description:
-      "La microfinance qui fait la difference , ouvrez un compte en quelques minutes et profitez de services adaptés à votre quotidien.",
+      "ORA Académique, Scolaire, Habitat, Équipement... Préparez vos ambitions ! Que vous soyez salarié, pensionné, entrepreneur, commerçant ou étudiant, RENAPROV FINANCE S.A met à votre disposition une gamme de produits adaptés à vos besoins.",
     image: "/Bienvenu a RENAPROV.png",
     fallbackImage: "/hero1.png",
-    cta: "Ouvrir mon compte aujourd’hui",
+    cta: "Ouvrir mon compte aujourd'hui",
   },
   {
     title: "Un compte simple et sécurisé, accessible à tous",
@@ -25,10 +25,10 @@ const slides = [
     cta: "Ouvrir mon compte aujourd'hui",
   },
   {
-    title: "De locataire à propriétaire grâce à RENAPROV",
+    title: "MASO",
     description:
-      "Constituez votre épargne à votre rythme avec nos solutions flexibles et sécurisées. Réalisez vos rêves avec RENAPROV.",
-    image: "/De locataire à propriétaire grâce à RENAPROV.png",
+      "MASO (Mutuelle d'Assistance et de Solidarité) est un produit solidaire mis en place par RENAPROV FINANCE SA qui vous permet de couvrir les besoins sociaux de base.",
+    image: "/logo maso solidarite.png",
     fallbackImage: "/hero1.png",
     cta: "Découvrir MASO",
   },

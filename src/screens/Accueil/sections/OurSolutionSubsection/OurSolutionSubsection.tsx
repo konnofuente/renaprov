@@ -15,19 +15,19 @@ const productCards = [
   // Comptes Courant
   {
     title: "Compte courant individuel",
-    description: "Gérez vos finances quotidiennes en toute simplicité avec des services complets.",
+    description: "Gérez vos transactions quotidiennes en toute simplicité.",
     image: "/service/Compte courant individuel.jpg",
     route: "/service/compte-courant-individuel",
   },
   {
     title: "Compte courant entreprise",
-    description: "Compte professionnel pour entreprises avec des services bancaires complets.",
+    description: "Gérez les transactions de votre entreprise en toute simplicité.",
     image: "/service/Compte courant entreprise.jpg",
     route: "/service/compte-courant-entreprise",
   },
   {
     title: "Compte courant association",
-    description: "Compte pour associations et ONG avec des conditions préférentielles.",
+    description: "Compte bancaire pour les associations à but non lucratif (culturelles, sportives, religieuses, humanitaires, etc.).",
     image: "/service/Compte courant association.jpg",
     route: "/service/compte-courant-association",
   },
@@ -35,39 +35,27 @@ const productCards = [
   // Comptes Épargne
   {
     title: "Compte épargne individuel",
-    description: "Épargnez pour vos projets personnels avec des taux attractifs et une gestion simplifiée.",
+    description: "Épargnez pour vos projets personnels avec des taux d'intérêt préférentiel et une gestion simplifiée.",
     image: "/service/Compte epargne individuel.jpg",
     route: "/service/compte-epargne-individuel",
   },
   {
     title: "Compte épargne entreprise",
-    description: "Épargne pour les entreprises et organisations avec des avantages dédiés.",
+    description: "Épargnez vos projets d'entreprises avec des avantages dédiés.",
     image: "/service/Compte epargne entreprise.jpg",
     route: "/service/compte-epargne-entreprise",
   },
   
   // Comptes Spéciaux
   {
-    title: "Compte salarié",
+    title: "Compte salarié secteur Public ou Privé",
     description: "Compte dédié aux employés avec des avantages et des services privilégiés.",
     image: "/service/compte salaire.jpg",
     route: "/service/compte-cheque-salaire-pension",
   },
   {
-    title: "Compte privé",
-    description: "Compte privé avec avantages exclusifs et services personnalisés.",
-    image: "/service/compte prive.jpg",
-    route: "/service/compte-prive",
-  },
-  {
-    title: "Compte public",
-    description: "Compte pour les fonctionnaires avec des conditions spéciales.",
-    image: "/service/compte public.jpg",
-    route: "/service/compte-public",
-  },
-  {
-    title: "Compte pensionné",
-    description: "Compte pour les retraités avec des avantages dédiés et des services adaptés.",
+    title: "Compte pensionné secteur Public ou Privé",
+    description: "Compte pour les retraités du secteur public ou privé avec des avantages dédiés et des services adaptés.",
     image: "/service/compte pensionne.jpg",
     route: "/service/compte-pensionne",
   },
@@ -80,7 +68,7 @@ const productCards = [
   },
   {
     title: "ORA Investissement",
-    description: "Plan d'épargne permettant de constituer un fond pour promouvoir son investissement et réaliser son projet.",
+    description: "Plan d'épargne permettant de constituer un fond pour la réalisation d'un projet.",
     image: "/service/Ora investissement.png",
   },
   {
@@ -90,7 +78,7 @@ const productCards = [
   },
   {
     title: "ORA Scolaire",
-    description: "Plan d'épargne à partir de 350 FCFA pour solutionner les problèmes liés à la rentrée scolaire.",
+    description: "Plan d'épargne à partir de 350 FCFA permettant de garantir la rentrée scolaire.",
     image: "/service/ORA School.jpeg",
   },
   {
@@ -100,7 +88,7 @@ const productCards = [
   },
   {
     title: "ORA Équipement",
-    description: "Plan d'épargne pour acquisition d'équipements mobiliers, informatiques, électroniques, électroménager, etc.",
+    description: "Plan d'épargne permettant l'acquisition d'équipements mobiliers, informatiques, électroniques, électroménager, etc.",
     image: "/service/ORA equipement.jpeg",
   },
   {
@@ -117,21 +105,21 @@ const productCards = [
   // MASO
   {
     title: "MASO",
-    description: "De locataire à propriétaire, concrétisez votre rêve immobilier grâce à la solidarité.",
-    image: "/MASO.png",
+    description: "MASO (Mutuelle d'Assistance et de Solidarité) est un produit solidaire mis en place par RENAPROV FINANCE SA qui vous permet de couvrir les besoins sociaux de base.",
+    image: "/logo maso solidarite.png",
   },
   
   // SPMC
   {
     title: "SPMC",
-    description: "Système de Paiement Mobile Camerounais pour des transactions rapides et sécurisées.",
+    description: "Compte courant adapté aux acteurs des petits métiers et petits commerciaux avec des frais de gestion simplifiés et possibilité d'octroi de crédit.",
     image: "/Un%20compte%20simple%20et%20sécurisé,%20accessible%20à%20tous.png",
   },
   
   // Bicard
   {
     title: "Bicard",
-    description: "Carte de paiement multi-services pour tous vos achats et retraits.",
+    description: "Carte bancaire permettant la facilitation de vos transactions financières.",
     image: "/Un%20compte%20simple%20et%20sécurisé,%20accessible%20à%20tous.png",
   },
 ];

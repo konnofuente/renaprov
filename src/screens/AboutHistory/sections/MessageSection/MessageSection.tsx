@@ -18,13 +18,13 @@ export const MessageSection = (): JSX.Element => {
             id="message-heading"
             className="font-bold text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[52px] leading-[120%]"
           >
-            <span className="block">Mr M. Emmanuel</span>
-            <span className="block">Noël Bissai</span>
+            <span className="block">Révérend Pasteur</span>
+            <span className="block">Emmanuel Noël Bissai</span>
           </h2>
 
           <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-relaxed w-full">
-            Depuis près de trois décennies, Renaprov s&apos;engage à rester
-            proche de ses clients et à leur proposer des solutions financières
+            Depuis près de trois décennies, RENAPROV FINANCE SA s&apos;engage à rester
+            proche de ses clients et à leur offrir des solutions financières
             solidaires. Notre ambition est de consolider cette proximité en
             développant des services modernes, adaptés aux besoins des familles,
             des entreprises et des collectivités. Ensemble, bâtissons une

@@ -5,35 +5,39 @@ import { Card, CardContent } from "../../../../components/ui/card";
 
 const timelineData = [
   {
-    year: "1996 – Création",
+    year: "1992 – Origines",
     items: [
-      "Fondation officielle de Renaprov",
-      "Lancement du premier bureau pour accompagner les petits commerçants.",
-      'Début de la mission : "Une banque solidaire au service des marchés."',
+      "RENAPROV FINANCE SA trouve ses origines en 1992",
+      "Naît d'abord sous forme d'association ayant pour mission de collecter les fonds des petits épargnants pour les redistribuer dans une dynamique de solidarité.",
     ],
   },
   {
-    year: "2006 – Expansion",
+    year: "1994 – Organisation",
     items: [
-      "Ouverture de nouvelles agences dans les principaux marchés.",
-      "Développement des premiers produits de microfinance.",
-      "Renaprov devient un acteur reconnu dans la proximité bancaire.",
+      "Une organisation à but non lucratif, principalement au service des commerçants des marchés",
+      "Afin de leur offrir une solution simple et sécurisée pour l'épargne.",
     ],
   },
   {
-    year: "2012 – Consolidation",
+    year: "1996 – Structuration",
     items: [
-      "Structuration du top management et modernisation de la gouvernance.",
-      "Mise en place de nouveaux services financiers adaptés aux besoins locaux.",
-      "Début des partenariats stratégiques avec des institutions locales.",
+      "La structure prend officiellement le nom de RENAPROV FINANCE SA",
+      "Amorçant alors une phase de structuration plus formelle dans le secteur de la microfinance.",
     ],
   },
   {
-    year: "2018 – Diversification",
+    year: "2000-2010 – Consolidation",
     items: [
-      "Création et intégration des filiales (hôpital, université, radio, etc.).",
-      "Lancement de projets sociaux et solidaires.",
-      "Accent sur la transformation numérique des services.",
+      "Pendant plus d'une décennie, RENAPROV opère avec seulement deux agences : le siège social à Ekounou et une agence à Edéa.",
+      "Phase de consolidation et de développement des services.",
+    ],
+  },
+  {
+    year: "2010+ – Expansion",
+    items: [
+      "Après plusieurs années de consolidation, RENAPROV amorce une phase d'expansion",
+      "Pour compter aujourd'hui 28 agences à travers le pays.",
+      "En parallèle, RENAPROV FINANCE SA a élargi son impact en mettant sur pied plusieurs filiales, renforçant ainsi son positionnement comme un acteur majeur de la finance inclusive et du développement communautaire.",
     ],
   },
 ];
@@ -148,14 +152,7 @@ export const TimelineSection = (): JSX.Element => {
           <div className="xl:max-w-lg">
             <div className="space-y-4" aria-describedby="timeline-description">
               <p className="font-normal text-black text-[18px] leading-[150%]">
-                Depuis 1996, Renaprov accompagne les Camerounais en proposant
-                des services financiers accessibles et solidaires.
-              </p>
-              <p className="font-normal text-black text-[18px] leading-[150%]">
-                D&apos;une petite institution ancrée dans le secteur informel,
-                nous sommes devenus un réseau national de microfinance, reconnu
-                pour notre proximité avec les clients et notre engagement pour
-                le développement social et économique.
+                Depuis plus de 30 ans, RENAPROV FINANCE SA vous accompagne dans vos projets personnels et professionnels.
               </p>
             </div>
           </div>
