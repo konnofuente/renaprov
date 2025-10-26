@@ -55,7 +55,7 @@ export const App: React.FC = () => {
       </Routes>
       <Footer />
       <FloatingWhatsAppButton 
-        phoneNumber="237690160047"
+        phoneNumber="237693930231"
         message="Bonjour, je souhaite obtenir plus d'informations sur les services de RENAPROV."
       />
     </Router>
