@@ -1,0 +1,5 @@
+# Ultra-simple .htaccess for Hostinger - Use this if others don't work
+Options -MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.html [QSA,L]

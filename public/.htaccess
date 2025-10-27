@@ -1,16 +1,10 @@
 RewriteEngine On
-RewriteBase /
 
 # Handle client-side routing for React Router
-# Only redirect to index.html if the request is not for a static asset
+# Redirect all requests to index.html except for existing files and directories
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} !^/assets/
-RewriteCond %{REQUEST_URI} !^/service/
-RewriteCond %{REQUEST_URI} !^/favicon
-RewriteCond %{REQUEST_URI} !^/apple-touch-icon
-RewriteCond %{REQUEST_URI} !^/site.webmanifest
-RewriteRule ^(.*)$ /index.html [QSA,L]
+RewriteRule . /index.html [L]
 
 # Enable compression for better performance
 <IfModule mod_deflate.c>
