@@ -3,12 +3,13 @@ import { Button } from "../../../../components/ui/button";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { AccountCreationForm } from "../../../../components/AccountCreationForm";
+import { ServicesDropdown } from "../../../../components/ServicesDropdown";
 
 const navigationItems = [
   { label: "Accueil", path: "/" },
   { label: "À propos", path: "/about" },
   { label: "Mission", path: "/mission" },
-  { label: "Produits", path: "/products" },
+  { label: "Produits", path: "/products", isDropdown: true },
   { label: "MASO", path: "/maso" },
   { label: "RENEWS", path: "/renews" },
   { label: "Contact", path: "/contact" },
@@ -53,17 +54,25 @@ export const HeaderSubsection = (): JSX.Element => {
             aria-label="Navigation principale"
           >
             {navigationItems.map((item, index) => (
-              <Link
-                key={index}
-                to={item.path}
-                className={`font-medium transition-colors duration-200 text-xs lg:text-sm xl:text-base whitespace-nowrap ${
-                  isActivePath(item.path)
-                    ? "text-foundation-bluenormal"
-                    : "text-black hover:text-foundation-bluenormal"
-                }`}
-              >
-                {item.label}
-              </Link>
+              item.isDropdown ? (
+                <ServicesDropdown
+                  key={index}
+                  isActive={isActivePath(item.path)}
+                  mainPath={item.path}
+                />
+              ) : (
+                <Link
+                  key={index}
+                  to={item.path}
+                  className={`font-medium transition-colors duration-200 text-xs lg:text-sm xl:text-base whitespace-nowrap ${
+                    isActivePath(item.path)
+                      ? "text-foundation-bluenormal"
+                      : "text-black hover:text-foundation-bluenormal"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              )
             ))}
           </nav>
 
@@ -99,18 +108,83 @@ export const HeaderSubsection = (): JSX.Element => {
               aria-label="Navigation mobile"
             >
               {navigationItems.map((item, index) => (
-                <Link
-                  key={index}
-                  to={item.path}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`block w-full text-left px-3 py-2 text-base font-medium rounded-md transition-colors duration-200 ${
-                    isActivePath(item.path)
-                      ? "text-foundation-bluenormal bg-white/20"
-                      : "text-black hover:bg-white/20"
-                  }`}
-                >
-                  {item.label}
-                </Link>
+                item.isDropdown ? (
+                  <div key={index} className="px-3 py-2">
+                    <div className="flex items-center justify-between mb-2">
+                      <Link
+                        to={item.path}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="text-base font-medium text-black hover:text-foundation-bluenormal"
+                      >
+                        Produits
+                      </Link>
+                    </div>
+                    <div className="text-sm font-medium text-gray-600 mb-2 ml-2">
+                      Services
+                    </div>
+                    <div className="ml-4 space-y-1">
+                      {Object.entries({
+                        "Comptes Courant": [
+                          { title: "Compte courant individuel", route: "/service/compte-courant-individuel" },
+                          { title: "Compte courant entreprise", route: "/service/compte-courant-entreprise" },
+                          { title: "Compte courant association", route: "/service/compte-courant-association" },
+                        ],
+                        "Comptes Épargne": [
+                          { title: "Compte épargne individuel", route: "/service/compte-epargne-individuel" },
+                          { title: "Compte épargne entreprise", route: "/service/compte-epargne-entreprise" },
+                        ],
+                        "Comptes Spéciaux": [
+                          { title: "Compte salarié secteur Public ou Privé", route: "/service/compte-cheque-salaire-pension" },
+                          { title: "Compte pensionné secteur Public ou Privé", route: "/service/compte-pensionne" },
+                        ],
+                        "ORA": [
+                          { title: "ORA Foncier", route: "/service/ora-foncier" },
+                          { title: "ORA Investissement", route: "/service/ora-investissement" },
+                          { title: "ORA Prévoyance", route: "/service/ora-prevoyance" },
+                          { title: "ORA Scolaire", route: "/service/ora-scolaire" },
+                          { title: "ORA Académique", route: "/service/ora-academique" },
+                          { title: "ORA Équipement", route: "/service/ora-equipement" },
+                          { title: "ORA Islamique", route: "/service/ora-islamique" },
+                          { title: "ORA Santé", route: "/service/ora-sante" },
+                        ],
+                        "Autres Services": [
+                          { title: "MASO", route: "/maso" },
+                          { title: "SPMC", route: "/service/spmc" },
+                          { title: "Bicard", route: "/service/bicard" },
+                        ],
+                      }).map(([category, services]) => (
+                        <div key={category} className="mb-3">
+                          <div className="text-sm font-semibold text-gray-600 mb-1">
+                            {category}
+                          </div>
+                          {services.map((service) => (
+                            <Link
+                              key={service.title}
+                              to={service.route}
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="block text-sm text-gray-500 hover:text-foundation-bluenormal py-1 transition-colors duration-150"
+                            >
+                              {service.title}
+                            </Link>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    key={index}
+                    to={item.path}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`block w-full text-left px-3 py-2 text-base font-medium rounded-md transition-colors duration-200 ${
+                      isActivePath(item.path)
+                        ? "text-foundation-bluenormal bg-white/20"
+                        : "text-black hover:bg-white/20"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                )
               ))}
               <div className="pt-4 border-t border-foundation-greydarker/10">
                 <Button
