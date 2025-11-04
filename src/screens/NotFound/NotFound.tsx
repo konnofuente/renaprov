@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { SEO } from "../../components/SEO";
-import { FooterSubsection } from "../Accueil/sections/FooterSubsection";
 import { Button } from "../../components/ui/button";
 
 export const NotFound = (): JSX.Element => {
@@ -63,8 +62,6 @@ export const NotFound = (): JSX.Element => {
             </div>
           </div>
         </div>
-        
-        <FooterSubsection />
       </main>
     </>
   );
