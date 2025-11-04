@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { SEO } from "../../components/SEO";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { CheckCircle, ArrowRight, Phone, Mail, Globe, PiggyBank, TrendingUp } from "lucide-react";
+import { AccountCreationForm } from "../../components/AccountCreationForm";
 
 export const CompteEpargneIndividuel: React.FC = () => {
+  const [isAccountFormOpen, setIsAccountFormOpen] = useState(false);
   const features = [
     {
       icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
@@ -68,6 +70,7 @@ export const CompteEpargneIndividuel: React.FC = () => {
                 <Button 
                   size="lg" 
                   className="bg-white text-foundation-bluenormal hover:bg-gray-100"
+                  onClick={() => setIsAccountFormOpen(true)}
                 >
                   Ouvrir un compte
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -282,6 +285,7 @@ export const CompteEpargneIndividuel: React.FC = () => {
               <Button 
                 size="lg" 
                 className="bg-white text-foundation-bluenormal hover:bg-gray-100"
+                onClick={() => setIsAccountFormOpen(true)}
               >
                 Ouvrir un compte épargne
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -339,6 +343,12 @@ export const CompteEpargneIndividuel: React.FC = () => {
           </div>
         </section>
       </motion.main>
+      
+      {/* Account Creation Form Modal */}
+      <AccountCreationForm 
+        isOpen={isAccountFormOpen} 
+        onClose={() => setIsAccountFormOpen(false)} 
+      />
     </>
   );
 };
