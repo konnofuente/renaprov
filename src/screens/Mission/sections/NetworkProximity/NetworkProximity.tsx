@@ -49,11 +49,7 @@ const ContentSection: React.FC = () => {
 
       <div className="flex flex-col gap-6">
         <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-foundationgreynormal">
-          Renaprov a construit au fil des années un maillage solide
-          d&apos;agences implantées dans les marchés et quartiers stratégiques.
-          Cette proximité nous permet d&apos;accompagner efficacement nos
-          clients au quotidien, tandis que nos filiales renforcent notre mission
-          et diversifient nos services.
+        Depuis sa création, RENAPROV a su tisser un réseau dense et stratégique ; avec les agences, implantées au cœur des marchés et quartiers. Cette proximité avec nos clients nous permet de répondre rapidement à leurs besoins et de les accompagner efficacement dans leurs projets financiers au quotidien.  
         </p>
       </div>
     </div>
