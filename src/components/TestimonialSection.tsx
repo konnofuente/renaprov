@@ -13,7 +13,7 @@ const testimonials = [
     role: "Commerçante",
     company: "CEO de Shop and more",
     quote:
-      "Grâce à RENAPROV, j'ai pu lancer ma boutique à Bafoussam. Leur accompagnement m'a permis d'obtenir un crédit adapté et d'apprendre à bien gérer mon activité.",
+      "Grâce à MASO, j'ai pu lancer ma boutique à Bafoussam. Leur accompagnement m'a permis d'obtenir un crédit adapté et d'apprendre à bien gérer mon activité.",
     image: "/hero1.png",
   },
   {
@@ -21,7 +21,7 @@ const testimonials = [
     role: "Entrepreneur",
     company: "Fondateur de TechStart",
     quote:
-      "RENAPROV m'a accompagné dans le développement de mon entreprise. Leur expertise et leur proximité ont été essentielles pour la réussite de mes projets.",
+      "MASO m'a accompagné dans le développement de mon entreprise. Leur expertise et leur proximité ont été essentielles pour la réussite de mes projets.",
     image: "/hero1.png",
   },
   {
@@ -29,7 +29,7 @@ const testimonials = [
     role: "Agricultrice",
     company: "Coopérative Agricole",
     quote:
-      "Avec le soutien de RENAPROV, j'ai pu moderniser mon exploitation agricole et augmenter mes revenus. Un vrai partenaire de confiance.",
+      "Avec le soutien de MASO, j'ai pu moderniser mon exploitation agricole et augmenter mes revenus. Un vrai partenaire de confiance.",
     image: "/hero1.png",
   },
 ];
@@ -124,7 +124,7 @@ export const TestimonialSection = (): JSX.Element => {
               />
 
               {/* Quote Text */}
-              <p className="[font-family:'Roboto',Helvetica] font-normal text-white !text-white text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed mb-6 sm:mb-8">
+              <p className="[font-family:'Roboto',Helvetica] font-normal !text-white text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed mb-6 sm:mb-8">
                 {currentTestimonial.quote}
               </p>
 

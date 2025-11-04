@@ -30,10 +30,10 @@ export const CompteChequeSalairePension: React.FC = () => {
   ];
 
   const benefits = [
-    "Compte spécialement conçu pour les salariés et pensionnés",
+    "Compte spécialement conçu pour les salariés ",
     "Accès à des avantages exclusifs et des services privilégiés",
     "Gestion simplifiée de vos revenus réguliers",
-    "Support client dédié pour les employés et retraités"
+    "Support client dédié pour les employés "
   ];
 
   return (
@@ -60,10 +60,10 @@ export const CompteChequeSalairePension: React.FC = () => {
                 transition={{ duration: 0.8 }}
               >
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-                  Compte Chèque Salaire/Pension
+                  Compte Chèque Salaire
                 </h1>
                 <p className="text-xl lg:text-2xl mb-8 text-blue-100">
-                  Compte spécialement conçu pour les salariés et pensionnés avec des avantages exclusifs
+                  Compte spécialement conçu pour les salariés avec des avantages exclusifs
                 </p>
                 <Button 
                   size="lg" 
@@ -110,7 +110,7 @@ export const CompteChequeSalairePension: React.FC = () => {
                 Fonctionnalités Principales
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Le compte chèque salaire/pension permet aux salariés et pensionnés de bénéficier de services bancaires adaptés à leurs besoins spécifiques.
+                Le compte chèque salaire permet aux salariés de bénéficier de services bancaires adaptés à leurs besoins spécifiques.
               </p>
             </motion.div>
 
@@ -158,7 +158,7 @@ export const CompteChequeSalairePension: React.FC = () => {
                   Avantages Exclusifs
                 </h2>
                 <p className="text-lg text-gray-600 mb-8">
-                  En tant que salarié ou pensionné, vous bénéficiez d'avantages spéciaux et de conditions préférentielles avec RENAPROV.
+                  En tant que salarié , vous bénéficiez d'avantages spéciaux et de conditions préférentielles avec RENAPROV.
                 </p>
                 <ul className="space-y-4">
                   {benefits.map((benefit, index) => (
@@ -212,7 +212,7 @@ export const CompteChequeSalairePension: React.FC = () => {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="flex items-center justify-center flex-col">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -232,24 +232,6 @@ export const CompteChequeSalairePension: React.FC = () => {
                 </Card>
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-              >
-                <Card className="h-full border-2 border-foundation-bluenormal">
-                  <CardContent className="p-8 text-center">
-                    <div className="bg-foundation-bluenormal w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <CreditCard className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">Pensionnés</h3>
-                    <p className="text-gray-600">
-                      Retraités bénéficiant d'une pension de retraite régulière
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
             </div>
           </div>
         </section>
@@ -267,7 +249,7 @@ export const CompteChequeSalairePension: React.FC = () => {
                 Prêt à Ouvrir Votre Compte ?
               </h2>
               <p className="text-xl mb-8 text-blue-100">
-                Rejoignez des milliers de salariés et pensionnés qui font confiance à RENAPROV.
+                Rejoignez des milliers de salariés  qui font confiance à RENAPROV.
               </p>
               <Button 
                 size="lg" 

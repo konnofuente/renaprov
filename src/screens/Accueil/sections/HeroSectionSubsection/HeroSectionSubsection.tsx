@@ -177,7 +177,7 @@ export const HeroSectionSubsection: React.FC<HeroSectionSubsectionProps> = ({ on
     {
       title: "Rejoignez notre réseau d'agences partout au Cameroun",
       subtitle: "Plus de 30 agences pour vous accompagner dans vos projets financiers.",
-      cta: "Trouver une agence",
+      cta: "Trouvez une agence",
       action: () => {
         const element = document.querySelector("#agences");
         if (element) element.scrollIntoView({ behavior: "smooth" });

@@ -157,59 +157,6 @@ export const DirigeantsSection = (): JSX.Element => {
           ))}
         </div>
 
-        {/* Leadership Philosophy Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="bg-gradient-to-br from-foundation-bluenormal to-foundation-bluedarker rounded-2xl p-8 sm:p-12 md:p-16"
-        >
-          <div className="text-center mb-12">
-            <h3 className="[font-family:'Bricolage_Grotesque',Helvetica] font-bold text-white text-2xl sm:text-3xl md:text-4xl mb-4">
-              Notre philosophie de leadership
-            </h3>
-            <p className="[font-family:'Roboto',Helvetica] font-normal text-white/90 text-lg sm:text-xl max-w-3xl mx-auto">
-              Une équipe dirigeante unie par des valeurs communes et une vision partagée
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Crown className="w-8 h-8 text-white" />
-              </div>
-              <h4 className="[font-family:'Bricolage_Grotesque',Helvetica] font-bold text-white text-xl mb-2">
-                Vision
-              </h4>
-              <p className="[font-family:'Roboto',Helvetica] font-normal text-white/80 text-sm sm:text-base">
-                Promouvoir l'économie solidaire et sortir les Camerounais du cercle vicieux de la pauvreté
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-white" />
-              </div>
-              <h4 className="[font-family:'Bricolage_Grotesque',Helvetica] font-bold text-white text-xl mb-2">
-                Mission
-              </h4>
-              <p className="[font-family:'Roboto',Helvetica] font-normal text-white/80 text-sm sm:text-base">
-                Accompagner chaque client dans la réalisation de ses projets avec proximité et excellence
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Award className="w-8 h-8 text-white" />
-              </div>
-              <h4 className="[font-family:'Bricolage_Grotesque',Helvetica] font-bold text-white text-xl mb-2">
-                Valeurs
-              </h4>
-              <p className="[font-family:'Roboto',Helvetica] font-normal text-white/80 text-sm sm:text-base">
-                Intégrité, solidarité, innovation et engagement envers la communauté camerounaise
-              </p>
-            </div>
-          </div>
-        </motion.div>
 
         {/* Team Stats */}
         <motion.div

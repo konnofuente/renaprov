@@ -419,7 +419,7 @@ export const OurAgencySubsection = (): JSX.Element => {
       {/* Titre de la section */}
       <div className="flex flex-col items-center text-center mb-4">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
-          <div className="text-black">Trouver une agence</div>
+          <div className="text-black">Trouvez une agence</div>
           <div className="bg-[linear-gradient(148deg,rgba(0,172,238,1)_0%,rgba(1,27,38,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent]">
             RENAPROV FINANCE SA
           </div>

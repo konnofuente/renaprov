@@ -17,12 +17,13 @@ export const HeroSection = (): JSX.Element => {
         <div className="flex flex-col flex-1 max-w-none xl:max-w-[526px] items-start gap-4 sm:gap-[15px] order-2 xl:order-1">
           <div className="flex flex-col items-start gap-6 sm:gap-8 lg:gap-[34px] w-full">
             <h1 className="[font-family:'Bricolage_Grotesque',Helvetica] font-bold text-foundation-bluenormal text-3xl sm:text-4xl md:text-5xl lg:text-[59px] tracking-[0] leading-tight lg:leading-[70.8px]">
-              La microfinance au service du développement
+             
+            La microfinance au service des populations
+
             </h1>
 
             <p className="[font-family:'Bricolage_Grotesque',Helvetica] font-medium text-foundationgreylight-active text-sm sm:text-base lg:text-[17px] tracking-[0] leading-[1.35] lg:leading-[20.4px]">
-              Depuis plus de 30 ans, RENAPROV FINANCE SA accompagne les
-              Camerounais dans leurs projets personnels et professionnels.
+            Depuis 1996, RENAPROV FINANCE SA accompagne les Camerounais dans leurs projets personnels et professionnels.
             </p>
           </div>
 

@@ -53,7 +53,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({
 
 // Composant modulaire pour les informations de contact
 interface ContactInfoProps {
-  location: string;
+  location?: string;
   phone: string;
 }
 
@@ -61,12 +61,19 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ location, phone }) => {
   return (
     <div className="flex flex-row items-center gap-2 sm:gap-4 md:gap-6 mb-6 overflow-x-auto scrollbar-hide">
       <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
-        <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-foundation-bluenormal flex-shrink-0" />
-        <span
-          className={`text-xs sm:text-sm md:text-base  text-foundationbluelight whitespace-nowrap`}
-        >
-          {location}
-        </span>
+        {location &&
+         (
+          <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
+            <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-foundation-bluenormal flex-shrink-0" />
+          <span
+            className={`text-xs sm:text-sm md:text-base  text-foundationbluelight whitespace-nowrap`}
+          >
+            {location}
+          </span>
+          </div>
+        )
+        }
+        
       </div>
       <div className="flex items-center gap-1 sm:gap-2 border-b border-foundation-bluenormal-light pb-1 flex-shrink-0">
         <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-foundation-bluenormal flex-shrink-0" />
@@ -120,10 +127,18 @@ export const ORASection = (): JSX.Element => {
           {/* Contenu principal */}
           <div className="flex flex-col order-2 lg:order-1">
             <header className="flex flex-col gap-6 md:gap-8">
+              <div className="flex gap-2 flex-wrap">
               <ContactInfo
-                location="Quartier X, Ville Y"
-                phone="+237 XXX XXX XXX"
+                phone="+237 691 738 357"
               />
+              <ContactInfo
+                phone="+237 671 157 321"
+              />
+              <ContactInfo
+                phone="+237  620 377 481"
+              />
+
+              </div>
 
               <h2
                 className={`text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold leading-tight text-grayswhite`}

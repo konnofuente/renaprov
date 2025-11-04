@@ -54,7 +54,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({
 
 // Composant modulaire pour les informations de contact
 interface ContactInfoProps {
-  location: string;
+  location?: string;
   phone: string;
 }
 
@@ -62,12 +62,18 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ location, phone }) => {
   return (
     <div className="flex flex-row items-center gap-3 sm:gap-6 mb-6 overflow-hidden">
       <div className="flex items-center gap-2 flex-shrink-0">
-        <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-foundation-bluenormal flex-shrink-0" />
-        <span
-          className={`${designTokens.typography.caption} text-foundationbluelight whitespace-nowrap`}
-        >
-          {location}
-        </span>
+        {
+          location && (
+            <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
+              <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-foundation-bluenormal flex-shrink-0" />
+              <span
+                className={`${designTokens.typography.caption} text-foundationbluelight whitespace-nowrap`}
+              >
+                {location}
+              </span>
+            </div>
+          )
+        }
       </div>
       <div className="flex items-center gap-2 border-b border-foundationbluelight pb-1 flex-shrink-0">
         <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-foundation-bluenormal flex-shrink-0" />
@@ -88,10 +94,15 @@ export const HospitalLaMamuSection = (): JSX.Element => {
         {/* Contenu principal */}
         <div className="w-full lg:max-w-[600px] space-y-6 sm:space-y-8 lg:space-y-[45px] order-2 lg:order-1">
           <header className=" space-y-[17px] ">
-            <div>
+            <div className="flex gap-2 flex-wrap">
               <ContactInfo
-                location="Quartier X, Ville Y"
-                phone="+237 XXX XXX XXX"
+                phone="+237 6 55 01 18 49"
+              />
+              <ContactInfo
+                phone="+237 6 55 00 94 83"
+              />
+              <ContactInfo
+                phone=" +237 6 90 22 88 90"
               />
             </div>
 

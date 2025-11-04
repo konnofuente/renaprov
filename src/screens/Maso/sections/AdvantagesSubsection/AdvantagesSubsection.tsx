@@ -7,7 +7,7 @@ const masoAdvantagesData = [
     title: "-35% sur les frais de soins hospitaliers à la Mamu",
     description:
       "Effectuez vos dépôts et retraits quand vous le souhaitez, sans contraintes, pour un contrôle total de vos finances.",
-    imageSrc: "/reduire les frais de soit hospitalier a la Mamu.png",
+    imageSrc: "/image-3-1.png",
     imageAlt: "Réduction frais hospitaliers MASO",
   },
   {
@@ -15,7 +15,7 @@ const masoAdvantagesData = [
     title: "Réduisez vos frais d'études et investissez dans votre avenir",
     description:
       "Grâce au partenariat entre RENAPROV et l'IUB, les membres MASO bénéficient de -20% sur les frais universitaires.",
-    imageSrc: "/Réduisez vos frais détudes et investissez dans votre avenir.png",
+    imageSrc: "/image-3.png",
     imageAlt: "Réduction frais universitaires MASO",
   },
   {

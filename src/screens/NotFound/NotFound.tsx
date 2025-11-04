@@ -1,8 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { SEO } from "../../components/SEO";
-import { HeaderSubsection } from "../Accueil/sections/HeaderSubsection";
-import { FooterSubsection } from "../Accueil/sections/FooterSubsection";
 import { Button } from "../../components/ui/button";
 
 export const NotFound = (): JSX.Element => {
@@ -14,7 +11,7 @@ export const NotFound = (): JSX.Element => {
         keywords="404, page non trouvée, erreur, RENAPROV"
       />
       <main className="flex flex-col w-full bg-[#ffffff] min-h-screen">
-        <HeaderSubsection />
+        
         
         <div className="flex-1 flex flex-col items-center justify-center px-6 py-16 sm:py-20 md:py-24 lg:py-32">
           <div className="text-center max-w-2xl mx-auto">
@@ -65,8 +62,6 @@ export const NotFound = (): JSX.Element => {
             </div>
           </div>
         </div>
-        
-        <FooterSubsection />
       </main>
     </>
   );

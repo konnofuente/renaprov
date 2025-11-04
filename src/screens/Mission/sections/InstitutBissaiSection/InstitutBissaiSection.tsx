@@ -53,20 +53,24 @@ const ActionButton: React.FC<ActionButtonProps> = ({
 
 // Composant modulaire pour les informations de contact
 interface ContactInfoProps {
-  location: string;
+  location?: string;
   phone: string;
 }
 
 const ContactInfo: React.FC<ContactInfoProps> = ({ location, phone }) => {
   return (
-    <div className="flex flex-row items-center gap-2 sm:gap-4 md:gap-6 mb-6 overflow-x-auto scrollbar-hide">
+    <div className="flex flex-row flex-wrap items-center gap-2 sm:gap-4 md:gap-6 mb-6">
       <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
-        <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-foundation-bluenormal flex-shrink-0" />
-        <span
-          className={`text-xs sm:text-sm md:text-base text-foundation-bluedark-hover whitespace-nowrap`}
-        >
-          {location}
-        </span>
+        {location && (
+          <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
+            <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-foundation-bluenormal flex-shrink-0" />
+            <span
+              className={`text-xs sm:text-sm md:text-base text-foundation-bluedark-hover`}
+            >
+              {location}
+            </span>
+          </div>
+        )}
       </div>
       <div className="flex items-center gap-1 sm:gap-2 border-b border-foundation-bluedark-hover pb-1 flex-shrink-0">
         <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-foundation-bluenormal flex-shrink-0" />
@@ -110,8 +114,8 @@ export const InstitutBissaiSection = (): JSX.Element => {
             {/* Contact Info - en haut mais plus compact */}
             <div className="mb-4">
               <ContactInfo
-                location="Quartier X, Ville Y"
-                phone="+237 XXX XXX XXX"
+                location="Ekounou Deux Cheveaux, Yaoundé • Socagi 13809, Yaoundé, Cameroon 237"
+                phone="+237 690 20 37 08"
               />
             </div>
 
