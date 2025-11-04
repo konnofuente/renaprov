@@ -235,7 +235,7 @@ export const BranchLocator = (): JSX.Element => {
     <section className="flex flex-col items-center gap-[38px] px-[79px] py-[60px] bg-foundationbluelight">
       <div className="flex flex-col items-center w-full max-w-[1280px]">
         <h2 className="[font-family:'Bricolage_Grotesque',Helvetica] font-bold text-black text-5xl text-center tracking-[-0.96px] leading-[56.6px]">
-          Trouver une agence
+          Trouvez une agence
           <br />
           RENAPROV FINANCE SA
         </h2>

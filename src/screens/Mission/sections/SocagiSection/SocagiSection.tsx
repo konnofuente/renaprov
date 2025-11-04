@@ -30,7 +30,7 @@ export const SocagiSection = (): JSX.Element => {
               <div className="flex items-center gap-1 sm:gap-2 border-b border-foundation-bluedark-hover pb-1 flex-shrink-0">
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-foundation-bluenormal flex-shrink-0" />
                 <span className="text-xs sm:text-sm md:text-base text-foundation-bluedark-hover whitespace-nowrap">
-                  +237 XXX XXX XXX
+                +237 693930231
                 </span>
               </div>
             </div>

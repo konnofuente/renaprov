@@ -1,7 +1,6 @@
 import { SEO } from "../../components/SEO";
 import { CallToActionSubsection } from "../Accueil/sections/CallToActionSubsection";
 import { HeroSection } from "./sections/HeroSection";
-import { EditorialSection } from "./sections/EditorialSection";
 import { FlashNewsSection } from "./sections/FlashNewsSection";
 import { AgencesSection } from "./sections/AgencesSection";
 import { FilialesSection } from "./sections/FilialesSection";
@@ -18,7 +17,6 @@ export const Renews = (): JSX.Element => {
       />
       <main className="flex flex-col w-full bg-[#ffffff]">
         <HeroSection />
-        <EditorialSection />
         <FlashNewsSection />
         <AgencesSection />
         <FilialesSection />

@@ -113,15 +113,6 @@ export const Footer: React.FC = () => {
               <div className="w-fit font-text-small-normal font-[number:var(--text-small-normal-font-weight)] text-foundation-bluelight-active text-xs sm:text-[length:var(--text-small-normal-font-size)] tracking-[var(--text-small-normal-letter-spacing)] leading-[var(--text-small-normal-line-height)] [font-style:var(--text-small-normal-font-style)]">
                 Copyright © 2025 RENAPROV All rights reserved.
               </div>
-
-              <a
-                href="https://camairetech.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-fit font-text-small-link font-[number:var(--text-small-link-font-weight)] text-foundation-bluelight-active text-xs sm:text-[length:var(--text-small-link-font-size)] tracking-[var(--text-small-link-letter-spacing)] leading-[var(--text-small-link-line-height)] underline [font-style:var(--text-small-link-font-style)] hover:text-blue-300 transition-colors duration-200"
-              >
-                Design by CamaireTech
-              </a>
             </div>
 
             <div className="inline-flex items-start gap-3">

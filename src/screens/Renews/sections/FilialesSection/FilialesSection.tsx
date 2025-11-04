@@ -21,7 +21,7 @@ const filiales = [
     name: "ROYAL FM",
     tagline: "C'est notre radio, c'est votre radio, c'est La radio des auditeurs !",
     icon: Radio,
-    image: "/logo Royal FMRoyal FM.png",
+    image: "/royal.jpg",
     description: "ROYAL FM 88.4 est la voix du Groupe RENAPROV, diffusant des programmes de qualité qui informent, éduquent et divertissent les auditeurs camerounais.",
     services: [
       "Programmes d'information et d'actualité",
