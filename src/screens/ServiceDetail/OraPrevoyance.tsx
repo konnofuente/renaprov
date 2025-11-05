@@ -40,7 +40,7 @@ export const OraPrevoyance: React.FC = () => {
     {
       step: "1",
       title: "Souscription",
-      description: "Souscrivez au plan ORA Prévoyance et ouvrez votre compte épargne dédié."
+      description: "Souscrivez  au plan ORA Prévoyance et ouvrez votre compte épargne dédié."
     },
     {
       step: "2",
