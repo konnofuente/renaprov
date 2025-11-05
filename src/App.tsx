@@ -17,6 +17,15 @@ import { CompteCourantEntreprise } from "./screens/ServiceDetail/CompteCourantEn
 import { CompteCourantAssociation } from "./screens/ServiceDetail/CompteCourantAssociation";
 import { CompteEpargneEntreprise } from "./screens/ServiceDetail/CompteEpargneEntreprise";
 import { ComptePensionne } from "./screens/ServiceDetail/ComptePensionne";
+import { OraFoncier } from "./screens/ServiceDetail/OraFoncier";
+import { OraInvestissement } from "./screens/ServiceDetail/OraInvestissement";
+import { OraAcademique } from "./screens/ServiceDetail/OraAcademique";
+import { OraScolaire } from "./screens/ServiceDetail/OraScolaire";
+import { OraPrevoyance } from "./screens/ServiceDetail/OraPrevoyance";
+import { OraEquipement } from "./screens/ServiceDetail/OraEquipement";
+import { OraIslamique } from "./screens/ServiceDetail/OraIslamique";
+import { OraSante } from "./screens/ServiceDetail/OraSante";
+import { Spmc } from "./screens/ServiceDetail/Spmc";
 import { NotFound } from "./screens/NotFound";
 import { HeaderSubsection } from "./screens/Accueil/sections/HeaderSubsection";
 import { Footer } from "./components/Footer";
@@ -47,6 +56,15 @@ export const App: React.FC = () => {
         <Route path="/service/compte-courant-association" element={<CompteCourantAssociation />} />
         <Route path="/service/compte-epargne-entreprise" element={<CompteEpargneEntreprise />} />
         <Route path="/service/compte-pensionne" element={<ComptePensionne />} />
+        <Route path="/service/ora-foncier" element={<OraFoncier />} />
+        <Route path="/service/ora-investissement" element={<OraInvestissement />} />
+        <Route path="/service/ora-academique" element={<OraAcademique />} />
+        <Route path="/service/ora-scolaire" element={<OraScolaire />} />
+        <Route path="/service/ora-prevoyance" element={<OraPrevoyance />} />
+        <Route path="/service/ora-equipement" element={<OraEquipement />} />
+        <Route path="/service/ora-islamique" element={<OraIslamique />} />
+        <Route path="/service/ora-sante" element={<OraSante />} />
+        <Route path="/service/spmc" element={<Spmc />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
