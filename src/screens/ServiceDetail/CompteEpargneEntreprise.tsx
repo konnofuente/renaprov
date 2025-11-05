@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { SEO } from "../../components/SEO";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
-import { CheckCircle, ArrowRight, Phone, Mail, Globe, Building, TrendingUp, PiggyBank } from "lucide-react";
+import { CheckCircle, ArrowRight, Phone, Mail, Globe, Building } from "lucide-react";
 
 export const CompteEpargneEntreprise: React.FC = () => {
   const features = [
