@@ -3,45 +3,68 @@ import { motion } from "framer-motion";
 import { SEO } from "../../components/SEO";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
-import { CheckCircle, ArrowRight, Phone, Mail, Globe, Users } from "lucide-react";
+import { CheckCircle, ArrowRight, Phone, Mail, Globe, School, BookOpen, Calendar, PiggyBank, Users } from "lucide-react";
 
-export const CompteChequeSalairePension: React.FC = () => {
+export const OraScolaire: React.FC = () => {
   const features = [
     {
-      icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
-      title: "Virements inter-institutions",
-      description: "Émettez et recevez des virements d'autres institutions financières en toute sécurité."
+      icon: <PiggyBank className="w-6 h-6 text-foundation-bluenormal" />,
+      title: "Épargne flexible dès 350 FCFA",
+      description: "Constituer votre fonds scolaire en épargnant à partir de 350 FCFA selon vos capacités."
     },
     {
-      icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
-      title: "Dépôt de chèques",
-      description: "Déposez vos chèques pour encaissement et/ou pour escompte avec facilité."
+      icon: <BookOpen className="w-6 h-6 text-foundation-bluenormal" />,
+      title: "Préparation sereine de la rentrée",
+      description: "Préparez sereinement la rentrée scolaire en épargnant progressivement."
     },
     {
-      icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
-      title: "Retraits sur chèque",
-      description: "Effectuez vos opérations de retrait sur chèque selon vos besoins."
+      icon: <School className="w-6 h-6 text-foundation-bluenormal" />,
+      title: "Couverture des frais scolaires",
+      description: "Assurez la couverture des frais de scolarité et du matériel scolaire pour vos enfants."
     },
     {
-      icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
-      title: "Découverts et facilités",
-      description: "Bénéficiez des découverts et facilités de caisses pour gérer vos finances."
+      icon: <Users className="w-6 h-6 text-foundation-bluenormal" />,
+      title: "Accompagnement scolaire",
+      description: "Bénéficiez d'un accompagnement pour la préparation de la rentrée scolaire."
     }
   ];
 
   const benefits = [
-    "Compte spécialement conçu pour les salariés ",
-    "Accès à des avantages exclusifs et des services privilégiés",
-    "Gestion simplifiée de vos revenus réguliers",
-    "Support client dédié pour les employés "
+    "Frais de scolarité et matériel assurés",
+    "Tranquillité d'esprit pour les parents",
+    "Épargne accessible et progressive",
+    "Préparation de la rentrée en toute sérénité"
+  ];
+
+  const acquisitionSteps = [
+    {
+      step: "1",
+      title: "Souscription",
+      description: "Souscrivez au plan ORA Scolaire et ouvrez votre compte épargne dédié."
+    },
+    {
+      step: "2",
+      title: "Épargne régulière",
+      description: "Constituer votre fonds en épargnant régulièrement à partir de 350 FCFA."
+    },
+    {
+      step: "3",
+      title: "Utilisation des fonds",
+      description: "Utilisez votre fonds constitué pour couvrir les frais de scolarité et le matériel scolaire."
+    },
+    {
+      step: "4",
+      title: "Rentrée scolaire",
+      description: "Assurez la rentrée scolaire de vos enfants en toute sérénité avec votre fonds."
+    }
   ];
 
   return (
     <>
       <SEO
-        title="Compte Chèque Salaire/Pension - RENAPROV FINANCE SA"
-        description="Compte spécialement conçu pour les salariés et pensionnés. Virements, dépôts de chèques, retraits et découverts avec des avantages exclusifs."
-        keywords="compte salaire, compte pension, salarié, pensionné, RENAPROV, microfinance, Cameroun, virements, chèques"
+        title="ORA Scolaire - RENAPROV FINANCE SA"
+        description="Plan d'épargne permettant de constituer un fond à partir de 350 FCFA dans le but de solutionner les problèmes liés à la rentrée scolaire avec ORA Scolaire."
+        keywords="ORA Scolaire, épargne scolaire, rentrée scolaire, frais de scolarité, RENAPROV, microfinance, Cameroun, matériel scolaire"
       />
       
       <motion.main
@@ -60,16 +83,25 @@ export const CompteChequeSalairePension: React.FC = () => {
                 transition={{ duration: 0.8 }}
               >
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-                  Compte Chèque Salaire
+                  ORA Scolaire
                 </h1>
-                <p className="text-xl lg:text-2xl mb-8 text-blue-100">
-                  Compte spécialement conçu pour les salariés avec des avantages exclusifs
+                <p className="text-xl lg:text-2xl mb-4 text-blue-100 font-semibold">
+                  Préparez la rentrée scolaire en toute sérénité
+                </p>
+                <p className="text-lg lg:text-xl mb-4 text-blue-100">
+                  Épargnez à partir de
+                </p>
+                <p className="text-2xl lg:text-3xl font-bold mb-4 text-yellow-300">
+                  350 FCFA minimum
+                </p>
+                <p className="text-lg lg:text-xl mb-8 text-blue-100">
+                  Plan d'épargne permettant de constituer un fond à partir de 350 FCFA dans le but de solutionner les problèmes liés à la rentrée scolaire.
                 </p>
                 <Button 
                   size="lg" 
                   className="bg-white text-foundation-bluenormal hover:bg-gray-100"
                 >
-                  Ouvrir un compte
+                  Souscrire à ORA Scolaire
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </motion.div>
@@ -81,14 +113,14 @@ export const CompteChequeSalairePension: React.FC = () => {
                 className="relative"
               >
                 <img
-                  src="/service/compte salaire.jpg"
-                  alt="Compte Chèque Salaire/Pension RENAPROV"
+                  src="/service/ORA School.jpeg"
+                  alt="ORA Scolaire RENAPROV"
                   className="w-full h-auto rounded-lg shadow-2xl"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg">
                   <div className="flex items-center space-x-2">
-                    <Users className="w-5 h-5 text-foundation-bluenormal" />
-                    <span className="text-sm font-medium text-gray-700">Pour salariés & pensionnés</span>
+                    <School className="w-5 h-5 text-blue-500" />
+                    <span className="text-sm font-medium text-gray-700">Rentrée scolaire</span>
                   </div>
                 </div>
               </motion.div>
@@ -110,7 +142,7 @@ export const CompteChequeSalairePension: React.FC = () => {
                 Fonctionnalités Principales
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Le compte chèque salaire permet aux salariés de bénéficier de services bancaires adaptés à leurs besoins spécifiques.
+                ORA Scolaire vous permet de constituer un fonds pour solutionner les problèmes liés à la rentrée scolaire.
               </p>
             </motion.div>
 
@@ -155,10 +187,10 @@ export const CompteChequeSalairePension: React.FC = () => {
                 transition={{ duration: 0.8 }}
               >
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                  Avantages Exclusifs
+                  Pourquoi Choisir ORA Scolaire ?
                 </h2>
                 <p className="text-lg text-gray-600 mb-8">
-                  En tant que salarié , vous bénéficiez d'avantages spéciaux et de conditions préférentielles avec RENAPROV.
+                  Avec ORA Scolaire, préparez sereinement la rentrée scolaire de vos enfants en épargnant progressivement à partir de 350 FCFA.
                 </p>
                 <ul className="space-y-4">
                   {benefits.map((benefit, index) => (
@@ -185,8 +217,8 @@ export const CompteChequeSalairePension: React.FC = () => {
                 className="relative"
               >
                 <img
-                  src="/service/compte salaire.jpg"
-                  alt="Avantages du compte salaire/pension RENAPROV"
+                  src="/service/ORA School.jpeg"
+                  alt="Avantages ORA Scolaire RENAPROV"
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
               </motion.div>
@@ -194,7 +226,7 @@ export const CompteChequeSalairePension: React.FC = () => {
           </div>
         </section>
 
-        {/* Eligibility Section */}
+        {/* Processus d'Acquisition Section */}
         <section className="py-16 lg:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
             <motion.div
@@ -205,33 +237,37 @@ export const CompteChequeSalairePension: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                Qui Peut Ouvrir Ce Compte ?
+                Processus d'Acquisition
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Ce compte est spécialement conçu pour les personnes ayant des revenus réguliers.
+                Découvrez les étapes simples pour préparer la rentrée scolaire avec ORA Scolaire.
               </p>
             </motion.div>
 
-            <div className="flex items-center justify-center flex-col">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                <Card className="h-full border-2 border-foundation-bluenormal">
-                  <CardContent className="p-8 text-center">
-                    <div className="bg-foundation-bluenormal w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <Users className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">Salariés</h3>
-                    <p className="text-gray-600">
-                      Employés du secteur public ou privé avec un contrat de travail en cours
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {acquisitionSteps.map((step, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                >
+                  <Card className="h-full border-2 border-foundation-bluenormal hover:shadow-lg transition-shadow duration-300">
+                    <CardContent className="p-6">
+                      <div className="text-center">
+                        <div className="bg-foundation-bluenormal w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                          <span className="text-2xl font-bold text-white">{step.step}</span>
+                        </div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
+                        <p className="text-gray-600 text-sm">
+                          {step.description}
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -246,16 +282,16 @@ export const CompteChequeSalairePension: React.FC = () => {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                Prêt à Ouvrir Votre Compte ?
+                Préparez la Rentrée Scolaire de Vos Enfants Aujourd'hui
               </h2>
               <p className="text-xl mb-8 text-blue-100">
-                Rejoignez des milliers de salariés  qui font confiance à RENAPROV.
+                Rejoignez des milliers de parents qui préparent sereinement la rentrée scolaire avec ORA Scolaire.
               </p>
               <Button 
                 size="lg" 
                 className="bg-white text-foundation-bluenormal hover:bg-gray-100"
               >
-                Ouvrir un compte maintenant
+                Souscrire à ORA Scolaire
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </motion.div>
@@ -314,3 +350,4 @@ export const CompteChequeSalairePension: React.FC = () => {
     </>
   );
 };
+

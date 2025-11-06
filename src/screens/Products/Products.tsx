@@ -9,14 +9,105 @@ import { ProductFilter } from "./components/ProductFilter";
 import { productCategories, Product, ProductFilter as FilterType, filterProductsByType } from "./data/productsData";
 import { TestimonialSection } from "../../components/TestimonialSection";
 import { ConnexProductsSection } from "../../components/ConnexProductsSection";
+import { useNavigate } from "react-router-dom";
 
 export const Products = (): JSX.Element => {
   const [activeFilter, setActiveFilter] = useState<FilterType>('all');
+  const navigate = useNavigate(); // Navigation hook
+
+  const productShow = [
+    {
+      productName: 'Compte épargne individuel',
+      productLink: '/service/compte-epargne-individuel',
+    },
+    {
+      productName: 'Compte épargne personne morale',
+      productLink: '/service/compte-epargne-entreprise',
+    },
+    {
+      productName: 'Compte courant individuel',
+      productLink: '/service/compte-courant-individuel',
+    },
+    {
+      productName: 'Compte courant personne morale',
+      productLink: '/service/compte-courant-entreprise',
+    },
+    {
+      productName: 'Compte courant association',
+      productLink: '/service/compte-courant-association',
+    },
+    {
+      productName :'Compte salarié',
+      productLink: '/service/compte-cheque-salaire-pension',
+    },
+    {
+      productName: 'Compte privé',
+      productLink: '/service/compte-prive',
+    },
+    {
+      productName: 'Compte public',
+      productLink: '/service/compte-public',
+    },
+    {
+      productName: 'Compte pensionné',
+      productLink: '/service/compte-pensionne',
+    },
+    {
+      productName: 'SPMC',
+      productLink: '/service/spmc',
+    },
+    {
+      productName: 'Bicard',
+      productLink: '/service/bicard',
+    },
+    {
+      productName: 'ORA Foncier',
+      productLink: '/service/ora-foncier',
+    },
+    {
+      productName: 'ORA Investissement',
+      productLink: '/service/ora-investissement',
+    },
+    {
+      productName: 'ORA Prévoyance',
+      productLink: '/service/ora-prevoyance',
+    },
+    {
+      productName: 'ORA Scolaire',
+      productLink: '/service/ora-scolaire',
+    },
+    {
+      productName: 'ORA Académique',
+      productLink: '/service/ora-academique',
+    },
+    {
+      productName: 'ORA Équipement',
+      productLink: '/service/ora-equipement',
+    },
+    {
+      productName: 'ORA Islamique',
+      productLink: '/service/ora-islamique',
+    },
+    {
+      productName: 'ORA Santé',
+      productLink: '/service/ora-sante',
+    },
+    {
+      productName: 'MASO',
+      productLink: '/maso',
+    },
+  ]
 
   const handleProductClick = (product: Product) => {
     // Handle product click - could open modal, navigate to detail page, etc.
     console.log(`Clicked on product: ${product.name} (${product.brand})`);
-    // For now, just log. Later we can implement modal or navigation
+    const productLink = productShow.find((p) => p.productName === product.name)?.productLink;
+    if (productLink) {
+      navigate(productLink);
+    }
+    else{
+      alert('Produit non trouvé');
+    }
   };
 
   const handleFilterChange = (filter: FilterType) => {
@@ -62,7 +153,7 @@ export const Products = (): JSX.Element => {
                     title={category.title}
                     description={category.description}
                     products={category.products}
-                    onProductClick={handleProductClick}
+                    onProductClick={(product) => handleProductClick(product as any)}
                     productType={category.productType}
                     brand={category.brand}
                   />
@@ -77,7 +168,7 @@ export const Products = (): JSX.Element => {
                 title={category.title}
                 description={category.description}
                 products={category.products}
-                onProductClick={handleProductClick}
+                onProductClick={(product) => handleProductClick(product as any)}
                 productType={category.productType}
                 brand={category.brand}
               />

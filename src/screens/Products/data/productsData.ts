@@ -26,7 +26,7 @@ export const productCategories: ProductCategory[] = [
       {
         name: "Compte épargne individuel",
         description: "Épargnez pour vos projets personnels avec des taux attractifs et une gestion simplifiée.",
-        imageSrc: "/Un%20compte%20simple%20et%20sécurisé,%20accessible%20à%20tous.png",
+        imageSrc: "/service/Compte epargne individuel.jpg",
         imageAlt: "Compte épargne individuel RENAPROV",
         productType: 'renaprov',
         brand: 'RENAPROV'
@@ -34,7 +34,7 @@ export const productCategories: ProductCategory[] = [
       {
         name: "Compte épargne personne morale",
         description: "Épargne pour les entreprises et organisations avec des avantages dédiés.",
-        imageSrc: "/Faites%20grandir%20vos%20projets,%20nous%20finançons%20vos%20ambitions.png",
+        imageSrc: "/service/Compte epargne entreprise.jpg",
         imageAlt: "Compte épargne entreprise RENAPROV",
         productType: 'renaprov',
         brand: 'RENAPROV'
@@ -42,7 +42,7 @@ export const productCategories: ProductCategory[] = [
       {
         name: "Compte courant individuel",
         description: "Gérez vos finances quotidiennes en toute simplicité avec des services complets.",
-        imageSrc: "/Un%20compte%20simple%20et%20sécurisé,%20accessible%20à%20tous.png",
+        imageSrc: "/service/Compte courant individuel.jpg",
         imageAlt: "Compte courant individuel RENAPROV",
         productType: 'renaprov',
         brand: 'RENAPROV'
@@ -50,7 +50,7 @@ export const productCategories: ProductCategory[] = [
       {
         name: "Compte courant personne morale",
         description: "Compte professionnel pour entreprises avec des services bancaires complets.",
-        imageSrc: "/Faites%20grandir%20vos%20projets,%20nous%20finançons%20vos%20ambitions.png",
+        imageSrc: "/service/Compte courant entreprise.jpg",
         imageAlt: "Compte courant entreprise RENAPROV",
         productType: 'renaprov',
         brand: 'RENAPROV'
@@ -58,7 +58,7 @@ export const productCategories: ProductCategory[] = [
       {
         name: "Compte courant association",
         description: "Compte pour associations et ONG avec des conditions préférentielles.",
-        imageSrc: "/Un%20compte%20simple%20et%20sécurisé,%20accessible%20à%20tous.png",
+        imageSrc: "/service/Compte courant association.jpg",
         imageAlt: "Compte courant association RENAPROV",
         productType: 'renaprov',
         brand: 'RENAPROV'
@@ -74,7 +74,7 @@ export const productCategories: ProductCategory[] = [
       {
         name: "Compte salarié",
         description: "Compte dédié aux employés avec des avantages et des services privilégiés.",
-        imageSrc: "/Un%20compte%20simple%20et%20sécurisé,%20accessible%20à%20tous.png",
+        imageSrc: "/service/compte salaire.jpg",
         imageAlt: "Compte salarié RENAPROV",
         productType: 'renaprov',
         brand: 'RENAPROV'
@@ -82,7 +82,7 @@ export const productCategories: ProductCategory[] = [
       {
         name: "Compte privé",
         description: "Compte privé avec avantages exclusifs et services personnalisés.",
-        imageSrc: "/Faites%20grandir%20vos%20projets,%20nous%20finançons%20vos%20ambitions.png",
+        imageSrc: "/service/Compte privé.jpg",
         imageAlt: "Compte privé RENAPROV",
         productType: 'renaprov',
         brand: 'RENAPROV'
@@ -98,7 +98,7 @@ export const productCategories: ProductCategory[] = [
       {
         name: "Compte pensionné",
         description: "Compte pour les retraités avec des avantages dédiés et des services adaptés.",
-        imageSrc: "/Faites%20grandir%20vos%20projets,%20nous%20finançons%20vos%20ambitions.png",
+        imageSrc: "/service/compte pensionne.jpg",
         imageAlt: "Compte pensionné RENAPROV",
         productType: 'renaprov',
         brand: 'RENAPROV'

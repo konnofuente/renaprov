@@ -3,45 +3,68 @@ import { motion } from "framer-motion";
 import { SEO } from "../../components/SEO";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
-import { CheckCircle, ArrowRight, Phone, Mail, Globe, Users } from "lucide-react";
+import { CheckCircle, ArrowRight, Phone, Mail, Globe, Smartphone, CreditCard, Shield, Zap, Users } from "lucide-react";
 
-export const CompteChequeSalairePension: React.FC = () => {
+export const Spmc: React.FC = () => {
   const features = [
     {
-      icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
-      title: "Virements inter-institutions",
-      description: "Émettez et recevez des virements d'autres institutions financières en toute sécurité."
+      icon: <Shield className="w-6 h-6 text-foundation-bluenormal" />,
+      title: "Transactions rapides et sécurisées",
+      description: "Effectuez vos transactions en toute sécurité avec le Système de Paiement Mobile Camerounais."
     },
     {
-      icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
-      title: "Dépôt de chèques",
-      description: "Déposez vos chèques pour encaissement et/ou pour escompte avec facilité."
+      icon: <Smartphone className="w-6 h-6 text-foundation-bluenormal" />,
+      title: "Paiement mobile",
+      description: "Effectuez vos paiements directement depuis votre téléphone mobile, partout et à tout moment."
     },
     {
-      icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
-      title: "Retraits sur chèque",
-      description: "Effectuez vos opérations de retrait sur chèque selon vos besoins."
+      icon: <Users className="w-6 h-6 text-foundation-bluenormal" />,
+      title: "Solution financière pour entrepreneurs",
+      description: "SPMC est la solution financière idéale pour lancer et développer votre business."
     },
     {
-      icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
-      title: "Découverts et facilités",
-      description: "Bénéficiez des découverts et facilités de caisses pour gérer vos finances."
+      icon: <Zap className="w-6 h-6 text-foundation-bluenormal" />,
+      title: "Accessibilité et simplicité",
+      description: "Solution simple et accessible pour tous vos besoins de paiement mobile."
     }
   ];
 
   const benefits = [
-    "Compte spécialement conçu pour les salariés ",
-    "Accès à des avantages exclusifs et des services privilégiés",
-    "Gestion simplifiée de vos revenus réguliers",
-    "Support client dédié pour les employés "
+    "Transactions rapides et sécurisées",
+    "Accessible depuis votre mobile",
+    "Solution financière pour lancer votre business",
+    "Conçu pour les entrepreneurs et petits commerces"
+  ];
+
+  const usageSteps = [
+    {
+      step: "1",
+      title: "Activation",
+      description: "Activez votre compte SPMC dans l'agence RENAPROV Finance la plus proche."
+    },
+    {
+      step: "2",
+      title: "Utilisation mobile",
+      description: "Accédez à SPMC depuis votre téléphone mobile et configurez votre compte."
+    },
+    {
+      step: "3",
+      title: "Transactions",
+      description: "Effectuez vos transactions (paiements, transferts, retraits) en toute simplicité."
+    },
+    {
+      step: "4",
+      title: "Gestion",
+      description: "Gérez vos transactions et consultez votre historique depuis votre mobile."
+    }
   ];
 
   return (
     <>
       <SEO
-        title="Compte Chèque Salaire/Pension - RENAPROV FINANCE SA"
-        description="Compte spécialement conçu pour les salariés et pensionnés. Virements, dépôts de chèques, retraits et découverts avec des avantages exclusifs."
-        keywords="compte salaire, compte pension, salarié, pensionné, RENAPROV, microfinance, Cameroun, virements, chèques"
+        title="SPMC - Système de Paiement Mobile Camerounais - RENAPROV FINANCE SA"
+        description="Système de Paiement Mobile Camerounais pour des transactions rapides et sécurisées. Solution financière pour lancer votre business avec SPMC."
+        keywords="SPMC, Système de Paiement Mobile Camerounais, paiement mobile, transactions mobiles, RENAPROV, microfinance, Cameroun, entrepreneurs, petits commerces"
       />
       
       <motion.main
@@ -60,16 +83,19 @@ export const CompteChequeSalairePension: React.FC = () => {
                 transition={{ duration: 0.8 }}
               >
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-                  Compte Chèque Salaire
+                  SPMC
                 </h1>
-                <p className="text-xl lg:text-2xl mb-8 text-blue-100">
-                  Compte spécialement conçu pour les salariés avec des avantages exclusifs
+                <p className="text-xl lg:text-2xl mb-4 text-blue-100 font-semibold">
+                  SPMC est la SOLUTION FINANCIÈRE pour le lancement de votre business
+                </p>
+                <p className="text-lg lg:text-xl mb-8 text-blue-100">
+                  Système de Paiement Mobile Camerounais pour des transactions rapides et sécurisées.
                 </p>
                 <Button 
                   size="lg" 
                   className="bg-white text-foundation-bluenormal hover:bg-gray-100"
                 >
-                  Ouvrir un compte
+                  En savoir plus
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </motion.div>
@@ -81,14 +107,14 @@ export const CompteChequeSalairePension: React.FC = () => {
                 className="relative"
               >
                 <img
-                  src="/service/compte salaire.jpg"
-                  alt="Compte Chèque Salaire/Pension RENAPROV"
+                  src="/service/SPMC.jpeg"
+                  alt="SPMC RENAPROV"
                   className="w-full h-auto rounded-lg shadow-2xl"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg">
                   <div className="flex items-center space-x-2">
-                    <Users className="w-5 h-5 text-foundation-bluenormal" />
-                    <span className="text-sm font-medium text-gray-700">Pour salariés & pensionnés</span>
+                    <Smartphone className="w-5 h-5 text-blue-500" />
+                    <span className="text-sm font-medium text-gray-700">Paiement mobile</span>
                   </div>
                 </div>
               </motion.div>
@@ -110,7 +136,7 @@ export const CompteChequeSalairePension: React.FC = () => {
                 Fonctionnalités Principales
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Le compte chèque salaire permet aux salariés de bénéficier de services bancaires adaptés à leurs besoins spécifiques.
+                SPMC vous offre une solution de paiement mobile complète pour vos transactions quotidiennes.
               </p>
             </motion.div>
 
@@ -155,10 +181,10 @@ export const CompteChequeSalairePension: React.FC = () => {
                 transition={{ duration: 0.8 }}
               >
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                  Avantages Exclusifs
+                  Pourquoi Choisir SPMC ?
                 </h2>
                 <p className="text-lg text-gray-600 mb-8">
-                  En tant que salarié , vous bénéficiez d'avantages spéciaux et de conditions préférentielles avec RENAPROV.
+                  Avec SPMC, lancez votre business avec une solution financière mobile accessible et sécurisée.
                 </p>
                 <ul className="space-y-4">
                   {benefits.map((benefit, index) => (
@@ -185,8 +211,8 @@ export const CompteChequeSalairePension: React.FC = () => {
                 className="relative"
               >
                 <img
-                  src="/service/compte salaire.jpg"
-                  alt="Avantages du compte salaire/pension RENAPROV"
+                  src="/service/SPMC.jpeg"
+                  alt="Avantages SPMC RENAPROV"
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
               </motion.div>
@@ -194,7 +220,7 @@ export const CompteChequeSalairePension: React.FC = () => {
           </div>
         </section>
 
-        {/* Eligibility Section */}
+        {/* Comment utiliser SPMC Section */}
         <section className="py-16 lg:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
             <motion.div
@@ -205,33 +231,37 @@ export const CompteChequeSalairePension: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                Qui Peut Ouvrir Ce Compte ?
+                Comment Utiliser SPMC
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Ce compte est spécialement conçu pour les personnes ayant des revenus réguliers.
+                Découvrez les étapes simples pour utiliser SPMC et lancer votre business.
               </p>
             </motion.div>
 
-            <div className="flex items-center justify-center flex-col">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                <Card className="h-full border-2 border-foundation-bluenormal">
-                  <CardContent className="p-8 text-center">
-                    <div className="bg-foundation-bluenormal w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <Users className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">Salariés</h3>
-                    <p className="text-gray-600">
-                      Employés du secteur public ou privé avec un contrat de travail en cours
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {usageSteps.map((step, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                >
+                  <Card className="h-full border-2 border-foundation-bluenormal hover:shadow-lg transition-shadow duration-300">
+                    <CardContent className="p-6">
+                      <div className="text-center">
+                        <div className="bg-foundation-bluenormal w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                          <span className="text-2xl font-bold text-white">{step.step}</span>
+                        </div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
+                        <p className="text-gray-600 text-sm">
+                          {step.description}
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -246,16 +276,19 @@ export const CompteChequeSalairePension: React.FC = () => {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                Prêt à Ouvrir Votre Compte ?
+                Lancez Votre Business avec SPMC Aujourd'hui
               </h2>
-              <p className="text-xl mb-8 text-blue-100">
-                Rejoignez des milliers de salariés  qui font confiance à RENAPROV.
+              <p className="text-xl mb-4 text-blue-100">
+                Pour plus d'informations sur les modalités, rendez-vous dans l'agence RENAPROV Finance la plus proche.
+              </p>
+              <p className="text-lg mb-8 text-blue-100">
+                Rejoignez des milliers d'entrepreneurs qui utilisent SPMC pour leurs transactions mobiles.
               </p>
               <Button 
                 size="lg" 
                 className="bg-white text-foundation-bluenormal hover:bg-gray-100"
               >
-                Ouvrir un compte maintenant
+                En savoir plus
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </motion.div>
@@ -314,3 +347,4 @@ export const CompteChequeSalairePension: React.FC = () => {
     </>
   );
 };
+

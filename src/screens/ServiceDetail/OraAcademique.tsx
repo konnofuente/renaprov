@@ -3,45 +3,68 @@ import { motion } from "framer-motion";
 import { SEO } from "../../components/SEO";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
-import { CheckCircle, ArrowRight, Phone, Mail, Globe, Users } from "lucide-react";
+import { CheckCircle, ArrowRight, Phone, Mail, Globe, GraduationCap, BookOpen, Calendar, PiggyBank, Users } from "lucide-react";
 
-export const CompteChequeSalairePension: React.FC = () => {
+export const OraAcademique: React.FC = () => {
   const features = [
     {
-      icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
-      title: "Virements inter-institutions",
-      description: "Émettez et recevez des virements d'autres institutions financières en toute sécurité."
+      icon: <PiggyBank className="w-6 h-6 text-foundation-bluenormal" />,
+      title: "Épargne à partir de 1000 FCFA/jour",
+      description: "Constituer votre fonds académique en épargnant quotidiennement à partir de 1000 FCFA."
     },
     {
-      icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
-      title: "Dépôt de chèques",
-      description: "Déposez vos chèques pour encaissement et/ou pour escompte avec facilité."
+      icon: <BookOpen className="w-6 h-6 text-foundation-bluenormal" />,
+      title: "Préparation de la rentrée académique",
+      description: "Préparez sereinement la rentrée académique en épargnant progressivement."
     },
     {
-      icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
-      title: "Retraits sur chèque",
-      description: "Effectuez vos opérations de retrait sur chèque selon vos besoins."
+      icon: <GraduationCap className="w-6 h-6 text-foundation-bluenormal" />,
+      title: "Inscription à l'IUB (Institut Universitaire BISSAÏ)",
+      description: "Assurez vos frais de scolarité pour la rentrée académique au sein de l'IUB."
     },
     {
-      icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
-      title: "Découverts et facilités",
-      description: "Bénéficiez des découverts et facilités de caisses pour gérer vos finances."
+      icon: <Users className="w-6 h-6 text-foundation-bluenormal" />,
+      title: "Accompagnement académique",
+      description: "Bénéficiez d'un accompagnement pour votre projet académique."
     }
   ];
 
   const benefits = [
-    "Compte spécialement conçu pour les salariés ",
-    "Accès à des avantages exclusifs et des services privilégiés",
-    "Gestion simplifiée de vos revenus réguliers",
-    "Support client dédié pour les employés "
+    "Préparation de la rentrée académique",
+    "Épargne à partir de 1000 FCFA/jour",
+    "Frais de scolarité couverts à l'IUB",
+    "Accès à l'Institut Universitaire BISSAÏ"
+  ];
+
+  const inscriptionSteps = [
+    {
+      step: "1",
+      title: "Souscription",
+      description: "Souscrivez au plan ORA Académique et ouvrez votre compte épargne dédié."
+    },
+    {
+      step: "2",
+      title: "Épargne quotidienne",
+      description: "Constituer votre fonds en épargnant quotidiennement à partir de 1000 FCFA."
+    },
+    {
+      step: "3",
+      title: "Inscription à l'IUB",
+      description: "Inscrivez-vous à l'Institut Universitaire BISSAÏ avec votre fonds constitué."
+    },
+    {
+      step: "4",
+      title: "Rentrée académique",
+      description: "Assurez vos frais de scolarité et commencez votre année académique sereinement."
+    }
   ];
 
   return (
     <>
       <SEO
-        title="Compte Chèque Salaire/Pension - RENAPROV FINANCE SA"
-        description="Compte spécialement conçu pour les salariés et pensionnés. Virements, dépôts de chèques, retraits et découverts avec des avantages exclusifs."
-        keywords="compte salaire, compte pension, salarié, pensionné, RENAPROV, microfinance, Cameroun, virements, chèques"
+        title="ORA Académique - RENAPROV FINANCE SA"
+        description="Plan d'épargne permettant de constituer un fond à partir de 1000 FCFA pour assurer les frais de scolarité pour la rentrée académique au sein de la filiale académique du groupe IUB (Institut Universitaire BISSAÏ)."
+        keywords="ORA Académique, épargne académique, rentrée académique, IUB, Institut Universitaire BISSAÏ, RENAPROV, microfinance, Cameroun, frais de scolarité"
       />
       
       <motion.main
@@ -60,16 +83,25 @@ export const CompteChequeSalairePension: React.FC = () => {
                 transition={{ duration: 0.8 }}
               >
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-                  Compte Chèque Salaire
+                  ORA Académique
                 </h1>
-                <p className="text-xl lg:text-2xl mb-8 text-blue-100">
-                  Compte spécialement conçu pour les salariés avec des avantages exclusifs
+                <p className="text-xl lg:text-2xl mb-4 text-blue-100 font-semibold">
+                  Cotiser petit à petit, c'est possible!
+                </p>
+                <p className="text-lg lg:text-xl mb-4 text-blue-100">
+                  Préparez la rentrée en versant seulement
+                </p>
+                <p className="text-2xl lg:text-3xl font-bold mb-4 text-yellow-300">
+                  1000 FCFA/jour
+                </p>
+                <p className="text-lg lg:text-xl mb-8 text-blue-100">
+                  Plan d'épargne permettant de constituer un fond à partir de 1000 FCFA pour assurer les frais de scolarité pour la rentrée académique au sein de la filiale académique du groupe IUB (Institut Universitaire BISSAÏ).
                 </p>
                 <Button 
                   size="lg" 
                   className="bg-white text-foundation-bluenormal hover:bg-gray-100"
                 >
-                  Ouvrir un compte
+                  Souscrire à ORA Académique
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </motion.div>
@@ -81,14 +113,14 @@ export const CompteChequeSalairePension: React.FC = () => {
                 className="relative"
               >
                 <img
-                  src="/service/compte salaire.jpg"
-                  alt="Compte Chèque Salaire/Pension RENAPROV"
+                  src="/ORA Académique.png"
+                  alt="ORA Académique RENAPROV"
                   className="w-full h-auto rounded-lg shadow-2xl"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg">
                   <div className="flex items-center space-x-2">
-                    <Users className="w-5 h-5 text-foundation-bluenormal" />
-                    <span className="text-sm font-medium text-gray-700">Pour salariés & pensionnés</span>
+                    <GraduationCap className="w-5 h-5 text-blue-500" />
+                    <span className="text-sm font-medium text-gray-700">Académique</span>
                   </div>
                 </div>
               </motion.div>
@@ -110,7 +142,7 @@ export const CompteChequeSalairePension: React.FC = () => {
                 Fonctionnalités Principales
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Le compte chèque salaire permet aux salariés de bénéficier de services bancaires adaptés à leurs besoins spécifiques.
+                ORA Académique vous permet de constituer un fonds pour assurer les frais de scolarité pour la rentrée académique au sein de l'Institut Universitaire BISSAÏ.
               </p>
             </motion.div>
 
@@ -155,10 +187,10 @@ export const CompteChequeSalairePension: React.FC = () => {
                 transition={{ duration: 0.8 }}
               >
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                  Avantages Exclusifs
+                  Pourquoi Choisir ORA Académique ?
                 </h2>
                 <p className="text-lg text-gray-600 mb-8">
-                  En tant que salarié , vous bénéficiez d'avantages spéciaux et de conditions préférentielles avec RENAPROV.
+                  Avec ORA Académique, préparez sereinement la rentrée académique en épargnant progressivement à partir de 1000 FCFA par jour.
                 </p>
                 <ul className="space-y-4">
                   {benefits.map((benefit, index) => (
@@ -185,8 +217,8 @@ export const CompteChequeSalairePension: React.FC = () => {
                 className="relative"
               >
                 <img
-                  src="/service/compte salaire.jpg"
-                  alt="Avantages du compte salaire/pension RENAPROV"
+                  src="/ORA Académique.png"
+                  alt="Avantages ORA Académique RENAPROV"
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
               </motion.div>
@@ -194,7 +226,7 @@ export const CompteChequeSalairePension: React.FC = () => {
           </div>
         </section>
 
-        {/* Eligibility Section */}
+        {/* Processus d'Inscription Section */}
         <section className="py-16 lg:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
             <motion.div
@@ -205,33 +237,37 @@ export const CompteChequeSalairePension: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                Qui Peut Ouvrir Ce Compte ?
+                Processus d'Inscription
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Ce compte est spécialement conçu pour les personnes ayant des revenus réguliers.
+                Découvrez les étapes simples pour préparer votre rentrée académique avec ORA Académique.
               </p>
             </motion.div>
 
-            <div className="flex items-center justify-center flex-col">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                <Card className="h-full border-2 border-foundation-bluenormal">
-                  <CardContent className="p-8 text-center">
-                    <div className="bg-foundation-bluenormal w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <Users className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">Salariés</h3>
-                    <p className="text-gray-600">
-                      Employés du secteur public ou privé avec un contrat de travail en cours
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {inscriptionSteps.map((step, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                >
+                  <Card className="h-full border-2 border-foundation-bluenormal hover:shadow-lg transition-shadow duration-300">
+                    <CardContent className="p-6">
+                      <div className="text-center">
+                        <div className="bg-foundation-bluenormal w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                          <span className="text-2xl font-bold text-white">{step.step}</span>
+                        </div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
+                        <p className="text-gray-600 text-sm">
+                          {step.description}
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -246,16 +282,16 @@ export const CompteChequeSalairePension: React.FC = () => {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                Prêt à Ouvrir Votre Compte ?
+                Préparez Votre Rentrée Académique Aujourd'hui
               </h2>
               <p className="text-xl mb-8 text-blue-100">
-                Rejoignez des milliers de salariés  qui font confiance à RENAPROV.
+                Rejoignez des milliers d'étudiants qui préparent sereinement leur rentrée académique avec ORA Académique.
               </p>
               <Button 
                 size="lg" 
                 className="bg-white text-foundation-bluenormal hover:bg-gray-100"
               >
-                Ouvrir un compte maintenant
+                Souscrire à ORA Académique
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </motion.div>
@@ -314,3 +350,4 @@ export const CompteChequeSalairePension: React.FC = () => {
     </>
   );
 };
+
