@@ -1,48 +1,70 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { SEO } from "../../components/SEO";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
-import { CheckCircle, ArrowRight, Phone, Mail, Globe, Building } from "lucide-react";
+import { CheckCircle, ArrowRight, Phone, Mail, Globe, Smartphone, CreditCard, Shield, Zap, Users } from "lucide-react";
 
-export const CompteEpargneEntreprise: React.FC = () => {
-  const [isAccountFormOpen, setIsAccountFormOpen] = useState(false);
+export const Spmc: React.FC = () => {
   const features = [
     {
-      icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
-      title: "Dépôts et retraits gratuits",
-      description: "Effectuez des dépôts et des retraits sans aucun frais dans un guichet."
+      icon: <Shield className="w-6 h-6 text-foundation-bluenormal" />,
+      title: "Transactions rapides et sécurisées",
+      description: "Effectuez vos transactions en toute sécurité avec le Système de Paiement Mobile Camerounais."
     },
     {
-      icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
-      title: "Intérêts annuels",
-      description: "Bénéficiez des intérêts sur les dépôts effectués annuellement."
+      icon: <Smartphone className="w-6 h-6 text-foundation-bluenormal" />,
+      title: "Paiement mobile",
+      description: "Effectuez vos paiements directement depuis votre téléphone mobile, partout et à tout moment."
     },
     {
-      icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
-      title: "Compte sur livret",
-      description: "Gérez votre épargne avec un livret traditionnel et sécurisé."
+      icon: <Users className="w-6 h-6 text-foundation-bluenormal" />,
+      title: "Solution financière pour entrepreneurs",
+      description: "SPMC est la solution financière idéale pour lancer et développer votre business."
     },
     {
-      icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
-      title: "Services entreprise",
-      description: "Bénéficiez de services d'épargne adaptés aux besoins des entreprises."
+      icon: <Zap className="w-6 h-6 text-foundation-bluenormal" />,
+      title: "Accessibilité et simplicité",
+      description: "Solution simple et accessible pour tous vos besoins de paiement mobile."
     }
   ];
 
   const benefits = [
-    "Épargnez pour les projets de votre entreprise avec des taux attractifs",
-    "Gestion simplifiée de l'épargne d'entreprise",
-    "Aucun frais sur les opérations de base",
-    "Intérêts calculés et versés annuellement"
+    "Transactions rapides et sécurisées",
+    "Accessible depuis votre mobile",
+    "Solution financière pour lancer votre business",
+    "Conçu pour les entrepreneurs et petits commerces"
+  ];
+
+  const usageSteps = [
+    {
+      step: "1",
+      title: "Activation",
+      description: "Activez votre compte SPMC dans l'agence RENAPROV Finance la plus proche."
+    },
+    {
+      step: "2",
+      title: "Utilisation mobile",
+      description: "Accédez à SPMC depuis votre téléphone mobile et configurez votre compte."
+    },
+    {
+      step: "3",
+      title: "Transactions",
+      description: "Effectuez vos transactions (paiements, transferts, retraits) en toute simplicité."
+    },
+    {
+      step: "4",
+      title: "Gestion",
+      description: "Gérez vos transactions et consultez votre historique depuis votre mobile."
+    }
   ];
 
   return (
     <>
       <SEO
-        title="Compte Épargne Entreprise - RENAPROV FINANCE SA"
-        description="Épargnez pour les projets de votre entreprise avec le compte épargne entreprise RENAPROV. Dépôts et retraits gratuits, intérêts annuels."
-        keywords="compte épargne, entreprise, RENAPROV, microfinance, Cameroun, épargne, intérêts, livret, PME"
+        title="SPMC - Système de Paiement Mobile Camerounais - RENAPROV FINANCE SA"
+        description="Système de Paiement Mobile Camerounais pour des transactions rapides et sécurisées. Solution financière pour lancer votre business avec SPMC."
+        keywords="SPMC, Système de Paiement Mobile Camerounais, paiement mobile, transactions mobiles, RENAPROV, microfinance, Cameroun, entrepreneurs, petits commerces"
       />
       
       <motion.main
@@ -61,17 +83,19 @@ export const CompteEpargneEntreprise: React.FC = () => {
                 transition={{ duration: 0.8 }}
               >
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-                  Compte Épargne Entreprise
+                  SPMC
                 </h1>
-                <p className="text-xl lg:text-2xl mb-8 text-blue-100">
-                  Épargnez pour les projets de votre entreprise avec des taux attractifs et une gestion simplifiée
+                <p className="text-xl lg:text-2xl mb-4 text-blue-100 font-semibold">
+                  SPMC est la SOLUTION FINANCIÈRE pour le lancement de votre business
+                </p>
+                <p className="text-lg lg:text-xl mb-8 text-blue-100">
+                  Système de Paiement Mobile Camerounais pour des transactions rapides et sécurisées.
                 </p>
                 <Button 
                   size="lg" 
                   className="bg-white text-foundation-bluenormal hover:bg-gray-100"
-                  onClick={() => setIsAccountFormOpen(true)}
                 >
-                  Ouvrir un compte
+                  En savoir plus
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </motion.div>
@@ -83,14 +107,14 @@ export const CompteEpargneEntreprise: React.FC = () => {
                 className="relative"
               >
                 <img
-                  src="/service/Compte epargne entreprise.jpg"
-                  alt="Compte Épargne Entreprise RENAPROV"
+                  src="/service/SPMC.jpeg"
+                  alt="SPMC RENAPROV"
                   className="w-full h-auto rounded-lg shadow-2xl"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg">
                   <div className="flex items-center space-x-2">
-                    <Building className="w-5 h-5 text-foundation-bluenormal" />
-                    <span className="text-sm font-medium text-gray-700">Pour entreprises</span>
+                    <Smartphone className="w-5 h-5 text-blue-500" />
+                    <span className="text-sm font-medium text-gray-700">Paiement mobile</span>
                   </div>
                 </div>
               </motion.div>
@@ -112,7 +136,7 @@ export const CompteEpargneEntreprise: React.FC = () => {
                 Fonctionnalités Principales
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Le compte épargne entreprise vous permet de constituer une épargne sécurisée pour vos projets d'entreprise.
+                SPMC vous offre une solution de paiement mobile complète pour vos transactions quotidiennes.
               </p>
             </motion.div>
 
@@ -157,17 +181,17 @@ export const CompteEpargneEntreprise: React.FC = () => {
                 transition={{ duration: 0.8 }}
               >
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                  Pourquoi Épargner avec RENAPROV ?
+                  Pourquoi Choisir SPMC ?
                 </h2>
                 <p className="text-lg text-gray-600 mb-8">
-                  Avec plus de 30 ans d'expérience dans la microfinance, RENAPROV comprend les besoins d'épargne des entreprises.
+                  Avec SPMC, lancez votre business avec une solution financière mobile accessible et sécurisée.
                 </p>
                 <ul className="space-y-4">
                   {benefits.map((benefit, index) => (
                     <motion.li
                       key={index}
                       initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
+                      whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
                       className="flex items-center space-x-3"
@@ -187,11 +211,57 @@ export const CompteEpargneEntreprise: React.FC = () => {
                 className="relative"
               >
                 <img
-                  src="/service/Compte epargne entreprise.jpg"
-                  alt="Avantages du compte épargne entreprise RENAPROV"
+                  src="/service/SPMC.jpeg"
+                  alt="Avantages SPMC RENAPROV"
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Comment utiliser SPMC Section */}
+        <section className="py-16 lg:py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                Comment Utiliser SPMC
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Découvrez les étapes simples pour utiliser SPMC et lancer votre business.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {usageSteps.map((step, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                >
+                  <Card className="h-full border-2 border-foundation-bluenormal hover:shadow-lg transition-shadow duration-300">
+                    <CardContent className="p-6">
+                      <div className="text-center">
+                        <div className="bg-foundation-bluenormal w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                          <span className="text-2xl font-bold text-white">{step.step}</span>
+                        </div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
+                        <p className="text-gray-600 text-sm">
+                          {step.description}
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -206,17 +276,19 @@ export const CompteEpargneEntreprise: React.FC = () => {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                Commencez à Épargner pour Votre Entreprise
+                Lancez Votre Business avec SPMC Aujourd'hui
               </h2>
-              <p className="text-xl mb-8 text-blue-100">
-                Rejoignez des milliers d'entreprises qui font confiance à RENAPROV pour leur épargne.
+              <p className="text-xl mb-4 text-blue-100">
+                Pour plus d'informations sur les modalités, rendez-vous dans l'agence RENAPROV Finance la plus proche.
+              </p>
+              <p className="text-lg mb-8 text-blue-100">
+                Rejoignez des milliers d'entrepreneurs qui utilisent SPMC pour leurs transactions mobiles.
               </p>
               <Button 
                 size="lg" 
                 className="bg-white text-foundation-bluenormal hover:bg-gray-100"
-                onClick={() => setIsAccountFormOpen(true)}
               >
-                Ouvrir un compte épargne entreprise
+                En savoir plus
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </motion.div>
@@ -272,12 +344,7 @@ export const CompteEpargneEntreprise: React.FC = () => {
           </div>
         </section>
       </motion.main>
-      
-      {/* Account Creation Form Modal */}
-      <AccountCreationForm 
-        isOpen={isAccountFormOpen} 
-        onClose={() => setIsAccountFormOpen(false)} 
-      />
     </>
   );
 };
+

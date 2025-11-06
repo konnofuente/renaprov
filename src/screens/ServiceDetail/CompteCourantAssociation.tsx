@@ -3,8 +3,7 @@ import { motion } from "framer-motion";
 import { SEO } from "../../components/SEO";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
-import { CheckCircle, ArrowRight, Phone, Mail, Globe, Heart} from "lucide-react";
-import { AccountCreationForm } from "../../components/AccountCreationForm";
+import { CheckCircle, ArrowRight, Phone, Mail, Globe, Heart } from "lucide-react";
 
 export const CompteCourantAssociation: React.FC = () => {
   const [isAccountFormOpen, setIsAccountFormOpen] = useState(false);

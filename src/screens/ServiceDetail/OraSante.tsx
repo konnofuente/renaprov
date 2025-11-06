@@ -1,48 +1,70 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { SEO } from "../../components/SEO";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
-import { CheckCircle, ArrowRight, Phone, Mail, Globe, Building } from "lucide-react";
+import { CheckCircle, ArrowRight, Phone, Mail, Globe, Heart, Hospital, Shield, PiggyBank, Activity } from "lucide-react";
 
-export const CompteEpargneEntreprise: React.FC = () => {
-  const [isAccountFormOpen, setIsAccountFormOpen] = useState(false);
+export const OraSante: React.FC = () => {
   const features = [
     {
-      icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
-      title: "Dépôts et retraits gratuits",
-      description: "Effectuez des dépôts et des retraits sans aucun frais dans un guichet."
+      icon: <PiggyBank className="w-6 h-6 text-foundation-bluenormal" />,
+      title: "Couverture sanitaire à partir de 1000 FCFA/jour",
+      description: "Bénéficiez d'une couverture sanitaire accessible en épargnant quotidiennement à partir de 1000 FCFA."
     },
     {
-      icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
-      title: "Intérêts annuels",
-      description: "Bénéficiez des intérêts sur les dépôts effectués annuellement."
+      icon: <Hospital className="w-6 h-6 text-foundation-bluenormal" />,
+      title: "Accès au Complexe Hospitalier La MAMU",
+      description: "Accédez aux services de santé du Complexe Hospitalier La MAMU avec votre épargne."
     },
     {
-      icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
-      title: "Compte sur livret",
-      description: "Gérez votre épargne avec un livret traditionnel et sécurisé."
+      icon: <Shield className="w-6 h-6 text-foundation-bluenormal" />,
+      title: "Protection santé accessible",
+      description: "Protégez votre santé et celle de votre famille avec une couverture sanitaire accessible."
     },
     {
-      icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
-      title: "Services entreprise",
-      description: "Bénéficiez de services d'épargne adaptés aux besoins des entreprises."
+      icon: <Activity className="w-6 h-6 text-foundation-bluenormal" />,
+      title: "Épargne progressive pour la santé",
+      description: "Constituer votre fonds de santé progressivement selon vos capacités."
     }
   ];
 
   const benefits = [
-    "Épargnez pour les projets de votre entreprise avec des taux attractifs",
-    "Gestion simplifiée de l'épargne d'entreprise",
-    "Aucun frais sur les opérations de base",
-    "Intérêts calculés et versés annuellement"
+    "Couverture sanitaire accessible (1000 FCFA/jour)",
+    "Accès au Complexe Hospitalier La MAMU",
+    "Protection santé pour vous et votre famille",
+    "Épargne progressive pour votre santé"
+  ];
+
+  const processusSteps = [
+    {
+      step: "1",
+      title: "Souscription",
+      description: "Souscrivez au plan ORA Santé et ouvrez votre compte épargne dédié."
+    },
+    {
+      step: "2",
+      title: "Épargne quotidienne",
+      description: "Constituer votre fonds de santé en épargnant quotidiennement à partir de 1000 FCFA."
+    },
+    {
+      step: "3",
+      title: "Accès aux soins",
+      description: "Accédez aux services de santé du Complexe Hospitalier La MAMU avec votre fonds."
+    },
+    {
+      step: "4",
+      title: "Utilisation",
+      description: "Utilisez votre couverture sanitaire pour vos soins et ceux de votre famille."
+    }
   ];
 
   return (
     <>
       <SEO
-        title="Compte Épargne Entreprise - RENAPROV FINANCE SA"
-        description="Épargnez pour les projets de votre entreprise avec le compte épargne entreprise RENAPROV. Dépôts et retraits gratuits, intérêts annuels."
-        keywords="compte épargne, entreprise, RENAPROV, microfinance, Cameroun, épargne, intérêts, livret, PME"
+        title="ORA Santé - RENAPROV FINANCE SA"
+        description="Plan d'épargne permettant de bénéficier à partir de 1000 fcfa/jour d'une couverture sanitaire au Complexe Hospitalier La MAMU avec ORA Santé."
+        keywords="ORA Santé, couverture sanitaire, santé, Complexe Hospitalier La MAMU, épargne santé, RENAPROV, microfinance, Cameroun, assurance santé"
       />
       
       <motion.main
@@ -61,17 +83,25 @@ export const CompteEpargneEntreprise: React.FC = () => {
                 transition={{ duration: 0.8 }}
               >
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-                  Compte Épargne Entreprise
+                  ORA Santé
                 </h1>
-                <p className="text-xl lg:text-2xl mb-8 text-blue-100">
-                  Épargnez pour les projets de votre entreprise avec des taux attractifs et une gestion simplifiée
+                <p className="text-xl lg:text-2xl mb-4 text-blue-100 font-semibold">
+                  Protégez votre santé et celle de votre famille
+                </p>
+                <p className="text-lg lg:text-xl mb-4 text-blue-100">
+                  Couverture sanitaire accessible à partir de
+                </p>
+                <p className="text-2xl lg:text-3xl font-bold mb-4 text-yellow-300">
+                  1000 FCFA/jour
+                </p>
+                <p className="text-lg lg:text-xl mb-8 text-blue-100">
+                  Plan d'épargne permettant de bénéficier d'une couverture sanitaire au <strong>Complexe Hospitalier La MAMU</strong>.
                 </p>
                 <Button 
                   size="lg" 
                   className="bg-white text-foundation-bluenormal hover:bg-gray-100"
-                  onClick={() => setIsAccountFormOpen(true)}
                 >
-                  Ouvrir un compte
+                  Souscrire à ORA Santé
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </motion.div>
@@ -83,14 +113,14 @@ export const CompteEpargneEntreprise: React.FC = () => {
                 className="relative"
               >
                 <img
-                  src="/service/Compte epargne entreprise.jpg"
-                  alt="Compte Épargne Entreprise RENAPROV"
+                  src="/service/Ora Sante.png"
+                  alt="ORA Santé RENAPROV"
                   className="w-full h-auto rounded-lg shadow-2xl"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg">
                   <div className="flex items-center space-x-2">
-                    <Building className="w-5 h-5 text-foundation-bluenormal" />
-                    <span className="text-sm font-medium text-gray-700">Pour entreprises</span>
+                    <Heart className="w-5 h-5 text-red-500" />
+                    <span className="text-sm font-medium text-gray-700">Santé protégée</span>
                   </div>
                 </div>
               </motion.div>
@@ -112,7 +142,7 @@ export const CompteEpargneEntreprise: React.FC = () => {
                 Fonctionnalités Principales
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Le compte épargne entreprise vous permet de constituer une épargne sécurisée pour vos projets d'entreprise.
+                ORA Santé vous permet de bénéficier d'une couverture sanitaire accessible au Complexe Hospitalier La MAMU.
               </p>
             </motion.div>
 
@@ -157,17 +187,17 @@ export const CompteEpargneEntreprise: React.FC = () => {
                 transition={{ duration: 0.8 }}
               >
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                  Pourquoi Épargner avec RENAPROV ?
+                  Pourquoi Choisir ORA Santé ?
                 </h2>
                 <p className="text-lg text-gray-600 mb-8">
-                  Avec plus de 30 ans d'expérience dans la microfinance, RENAPROV comprend les besoins d'épargne des entreprises.
+                  Avec ORA Santé, protégez votre santé et celle de votre famille avec une couverture sanitaire accessible à partir de 1000 FCFA par jour.
                 </p>
                 <ul className="space-y-4">
                   {benefits.map((benefit, index) => (
                     <motion.li
                       key={index}
                       initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
+                      whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
                       className="flex items-center space-x-3"
@@ -187,11 +217,57 @@ export const CompteEpargneEntreprise: React.FC = () => {
                 className="relative"
               >
                 <img
-                  src="/service/Compte epargne entreprise.jpg"
-                  alt="Avantages du compte épargne entreprise RENAPROV"
+                  src="/service/Ora Sante.png"
+                  alt="Avantages ORA Santé RENAPROV"
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Processus Section */}
+        <section className="py-16 lg:py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                Processus d'Acquisition
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Découvrez les étapes simples pour bénéficier de votre couverture sanitaire avec ORA Santé.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {processusSteps.map((step, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                >
+                  <Card className="h-full border-2 border-foundation-bluenormal hover:shadow-lg transition-shadow duration-300">
+                    <CardContent className="p-6">
+                      <div className="text-center">
+                        <div className="bg-foundation-bluenormal w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                          <span className="text-2xl font-bold text-white">{step.step}</span>
+                        </div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
+                        <p className="text-gray-600 text-sm">
+                          {step.description}
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -206,17 +282,16 @@ export const CompteEpargneEntreprise: React.FC = () => {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                Commencez à Épargner pour Votre Entreprise
+                Protégez Votre Santé et Celle de Votre Famille Aujourd'hui
               </h2>
               <p className="text-xl mb-8 text-blue-100">
-                Rejoignez des milliers d'entreprises qui font confiance à RENAPROV pour leur épargne.
+                Rejoignez des milliers de clients qui bénéficient d'une couverture sanitaire accessible avec ORA Santé.
               </p>
               <Button 
                 size="lg" 
                 className="bg-white text-foundation-bluenormal hover:bg-gray-100"
-                onClick={() => setIsAccountFormOpen(true)}
               >
-                Ouvrir un compte épargne entreprise
+                Souscrire à ORA Santé
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </motion.div>
@@ -272,12 +347,7 @@ export const CompteEpargneEntreprise: React.FC = () => {
           </div>
         </section>
       </motion.main>
-      
-      {/* Account Creation Form Modal */}
-      <AccountCreationForm 
-        isOpen={isAccountFormOpen} 
-        onClose={() => setIsAccountFormOpen(false)} 
-      />
     </>
   );
 };
+

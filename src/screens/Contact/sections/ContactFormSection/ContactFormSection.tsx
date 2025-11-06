@@ -102,8 +102,8 @@ ${formData.message}
             className="order-2 lg:order-1"
           >
             <div className="h-[400px] lg:h-[500px] rounded-lg overflow-hidden shadow-lg">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.8!2d11.5021!3d3.848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bcfb3c3c3c3c3%3A0x3c3c3c3c3c3c3c3c!2sYaound%C3%A9%2C%20Cameroun!5e0!3m2!1sfr!2scm!4v1234567890123!5m2!1sfr!2scm"
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8902.640281953709!2d11.492407742997461!3d3.86806765181755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bcf813846c2a1%3A0xa256fe0a9cf5de46!2sRENAPROV%20Finance%20S.A%20Direction%20G%C3%A9n%C3%A9rale!5e0!3m2!1sfr!2scm!4v1762342277912!5m2!1sfr!2scm"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
