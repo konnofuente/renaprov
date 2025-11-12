@@ -101,7 +101,7 @@ export const HeaderSubsection = (): JSX.Element => {
 
         {/* Mobile Navigation Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-foundation-greydarker/10 bg-foundationbluelight">
+          <div className="lg:hidden border-t h-[90vh] overflow-y-scroll  border-foundation-greydarker/10 bg-foundationbluelight">
             <nav
               className="px-6 py-4 space-y-2"
               role="navigation"
