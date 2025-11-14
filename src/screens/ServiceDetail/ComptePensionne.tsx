@@ -84,7 +84,7 @@ export const ComptePensionne: React.FC = () => {
                 className="relative"
               >
                 <img
-                  src="/service/compte pensionne.jpg"
+                  src="/new/un mere devant la caisse service.jpeg"
                   alt="Compte Pensionné RENAPROV"
                   className="w-full h-auto rounded-lg shadow-2xl"
                 />
@@ -188,7 +188,7 @@ export const ComptePensionne: React.FC = () => {
                 className="relative"
               >
                 <img
-                  src="/service/compte pensionne.jpg"
+                  src="/new/un mere devant la caisse service.jpeg"
                   alt="Avantages du compte pensionné RENAPROV"
                   className="w-full h-auto rounded-lg shadow-lg"
                 />

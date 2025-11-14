@@ -4,6 +4,7 @@ import { SEO } from "../../components/SEO";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { CheckCircle, ArrowRight, Phone, Mail, Globe, Users } from "lucide-react";
+import { AccountCreationForm } from "../../components/AccountCreationForm";
 
 export const CompteChequeSalairePension: React.FC = () => {
   const [isAccountFormOpen, setIsAccountFormOpen] = useState(false);
@@ -83,7 +84,7 @@ export const CompteChequeSalairePension: React.FC = () => {
                 className="relative"
               >
                 <img
-                  src="/service/compte salaire.jpg"
+                  src="/new/client devant la caisse.jpeg"
                   alt="Compte Chèque Salaire/Pension RENAPROV"
                   className="w-full h-auto rounded-lg shadow-2xl"
                 />
@@ -187,7 +188,7 @@ export const CompteChequeSalairePension: React.FC = () => {
                 className="relative"
               >
                 <img
-                  src="/service/compte salaire.jpg"
+                  src="/new/client devant la caisse.jpeg"
                   alt="Avantages du compte salaire/pension RENAPROV"
                   className="w-full h-auto rounded-lg shadow-lg"
                 />

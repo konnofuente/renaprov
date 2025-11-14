@@ -6,15 +6,14 @@ export const CallToActionSubsection = (): JSX.Element => {
     <section
       className="relative flex flex-col items-center justify-center gap-4 sm:gap-6 md:gap-8 px-6 py-12 sm:py-16 md:py-20 w-full min-h-[300px] sm:min-h-[400px] md:min-h-[500px]"
       style={{
-        backgroundImage: "url('/call to action.png')",
+        backgroundImage: "url('/new/3 hand holding.jpeg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      {/* Overlay avec couleur spécifiée */}
+      {/* Overlay sombre pour améliorer la visibilité du texte */}
       <div
-        className="absolute inset-0"
-        style={{ backgroundColor: "rgba(5, 91, 124, 0.2)" }}
+        className="absolute inset-0 bg-black/50"
       ></div>
 
       {/* Contenu */}

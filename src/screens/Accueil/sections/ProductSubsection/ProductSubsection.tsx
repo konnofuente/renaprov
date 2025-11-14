@@ -65,7 +65,7 @@ const products = [
       },
     ],
     imagePosition: "right",
-    imageSrc: "/ORA-Épargnez-aujourdhui-concrétisez-vos-projets-demain.png",
+    imageSrc: "/new/different advanctage de Ora.jpeg",
     imageAlt: "ORA - Épargnez aujourd'hui, concrétisez vos projets demain",
   },
 ];

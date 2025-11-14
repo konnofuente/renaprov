@@ -84,7 +84,7 @@ export const CompteEpargneIndividuel: React.FC = () => {
                 className="relative"
               >
                 <img
-                  src="/service/Compte epargne individuel.jpg"
+                  src="/new/client devant la caisse.jpeg"
                   alt="Compte Épargne Individuel RENAPROV"
                   className="w-full h-auto rounded-lg shadow-2xl"
                 />
@@ -188,7 +188,7 @@ export const CompteEpargneIndividuel: React.FC = () => {
                 className="relative"
               >
                 <img
-                  src="/service/Compte epargne individuel.jpg"
+                  src="/new/un mere devant la caisse service.jpeg"
                   alt="Avantages du compte épargne RENAPROV"
                   className="w-full h-auto rounded-lg shadow-lg"
                 />

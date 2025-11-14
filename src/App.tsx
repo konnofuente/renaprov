@@ -26,6 +26,7 @@ import { OraEquipement } from "./screens/ServiceDetail/OraEquipement";
 import { OraIslamique } from "./screens/ServiceDetail/OraIslamique";
 import { OraSante } from "./screens/ServiceDetail/OraSante";
 import { Spmc } from "./screens/ServiceDetail/Spmc";
+import { Bicard } from "./screens/ServiceDetail/Bicard";
 import { NotFound } from "./screens/NotFound";
 import { HeaderSubsection } from "./screens/Accueil/sections/HeaderSubsection";
 import { Footer } from "./components/Footer";
@@ -65,6 +66,7 @@ export const App: React.FC = () => {
         <Route path="/service/ora-islamique" element={<OraIslamique />} />
         <Route path="/service/ora-sante" element={<OraSante />} />
         <Route path="/service/spmc" element={<Spmc />} />
+        <Route path="/service/bicard" element={<Bicard />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

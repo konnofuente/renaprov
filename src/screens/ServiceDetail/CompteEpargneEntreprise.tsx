@@ -4,6 +4,7 @@ import { SEO } from "../../components/SEO";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { CheckCircle, ArrowRight, Phone, Mail, Globe, Building } from "lucide-react";
+import { AccountCreationForm } from "../../components/AccountCreationForm";
 
 export const CompteEpargneEntreprise: React.FC = () => {
   const [isAccountFormOpen, setIsAccountFormOpen] = useState(false);
@@ -83,7 +84,7 @@ export const CompteEpargneEntreprise: React.FC = () => {
                 className="relative"
               >
                 <img
-                  src="/service/Compte epargne entreprise.jpg"
+                  src="/new/un mere devant la caisse service.jpeg"
                   alt="Compte Épargne Entreprise RENAPROV"
                   className="w-full h-auto rounded-lg shadow-2xl"
                 />
@@ -187,7 +188,7 @@ export const CompteEpargneEntreprise: React.FC = () => {
                 className="relative"
               >
                 <img
-                  src="/service/Compte epargne entreprise.jpg"
+                  src="/new/un mere devant la caisse service.jpeg"
                   alt="Avantages du compte épargne entreprise RENAPROV"
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
