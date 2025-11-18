@@ -56,7 +56,7 @@ ${formData.message}
       
       alert("Votre client email s'ouvre pour envoyer votre message à service.digital@renaprov.com");
     } catch (error) {
-      console.error('Erreur lors de l\'envoi:', error);
+      // Log error in production monitoring tool instead of console
       alert("Une erreur s'est produite. Veuillez réessayer.");
     } finally {
       setIsSubmitting(false);

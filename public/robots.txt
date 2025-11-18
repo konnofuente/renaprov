@@ -1,0 +1,31 @@
+# robots.txt pour RENAPROV FINANCE SA
+# https://renaprov.cm
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://renaprov.cm/sitemap.xml
+
+# Bloquer les fichiers de développement
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.github/
+
+# Autoriser les assets
+Allow: /images/
+Allow: /service/
+Allow: /new/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.svg
+Allow: /*.ico
+Allow: /*.webp
+
+
+
+

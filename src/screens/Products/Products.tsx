@@ -100,7 +100,6 @@ export const Products = (): JSX.Element => {
 
   const handleProductClick = (product: Product) => {
     // Handle product click - could open modal, navigate to detail page, etc.
-    console.log(`Clicked on product: ${product.name} (${product.brand})`);
     const productLink = productShow.find((p) => p.productName === product.name)?.productLink;
     if (productLink) {
       navigate(productLink);
