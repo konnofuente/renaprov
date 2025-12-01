@@ -14,7 +14,7 @@ const testimonials = [
     company: "CEO de Shop and more",
     quote:
       "Grâce à MASO, j'ai pu lancer ma boutique à Bafoussam. Leur accompagnement m'a permis d'obtenir un crédit adapté et d'apprendre à bien gérer mon activité.",
-    image: "/hero1.png",
+    image: "/maso/maso10.jpg",
   },
   {
     name: "Jean-Paul M.",
@@ -22,7 +22,7 @@ const testimonials = [
     company: "Fondateur de TechStart",
     quote:
       "MASO m'a accompagné dans le développement de mon entreprise. Leur expertise et leur proximité ont été essentielles pour la réussite de mes projets.",
-    image: "/hero1.png",
+    image: "/maso/maso11.jpg",
   },
   {
     name: "Marie K.",
@@ -30,7 +30,7 @@ const testimonials = [
     company: "Coopérative Agricole",
     quote:
       "Avec le soutien de MASO, j'ai pu moderniser mon exploitation agricole et augmenter mes revenus. Un vrai partenaire de confiance.",
-    image: "/hero1.png",
+    image: "/maso/maso0.jpg",
   },
 ];
 

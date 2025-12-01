@@ -23,7 +23,7 @@ const galeriePhotos = [
     location: "Yaoundé",
     category: "Santé",
     icon: Building2,
-    image: "/hero1.png",
+    image: "/bissai/5.jpg",
     description: "Cérémonie d'inauguration officielle du Complexe Hospitalier LA MAMU en présence du Gouverneur de la région Centre"
   },
   {
@@ -33,7 +33,7 @@ const galeriePhotos = [
     location: "Palais Polyvalent des Sports, Yaoundé",
     category: "MASO",
     icon: Gift,
-    image: "/hero1.png",
+    image: "/maso/masoH.jpg",
     description: "Grande cérémonie de tirage au sort avec plus de 6 000 mutualistes présents"
   },
   {
@@ -43,7 +43,7 @@ const galeriePhotos = [
     location: "Quartier 2 Chevaux, Yaoundé",
     category: "Éducation",
     icon: GraduationCap,
-    image: "/hero1.png",
+    image: "/bissai/biss5.jpg",
     description: "Inauguration du nouvel institut supérieur avec ses 7 filières spécialisées"
   },
   {

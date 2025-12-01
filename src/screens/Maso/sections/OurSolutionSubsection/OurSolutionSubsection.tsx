@@ -14,7 +14,7 @@ const masoPrizes = [
   {
     title: "Votre financement",
     description: "bénéficiez d’un financement à taux zéro de 100 000 FCFA à 2 000 000 FCFA valeur, grâce à la tombola MASO",
-    image: "/maso gagner villa.png",
+    image: "/maso/masoL.jpg",
   },
   {
     title: "Véhicules Personnels",
@@ -24,12 +24,12 @@ const masoPrizes = [
   {
     title: "Taxi à gagner",
     description: "Bénéficiez d’un véhicule taxi d'une valeur de 4,000,000 XAF, grâce à la tombola MASO",
-    image: "/maso gagner vehicule.png",
+    image: "/maso/masoT.jpg",
   },
   {
     title: "Tricycle",
     description: "Bénéficiez d’un tricycle d'une valeur de 1,800,000 XAF, grâce à la tombola MASO",
-    image: "/maso gagner tricycle.png",
+    image: "/maso/masoTr.jpg",
   },
   {
     title: "Votre Villa",
@@ -165,7 +165,7 @@ export const OurSolutionSubsection: React.FC<OurSolutionSubsectionProps> = ({ on
                 <Card className="flex flex-col w-full bg-white rounded-2xl overflow-hidden border-0 h-full group hover:shadow-lg transition-all duration-300">
                   <div className="relative overflow-hidden">
                     <img
-                      className="w-full h-40 sm:h-44 md:h-48 object-cover bg-gray-100 group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-40 sm:h-44 md:h-48 object-cover object-top  bg-gray-100 group-hover:scale-105 transition-transform duration-300"
                       alt={`${prize.title} - MASO`}
                             src={prize.image || "/hero1.png"}
                       loading="lazy"

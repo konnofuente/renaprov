@@ -36,7 +36,7 @@ const filiales = [
     name: "COMPLEXE HOSPITALIER LA MAMU",
     tagline: "Se soigner au prix les plus bas dans un établissement de haute facture, c'est désormais possible !",
     icon: Stethoscope,
-    image: "/logo Complexe Hospitalier la MAMU.png",
+    image: "/chm/mam1.jpg",
     description: "Le Complexe Hospitalier la MAMU offre des soins de santé de qualité avec un plateau technique de pointe, accessible à tous les Camerounais.",
     services: [
       "Plateau technique de pointe (IRM, scanners, mammographes)",

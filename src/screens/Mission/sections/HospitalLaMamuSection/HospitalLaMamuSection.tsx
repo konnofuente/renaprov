@@ -146,7 +146,7 @@ export const HospitalLaMamuSection = (): JSX.Element => {
             <img
               className="w-full h-64 sm:h-80 lg:h-auto object-cover transition-transform duration-300 hover:scale-105"
               alt="Complexe Hospitalier La Mamu"
-              src="/image-3-1.png"
+              src="/chm/mam3.jpg"
               loading="lazy"
             />
           </div>
@@ -157,15 +157,15 @@ export const HospitalLaMamuSection = (): JSX.Element => {
               <img
                 className="h-[200px] w-[290px] rounded-lg object-cover shadow-xl transition-transform duration-300 group-hover:scale-105 group-hover:shadow-2xl"
                 alt="Complexe Hospitalier La Mamu - Équipements"
-                src="/image-4.png"
+              src="/chm/mam2.jpg"
                 loading="lazy"
               />
             </div>
             <div className="relative group">
               <img
-                className="h-[200px] w-[290px] rounded-lg object-cover shadow-xl transition-transform duration-300 group-hover:scale-105 group-hover:shadow-2xl"
+                className="h-[200px] w-[290px] rounded-lg object-top object-cover shadow-xl transition-transform duration-300 group-hover:scale-105 group-hover:shadow-2xl"
                 alt="Complexe Hospitalier La Mamu - Services"
-                src="/image-2.png"
+              src="/chm/mam1.jpg"
                 loading="lazy"
               />
             </div>

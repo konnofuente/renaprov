@@ -129,11 +129,6 @@ export const HeaderSubsection = (): JSX.Element => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-<<<<<<< HEAD
-          <div className="lg:hidden border-t border-foundation-greydarker/10 bg-foundationbluelight">
-            <nav className="px-6 py-4 space-y-2" aria-label="Navigation mobile">
-              {navigationItems.map((item, index) =>
-=======
           <div className="lg:hidden border-t h-[90vh] overflow-y-scroll  border-foundation-greydarker/10 bg-foundationbluelight">
             <nav
               className="px-6 py-4 space-y-2"
@@ -141,7 +136,6 @@ export const HeaderSubsection = (): JSX.Element => {
               aria-label="Navigation mobile"
             >
               {navigationItems.map((item, index) => (
->>>>>>> 2dc6fd1 (Enhance mobile navigation menu by setting height to 90vh and enabling vertical scroll)
                 item.isDropdown ? (
                   <div key={index}>
                     <button
@@ -195,7 +189,7 @@ export const HeaderSubsection = (): JSX.Element => {
                     {item.label}
                   </Link>
                 )
-              )}
+              ))}
 
               <div className="pt-4 border-t border-foundation-greydarker/10">
                 <Button

@@ -18,7 +18,7 @@ const flashNews = [
     date: "27 Mars 2024",
     category: "Santé",
     icon: Stethoscope,
-    image: "/logo Complexe Hospitalier la MAMU.png",
+    image: "/chm/mam2.jpg",
     description: "Au cœur du paysage médical camerounais émerge une institution remarquable, le Complexe Hospitalier la MAMU. Le nom 'MAMU' porte en lui une signification profonde, évoquant bien plus qu'un simple acronyme.",
     highlights: [
       "Inauguration officielle le 27 mars 2024",

@@ -37,7 +37,7 @@ const products = [
       },
     ],
     imagePosition: "left",
-    imageSrc: "/MASO-Solidarité-assistance-et-opportunités-pour-tous.png",
+    imageSrc:'/maso/maso6.jpg',
     imageAlt: "MASO - Solidarité, assistance et opportunités pour tous",
   },
   
