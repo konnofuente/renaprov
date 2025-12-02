@@ -151,7 +151,7 @@ export const HospitalLaMamuSection = (): JSX.Element => {
             />
           </div>
 
-          {/* Images superposées - uniquement sur très grands écrans (xl et plus) */}
+          {/* Images superposées- uniquement sur très grands écrans (xl et plus) */}
           <div className="hidden xl:flex absolute gap-3 bottom-4 right-4 transform translate-y-[48px] translate-x-[48px]">
             <div className="relative group">
               <img
