@@ -40,7 +40,7 @@ const adhesionData = {
     },
   ],
   imagePosition: "left",
-  imageSrc: "/benef 1.png",
+  imageSrc: "/maso/condition.jpg",
   imageAlt: "Conditions d'adhésion MASO",
 };
 

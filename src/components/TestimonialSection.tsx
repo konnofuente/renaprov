@@ -14,7 +14,7 @@ const testimonials = [
     company: "CEO de Shop and more",
     quote:
       "Grâce à MASO, j'ai pu lancer ma boutique à Bafoussam. Leur accompagnement m'a permis d'obtenir un crédit adapté et d'apprendre à bien gérer mon activité.",
-    image: "/maso/maso10.jpg",
+    image: "/maso/tem2.jpg",
   },
   {
     name: "Jean-Paul M.",
@@ -30,7 +30,7 @@ const testimonials = [
     company: "Coopérative Agricole",
     quote:
       "Avec le soutien de MASO, j'ai pu moderniser mon exploitation agricole et augmenter mes revenus. Un vrai partenaire de confiance.",
-    image: "/maso/maso0.jpg",
+    image: "/maso/tem3.jpg",
   },
 ];
 

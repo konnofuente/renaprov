@@ -11,31 +11,31 @@ const slides = [
     title: "La MASO – Ensemble, sortons du cercle de la pauvreté",
     description:
       "Une initiative de RENAPROV FINANCE SA qui redonne du pouvoir aux Camerounais grâce à la solidarité. Avec La MASO, vous bénéficiez d'avantages directs en santé, éducation, assistance sociale et bien-être.",
-    image: "/De locataire à propriétaire grâce à RENAPROV.png",
-    fallbackImage: "/hero1.png",
+    image: "/maso/masopov.jpg",
+    fallbackImage: "/maso/maso1.jpg",
     cta: "Adhérez dès aujourd'hui",
   },
   {
     title: "Une solidarité camerounaise qui change des vies",
     description:
       "La MASO incarne l'esprit de solidarité camerounaise en créant un réseau d'entraide qui permet à chaque membre de bénéficier de services essentiels dans les domaines de la santé, de l'éducation et de l'assistance sociale.",
-    image: "/Un compte simple et sécurisé, accessible à tous.png",
-    fallbackImage: "/hero1.png",
+    image: "/maso/masovi.jpg",
+    fallbackImage: "/maso/masovi.jpg",
     cta: "Découvrir nos services",
   },
   {
     title: "Avec la MASO, gagnez votre prochain",
     description:
       "Participez à nos tirages au sort et gagnez des véhicules, des villas et bien plus encore. La MASO vous offre la chance de réaliser vos rêves tout en bénéficiant de nos services de solidarité.",
-    image: "/Faites grandir vos projets, nous finançons vos ambitions.png",
-    fallbackImage: "/hero1.png",
+    image: "/maso/win.png",
+    fallbackImage: "/maso/win.png",
     cta: "Participer aux tirages",
   },
   {
     title: "Conditions d'adhésion simples et accessibles",
     description:
       "Rejoignez la MASO avec seulement 500 FCFA pour le carnet et 100 FCFA par jour. Une cotisation accessible qui vous ouvre les portes de tous nos avantages et services.",
-    image: "/Rendes-vous en Agence.png",
+    image: "/maso/masocond.jpg",
     fallbackImage: "/hero1.png",
     cta: "S'inscrire maintenant",
   },
@@ -44,15 +44,15 @@ const slides = [
     title: "Rejoignez notre réseau de solidarité",
     description:
       "Devenez membre de la MASO et bénéficiez d'un accompagnement personnalisé, de formations et d'un réseau de solidarité qui vous soutient dans tous vos projets.",
-    image: "/Bienvenu a RENAPROV.png",
-    fallbackImage: "/hero1.png",
+    image: "/maso/maso10.jpg",
+    fallbackImage: "/maso/maso10.jpg",
     cta: "Rejoindre la MASO",
   },
   {
     title: "Rejoignez - nous",
     description:
       "Faites partie de la communauté RENAPROV et profitez d’un réseau solide qui soutient vos ambitions. Que vous soyez entrepreneur, salarié ou étudiant.",
-    image: "/Rejoignez - nous.png",
+    image: "/maso/masorej.jpg",
     fallbackImage: "/hero1.png",
     cta: "Ouvrir mon compte aujourd’hui",
   },

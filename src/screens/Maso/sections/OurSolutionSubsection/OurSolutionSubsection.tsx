@@ -34,7 +34,7 @@ const masoPrizes = [
   {
     title: "Votre Villa",
     description: "Bénéficiez d’une villa d'une valeur de 30,000,000 XAF, grâce à la tombola MASO",
-    image: "/maso gagner villa.png",
+    image: "/maso/maso gagner villa.jpg",
   },
 ];
 

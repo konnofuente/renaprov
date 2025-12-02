@@ -12,7 +12,7 @@ export const SocagiSection = (): JSX.Element => {
               <img
                 className="w-full h-full rounded-lg md:rounded-xl object-cover"
                 alt="La Socagi - Gestion et Investissement"
-                src="/image-3-2.png"
+                src="/other/socagi.jpg"
               />
             </div>
           </div>

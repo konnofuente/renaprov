@@ -17,7 +17,7 @@ const dirigeants = [
     id: 1,
     name: "EMMANUEL NOËL BISSAÏ",
     position: "PRÉSIDENT DU CONSEIL D'ADMINISTRATION",
-    image: "/hero1.png",
+    image: "/other/dg.jpg",
     description: "Visionnaire et leader spirituel, le Révérend Pasteur Emmanuel Noël BISSAÏ guide le Groupe RENAPROV depuis sa création en 1996 avec une vision claire de l'économie solidaire.",
     icon: Crown,
     featured: true

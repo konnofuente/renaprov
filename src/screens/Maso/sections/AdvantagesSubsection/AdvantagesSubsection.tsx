@@ -7,7 +7,7 @@ const masoAdvantagesData = [
     title: "-35% sur les frais de soins hospitaliers à la Mamu",
     description:
       "Effectuez vos dépôts et retraits quand vous le souhaitez, sans contraintes, pour un contrôle total de vos finances.",
-    imageSrc: "/image-3-1.png",
+    imageSrc: "/chm/mam2.jpg",
     imageAlt: "Réduction frais hospitaliers MASO",
   },
   {

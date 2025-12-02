@@ -63,7 +63,7 @@ const galeriePhotos = [
     location: "NKOL-NGUET, MFOU",
     category: "MASO",
     icon: Building2,
-    image: "/hero1.png",
+    image: "/maso/villa.jpg",
     description: "Remise solennelle des clés des villas aux bénéficiaires par le gouverneur"
   },
   {
