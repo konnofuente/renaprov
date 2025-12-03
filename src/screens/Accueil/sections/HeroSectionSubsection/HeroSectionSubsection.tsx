@@ -12,15 +12,15 @@ const slides = [
     title: "Bienvenu a RENAPROV FINANCE S.A",
     description:
       "ORA Académique, Scolaire, Habitat, Équipement... Préparez vos ambitions ! Que vous soyez salarié, pensionné, entrepreneur, commerçant ou étudiant, RENAPROV FINANCE S.A met à votre disposition une gamme de produits adaptés à vos besoins.",
-    image: "/Bienvenu a RENAPROV.png",
-    fallbackImage: "/hero1.png",
+    image: "/Bienvenu  RENAPROV.png",
+    fallbackImage: "Bienvenu a RENAPROV.png",
     cta: "Ouvrir mon compte aujourd'hui",
   },
   {
     title: "Un compte simple et sécurisé, accessible à tous",
     description:
       "Chez RENAPROV, ouvrez un compte en quelques minutes et profitez de services adaptés à votre quotidien : dépôts, retraits, transferts et épargne, où que vous soyez.",
-    image: "/Un compte simple et sécurisé, accessible à tous.png",
+    image: "/other/condition.jpg",
     fallbackImage: "/hero1.png",
     cta: "Ouvrir mon compte aujourd'hui",
   },
@@ -36,11 +36,10 @@ const slides = [
     title: "Faites grandir vos projets, nous finançons vos ambitions",
     description:
       "Profitez d'une gamme complète de services bancaires conçus pour simplifier votre vie financière au quotidien.",
-    image: "/Faites grandir vos projets, nous finançons vos ambitions.png",
+    image: "/maso/win.png",
     fallbackImage: "/hero1.png",
     cta: "Nos solutions",
   },
-
   {
     title: "Rendes-vous en Agence",
     description:
@@ -53,7 +52,7 @@ const slides = [
     title: "Rejoignez - nous",
     description:
       "Faites partie de la communauté RENAPROV et profitez d’un réseau solide qui soutient vos ambitions. Que vous soyez entrepreneur, salarié ou étudiant.",
-    image: "/Rejoignez - nous.png",
+    image: "/other/join.jpg",
     fallbackImage: "/hero1.png",
     cta: "Ouvrir mon compte aujourd’hui",
   },

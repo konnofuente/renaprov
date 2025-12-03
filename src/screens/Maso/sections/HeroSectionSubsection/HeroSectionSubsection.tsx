@@ -11,7 +11,7 @@ const slides = [
     title: "La MASO – Ensemble, sortons du cercle de la pauvreté",
     description:
       "Une initiative de RENAPROV FINANCE SA qui redonne du pouvoir aux Camerounais grâce à la solidarité. Avec La MASO, vous bénéficiez d'avantages directs en santé, éducation, assistance sociale et bien-être.",
-    image: "/maso/masopov.jpg",
+    image: "/logo maso solidarite.png",
     fallbackImage: "/maso/maso1.jpg",
     cta: "Adhérez dès aujourd'hui",
   },
@@ -30,6 +30,14 @@ const slides = [
     image: "/maso/win.png",
     fallbackImage: "/maso/win.png",
     cta: "Participer aux tirages",
+  },
+  {
+    title: "Gagnez votre villa avec la MASO",
+    description:
+    "participez à la grande tombola Maso et tentez de gagner votre prochaine villa",
+    image: "/maso/villa.jpg",
+    fallbackImage: "/hero1.png",
+    cta: "Participer à la tombola",
   },
   {
     title: "Conditions d'adhésion simples et accessibles",

@@ -7,7 +7,7 @@ const advantagesData = [
     title: "Gérez votre argent à votre rythme",
     description:
       "Effectuez vos dépôts et retraits quand vous le souhaitez, sans contraintes, pour un contrôle total de vos finances.",
-    imageSrc: "/benef 1.png",
+    imageSrc: "/other/mon.jpg",
     imageAlt: "Gérez votre argent à votre rythme",
   },
   {
@@ -23,7 +23,7 @@ const advantagesData = [
     title: "Transparence totale",
     description:
       "Ouvrir un compte est simple et abordable, avec des frais transparents et adaptés à tous les budgets.",
-    imageSrc: "/benef 1.png",
+    imageSrc: "/maso/transparence.png",
     imageAlt: "Transparence totale",
   },
   {
@@ -31,7 +31,7 @@ const advantagesData = [
     title: "Un accompagnement financier qui vous suit",
     description:
       "Nos conseillers vous guident dans vos décisions financières et vous aident à optimiser votre argent au quotidien.",
-    imageSrc: "/benef 1.png",
+    imageSrc: "/other/reach.jpg",
     imageAlt: "Accompagnement financier",
   },
 ];

@@ -92,9 +92,9 @@ export const ExperienceSubsection = (): JSX.Element => {
 
           <div className="flex-1 h-full rounded-[5px] overflow-hidden relative">
             <img
-              src="/renaprov%2030%20ans%20experience%203.png"
+              src="/other/fem.jpg"
               alt="RENAPROV 30 ans d'expérience 3"
-              className="absolute top-0 left-0 w-full h-full"
+              className="absolute  top-0 left-0 w-full h-full"
               style={{
                 objectFit: "cover",
                 width: "100%",
