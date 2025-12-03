@@ -109,7 +109,7 @@ export const HeaderSubsection = (): JSX.Element => {
           {/* CTA Button */}
           <div className="hidden md:flex items-center">
             <Button
-              className="w-auto bg-foundation-bluenormal hover:bg-foundation-bluedark-hover text-white font-semibold px-6 py-4 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg"
+              className="w-auto  bg-foundation-bluenormal hover:bg-foundation-bluedark-hover text-white font-semibold px-6 py-6 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg"
               onClick={() => setIsAccountFormOpen(true)}
             >
               Ouvrir mon compte
@@ -193,7 +193,7 @@ export const HeaderSubsection = (): JSX.Element => {
 
               <div className="pt-4 border-t border-foundation-greydarker/10">
                 <Button
-                  className="w-full bg-foundation-bluenormal hover:bg-foundation-bluedark-hover text-white font-semibold px-6 py-4 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base"
+                  className="w-full sm:w-auto bg-white font-bold text-foundation-bluenormal hover:bg-white/95  px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 py-1 sm:py-1.5 md:py-2 lg:py-4 xl:py-3 transition-all duration-200 shadow-lg hover:shadow-xl text-xs sm:text-xs md:text-sm lg:text-base xl:text-lg"
                   onClick={() => {
                     setMobileMenuOpen(false);
                     setIsAccountFormOpen(true);
