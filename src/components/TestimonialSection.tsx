@@ -137,16 +137,6 @@ export const TestimonialSection = (): JSX.Element => {
                 <span>Savoir plus sur nos crédit bancaire</span>
                 <ArrowRight className="w-4 h-4" />
               </Button>
-
-              {/* Author Info */}
-              <div className="flex flex-col gap-1">
-                <h3 className="[font-family:'Bricolage_Grotesque',Helvetica] font-bold text-white text-lg sm:text-xl md:text-2xl">
-                  {currentTestimonial.name}, {currentTestimonial.role}
-                </h3>
-                <p className="[font-family:'Roboto',Helvetica] font-normal text-gray-300 text-sm sm:text-base">
-                  {currentTestimonial.company}
-                </p>
-              </div>
             </div>
           </div>
         </div>
