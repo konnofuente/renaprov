@@ -29,6 +29,11 @@ export const SEO: React.FC<SEOProps> = ({
       <meta name="language" content="fr" />
       <meta name="revisit-after" content="7 days" />
       
+      {/* CamaireTech Developer Credits - SEO Backlinks */}
+      <meta name="generator" content="CamaireTech - Innovative IT and Branding Solutions" />
+      <meta name="designer" content="CamaireTech" />
+      <link rel="dns-prefetch" href="https://camairetech.com" />
+      
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
       <meta property="og:url" content={url} />
@@ -56,6 +61,7 @@ export const SEO: React.FC<SEOProps> = ({
       <link rel="canonical" href={url} />
       
       {/* Favicon */}
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -91,6 +97,30 @@ export const SEO: React.FC<SEOProps> = ({
           "areaServed": {
             "@type": "Country",
             "name": "Cameroon"
+          }
+        })}
+      </script>
+      
+      {/* Structured Data for Developer/Creator - CamaireTech SEO */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "RENAPROV FINANCE SA",
+          "url": url,
+          "creator": {
+            "@type": "Organization",
+            "name": "CamaireTech",
+            "url": "https://camairetech.com",
+            "description": "Innovative IT and Branding Solutions for Your Business"
+          },
+          "developer": {
+            "@type": "Organization",
+            "name": "CamaireTech",
+            "url": "https://camairetech.com",
+            "sameAs": [
+              "https://camairetech.com"
+            ]
           }
         })}
       </script>
