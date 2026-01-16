@@ -24,7 +24,7 @@ const footerContact = [
   { label: "+237 693930231" },
   { label: "+237 695133343" },
   { label: "+237 690203176" },
-  { label: "E-mail : service.digital@renaprov.com" },
+  { label: "E-mail : stephaniebissai@gmail.com" },
 ];
 
 const socialIcons = [

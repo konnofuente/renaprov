@@ -23,7 +23,7 @@ const contactData = [
   { text: "+237 693930231" },
   { text: "+237 695133343" },
   { text: "+237 690203176" },
-  { text: "E-mail : service.digital@renaprov.com" },
+  { text: "E-mail : stephaniebissai@gmail.com" },
 ];
 
 const socialIcons = [

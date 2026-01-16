@@ -332,7 +332,7 @@ export const OraEquipement: React.FC = () => {
                   <Mail className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Email</h3>
-                <p className="text-gray-300">service.digital@renaprov.com</p>
+                <p className="text-gray-300">stephaniebissai@gmail.com</p>
               </motion.div>
             </div>
           </div>

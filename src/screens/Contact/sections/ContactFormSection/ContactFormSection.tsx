@@ -40,7 +40,7 @@ Message:
 ${formData.message}
       `);
       
-      const mailtoLink = `mailto:service.digital@renaprov.com?subject=${subject}&body=${body}`;
+      const mailtoLink = `mailto:stephaniebissai@gmail.com?subject=${subject}&body=${body}`;
       
       // Open email client
       window.location.href = mailtoLink;
@@ -54,7 +54,7 @@ ${formData.message}
         message: "",
       });
       
-      alert("Votre client email s'ouvre pour envoyer votre message à service.digital@renaprov.com");
+      alert("Votre client email s'ouvre pour envoyer votre message à stephaniebissai@gmail.com");
     } catch (error) {
       console.error('Erreur lors de l\'envoi:', error);
       alert("Une erreur s'est produite. Veuillez réessayer.");
@@ -146,7 +146,7 @@ ${formData.message}
                   </div>
                   <div className="flex items-center space-x-3">
                     <Mail className="w-5 h-5 text-foundation-bluenormal flex-shrink-0" />
-                    <span className="text-gray-700">service.digital@renaprov.com</span>
+                    <span className="text-gray-700">stephaniebissai@gmail.com</span>
                   </div>
                 </div>
               </div>

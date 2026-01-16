@@ -57,7 +57,7 @@ export const NotFound = (): JSX.Element => {
                 <span>690 228 890</span>
                 <span className="hidden sm:inline">•</span>
                 <span className="text-foundation-bluenormal font-medium">Email:</span>
-                <span>service.digital@renaprov.com</span>
+                <span>stephaniebissai@gmail.com</span>
               </div>
             </div>
           </div>
