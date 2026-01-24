@@ -9,12 +9,12 @@ export const NewsletterSubscription = (): JSX.Element => {
         <div className="flex flex-col items-center gap-5 w-full max-w-[1036px]">
           <div className="flex flex-col items-center gap-6 w-full max-w-screen-md">
             <h1 className="font-heading-h1 font-[number:var(--heading-h1-font-weight)] text-white text-[length:var(--heading-h1-font-size)] text-center tracking-[var(--heading-h1-letter-spacing)] leading-[var(--heading-h1-line-height)] [font-style:var(--heading-h1-font-style)]">
-              Abonnez vous à la newsletter
+              Abonnez-vous à la newsletter
             </h1>
           </div>
 
           <p className="font-text-regular-normal font-[number:var(--text-regular-normal-font-weight)] text-foundationbluelight text-[length:var(--text-regular-normal-font-size)] text-center tracking-[var(--text-regular-normal-letter-spacing)] leading-[var(--text-regular-normal-line-height)] [font-style:var(--text-regular-normal-font-style)]">
-            Recevez des recettes saines directement dans votre boîte mail.
+            Recevez nos actualités directement par email.
           </p>
         </div>
 

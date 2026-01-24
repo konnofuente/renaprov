@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 const slides = [
   {
-    title: "Bienvenu a RENAPROV FINANCE S.A",
+    title: "Bienvenue à RENAPROV FINANCE S.A",
     description:
       "ORA Académique, Scolaire, Habitat, Équipement... Préparez vos ambitions ! Que vous soyez salarié, pensionné, entrepreneur, commerçant ou étudiant, RENAPROV FINANCE S.A met à votre disposition une gamme de produits adaptés à vos besoins.",
     image: "/Bienvenu  RENAPROV.png",
@@ -41,7 +41,7 @@ const slides = [
     cta: "Nos solutions",
   },
   {
-    title: "Rendes-vous en Agence",
+    title: "Rendez-vous en agence",
     description:
       "Nos équipes vous accueillent dans toutes nos agences pour vous conseiller et vous aider à atteindre vos objectifs financiers.",
     image: "/Rendes-vous en Agence.png",
@@ -344,20 +344,7 @@ export const HeroSectionSubsection: React.FC<HeroSectionSubsectionProps> = ({ on
             {/* Image Section */}
             <div className="relative order-1 lg:order-2 flex justify-center">
               <div
-                className="relative  overflow-hidden shadow-2xl bg-gray-100
-              
-              
-              
-              
-              w-full xl:w-[579px] h-[200px] sm:h-[250px] md:h-[300px] xl:h-[365px] rounded-[16px] xl:rounded-[23px] object-cover
-              
-              
-              
-              
-              
-              
-              
-              "
+                className="relative overflow-hidden shadow-2xl bg-gray-100 w-full xl:w-[579px] h-[200px] sm:h-[250px] md:h-[300px] xl:h-[365px] rounded-[16px] xl:rounded-[23px]"
               >
                 <img
                   src={
@@ -366,11 +353,19 @@ export const HeroSectionSubsection: React.FC<HeroSectionSubsectionProps> = ({ on
                       : slides[currentSlide].image
                   }
                   alt={slides[currentSlide].title}
-                  className="w-full h-full object-cover"
+                  className={`w-full h-full ${
+                    slides[currentSlide].image.toLowerCase().includes("logo") || 
+                    slides[currentSlide].image.toLowerCase().includes("maso")
+                      ? "object-contain"
+                      : "object-cover"
+                  }`}
                   onError={() => handleImageError(currentSlide)}
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                {!slides[currentSlide].image.toLowerCase().includes("logo") && 
+                 !slides[currentSlide].image.toLowerCase().includes("maso") && (
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                )}
               </div>
             </div>
           </motion.div>

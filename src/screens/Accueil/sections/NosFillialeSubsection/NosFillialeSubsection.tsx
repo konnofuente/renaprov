@@ -8,7 +8,7 @@ import { Card, CardContent } from "../../../../components/ui/card";
 
 const subsidiaries = [
   {
-    category: "Hospital",
+    category: "Hôpital",
     title: "Complexe Hospitalier la MAMU",
     description:
       "Un établissement de santé moderne offrant des soins de qualité et accessibles à tous.",
@@ -16,7 +16,7 @@ const subsidiaries = [
     websiteUrl: "https://www.hopitallamamu.com/",
   },
   {
-    category: "Universite",
+    category: "Université",
     title: "Institut Universitaire Bissai",
     description:
       "Un centre académique dédié à la formation de qualité et à l'excellence.",
@@ -98,7 +98,7 @@ export const NosFillialeSubsection = (): JSX.Element => {
       {/* Titre principal comme sur l'image */}
       <div className="w-full text-center">
         <h2 className="[font-family:'Bricolage_Grotesque',Helvetica] font-bold text-black text-3xl sm:text-4xl md:text-5xl lg:text-[56px] tracking-[0] leading-tight lg:leading-[70.8px]">
-          Voici nos differents
+          Voici nos différentes
         </h2>
         <h2 className="[font-family:'Bricolage_Grotesque',Helvetica] font-bold text-foundation-bluenormal text-4xl sm:text-5xl md:text-6xl lg:text-[64px] tracking-[0] leading-tight lg:leading-[70.8px]">
           filiales

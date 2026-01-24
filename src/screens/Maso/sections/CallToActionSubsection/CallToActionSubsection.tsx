@@ -20,11 +20,11 @@ export const CallToActionSubsection = (): JSX.Element => {
       {/* Contenu */}
       <div className="relative z-10 flex flex-col items-center gap-4 sm:gap-6 md:gap-8 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl w-full px-4 sm:px-0">
         <h2 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center leading-tight">
-          Abonnez vous à la newsletter
+          Abonnez-vous à la newsletter
         </h2>
 
         <p className="text-white text-sm sm:text-base md:text-lg text-center leading-relaxed">
-          Recevez des recettes saines directement dans votre boîte mail.
+          Recevez nos actualités directement par email.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-center w-full max-w-md sm:max-w-lg">

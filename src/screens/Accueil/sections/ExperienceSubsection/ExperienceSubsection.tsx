@@ -121,7 +121,7 @@ export const ExperienceSubsection = (): JSX.Element => {
           </div>
 
           <p className="[font-family:'Karla',Helvetica] font-normal text-foundationgreynormal text-sm sm:text-base md:text-lg tracking-[0] leading-relaxed md:leading-[28.8px]">
-            Depuis sa création, RENAPROV FINANCE S.A à su gagner la confiance de milliers de personnes à travers le monde et spécifiquement au Cameroun de par sa marque de distinction qui est l'Economie solidaire.
+            Depuis sa création, RENAPROV FINANCE S.A à su gagner la confiance de milliers de personnes à travers le monde et spécifiquement au Cameroun de par sa marque de distinction qui est l'Économie solidaire.
           </p>
         </div>
 

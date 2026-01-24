@@ -91,26 +91,12 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ location, phone }) => {
 const ImageGallery: React.FC = () => {
   return (
     <div className="w-full h-64 md:h-80 lg:h-96">
-      <div className="relative w-full h-full">
-        {/* Image principale comme arrière-plan */}
+      <div className="w-full h-full">
+        {/* Image principale */}
         <img
-          className="absolute inset-0 w-full h-full rounded-lg md:rounded-xl object-cover"
-          alt="ORA - Épargne Collective"
-          src="/image-3-3.png"
-        />
-
-        {/* Première image superposée - décalée vers le bas et à droite - uniquement sur très grands écrans (xl et plus) */}
-        <img
-          className="hidden xl:block absolute bottom-2 right-2 w-[48%] h-1/2 rounded-lg object-cover shadow-lg transform translate-y-16 translate-x-8"
-          alt="ORA - Épargne Solidaire"
-          src="/image-2-1.png"
-        />
-
-        {/* Deuxième image superposée - décalée vers le bas et à droite - uniquement sur très grands écrans (xl et plus) */}
-        <img
-          className="hidden xl:block absolute bottom-2 left-2 w-[48%] h-1/2 rounded-lg object-cover shadow-lg transform translate-y-16 translate-x-8"
-          alt="ORA - Inclusion Financière"
-          src="/image-4-1.png"
+          className="w-full h-full rounded-lg md:rounded-xl object-contain bg-white p-8"
+          alt="Royal FM"
+          src="/logo Royal FMRoyal FM.png"
         />
       </div>
     </div>
@@ -160,13 +146,13 @@ export const ORASection = (): JSX.Element => {
               >
                 <ActionButton 
                   variant="primary"
-                  onClick={() => window.open('https://royalfm.cm/', '_blank')}
+                  onClick={() => window.open('https://royalfmcameroun.com/direct', '_blank')}
                 >
                   Écouter en direct
                 </ActionButton>
                 <ActionButton 
                   variant="secondary"
-                  onClick={() => window.open('https://royalfm.cm/', '_blank')}
+                  onClick={() => window.open('https://royalfmcameroun.com/', '_blank')}
                 >
                   Découvrir nos programmes
                 </ActionButton>

@@ -17,8 +17,8 @@ const products = [
       {
         text: (
           <>
-            <span className="font-bold">Santé et Education </span>
-            <span>– Jusqua </span>
+            <span className="font-bold">Santé et Éducation </span>
+            <span>– Jusqu&apos;à </span>
             <span className="font-bold">35% de réduction</span>
             <span> sur vos frais</span>
           </>
@@ -29,7 +29,7 @@ const products = [
           <>
             <span className="font-bold">Tombola & communauté </span>
             <span>
-              – Gagnez maisons, motos et financements tout en participant à une
+              – Gagnez des maisons, motos et financements tout en participant à une
               communauté solidaire
             </span>
           </>

@@ -23,7 +23,7 @@ export const MessageSection = (): JSX.Element => {
           </h2>
 
           <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-relaxed w-full">
-            Depuis près de trois décennies, RENAPROV FINANCE SA s&apos;engage à rester
+            Depuis près de trois décennies, RENAPROV FINANCE S.A s&apos;engage à rester
             proche de ses clients et à leur offrir des solutions financières
             solidaires. Notre ambition est de consolider cette proximité en
             développant des services modernes, adaptés aux besoins des familles,

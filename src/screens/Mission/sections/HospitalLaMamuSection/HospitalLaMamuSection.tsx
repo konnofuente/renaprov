@@ -127,13 +127,13 @@ export const HospitalLaMamuSection = (): JSX.Element => {
           >
             <ActionButton 
               variant="secondary"
-              onClick={() => window.open('https://lamamu.cm/', '_blank')}
+              onClick={() => window.open('https://www.hopitallamamu.com/', '_blank')}
             >
               Prendre rendez-vous
             </ActionButton>
             <ActionButton 
               variant="primary"
-              onClick={() => window.open('https://lamamu.cm/', '_blank')}
+              onClick={() => window.open('https://www.hopitallamamu.com/', '_blank')}
             >
               Découvrir nos services
             </ActionButton>
