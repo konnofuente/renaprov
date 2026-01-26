@@ -1,0 +1,62 @@
+{
+  "seo": {
+    "title": "RENAPROV - Trusted Microfinance in Cameroon",
+    "description": "RENAPROV FINANCE SA - Microfinance institution in Cameroon. Accessible financial services, savings, loans, financial inclusion. Become a homeowner with MASO, save with ORA.",
+    "keywords": "microfinance, Cameroon, savings, credit, financial inclusion, RENAPROV, MASO, ORA, current account, savings account, finance, Yaoundé, Douala"
+  },
+  "hero": {
+    "title": "Microfinance at the service of populations",
+    "description": "Since 1996, RENAPROV FINANCE SA has been supporting Cameroonians in their personal and professional projects.",
+    "cta": "Open my account today",
+    "imageAlt": "Microfinance at the service of populations"
+  },
+  "networkProximity": {
+    "title": "A network at the service of proximity",
+    "description": "Since its creation, RENAPROV has built a dense and strategic network; with branches located in the heart of markets and neighbourhoods. This proximity to our clients allows us to respond quickly to their needs and support them effectively in their daily financial projects.",
+    "ariaLabels": {
+      "img1": "Person in light blue suit",
+      "img2": "Person in dark blue suit with smartphone",
+      "img3": "Person in blue safari suit"
+    }
+  },
+  "filiales": {
+    "titlePart1": "Our subsidiaries (the)",
+    "titlePart2": "strength of an integrated network"
+  },
+  "institutBissai": {
+    "title": "Bissai University Institute",
+    "description": "A higher education institution recognised for the quality of its programmes. The Bissai University Institute prepares young people for the jobs of tomorrow through adapted programmes, qualified teaching staff and a focus on innovation.",
+    "location": "Ekounou Deux Cheveaux, Yaoundé • Socagi 13809, Yaoundé, Cameroon 237",
+    "phone": "+237 690 20 37 08",
+    "ctaEnroll": "Enrol",
+    "ctaDiscover": "Discover our programmes",
+    "imageAlt": "Bissai University Institute"
+  },
+  "hospitalLaMamu": {
+    "title": "La Mamu Hospital Complex",
+    "description": "A modern facility offering accessible, quality care with a human approach and close to patients.",
+    "phones": ["+237 6 55 01 18 49", "+237 6 55 00 94 83", "+237 6 90 22 88 90"],
+    "ctaAppointment": "Book an appointment",
+    "ctaDiscover": "Discover our services",
+    "imageAlt": "La Mamu Hospital Complex",
+    "imageAlt2": "La Mamu Hospital Complex - Equipment",
+    "imageAlt3": "La Mamu Hospital Complex - Services"
+  },
+  "socagi": {
+    "title": "La Socagi",
+    "description": "A company specialised in management and investment, La Socagi supports businesses and individuals in their economic projects. Its objective: to promote sustainable growth, secure investments and create long-term value.",
+    "location": "Quartier X, Ville Y",
+    "phone": "+237 693930231",
+    "ctaJoin": "Join us",
+    "ctaDiscover": "Discover our offerings",
+    "imageAlt": "La Socagi - Management and Investment"
+  },
+  "royalFm": {
+    "title": "Royal FM",
+    "description": "The listeners' radio in Yaoundé. Royal FM accompanies you with varied programmes, quality information and proximity to its listeners.",
+    "phones": ["+237 691 738 357", "+237 671 157 321", "+237 620 377 481"],
+    "ctaListen": "Listen live",
+    "ctaDiscover": "Discover our programmes",
+    "imageAlt": "Royal FM"
+  }
+}

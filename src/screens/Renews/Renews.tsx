@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { SEO } from "../../components/SEO";
 import { CallToActionSubsection } from "../Accueil/sections/CallToActionSubsection";
 import { HeroSection } from "./sections/HeroSection";
@@ -8,12 +9,14 @@ import { DirigeantsSection } from "./sections/DirigeantsSection";
 import { GalerieSection } from "./sections/GalerieSection";
 
 export const Renews = (): JSX.Element => {
+  const { t } = useTranslation("renews");
+
   return (
     <>
       <SEO
-        title="RENEWS 2024 - RENAPROV | Magazine d'actualités"
-        description="Découvrez les actualités 2024 de RENAPROV FINANCE SA : ouverture du Complexe Hospitalier LA MAMU, Tombola MASO Acte 4, Institut Universitaire BISSAÏ, nouvelles agences et bien plus."
-        keywords="RENEWS, RENAPROV, actualités 2024, LA MAMU, MASO, Institut BISSAÏ, microfinance, Cameroun, magazine d'entreprise"
+        title={t("seo.title")}
+        description={t("seo.description")}
+        keywords={t("seo.keywords")}
       />
       <main className="flex flex-col w-full bg-[#ffffff]">
         <HeroSection />

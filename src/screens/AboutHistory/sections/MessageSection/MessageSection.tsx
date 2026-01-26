@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 export const MessageSection = (): JSX.Element => {
+  const { t } = useTranslation("about");
+
   return (
     <section
       className="relative w-full  overflow-hidden bg-[linear-gradient(148deg,rgba(0,172,238,1)_0%,rgba(1,27,38,1)_43%)]  "
@@ -8,7 +12,7 @@ export const MessageSection = (): JSX.Element => {
         <div className="flex-shrink-0 w-full md:w-auto py-[-32px] h-full min-h-[400px]">
           <img
             className="w-full sm:w-[300px] md:w-[400px] lg:w-[500px] xl:w-[669px] h-full min-h-[400px] object-cover object-center shadow-lg"
-            alt="Portrait de Mr M. Emmanuel Noël Bissai, Directeur Général de RENAPROV"
+            alt={t("message.imageAlt")}
             src="/frame-2087326088-removebg-preview.png"
           />
         </div>
@@ -18,22 +22,17 @@ export const MessageSection = (): JSX.Element => {
             id="message-heading"
             className="font-bold text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[52px] leading-[120%]"
           >
-            <span className="block">Révérend Pasteur</span>
-            <span className="block">Emmanuel Noël Bissai</span>
+            <span className="block">{t("message.titlePrefix")}</span>
+            <span className="block">{t("message.titleName")}</span>
           </h2>
 
           <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-relaxed w-full">
-            Depuis près de trois décennies, RENAPROV FINANCE S.A s&apos;engage à rester
-            proche de ses clients et à leur offrir des solutions financières
-            solidaires. Notre ambition est de consolider cette proximité en
-            développant des services modernes, adaptés aux besoins des familles,
-            des entreprises et des collectivités. Ensemble, bâtissons une
-            finance inclusive et durable pour le Cameroun.
+            {t("message.content")}
           </p>
 
           <img
             className="absolute bottom-0 right-2 sm:right-4 md:right-6 lg:right-8 xl:right-12 w-[40px] sm:w-[60px] md:w-[80px] lg:w-[100px] xl:w-[120px] opacity-50 hover:opacity-70 transition-opacity duration-300 z-10"
-            alt="Décoration graphique RENAPROV"
+            alt={t("message.decorationAlt")}
             src="/capa-1.svg"
           />
         </div>

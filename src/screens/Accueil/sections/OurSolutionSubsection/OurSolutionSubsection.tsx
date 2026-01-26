@@ -2,8 +2,9 @@ import {
   ChevronLeft as ChevronLeftIcon,
   ChevronRight as ChevronRightIcon,
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 
@@ -11,123 +12,124 @@ import { Card, CardContent } from "../../../../components/ui/card";
 const gradientTextClass =
   "bg-[linear-gradient(148deg,rgba(0,172,238,1)_0%,rgba(1,27,38,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent]";
 
-const productCards = [
-  // Comptes Courant
-  {
-    title: "Compte courant individuel",
-    description: "Gérez vos transactions quotidiennes en toute simplicité.",
-    image: "/service/Compte courant individuel.jpg",
-    route: "/service/compte-courant-individuel",
-  },
-  {
-    title: "Compte courant entreprise",
-    description: "Gérez les transactions de votre entreprise en toute simplicité.",
-    image: "/service/Compte courant entreprise.jpg",
-    route: "/service/compte-courant-entreprise",
-  },
-  {
-    title: "Compte courant association",
-    description: "Compte bancaire pour les associations à but non lucratif (culturelles, sportives, religieuses, humanitaires, etc.).",
-    image: "/service/Compte courant association.jpg",
-    route: "/service/compte-courant-association",
-  },
-  
-  // Comptes Épargne
-  {
-    title: "Compte épargne individuel",
-    description: "Épargnez pour vos projets personnels avec des taux d'intérêt préférentiel et une gestion simplifiée.",
-    image: "/service/Compte epargne individuel.jpg",
-    route: "/service/compte-epargne-individuel",
-  },
-  {
-    title: "Compte épargne entreprise",
-    description: "Épargnez vos projets d'entreprises avec des avantages dédiés.",
-    image: "/service/Compte epargne entreprise.jpg",
-    route: "/service/compte-epargne-entreprise",
-  },
-  
-  // Comptes Spéciaux
-  {
-    title: "Compte salarié secteur Public ou Privé",
-    description: "Compte dédié aux employés avec des avantages et des services privilégiés.",
-    image: "/service/compte salaire.jpg",
-    route: "/service/compte-cheque-salaire-pension",
-  },
-  {
-    title: "Compte pensionné secteur Public ou Privé",
-    description: "Compte pour les retraités du secteur public ou privé avec des avantages dédiés et des services adaptés.",
-    image: "/service/compte pensionne.jpg",
-    route: "/service/compte-pensionne",
-  },
-  
-  // ORA - Objectif Réalisation d'Ambitions
-  {
-    title: "ORA Foncier",
-    description: "Plan d'épargne permettant d'acquérir un terrain viabilisé, sécurisé, avec eau et électricité, assorti d'un titre foncier à moindre coût.",
-    image: "/service/ORA froncier.jpeg",
-  },
-  {
-    title: "ORA Investissement",
-    description: "Plan d'épargne permettant de constituer un fond pour la réalisation d'un projet.",
-    image: "/service/Ora investissement.png",
-  },
-  {
-    title: "ORA Prévoyance",
-    description: "Plan d'épargne permettant de constituer un fond afin de prévenir les évènements heureux ou malheureux.",
-    image: "/service/ORA provayance.jpeg",
-  },
-  {
-    title: "ORA Scolaire",
-    description: "Plan d'épargne à partir de 350 FCFA permettant de garantir la rentrée scolaire.",
-    image: "/service/ORA School.jpeg",
-  },
-  {
-    title: "ORA Académique",
-    description: "Plan d'épargne à partir de 1000 FCFA pour assurer les frais de scolarité à l'Institut Universitaire BISSAÏ.",
-    image: "/service/ORA Académique.png",
-  },
-  {
-    title: "ORA Équipement",
-    description: "Plan d'épargne permettant l'acquisition d'équipements mobiliers, informatiques, électroniques, électroménager, etc.",
-    image: "/service/ORA equipement.jpeg",
-  },
-  {
-    title: "ORA Islamique",
-    description: "Plan d'épargne permettant de constituer une épargne non rémunérée conforme à la charia.",
-    image: "/ORA.png",
-  },
-  {
-    title: "ORA Santé",
-    description: "Plan d'épargne permettant de bénéficier à partir de 1000 FCFA/jour d'une couverture sanitaire au Complexe Hospitalier La MAMU.",
-    image: "/service/Ora Sante.png",
-  },
-  
-  // MASO
-  {
-    title: "MASO",
-    description: "MASO (Mutuelle d'Assistance et de Solidarité) est un produit solidaire mis en place par RENAPROV FINANCE SA qui vous permet de couvrir les besoins sociaux de base.",
-    image: "/logo maso solidarite.png",
-  },
-  
-  // SPMC
-  {
-    title: "SPMC",
-    description: "Compte courant adapté aux acteurs des petits métiers et petits commerciaux avec des frais de gestion simplifiés et possibilité d'octroi de crédit.",
-    image: "/Un%20compte%20simple%20et%20sécurisé,%20accessible%20à%20tous.png",
-  },
-  
-  // Bicard
-  {
-    title: "Bicard",
-    description: "Carte bancaire permettant la facilitation de vos transactions financières.",
-    image: "/Un%20compte%20simple%20et%20sécurisé,%20accessible%20à%20tous.png",
-  },
-];
-
 export const OurSolutionSubsection = (): JSX.Element => {
+  const { t } = useTranslation('home');
   const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate();
   const [cardsToShow, setCardsToShow] = useState(3);
+
+  const productCards = useMemo(() => [
+    // Comptes Courant
+    {
+      title: t('solutions.products.currentAccountIndividual.title'),
+      description: t('solutions.products.currentAccountIndividual.description'),
+      image: "/service/Compte courant individuel.jpg",
+      route: "/service/compte-courant-individuel",
+    },
+    {
+      title: t('solutions.products.currentAccountBusiness.title'),
+      description: t('solutions.products.currentAccountBusiness.description'),
+      image: "/service/Compte courant entreprise.jpg",
+      route: "/service/compte-courant-entreprise",
+    },
+    {
+      title: t('solutions.products.currentAccountAssociation.title'),
+      description: t('solutions.products.currentAccountAssociation.description'),
+      image: "/service/Compte courant association.jpg",
+      route: "/service/compte-courant-association",
+    },
+    
+    // Comptes Épargne
+    {
+      title: t('solutions.products.savingsAccountIndividual.title'),
+      description: t('solutions.products.savingsAccountIndividual.description'),
+      image: "/service/Compte epargne individuel.jpg",
+      route: "/service/compte-epargne-individuel",
+    },
+    {
+      title: t('solutions.products.savingsAccountBusiness.title'),
+      description: t('solutions.products.savingsAccountBusiness.description'),
+      image: "/service/Compte epargne entreprise.jpg",
+      route: "/service/compte-epargne-entreprise",
+    },
+    
+    // Comptes Spéciaux
+    {
+      title: t('solutions.products.employeeAccount.title'),
+      description: t('solutions.products.employeeAccount.description'),
+      image: "/service/compte salaire.jpg",
+      route: "/service/compte-cheque-salaire-pension",
+    },
+    {
+      title: t('solutions.products.pensionAccount.title'),
+      description: t('solutions.products.pensionAccount.description'),
+      image: "/service/compte pensionne.jpg",
+      route: "/service/compte-pensionne",
+    },
+    
+    // ORA - Objectif Réalisation d'Ambitions
+    {
+      title: t('solutions.products.oraFoncier.title'),
+      description: t('solutions.products.oraFoncier.description'),
+      image: "/service/ORA froncier.jpeg",
+    },
+    {
+      title: t('solutions.products.oraInvestissement.title'),
+      description: t('solutions.products.oraInvestissement.description'),
+      image: "/service/Ora investissement.png",
+    },
+    {
+      title: t('solutions.products.oraPrevoyance.title'),
+      description: t('solutions.products.oraPrevoyance.description'),
+      image: "/service/ORA provayance.jpeg",
+    },
+    {
+      title: t('solutions.products.oraScolaire.title'),
+      description: t('solutions.products.oraScolaire.description'),
+      image: "/service/ORA School.jpeg",
+    },
+    {
+      title: t('solutions.products.oraAcademique.title'),
+      description: t('solutions.products.oraAcademique.description'),
+      image: "/service/ORA Académique.png",
+    },
+    {
+      title: t('solutions.products.oraEquipement.title'),
+      description: t('solutions.products.oraEquipement.description'),
+      image: "/service/ORA equipement.jpeg",
+    },
+    {
+      title: t('solutions.products.oraIslamique.title'),
+      description: t('solutions.products.oraIslamique.description'),
+      image: "/ORA.png",
+    },
+    {
+      title: t('solutions.products.oraSante.title'),
+      description: t('solutions.products.oraSante.description'),
+      image: "/service/Ora Sante.png",
+    },
+    
+    // MASO
+    {
+      title: t('solutions.products.maso.title'),
+      description: t('solutions.products.maso.description'),
+      image: "/logo maso solidarite.png",
+    },
+    
+    // SPMC
+    {
+      title: t('solutions.products.spmc.title'),
+      description: t('solutions.products.spmc.description'),
+      image: "/Un%20compte%20simple%20et%20sécurisé,%20accessible%20à%20tous.png",
+    },
+    
+    // Bicard
+    {
+      title: t('solutions.products.bicard.title'),
+      description: t('solutions.products.bicard.description'),
+      image: "/Un%20compte%20simple%20et%20sécurisé,%20accessible%20à%20tous.png",
+    },
+  ], [t]);
 
   // Responsive cards calculation
   useEffect(() => {
@@ -211,18 +213,16 @@ export const OurSolutionSubsection = (): JSX.Element => {
       <div className="w-full max-w-7xl flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-12 mb-8 sm:mb-12 md:mb-16">
         <div className="w-full lg:max-w-2xl">
           <h2 className="font-bold text-gray-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mb-4 sm:mb-6">
-            Nos solutions financières pour{" "}
+            {t('solutions.title')}{" "}
             <span className={gradientTextClass}>
-              particuliers et entreprises
+              {t('solutions.titleHighlight')}
             </span>
           </h2>
         </div>
 
         <div className="w-full lg:max-w-2xl">
           <p className="font-normal text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">
-            Que vous soyez salarié, entrepreneur, commerçant ou étudiant,
-            RENAPROV met à votre disposition une gamme de produits pensés pour
-            vos besoins
+            {t('solutions.subtitle')}
           </p>
         </div>
       </div>
@@ -274,14 +274,14 @@ export const OurSolutionSubsection = (): JSX.Element => {
                     <Button
                       variant="link"
                       className="inline-flex items-center justify-start gap-2 p-0 h-auto mt-4 text-sm font-semibold text-foundation-bluenormal hover:text-foundation-bluedark-hover transition-colors duration-200"
-                      aria-label={`En savoir plus sur ${product.title}`}
+                      aria-label={`${t('solutions.learnMore')} ${product.title}`}
                       onClick={() => {
                         if (product.route) {
                           window.open(product.route, '_blank');
                         }
                       }}
                     >
-                      <span>En savoir plus</span>
+                      <span>{t('solutions.learnMore')}</span>
                       <ChevronRightIcon className="w-4 h-4" />
                     </Button>
                   </CardContent>

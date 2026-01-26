@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { ProductFilter as FilterType } from "../data/productsData";
 
@@ -10,19 +11,21 @@ export const ProductFilter: React.FC<ProductFilterProps> = ({
   activeFilter,
   onFilterChange,
 }) => {
+  const { t } = useTranslation("products");
+
   const filters = [
-    { key: 'all' as FilterType, label: 'Tous', color: 'bg-gray-600' },
-    { key: 'renaprov' as FilterType, label: 'Produits RENAPROV', color: 'bg-[#00acee]' },
-    { key: 'connexes' as FilterType, label: 'Connexes', color: 'bg-[#8b5cf6]' },
+    { key: "all" as FilterType, labelKey: "filters.all", color: "bg-gray-600" },
+    { key: "renaprov" as FilterType, labelKey: "filters.renaprov", color: "bg-[#00acee]" },
+    { key: "connexes" as FilterType, labelKey: "filters.connexes", color: "bg-[#8b5cf6]" },
   ];
 
   return (
     <div className="w-full max-w-4xl mx-auto mb-8 sm:mb-12">
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
         <h3 className="text-lg sm:text-xl font-semibold text-gray-700 mb-2 sm:mb-0">
-          Filtrer par marque :
+          {t("filters.filterByBrand")}
         </h3>
-        
+
         <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
           {filters.map((filter) => (
             <motion.button
@@ -43,8 +46,8 @@ export const ProductFilter: React.FC<ProductFilterProps> = ({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
             >
-              {filter.label}
-              
+              {t(filter.labelKey)}
+
               {/* Active indicator */}
               {activeFilter === filter.key && (
                 <motion.div
@@ -67,9 +70,9 @@ export const ProductFilter: React.FC<ProductFilterProps> = ({
         transition={{ delay: 0.2 }}
       >
         <p className="text-sm text-gray-500">
-          {activeFilter === 'all' && "Découvrez tous nos produits et services"}
-          {activeFilter === 'renaprov' && "Services financiers et microfinance"}
-          {activeFilter === 'connexes' && "Produits de transfert d'argent et paiements mobiles"}
+          {activeFilter === "all" && t("filters.filterDescAll")}
+          {activeFilter === "renaprov" && t("filters.filterDescRenaprov")}
+          {activeFilter === "connexes" && t("filters.filterDescConnexes")}
         </p>
       </motion.div>
     </div>

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Button } from "../../../../components/ui/button";
@@ -99,6 +100,8 @@ const galeriePhotos = [
 ];
 
 export const GalerieSection = (): JSX.Element => {
+  const { t } = useTranslation("renews");
+
   return (
     <section className="w-full bg-white py-16 sm:py-20 md:py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
@@ -111,11 +114,11 @@ export const GalerieSection = (): JSX.Element => {
           className="text-center mb-16"
         >
           <h2 className="[font-family:'Bricolage_Grotesque',Helvetica] font-bold text-foundation-bluenormal text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-tight mb-4">
-            GALÉRIE
+            {t("galerie.sectionTitle")}
           </h2>
           <div className="w-24 h-1 bg-foundation-bluenormal mx-auto rounded-full mb-6"></div>
           <p className="[font-family:'Roboto',Helvetica] font-normal text-gray-600 text-lg sm:text-xl max-w-3xl mx-auto">
-            Revivez les moments marquants et les événements importants de RENAPROV FINANCE S.A
+            {t("galerie.sectionSubtitle")}
           </p>
         </motion.div>
 

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { SEO } from "../../components/SEO";
 import { AdvantagesSubsection } from "./sections/AdvantagesSubsection";
 import { CallToActionSubsection } from "./sections/CallToActionSubsection";
@@ -10,14 +11,15 @@ import { AdhesionConditionsSection } from "./sections/AdhesionConditionsSection"
 import { MasoAdhesionForm } from "../../components/MasoAdhesionForm";
 
 export const Maso = (): JSX.Element => {
+  const { t } = useTranslation("maso");
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   return (
     <>
       <SEO
-        title="La MASO - RENAPROV | Ensemble, sortons du cercle de la pauvreté"
-        description="La MASO est une initiative de RENAPROV FINANCE SA qui redonne du pouvoir aux Camerounais grâce à la solidarité. Bénéficiez d'avantages directs en santé, éducation et assistance sociale."
-        keywords="MASO, RENAPROV, solidarité, Cameroun, santé, éducation, assistance sociale, microfinance, inclusion financière"
+        title={t("seo.title")}
+        description={t("seo.description")}
+        keywords={t("seo.keywords")}
       />
       <main className="flex flex-col w-full bg-[#ffffff]">
         <HeroSectionSubsection onOpenForm={() => setIsFormOpen(true)} />

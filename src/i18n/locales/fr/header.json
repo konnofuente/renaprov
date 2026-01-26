@@ -1,0 +1,21 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "mission": "Mission",
+    "products": "Produits",
+    "maso": "MASO",
+    "renews": "RENEWS",
+    "contact": "Contact"
+  },
+  "logoTagline": "Réserve Nationale de l'Épargne et de la Provision",
+  "openAccount": "Ouvrir mon compte",
+  "mobileMenu": {
+    "open": "Ouvrir le menu",
+    "close": "Fermer le menu",
+    "ariaLabel": "Navigation mobile"
+  },
+  "desktopNav": {
+    "ariaLabel": "Navigation principale"
+  }
+}

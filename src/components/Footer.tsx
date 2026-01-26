@@ -1,31 +1,9 @@
-import React from "react";
+import React, { useMemo } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Separator } from "./ui/separator";
-
-const footerLinks = [
-  { label: "Accueil" },
-  { label: "Notre histoire" },
-  { label: "Nos filières" },
-  { label: "Contact" },
-];
-
-const footerServices = [
-  { label: "Compte courant" },
-  { label: "Compte employé / retraité" },
-  { label: "Compte épargne" },
-  { label: "Des produits" },
-];
-
-const footerAddress = [
-  { label: "BP : 13809 Messa, Yaoundé" },
-  { label: "Siège social : Montée Elig-Effa, Yaoundé" },
-];
-
-const footerContact = [
-  { label: "+237 693930231" },
-  { label: "+237 695133343" },
-  { label: "+237 690203176" },
-  { label: "E-mail : stephaniebissai@gmail.com" },
-];
+import { useTranslation } from "react-i18next";
+import { getLocalizedPath, getLangFromPath, SUPPORTED_LANGS } from "../lib/utils";
+import i18n from "../i18n";
 
 const socialIcons = [
   { alt: "Facebook", src: "/icon---facebook.svg", href: "https://www.facebook.com/renaprovonline" },
@@ -34,9 +12,61 @@ const socialIcons = [
   { alt: "X (Twitter)", src: "/icon---x.svg", href: "https://x.com/RenaprovS" },
 ];
 
+const normalizeLang = (l: string | undefined): "fr" | "en" => {
+  const base = (l || "fr").split("-")[0].toLowerCase();
+  return SUPPORTED_LANGS.includes(base as "fr" | "en") ? (base as "fr" | "en") : "fr";
+};
+
 export const Footer: React.FC = () => {
+  const { t } = useTranslation(['footer', 'common']);
+  const location = useLocation();
+
+  const langFromUrl = getLangFromPath(location.pathname);
+  const currentLang = langFromUrl ?? normalizeLang(i18n.language);
+
+  const localized = (path: string) => getLocalizedPath(path, currentLang);
+
+  const getSocialAriaLabel = (alt: string): string => {
+    const map: Record<string, string> = {
+      'Facebook': 'footer:social.facebook',
+      'Instagram': 'footer:social.instagram',
+      'LinkedIn': 'footer:social.linkedin',
+      'X (Twitter)': 'footer:social.twitter',
+    };
+    return t(map[alt] || alt);
+  };
+
+  const footerLinks = useMemo(() => [
+    { label: t('footer:links.home'), path: localized("/") },
+    { label: t('footer:links.about'), path: localized("/about") },
+    { label: t('footer:links.mission'), path: localized("/mission") },
+    { label: t('footer:links.products'), path: localized("/products") },
+    { label: t('footer:links.maso'), path: localized("/maso") },
+    { label: t('footer:links.renews'), path: localized("/renews") },
+    { label: t('footer:links.contact'), path: localized("/contact") },
+  ], [t, currentLang]);
+
+  const footerServices = useMemo(() => [
+    { label: t('footer:services.bankAccounts'), path: localized("/products#bank-accounts") },
+    { label: t('footer:services.specialisedServices'), path: localized("/products#specialised-services") },
+    { label: t('footer:services.ora'), path: localized("/products#ora-section") },
+    { label: t('footer:services.maso'), path: localized("/maso") },
+  ], [t, currentLang]);
+
+  const footerAddress = useMemo(() => [
+    { label: t('footer:address.poBox') },
+    { label: t('footer:address.headquarters') },
+  ], [t]);
+
+  const footerContact = useMemo(() => [
+    { label: t('footer:contact.phone1'), href: 'tel:+237693930231', type: 'phone' },
+    { label: t('footer:contact.phone2'), href: 'tel:+237695133343', type: 'phone' },
+    { label: t('footer:contact.phone3'), href: 'tel:+237690203176', type: 'phone' },
+    { label: t('footer:contact.email'), href: 'mailto:stephaniebissai@gmail.com', type: 'email' },
+  ], [t]);
+
   return (
-    <footer className="items-center justify-center gap-10 sm:gap-12 md:gap-16 lg:gap-20 px-6 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-10 sm:py-12 md:py-16 lg:py-20 bg-[#011b26] flex flex-col w-full">
+    <footer className="items-center justify-center gap-10 sm:gap-12 md:gap-16 lg:gap-20 px-6 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-10 sm:py-12 md:py-16 lg:py-20 bg-[#011b26] flex flex-col w-full relative z-10">
       <div className="flex-col max-w-screen-xl items-start gap-10 sm:gap-12 md:gap-16 lg:gap-20 w-full flex">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 items-start gap-8 sm:gap-10 w-full">
           {/* Logo Section */}
@@ -44,20 +74,24 @@ export const Footer: React.FC = () => {
             <img
               src="/logo.png"
               className="w-[180px] sm:w-[200px] md:w-[217.46px] h-auto"
-              alt="RENAPROV FINANCE SA Logo"
+              alt={t('common:logoAltShort')}
             />
           </div>
 
           {/* Links Section */}
           <div className="flex flex-col items-start gap-4 sm:gap-6">
             <h3 className="font-text-h3 font-[number:var(--text-h3-font-weight)] text-white text-[length:var(--text-h3-font-size)] tracking-[var(--text-h3-letter-spacing)] leading-[var(--text-h3-line-height)] [font-style:var(--text-h3-font-style)]">
-              Liens
+              {t('footer:links.title')}
             </h3>
             <div className="flex flex-col items-start gap-3 sm:gap-4">
               {footerLinks.map((link, index) => (
-                <span key={index} className="font-text-body font-[number:var(--text-body-font-weight)] text-foundation-bluelight-active text-[length:var(--text-body-font-size)] tracking-[var(--text-body-letter-spacing)] leading-[var(--text-body-line-height)] [font-style:var(--text-body-font-style)]">
+                <Link 
+                  key={index} 
+                  to={link.path}
+                  className="font-text-body font-[number:var(--text-body-font-weight)] text-foundation-bluelight-active text-[length:var(--text-body-font-size)] tracking-[var(--text-body-letter-spacing)] leading-[var(--text-body-line-height)] [font-style:var(--text-body-font-style)] hover:text-foundation-bluenormal transition-colors duration-200 cursor-pointer"
+                >
                   {link.label}
-                </span>
+                </Link>
               ))}
             </div>
           </div>
@@ -65,13 +99,17 @@ export const Footer: React.FC = () => {
           {/* Services Section */}
           <div className="flex flex-col items-start gap-4 sm:gap-6">
             <h3 className="font-text-h3 font-[number:var(--text-h3-font-weight)] text-white text-[length:var(--text-h3-font-size)] tracking-[var(--text-h3-letter-spacing)] leading-[var(--text-h3-line-height)] [font-style:var(--text-h3-font-style)]">
-              Services
+              {t('footer:services.title')}
             </h3>
             <div className="flex flex-col items-start gap-3 sm:gap-4">
               {footerServices.map((service, index) => (
-                <span key={index} className="font-text-body font-[number:var(--text-body-font-weight)] text-foundation-bluelight-active text-[length:var(--text-body-font-size)] tracking-[var(--text-body-letter-spacing)] leading-[var(--text-body-line-height)] [font-style:var(--text-body-font-style)]">
+                <Link 
+                  key={index} 
+                  to={service.path}
+                  className="font-text-body font-[number:var(--text-body-font-weight)] text-foundation-bluelight-active text-[length:var(--text-body-font-size)] tracking-[var(--text-body-letter-spacing)] leading-[var(--text-body-line-height)] [font-style:var(--text-body-font-style)] hover:text-foundation-bluenormal transition-colors duration-200 cursor-pointer"
+                >
                   {service.label}
-                </span>
+                </Link>
               ))}
             </div>
           </div>
@@ -79,7 +117,7 @@ export const Footer: React.FC = () => {
           {/* Address Section */}
           <div className="flex flex-col items-start gap-4 sm:gap-6">
             <h3 className="font-text-h3 font-[number:var(--text-h3-font-weight)] text-white text-[length:var(--text-h3-font-size)] tracking-[var(--text-h3-letter-spacing)] leading-[var(--text-h3-line-height)] [font-style:var(--text-h3-font-style)]">
-              Adresse
+              {t('footer:address.title')}
             </h3>
             <div className="flex flex-col items-start gap-3 sm:gap-4">
               {footerAddress.map((address, index) => (
@@ -93,13 +131,17 @@ export const Footer: React.FC = () => {
           {/* Contact Section */}
           <div className="flex flex-col items-start gap-4 sm:gap-6">
             <h3 className="font-text-h3 font-[number:var(--text-h3-font-weight)] text-white text-[length:var(--text-h3-font-size)] tracking-[var(--text-h3-letter-spacing)] leading-[var(--text-h3-line-height)] [font-style:var(--text-h3-font-style)]">
-              Contact
+              {t('footer:contact.title')}
             </h3>
             <div className="flex flex-col items-start gap-3 sm:gap-4">
               {footerContact.map((contact, index) => (
-                <span key={index} className="font-text-body font-[number:var(--text-body-font-weight)] text-foundation-bluelight-active text-[length:var(--text-body-font-size)] tracking-[var(--text-body-letter-spacing)] leading-[var(--text-body-line-height)] [font-style:var(--text-body-font-style)]">
+                <a 
+                  key={index} 
+                  href={contact.href}
+                  className="font-text-body font-[number:var(--text-body-font-weight)] text-foundation-bluelight-active text-[length:var(--text-body-font-size)] tracking-[var(--text-body-letter-spacing)] leading-[var(--text-body-line-height)] [font-style:var(--text-body-font-style)] hover:text-foundation-bluenormal transition-colors duration-200 cursor-pointer"
+                >
                   {contact.label}
-                </span>
+                </a>
               ))}
             </div>
           </div>
@@ -111,7 +153,7 @@ export const Footer: React.FC = () => {
           <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-6 sm:gap-4 self-stretch w-full">
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-center sm:text-left">
               <div className="w-fit font-text-small-normal font-[number:var(--text-small-normal-font-weight)] text-foundation-bluelight-active text-xs sm:text-[length:var(--text-small-normal-font-size)] tracking-[var(--text-small-normal-letter-spacing)] leading-[var(--text-small-normal-line-height)] [font-style:var(--text-small-normal-font-style)]">
-                Copyright © 2025 RENAPROV All rights reserved.
+                {t('common:copyright')}
               </div>
             </div>
 
@@ -123,7 +165,7 @@ export const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="cursor-pointer hover:opacity-80 transition-opacity"
-                  aria-label={icon.alt}
+                  aria-label={getSocialAriaLabel(icon.alt)}
                 >
                   <img
                     className="w-5 h-5 sm:w-6 sm:h-6"

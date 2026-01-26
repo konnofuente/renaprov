@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { SEO } from "../../components/SEO";
 import { Button } from "../../components/ui/button";
@@ -6,37 +7,29 @@ import { Card, CardContent } from "../../components/ui/card";
 import { CheckCircle, ArrowRight, Phone, Mail, Globe } from "lucide-react";
 
 export const CompteCourantIndividuel: React.FC = () => {
-  const features = [
-    {
-      icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
-      title: "Virements inter-institutions",
-      description: "Émettez et recevez des virements d'autres institutions financières en toute sécurité."
-    },
-    {
-      icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
-      title: "Dépôt de chèques",
-      description: "Déposez vos chèques pour encaissement et/ou pour escompte avec facilité."
-    },
-    {
-      icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
-      title: "Retraits sur chèque",
-      description: "Effectuez vos opérations de retrait sur chèque selon vos besoins."
-    }
-  ];
+  const { t } = useTranslation("services");
 
-  const benefits = [
-    "Gestion simplifiée de vos finances quotidiennes",
-    "Accès à tous les services bancaires essentiels",
-    "Sécurité et fiabilité garanties",
-    "Support client dédié"
-  ];
+  const features = useMemo(
+    () =>
+      [0, 1, 2].map((i) => ({
+        icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
+        title: t(`compteCourantIndividuel.features.${i}.title`),
+        description: t(`compteCourantIndividuel.features.${i}.description`),
+      })),
+    [t]
+  );
+
+  const benefits = useMemo(
+    () => [0, 1, 2, 3].map((i) => t(`compteCourantIndividuel.benefits.${i}`)),
+    [t]
+  );
 
   return (
     <>
       <SEO
-        title="Compte Courant Individuel - RENAPROV FINANCE SA"
-        description="Gérez vos finances quotidiennes avec le compte courant individuel RENAPROV. Virements, dépôts de chèques, retraits et services bancaires complets."
-        keywords="compte courant, individuel, RENAPROV, microfinance, Cameroun, virements, chèques, services bancaires"
+        title={t("compteCourantIndividuel.seo.title")}
+        description={t("compteCourantIndividuel.seo.description")}
+        keywords={t("compteCourantIndividuel.seo.keywords")}
       />
       
       <motion.main
@@ -55,16 +48,16 @@ export const CompteCourantIndividuel: React.FC = () => {
                 transition={{ duration: 0.8 }}
               >
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-                  Compte Courant Individuel
+                  {t("compteCourantIndividuel.hero.title")}
                 </h1>
                 <p className="text-xl lg:text-2xl mb-8 text-blue-100">
-                  Gérez vos finances quotidiennes en toute simplicité avec des services complets
+                  {t("compteCourantIndividuel.hero.subtitle")}
                 </p>
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="bg-white text-foundation-bluenormal hover:bg-gray-100"
                 >
-                  Ouvrir un compte
+                  {t("common.openAccount")}
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </motion.div>
@@ -77,13 +70,13 @@ export const CompteCourantIndividuel: React.FC = () => {
               >
                 <img
                   src="/service/Compte courant individuel.jpg"
-                  alt="Compte Courant Individuel RENAPROV"
+                  alt={t("compteCourantIndividuel.hero.imageAlt")}
                   className="w-full h-auto rounded-lg shadow-2xl"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg">
                   <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                    <span className="text-sm font-medium text-gray-700">Service disponible</span>
+                    <div className="w-3 h-3 bg-green-500 rounded-full" />
+                    <span className="text-sm font-medium text-gray-700">{t("common.serviceAvailable")}</span>
                   </div>
                 </div>
               </motion.div>
@@ -102,10 +95,10 @@ export const CompteCourantIndividuel: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                Fonctionnalités Principales
+                {t("common.featuresTitle")}
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Le compte courant individuel vous permet d'effectuer toutes vos opérations bancaires quotidiennes avec facilité et sécurité.
+                {t("compteCourantIndividuel.featuresSubtitle")}
               </p>
             </motion.div>
 
@@ -152,10 +145,10 @@ export const CompteCourantIndividuel: React.FC = () => {
                 transition={{ duration: 0.8 }}
               >
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                  Pourquoi Choisir RENAPROV ?
+                  {t("common.benefitsTitle")}
                 </h2>
                 <p className="text-lg text-gray-600 mb-8">
-                  Avec plus de 30 ans d'expérience dans la microfinance au Cameroun, RENAPROV vous offre des services fiables et adaptés à vos besoins.
+                  {t("compteCourantIndividuel.benefitsSubtitle")}
                 </p>
                 <ul className="space-y-4">
                   {benefits.map((benefit, index) => (
@@ -183,7 +176,7 @@ export const CompteCourantIndividuel: React.FC = () => {
               >
                 <img
                   src="/service/Compte courant individuel.jpg"
-                  alt="Avantages du compte courant RENAPROV"
+                  alt={t("compteCourantIndividuel.benefitsImageAlt")}
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
               </motion.div>
@@ -201,16 +194,16 @@ export const CompteCourantIndividuel: React.FC = () => {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                Prêt à Ouvrir Votre Compte ?
+                {t("common.ctaTitle")}
               </h2>
               <p className="text-xl mb-8 text-blue-100">
-                Rejoignez des milliers de clients satisfaits et découvrez tous les avantages de RENAPROV.
+                {t("compteCourantIndividuel.ctaSubtitle")}
               </p>
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-white text-foundation-bluenormal hover:bg-gray-100"
               >
-                Ouvrir un compte maintenant
+                {t("common.openAccountNow")}
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </motion.div>
@@ -231,7 +224,7 @@ export const CompteCourantIndividuel: React.FC = () => {
                 <div className="bg-foundation-bluenormal w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Globe className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Site Web</h3>
+                <h3 className="text-xl font-semibold mb-2">{t("common.contact.website")}</h3>
                 <p className="text-gray-300">renaprov.net</p>
               </motion.div>
               
@@ -245,7 +238,7 @@ export const CompteCourantIndividuel: React.FC = () => {
                 <div className="bg-foundation-bluenormal w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Phone className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Téléphone</h3>
+                <h3 className="text-xl font-semibold mb-2">{t("common.contact.phone")}</h3>
                 <p className="text-gray-300">+237 693 930 231</p>
               </motion.div>
               
@@ -259,7 +252,7 @@ export const CompteCourantIndividuel: React.FC = () => {
                 <div className="bg-foundation-bluenormal w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Mail className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Email</h3>
+                <h3 className="text-xl font-semibold mb-2">{t("common.contact.email")}</h3>
                 <p className="text-gray-300">stephaniebissai@gmail.com</p>
               </motion.div>
             </div>

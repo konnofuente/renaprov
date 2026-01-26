@@ -4,39 +4,26 @@ import {
   Quote,
   ArrowRight,
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "./ui/button";
 
-const testimonials = [
-  {
-    name: "Clarisse N.",
-    role: "Commerçante",
-    company: "CEO de Shop and more",
-    quote:
-      "Grâce à MASO, j'ai pu lancer ma boutique à Bafoussam. Leur accompagnement m'a permis d'obtenir un crédit adapté et d'apprendre à bien gérer mon activité.",
-    image: "/maso/tem2.jpg",
-  },
-  {
-    name: "Jean-Paul M.",
-    role: "Entrepreneur",
-    company: "Fondateur de TechStart",
-    quote:
-      "MASO m'a accompagné dans le développement de mon entreprise. Leur expertise et leur proximité ont été essentielles pour la réussite de mes projets.",
-    image: "/maso/maso11.jpg",
-  },
-  {
-    name: "Marie K.",
-    role: "Agricultrice",
-    company: "Coopérative Agricole",
-    quote:
-      "Avec le soutien de MASO, j'ai pu moderniser mon exploitation agricole et augmenter mes revenus. Un vrai partenaire de confiance.",
-    image: "/maso/tem3.jpg",
-  },
-];
+const TESTIMONIAL_IMAGES = ["/maso/tem2.jpg", "/maso/maso11.jpg", "/maso/tem3.jpg"];
 
 export const TestimonialSection = (): JSX.Element => {
+  const { t } = useTranslation("maso");
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  const testimonials = useMemo(() => {
+    const items = t("testimonials.items", { returnObjects: true }) as {
+      name: string;
+      role: string;
+      company: string;
+      quote: string;
+    }[];
+    return items.map((item, i) => ({ ...item, image: TESTIMONIAL_IMAGES[i] }));
+  }, [t]);
 
   // Auto-play functionality
   useEffect(() => {
@@ -71,10 +58,10 @@ export const TestimonialSection = (): JSX.Element => {
       {/* Header */}
       <div className="w-full max-w-7xl text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
         <h2 className="[font-family:'Bricolage_Grotesque',Helvetica] font-bold text-gray-900 text-3xl sm:text-4xl md:text-5xl lg:text-[56px] tracking-[0] leading-tight mb-2">
-          Ils témoignent de leur
+          {t("testimonials.titlePart1")}
         </h2>
         <h2 className="[font-family:'Bricolage_Grotesque',Helvetica] font-bold text-foundation-bluenormal text-4xl sm:text-5xl md:text-6xl lg:text-[64px] tracking-[0] leading-tight">
-          Expérience MASO
+          {t("testimonials.titlePart2")}
         </h2>
       </div>
 
@@ -102,14 +89,14 @@ export const TestimonialSection = (): JSX.Element => {
                       (currentSlide - 1 + testimonials.length) % testimonials.length
                     ].image
                   }
-                  alt="Previous"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-24 opacity-30">
-                <img
-                  src={testimonials[(currentSlide + 1) % testimonials.length].image}
-                  alt="Next"
+                alt={t("testimonials.aria.prevImage")}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-24 opacity-30">
+              <img
+                src={testimonials[(currentSlide + 1) % testimonials.length].image}
+                alt={t("testimonials.aria.nextImage")}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -132,9 +119,9 @@ export const TestimonialSection = (): JSX.Element => {
               <Button
                 variant="link"
                 className="inline-flex items-center justify-start gap-2 p-0 h-auto mb-6 sm:mb-8 text-sm sm:text-base font-semibold text-foundation-bluenormal hover:text-foundation-bluenormal/80 transition-colors duration-200"
-                aria-label="En savoir plus"
+                aria-label={t("testimonials.aria.cta")}
               >
-                <span>Savoir plus sur nos crédit bancaire</span>
+                <span>{t("testimonials.cta")}</span>
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </div>
@@ -154,7 +141,7 @@ export const TestimonialSection = (): JSX.Element => {
                     ? "bg-black w-8"
                     : "bg-black/20 w-2 hover:bg-black/40"
                 }`}
-                aria-label={`Aller au témoignage ${index + 1}`}
+                aria-label={t("testimonials.aria.goToTestimonial", { index: index + 1 })}
               />
             ))}
           </div>
@@ -166,7 +153,7 @@ export const TestimonialSection = (): JSX.Element => {
               size="icon"
               onClick={prevSlide}
               className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center gap-2 p-2 rounded-full border border-solid bg-white border-black hover:bg-gray-100 transition-all duration-200"
-              aria-label="Témoignage précédent"
+              aria-label={t("testimonials.aria.prev")}
             >
               <ChevronLeftIcon className="w-5 h-5 text-black" />
             </Button>
@@ -176,7 +163,7 @@ export const TestimonialSection = (): JSX.Element => {
               size="icon"
               onClick={nextSlide}
               className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center gap-2 p-2 rounded-full border border-solid bg-white border-black hover:bg-gray-100 transition-all duration-200"
-              aria-label="Témoignage suivant"
+              aria-label={t("testimonials.aria.next")}
             >
               <ChevronRightIcon className="w-5 h-5 text-black" />
             </Button>

@@ -3,8 +3,10 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "../../../../components/ui/button";
 import { Input } from "../../../../components/ui/input";
+import { useTranslation } from "react-i18next";
 
 export const ContactFormSection: React.FC = () => {
+  const { t } = useTranslation("contact");
   const [formData, setFormData] = useState({
     nom: "",
     prenom: "",
@@ -29,14 +31,14 @@ export const ContactFormSection: React.FC = () => {
     
     try {
       // Create mailto link with form data
-      const subject = encodeURIComponent(`Message de contact de ${formData.nom} ${formData.prenom}`);
+      const subject = encodeURIComponent(`${t("form.emailSubject")} ${formData.nom} ${formData.prenom}`);
       const body = encodeURIComponent(`
-Nom: ${formData.nom}
-Prénom: ${formData.prenom}
-Email: ${formData.email}
-Téléphone: ${formData.phone}
+${t("form.emailBody.name")}: ${formData.nom}
+${t("form.emailBody.firstName")}: ${formData.prenom}
+${t("form.emailBody.email")}: ${formData.email}
+${t("form.emailBody.phone")}: ${formData.phone}
 
-Message:
+${t("form.emailBody.message")}:
 ${formData.message}
       `);
       
@@ -54,10 +56,10 @@ ${formData.message}
         message: "",
       });
       
-      alert("Votre client email s'ouvre pour envoyer votre message à stephaniebissai@gmail.com");
+      alert(t("form.successMessage"));
     } catch (error) {
-      console.error('Erreur lors de l\'envoi:', error);
-      alert("Une erreur s'est produite. Veuillez réessayer.");
+      console.error("Erreur lors de l'envoi:", error);
+      alert(t("form.errorMessage"));
     } finally {
       setIsSubmitting(false);
     }
@@ -88,6 +90,7 @@ ${formData.message}
 
   return (
     <motion.section
+      id="contact-form"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
@@ -110,7 +113,7 @@ ${formData.message}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Localisation RENAPROV FINANCE SA"
+                title={t("contactInfo.mapTitle")}
                 className="w-full h-full"
               />
             </div>
@@ -122,19 +125,19 @@ ${formData.message}
             >
               {/* Address Section */}
               <div className="space-y-3">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Adresse</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">{t("address.title")}</h3>
                 <div className="flex items-start space-x-3">
                   <MapPin className="w-5 h-5 text-foundation-bluenormal mt-1 flex-shrink-0" />
                   <div className="text-gray-700 space-y-1">
-                    <p>BP : 13809 Messa, Yaoundé</p>
-                    <p>Siège social : Montée Elig-Effa, Yaoundé</p>
+                    <p>{t("address.line1")}</p>
+                    <p>{t("address.line2")}</p>
                   </div>
                 </div>
               </div>
 
               {/* Contact Section */}
               <div className="space-y-3">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Contact</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">{t("contactInfo.title")}</h3>
                 <div className="space-y-2">
                   <div className="flex items-center space-x-3">
                     <Phone className="w-5 h-5 text-foundation-bluenormal flex-shrink-0" />
@@ -163,7 +166,7 @@ ${formData.message}
                 variants={itemVariants}
                 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-8"
               >
-                Envoyer votre question
+                {t("form.title")}
               </motion.h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -173,13 +176,13 @@ ${formData.message}
                 >
                   <div>
                     <label htmlFor="nom" className="block text-sm font-medium text-gray-700 mb-2">
-                      Nom *
+                      {t("form.lastName")} *
                     </label>
                     <Input
                       id="nom"
                       name="nom"
                       type="text"
-                      placeholder="Votre nom"
+                      placeholder={t("form.lastNamePlaceholder")}
                       value={formData.nom}
                       onChange={handleInputChange}
                       required
@@ -188,13 +191,13 @@ ${formData.message}
                   </div>
                   <div>
                     <label htmlFor="prenom" className="block text-sm font-medium text-gray-700 mb-2">
-                      Prénom *
+                      {t("form.firstName")} *
                     </label>
                     <Input
                       id="prenom"
                       name="prenom"
                       type="text"
-                      placeholder="Votre prénom"
+                      placeholder={t("form.firstNamePlaceholder")}
                       value={formData.prenom}
                       onChange={handleInputChange}
                       required
@@ -205,14 +208,14 @@ ${formData.message}
 
                 <motion.div variants={itemVariants}>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    E-mail *
+                    {t("form.email")} *
                   </label>
                   <div className="relative">
                     <Input
                       id="email"
                       name="email"
                       type="email"
-                      placeholder="yourmail@gmail.com"
+                      placeholder={t("form.emailPlaceholder")}
                       value={formData.email}
                       onChange={handleInputChange}
                       required
@@ -224,14 +227,14 @@ ${formData.message}
 
                 <motion.div variants={itemVariants}>
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Téléphone
+                    {t("form.phone")}
                   </label>
                   <div className="relative">
                     <Input
                       id="phone"
                       name="phone"
                       type="tel"
-                      placeholder="+237 684 350 501"
+                      placeholder={t("form.phonePlaceholder")}
                       value={formData.phone}
                       onChange={handleInputChange}
                       className="w-full pl-4 pr-12"
@@ -242,13 +245,13 @@ ${formData.message}
 
                 <motion.div variants={itemVariants}>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Message *
+                    {t("form.message")} *
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     rows={5}
-                    placeholder="Votre message"
+                    placeholder={t("form.messagePlaceholder")}
                     value={formData.message}
                     onChange={handleInputChange}
                     required
@@ -262,7 +265,7 @@ ${formData.message}
                     disabled={isSubmitting}
                     className="h-12 sm:h-[50px] px-5 sm:px-6 bg-foundation-bluenormal hover:bg-foundation-bluedark-hover rounded-[35px] [font-family:'Karla',Helvetica] font-semibold text-white text-sm sm:text-[17px] tracking-[0.20px] leading-5 w-full sm:w-auto transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isSubmitting ? "Envoi en cours..." : "Envoyer"}
+                    {isSubmitting ? t("form.submitting") : t("form.submit")}
                   </Button>
                 </motion.div>
               </form>

@@ -1,56 +1,35 @@
-import React, { useState, useEffect } from 'react';
-import { Button } from './ui/button';
-import { Card, CardContent } from './ui/card';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useState, useEffect, useMemo } from "react";
+import { useTranslation } from "react-i18next";
+import { Button } from "./ui/button";
+import { Card, CardContent } from "./ui/card";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const connexProducts = [
-  {
-    id: "money-gram",
-    name: "MoneyGram",
-    description: "Transferts d'argent internationaux rapides et sécurisés vers plus de 200 pays.",
-    image: "/money gram.jpg",
-    category: "Transfert International"
-  },
-  {
-    id: "mtn-mobile-money",
-    name: "MTN Mobile Money",
-    description: "Service de paiement mobile pour effectuer des transactions financières via votre téléphone.",
-    image: "/mtn-mobile-money.jpg",
-    category: "Paiement Mobile"
-  },
-  {
-    id: "orange-money",
-    name: "Orange Money",
-    description: "Solution de paiement mobile pour gérer vos finances au quotidien.",
-    image: "/orange money.jpeg",
-    category: "Paiement Mobile"
-  },
-  {
-    id: "ria",
-    name: "RIA Money Transfer",
-    description: "Transferts d'argent internationaux avec des taux compétitifs et un service fiable.",
-    image: "/ria.png",
-    category: "Transfert International"
-  },
-  {
-    id: "wafacash",
-    name: "WafaCash",
-    description: "Service de transfert d'argent et de paiement mobile pour l'Afrique de l'Ouest.",
-    image: "/wafacash.webp",
-    category: "Transfert Régional"
-  },
-  {
-    id: "western-union",
-    name: "Western Union",
-    description: "Transferts d'argent internationaux avec plus de 500 000 points de service dans le monde.",
-    image: "/western money.jpeg",
-    category: "Transfert International"
-  }
+const CONNEX_IDS = ["moneygram", "mtn", "orange", "ria", "wafacash", "westernunion"] as const;
+const CONNEX_IMAGES = [
+  "/money gram.jpg",
+  "/mtn-mobile-money.jpg",
+  "/orange money.jpeg",
+  "/ria.png",
+  "/wafacash.webp",
+  "/western money.jpeg",
 ];
 
 export const ConnexProductsSection: React.FC = () => {
+  const { t } = useTranslation("products");
   const [currentSlide, setCurrentSlide] = useState(0);
   const [cardsToShow, setCardsToShow] = useState(3);
+
+  const connexProducts = useMemo(
+    () =>
+      CONNEX_IDS.map((id, i) => ({
+        id,
+        name: t(`connex.products.${id}.name`),
+        description: t(`connex.products.${id}.description`),
+        category: t(`connex.products.${id}.category`),
+        image: CONNEX_IMAGES[i],
+      })),
+    [t]
+  );
 
   // Responsive cards calculation
   useEffect(() => {
@@ -129,10 +108,10 @@ export const ConnexProductsSection: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4">
-            Produits Connexes
+            {t("connex.title")}
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Découvrez nos partenaires et produits complémentaires pour une expérience financière complète
+            {t("connex.subtitle")}
           </p>
         </div>
 
@@ -202,7 +181,7 @@ export const ConnexProductsSection: React.FC = () => {
                       ? "bg-gradient-to-r from-purple-600 to-indigo-600 w-8"
                       : "bg-gray-300 hover:bg-purple-300"
                   }`}
-                  aria-label={`Aller au slide ${index + 1}`}
+                  aria-label={`${t("aria.goToSlide")} ${index + 1}`}
                   aria-current={currentSlide === index ? "true" : "false"}
                 />
               ))}
@@ -220,7 +199,7 @@ export const ConnexProductsSection: React.FC = () => {
                     ? "bg-gray-100 border-gray-300 cursor-not-allowed opacity-50"
                     : "bg-white border-gray-300 hover:border-purple-500 hover:bg-purple-50"
                 }`}
-                aria-label="Slide précédent"
+                aria-label={t("aria.prevSlide")}
               >
                 <ChevronLeft
                   className={`w-5 h-5 ${
@@ -239,7 +218,7 @@ export const ConnexProductsSection: React.FC = () => {
                     ? "bg-gray-100 border-gray-300 cursor-not-allowed opacity-50"
                     : "bg-white border-gray-300 hover:border-purple-500 hover:bg-purple-50"
                 }`}
-                aria-label="Slide suivant"
+                aria-label={t("aria.nextSlide")}
               >
                 <ChevronRight
                   className={`w-5 h-5 ${

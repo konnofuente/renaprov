@@ -1,0 +1,93 @@
+{
+  "seo": {
+    "title": "Our Products - RENAPROV | Financial Services and Microfinance",
+    "description": "Discover all our RENAPROV financial products: savings accounts, current accounts, ORA products, SPMC, Bicard and more.",
+    "keywords": "financial products, savings accounts, ORA, SPMC, Bicard, microfinance, RENAPROV, Cameroon, financial services"
+  },
+  "hero": {
+    "title": "Our Products",
+    "description": "Discover our complete range of RENAPROV financial products: savings accounts, current accounts, ORA products, SPMC, Bicard and more to meet all your financial needs.",
+    "cta": "Join today",
+    "imageAlt": "MASO - Solidarity and assistance for all Cameroonians"
+  },
+  "filters": {
+    "filterByBrand": "Filter by brand:",
+    "all": "All",
+    "renaprov": "RENAPROV Products",
+    "connexes": "Related",
+    "filterDescAll": "Discover all our products and services",
+    "filterDescRenaprov": "Financial services and microfinance",
+    "filterDescConnexes": "Money transfer and mobile payment products"
+  },
+  "features": {
+    "title": "All about",
+    "titleHighlight": "RENAPROV Products",
+    "subtitle": "Since 1995, Renaprov has been supporting Cameroonians by offering accessible and solidarity-based financial services. From a small institution rooted in the informal sector, we have become a national microfinance network, recognised for our proximity to clients and our commitment to social and economic development.",
+    "items": {
+      "item1": { "title": "Integrity & Transparency", "description": "We act with honesty in all our operations, ensuring clear communication, fair practices and total transparency with our clients." },
+      "item2": { "title": "Solidarity & Proximity", "description": "Close to markets, families and traders, we place solidarity at the heart of our actions." },
+      "item3": { "title": "Operational Excellence", "description": "We are committed to offering reliable, effective and adapted microfinance services, with competent staff." }
+    }
+  },
+  "categories": {
+    "bankAccounts": {
+      "title": "Bank Accounts",
+      "description": "Manage your daily finances and save for your projects with our accounts tailored to all your needs.",
+      "products": {
+        "cei": { "name": "Individual savings account", "description": "Save for your personal projects with attractive rates and simplified management.", "imageAlt": "RENAPROV individual savings account" },
+        "cee": { "name": "Business savings account", "description": "Savings for businesses and organisations with dedicated benefits.", "imageAlt": "RENAPROV business savings account" },
+        "cci": { "name": "Individual current account", "description": "Manage your daily finances with ease and complete services.", "imageAlt": "RENAPROV individual current account" },
+        "cce": { "name": "Business current account", "description": "Professional account for businesses with full banking services.", "imageAlt": "RENAPROV business current account" },
+        "cca": { "name": "Association current account", "description": "Account for associations and NGOs with preferential conditions.", "imageAlt": "RENAPROV association current account" }
+      }
+    },
+    "specialized": {
+      "title": "Specialised Services",
+      "description": "Accounts and services dedicated to different profiles with specific benefits and adapted conditions.",
+      "products": {
+        "cs": { "name": "Employee account", "description": "Account dedicated to employees with benefits and privileged services.", "imageAlt": "RENAPROV employee account" },
+        "cp": { "name": "Private account", "description": "Private account with exclusive benefits and personalised services.", "imageAlt": "RENAPROV private account" },
+        "cpub": { "name": "Public account", "description": "Account for civil servants with special conditions.", "imageAlt": "RENAPROV public account" },
+        "cpen": { "name": "Pensioner account", "description": "Account for retirees with dedicated benefits and adapted services.", "imageAlt": "RENAPROV pensioner account" },
+        "spmc": { "name": "SPMC", "description": "Cameroonian Mobile Payment System for fast and secure transactions.", "imageAlt": "RENAPROV SPMC" },
+        "bicard": { "name": "Bicard", "description": "Multi-service payment card for all your purchases and withdrawals.", "imageAlt": "RENAPROV Bicard" }
+      }
+    },
+    "ora": {
+      "title": "ORA - Objective Achievement of Ambitions",
+      "description": "Specialised savings products to achieve your most important life projects.",
+      "products": {
+        "oraFoncier": { "name": "ORA Land", "description": "Savings plan allowing the client to build a fund to acquire serviced, secure land with water and electricity, with a land title at a lower cost.", "imageAlt": "RENAPROV ORA Land" },
+        "oraInvestissement": { "name": "ORA Investment", "description": "Savings plan allowing the client to build a fund to promote their investment and realise their project.", "imageAlt": "RENAPROV ORA Investment" },
+        "oraPrevoyance": { "name": "ORA Provident", "description": "Savings plan allowing the client to build a fund to prevent happy or unfortunate events.", "imageAlt": "RENAPROV ORA Provident" },
+        "oraScolaire": { "name": "ORA School", "description": "Savings plan allowing the client to build a fund from 350 FCFA to address back-to-school issues.", "imageAlt": "RENAPROV ORA School" },
+        "oraAcademique": { "name": "ORA Academic", "description": "Savings plan allowing the client to build a fund from 1000 FCFA to cover tuition fees for the academic year at the IUB (BISSAÏ University Institute) academic subsidiary.", "imageAlt": "RENAPROV ORA Academic" },
+        "oraEquipement": { "name": "ORA Equipment", "description": "Savings plan allowing the client to build a fund for the acquisition of furniture, IT, electronic, household appliances, etc.", "imageAlt": "RENAPROV ORA Equipment" },
+        "oraIslamique": { "name": "ORA Islamic", "description": "Savings plan allowing the client to build non-remunerated savings.", "imageAlt": "RENAPROV ORA Islamic" },
+        "oraSante": { "name": "ORA Health", "description": "Savings plan to benefit from 1000 fcfa/day health coverage at La MAMU Hospital Complex.", "imageAlt": "RENAPROV ORA Health" }
+      }
+    }
+  },
+  "connex": {
+    "title": "Related Products",
+    "subtitle": "Discover our partners and complementary products for a complete financial experience",
+    "learnMore": "Learn more",
+    "products": {
+      "moneygram": { "name": "MoneyGram", "description": "Fast and secure international money transfers to over 200 countries.", "category": "International Transfer" },
+      "mtn": { "name": "MTN Mobile Money", "description": "Mobile payment service to carry out financial transactions via your phone.", "category": "Mobile Payment" },
+      "orange": { "name": "Orange Money", "description": "Mobile payment solution to manage your daily finances.", "category": "Mobile Payment" },
+      "ria": { "name": "RIA Money Transfer", "description": "International money transfers with competitive rates and reliable service.", "category": "International Transfer" },
+      "wafacash": { "name": "WafaCash", "description": "Money transfer and mobile payment service for West Africa.", "category": "Regional Transfer" },
+      "westernunion": { "name": "Western Union", "description": "International money transfers with over 500,000 service points worldwide.", "category": "International Transfer" }
+    }
+  },
+  "learnMore": "Learn more",
+  "alerts": {
+    "productNotFound": "Product not found"
+  },
+  "aria": {
+    "goToSlide": "Go to slide",
+    "prevSlide": "Previous slide",
+    "nextSlide": "Next slide"
+  }
+}

@@ -1,0 +1,238 @@
+{
+  "seo": {
+    "title": "RENAPROV FINANCE S.A - Microfinance de Confiance au Cameroun",
+    "description": "RENAPROV FINANCE S.A - Institution de microfinance au Cameroun. Services financiers accessibles, épargne, crédits, inclusion financière. Devenez propriétaire avec MASO, épargnez avec ORA.",
+    "keywords": "microfinance, Cameroun, épargne, crédit, inclusion financière, RENAPROV, MASO, ORA, compte courant, compte épargne, finance, Yaoundé, Douala"
+  },
+  "hero": {
+    "slide1": {
+      "title": "Bienvenue à RENAPROV FINANCE S.A",
+      "description": "ORA Académique, Scolaire, Habitat, Équipement... Préparez vos ambitions ! Que vous soyez salarié, pensionné, entrepreneur, commerçant ou étudiant, RENAPROV FINANCE S.A met à votre disposition une gamme de produits adaptés à vos besoins.",
+      "cta": "Ouvrir mon compte aujourd'hui"
+    },
+    "slide2": {
+      "title": "Un compte simple et sécurisé, accessible à tous",
+      "description": "Chez RENAPROV, ouvrez un compte en quelques minutes et profitez de services adaptés à votre quotidien : dépôts, retraits, transferts et épargne, où que vous soyez.",
+      "cta": "Ouvrir mon compte aujourd'hui"
+    },
+    "slide3": {
+      "title": "MASO",
+      "description": "MASO (Mutuelle d'Assistance et de Solidarité) est un produit solidaire mis en place par RENAPROV FINANCE SA qui vous permet de couvrir les besoins sociaux de base.",
+      "cta": "Découvrir MASO"
+    },
+    "slide4": {
+      "title": "Faites grandir vos projets, nous finançons vos ambitions",
+      "description": "Profitez d'une gamme complète de services bancaires conçus pour simplifier votre vie financière au quotidien.",
+      "cta": "Nos solutions"
+    },
+    "slide5": {
+      "title": "Rendez-vous en agence",
+      "description": "Nos équipes vous accueillent dans toutes nos agences pour vous conseiller et vous aider à atteindre vos objectifs financiers.",
+      "cta": "Ouvrir mon compte aujourd'hui"
+    },
+    "slide6": {
+      "title": "Rejoignez - nous",
+      "description": "Faites partie de la communauté RENAPROV et profitez d'un réseau solide qui soutient vos ambitions. Que vous soyez entrepreneur, salarié ou étudiant.",
+      "cta": "Ouvrir mon compte aujourd'hui"
+    }
+  },
+  "topBar": {
+    "offer1": {
+      "title": "Devenez propriétaire de votre future Villa avec MASO!",
+      "subtitle": "Inscriptions ouvertes jusqu'au 29 juin. Ne manquez pas cette opportunité.",
+      "cta": "Je m'inscris dès maintenant"
+    },
+    "offer2": {
+      "title": "Épargnez avec ORA pour vos projets d'avenir",
+      "subtitle": "ORA Académie, Scolaire, Habitat, Équipement... Préparez vos ambitions!",
+      "cta": "Découvrir ORA"
+    },
+    "offer3": {
+      "title": "Ouvrez votre compte RENAPROV en quelques minutes",
+      "subtitle": "Compte courant, épargne, SPMC, Bicard... Tous nos services à portée de main!",
+      "cta": "Créer mon compte"
+    },
+    "offer4": {
+      "title": "Rejoignez notre réseau d'agences partout au Cameroun",
+      "subtitle": "Plus de 30 agences pour vous accompagner dans vos projets financiers.",
+      "cta": "Trouvez une agence"
+    }
+  },
+  "solutions": {
+    "title": "Nos solutions financières pour",
+    "titleHighlight": "particuliers et entreprises",
+    "subtitle": "Que vous soyez salarié, entrepreneur, commerçant ou étudiant, RENAPROV met à votre disposition une gamme de produits pensés pour vos besoins",
+    "learnMore": "En savoir plus",
+    "products": {
+      "currentAccountIndividual": {
+        "title": "Compte courant individuel",
+        "description": "Gérez vos transactions quotidiennes en toute simplicité."
+      },
+      "currentAccountBusiness": {
+        "title": "Compte courant entreprise",
+        "description": "Gérez les transactions de votre entreprise en toute simplicité."
+      },
+      "currentAccountAssociation": {
+        "title": "Compte courant association",
+        "description": "Compte bancaire pour les associations à but non lucratif (culturelles, sportives, religieuses, humanitaires, etc.)."
+      },
+      "savingsAccountIndividual": {
+        "title": "Compte épargne individuel",
+        "description": "Épargnez pour vos projets personnels avec des taux d'intérêt préférentiel et une gestion simplifiée."
+      },
+      "savingsAccountBusiness": {
+        "title": "Compte épargne entreprise",
+        "description": "Épargnez vos projets d'entreprises avec des avantages dédiés."
+      },
+      "employeeAccount": {
+        "title": "Compte salarié secteur Public ou Privé",
+        "description": "Compte dédié aux employés avec des avantages et des services privilégiés."
+      },
+      "pensionAccount": {
+        "title": "Compte pensionné secteur Public ou Privé",
+        "description": "Compte pour les retraités du secteur public ou privé avec des avantages dédiés et des services adaptés."
+      },
+      "oraFoncier": {
+        "title": "ORA Foncier",
+        "description": "Plan d'épargne permettant d'acquérir un terrain viabilisé, sécurisé, avec eau et électricité, assorti d'un titre foncier à moindre coût."
+      },
+      "oraInvestissement": {
+        "title": "ORA Investissement",
+        "description": "Plan d'épargne permettant de constituer un fond pour la réalisation d'un projet."
+      },
+      "oraPrevoyance": {
+        "title": "ORA Prévoyance",
+        "description": "Plan d'épargne permettant de constituer un fond afin de prévenir les évènements heureux ou malheureux."
+      },
+      "oraScolaire": {
+        "title": "ORA Scolaire",
+        "description": "Plan d'épargne à partir de 350 FCFA permettant de garantir la rentrée scolaire."
+      },
+      "oraAcademique": {
+        "title": "ORA Académique",
+        "description": "Plan d'épargne à partir de 1000 FCFA pour assurer les frais de scolarité à l'Institut Universitaire BISSAÏ."
+      },
+      "oraEquipement": {
+        "title": "ORA Équipement",
+        "description": "Plan d'épargne permettant l'acquisition d'équipements mobiliers, informatiques, électroniques, électroménager, etc."
+      },
+      "oraIslamique": {
+        "title": "ORA Islamique",
+        "description": "Plan d'épargne permettant de constituer une épargne non rémunérée conforme à la charia."
+      },
+      "oraSante": {
+        "title": "ORA Santé",
+        "description": "Plan d'épargne permettant de bénéficier à partir de 1000 FCFA/jour d'une couverture sanitaire au Complexe Hospitalier La MAMU."
+      },
+      "maso": {
+        "title": "MASO",
+        "description": "MASO (Mutuelle d'Assistance et de Solidarité) est un produit solidaire mis en place par RENAPROV FINANCE SA qui vous permet de couvrir les besoins sociaux de base."
+      },
+      "spmc": {
+        "title": "SPMC",
+        "description": "Compte courant adapté aux acteurs des petits métiers et petits commerciaux avec des frais de gestion simplifiés et possibilité d'octroi de crédit."
+      },
+      "bicard": {
+        "title": "Bicard",
+        "description": "Carte bancaire permettant la facilitation de vos transactions financières."
+      }
+    }
+  },
+  "experience": {
+    "yearsLabel": "ANNÉES",
+    "experienceLabel": "D'EXPÉRIENCE",
+    "description": "Depuis sa création, RENAPROV FINANCE S.A à su gagner la confiance de milliers de personnes à travers le monde et spécifiquement au Cameroun de par sa marque de distinction qui est l'Économie solidaire.",
+    "bullets": {
+      "bullet1": "Avec son réseau étendu sur l'ensemble du territoire camerounais avec plus de 28 Agences",
+      "bullet2": "Des filiales créées pour la satisfaction de tous",
+      "bullet3": "Tombola MASO : Gagnez maisons, motos, financements…"
+    },
+    "cta": "Contactez nous"
+  },
+  "advantages": {
+    "title": "Bénéfices clients",
+    "items": {
+      "item1": {
+        "title": "Gérez votre argent à votre rythme",
+        "description": "Effectuez vos dépôts et retraits quand vous le souhaitez, sans contraintes, pour un contrôle total de vos finances."
+      },
+      "item2": {
+        "title": "Profitez de services financiers avantageux",
+        "description": "En tant que client RENAPROV, vous accédez à des offres exclusives et à des programmes qui boostent votre pouvoir d'achat et vos projets."
+      },
+      "item3": {
+        "title": "Transparence totale",
+        "description": "Ouvrir un compte est simple et abordable, avec des frais transparents et adaptés à tous les budgets."
+      },
+      "item4": {
+        "title": "Un accompagnement financier qui vous suit",
+        "description": "Nos conseillers vous guident dans vos décisions financières et vous aident à optimiser votre argent au quotidien."
+      }
+    }
+  },
+  "subsidiaries": {
+    "titlePart1": "Voici nos différentes",
+    "titlePart2": "filiales",
+    "learnMore": "En savoir plus",
+    "items": {
+      "hospital": {
+        "category": "Hôpital",
+        "title": "Complexe Hospitalier la MAMU",
+        "description": "Un établissement de santé moderne offrant des soins de qualité et accessibles à tous."
+      },
+      "university": {
+        "category": "Université",
+        "title": "Institut Universitaire Bissai",
+        "description": "Un centre académique dédié à la formation de qualité et à l'excellence."
+      },
+      "realEstate": {
+        "category": "Immobilier",
+        "title": "La Socagi",
+        "description": "Société de gestion et d'investissement qui accompagne le développement économique à travers des solutions financières adaptées."
+      },
+      "radio": {
+        "category": "Radio",
+        "title": "Royal FM",
+        "description": "Société de gestion et d'investissement qui accompagne le développement économique à travers des solutions financières adaptées."
+      }
+    }
+  },
+  "agencies": {
+    "titlePart1": "Trouvez une agence",
+    "titlePart2": "RENAPROV FINANCE SA",
+    "tabs": {
+      "douala": "Douala et Environs",
+      "otherCities": "Autres Villes"
+    },
+    "viewOnMap": "Voir sur Google Map",
+    "ariaLabels": {
+      "previousSlide": "Slide précédent",
+      "nextSlide": "Slide suivant",
+      "goToSlide": "Aller à la page"
+    }
+  },
+  "newsletter": {
+    "title": "Abonnez-vous à la newsletter",
+    "description": "Recevez nos actualités directement par email.",
+    "placeholder": "Entrez votre email",
+    "button": "S'abonner"
+  },
+  "products": {
+    "title": "Nos Produits",
+    "maso": {
+      "title": "MASO : Solidarité, assistance et opportunités pour tous",
+      "description": "La MASO de RENAPROV FINANCE S.A accompagne les Camerounais à sortir du cercle vicieux de la pauvreté, en donnant accès à des services sociaux essentiels et à des opportunités uniques.",
+      "benefit1": "Education – Jusqu'à 20% de réduction sur vos frais",
+      "benefit2": "Santé – Jusqu'à 35% de réduction sur vos frais",
+      "benefit3": "Tombola & communauté – Gagnez maisons, motos et financements tout en participant à une communauté solidaire",
+      "cta": "Rejoindre MASO dès aujourd'hui"
+    },
+    "ora": {
+      "title": "ORA : Épargnez aujourd'hui, concrétisez vos projets demain",
+      "description": "ORA est le plan d'épargne de RENAPROV FINANCE S.A qui vous permet de préparer vos projets personnels et professionnels avec sécurité et flexibilité.",
+      "benefit1": "Objectifs multiples – épargne pour terrain, études, business ou équipements",
+      "benefit2": "Sécurité et rendement – vos fonds sont sécurisés et fructifient selon vos plan",
+      "cta": "Découvrir ORA"
+    }
+  }
+}

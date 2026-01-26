@@ -1,0 +1,62 @@
+{
+  "seo": {
+    "title": "RENAPROV - Microfinance de Confiance au Cameroun",
+    "description": "RENAPROV FINANCE SA - Institution de microfinance au Cameroun. Services financiers accessibles, épargne, crédits, inclusion financière. Devenez propriétaire avec MASO, épargnez avec ORA.",
+    "keywords": "microfinance, Cameroun, épargne, crédit, inclusion financière, RENAPROV, MASO, ORA, compte courant, compte épargne, finance, Yaoundé, Douala"
+  },
+  "hero": {
+    "title": "La microfinance au service des populations",
+    "description": "Depuis 1996, RENAPROV FINANCE SA accompagne les Camerounais dans leurs projets personnels et professionnels.",
+    "cta": "Ouvrir mon compte aujourd'hui",
+    "imageAlt": "La microfinance au service des populations"
+  },
+  "networkProximity": {
+    "title": "Un réseau au service de la proximité",
+    "description": "Depuis sa création, RENAPROV a su tisser un réseau dense et stratégique ; avec les agences, implantées au cœur des marchés et quartiers. Cette proximité avec nos clients nous permet de répondre rapidement à leurs besoins et de les accompagner efficacement dans leurs projets financiers au quotidien.",
+    "ariaLabels": {
+      "img1": "Personne en costume bleu clair",
+      "img2": "Personne en costume bleu foncé avec smartphone",
+      "img3": "Personne en costume safari bleu"
+    }
+  },
+  "filiales": {
+    "titlePart1": "Nos filiales à (la)",
+    "titlePart2": "force d'un réseau intégré"
+  },
+  "institutBissai": {
+    "title": "Institut Universitaire Bissai",
+    "description": "Un établissement d'enseignement supérieur reconnu pour la qualité de ses formations. L'Institut Universitaire Bissai prépare les jeunes aux métiers d'avenir grâce à des programmes adaptés, un corps enseignant qualifié et une ouverture sur l'innovation.",
+    "location": "Ekounou Deux Cheveaux, Yaoundé • Socagi 13809, Yaoundé, Cameroon 237",
+    "phone": "+237 690 20 37 08",
+    "ctaEnroll": "S'inscrire",
+    "ctaDiscover": "Découvrir les formations",
+    "imageAlt": "Institut Universitaire Bissai"
+  },
+  "hospitalLaMamu": {
+    "title": "Complexe Hospitalier La Mamu",
+    "description": "Un établissement moderne offrant des soins accessibles et de qualité, avec une approche humaine et proche des patients.",
+    "phones": ["+237 6 55 01 18 49", "+237 6 55 00 94 83", "+237 6 90 22 88 90"],
+    "ctaAppointment": "Prendre rendez-vous",
+    "ctaDiscover": "Découvrir nos services",
+    "imageAlt": "Complexe Hospitalier La Mamu",
+    "imageAlt2": "Complexe Hospitalier La Mamu - Équipements",
+    "imageAlt3": "Complexe Hospitalier La Mamu - Services"
+  },
+  "socagi": {
+    "title": "La Socagi",
+    "description": "Société spécialisée dans la gestion et l'investissement, La Socagi accompagne les entreprises et particuliers dans leurs projets économiques. Son objectif : favoriser la croissance durable, sécuriser les investissements et créer de la valeur à long terme.",
+    "location": "Quartier X, Ville Y",
+    "phone": "+237 693930231",
+    "ctaJoin": "Nous rejoindre",
+    "ctaDiscover": "Découvrir nos offres",
+    "imageAlt": "La Socagi - Gestion et Investissement"
+  },
+  "royalFm": {
+    "title": "Royal FM",
+    "description": "La radio des auditeurs à Yaoundé. Royal FM vous accompagne avec des programmes variés, de l'information de qualité et une proximité avec ses auditeurs.",
+    "phones": ["+237 691 738 357", "+237 671 157 321", "+237 620 377 481"],
+    "ctaListen": "Écouter en direct",
+    "ctaDiscover": "Découvrir nos programmes",
+    "imageAlt": "Royal FM"
+  }
+}

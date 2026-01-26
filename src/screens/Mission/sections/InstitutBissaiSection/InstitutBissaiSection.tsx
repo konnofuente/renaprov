@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Button } from "../../../../components/ui/button";
 import { MapPin, Phone } from "lucide-react";
 
@@ -84,76 +85,66 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ location, phone }) => {
   );
 };
 
-// Composant modulaire pour l'image
-const HeroImage: React.FC = () => {
-  return (
-    <div className="w-full h-64 md:h-80 lg:h-96 xl:h-[413px]">
-      <img
-        className="w-full h-full rounded-lg md:rounded-xl object-cover"
-        alt="Institut Universitaire Bissai"
-        src="/image-3.png"
-      />
-    </div>
-  );
-};
+const HeroImage: React.FC<{ alt: string }> = ({ alt }) => (
+  <div className="w-full h-64 md:h-80 lg:h-96 xl:h-[413px]">
+    <img
+      className="w-full h-full rounded-lg md:rounded-xl object-cover"
+      alt={alt}
+      src="/image-3.png"
+    />
+  </div>
+);
 
 export const InstitutBissaiSection = (): JSX.Element => {
+  const { t } = useTranslation("mission");
+
   return (
     <section
       className={`flex flex-col w-full items-center justify-between ${designTokens.spacing.section} ${designTokens.layout.section} bg-foundationbluelight`}
     >
       <div className={`flex flex-col w-full ${designTokens.layout.container}`}>
         <article className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
-          {/* Image */}
           <div className="order-1 lg:order-1 flex">
-            <HeroImage />
+            <HeroImage alt={t("institutBissai.imageAlt")} />
           </div>
 
-          {/* Contenu principal */}
           <div className="flex flex-col order-2 lg:order-2">
-            {/* Contact Info - en haut mais plus compact */}
             <div className="mb-4">
               <ContactInfo
-                location="Ekounou Deux Cheveaux, Yaoundé • Socagi 13809, Yaoundé, Cameroon 237"
-                phone="+237 690 20 37 08"
+                location={t("institutBissai.location")}
+                phone={t("institutBissai.phone")}
               />
             </div>
 
-            {/* Header avec titre aligné avec l'image */}
             <header className="flex flex-col gap-6 md:gap-8">
               <h2
                 className={`text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold leading-tight bg-gradient-to-r from-foundation-bluenormal to-foundation-bluedark bg-clip-text text-transparent`}
               >
-                Institut Universitaire Bissai
+                {t("institutBissai.title")}
               </h2>
             </header>
 
-            {/* Contenu sous le titre */}
             <div className="flex flex-col gap-6 md:gap-8 mt-6">
               <p
                 className={`text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-foundation-bluedarker`}
               >
-                Un établissement d'enseignement supérieur reconnu pour la
-                qualité de ses formations. L'Institut Universitaire Bissai
-                prépare les jeunes aux métiers d'avenir grâce à des programmes
-                adaptés, un corps enseignant qualifié et une ouverture sur
-                l'innovation.
+                {t("institutBissai.description")}
               </p>
 
               <div
                 className={`flex flex-col sm:flex-row items-stretch sm:items-center ${designTokens.spacing.buttons}`}
               >
-                <ActionButton 
+                <ActionButton
                   variant="primary"
-                  onClick={() => window.open('https://institutbissai.com/', '_blank')}
+                  onClick={() => window.open("https://institutbissai.com/", "_blank")}
                 >
-                  S'inscrire
+                  {t("institutBissai.ctaEnroll")}
                 </ActionButton>
-                <ActionButton 
+                <ActionButton
                   variant="secondary"
-                  onClick={() => window.open('https://institutbissai.com/', '_blank')}
+                  onClick={() => window.open("https://institutbissai.com/", "_blank")}
                 >
-                  Découvrir les formations
+                  {t("institutBissai.ctaDiscover")}
                 </ActionButton>
               </div>
             </div>

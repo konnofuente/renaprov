@@ -1,0 +1,89 @@
+{
+  "seo": {
+    "title": "La MASO - RENAPROV | Ensemble, sortons du cercle de la pauvreté",
+    "description": "La MASO est une initiative de RENAPROV FINANCE SA qui redonne du pouvoir aux Camerounais grâce à la solidarité. Bénéficiez d'avantages directs en santé, éducation et assistance sociale.",
+    "keywords": "MASO, RENAPROV, solidarité, Cameroun, santé, éducation, assistance sociale, microfinance, inclusion financière"
+  },
+  "hero": {
+    "banner": {
+      "line1": "Rejoignez la",
+      "line1Bold": "MASO",
+      "line1Rest": " - Solidarité et avantages pour tous!",
+      "line2": "Adhésion simple : 500 FCFA + 100 FCFA/jour. Bénéficiez de tous nos avantages.",
+      "cta": "Adhérer à la MASO"
+    },
+    "aria": { "prevSlide": "Slide précédent", "nextSlide": "Slide suivant" },
+    "slides": {
+      "slide1": { "title": "La MASO – Ensemble, sortons du cercle de la pauvreté", "description": "Une initiative de RENAPROV FINANCE SA qui redonne du pouvoir aux Camerounais grâce à la solidarité. Avec La MASO, vous bénéficiez d'avantages directs en santé, éducation, assistance sociale et bien-être.", "cta": "Adhérez dès aujourd'hui" },
+      "slide2": { "title": "Une solidarité camerounaise qui change des vies", "description": "La MASO incarne l'esprit de solidarité camerounaise en créant un réseau d'entraide qui permet à chaque membre de bénéficier de services essentiels dans les domaines de la santé, de l'éducation et de l'assistance sociale.", "cta": "Découvrir nos services" },
+      "slide3": { "title": "Avec la MASO, gagnez votre prochain", "description": "Participez à nos tirages au sort et gagnez des véhicules, des villas et bien plus encore. La MASO vous offre la chance de réaliser vos rêves tout en bénéficiant de nos services de solidarité.", "cta": "Participer aux tirages" },
+      "slide4": { "title": "Gagnez votre villa avec la MASO", "description": "Participez à la grande tombola Maso et tentez de gagner votre prochaine villa.", "cta": "Participer à la tombola" },
+      "slide5": { "title": "Conditions d'adhésion simples et accessibles", "description": "Rejoignez la MASO avec seulement 500 FCFA pour le carnet et 100 FCFA par jour. Une cotisation accessible qui vous ouvre les portes de tous nos avantages et services.", "cta": "S'inscrire maintenant" },
+      "slide6": { "title": "Rejoignez notre réseau de solidarité", "description": "Devenez membre de la MASO et bénéficiez d'un accompagnement personnalisé, de formations et d'un réseau de solidarité qui vous soutient dans tous vos projets.", "cta": "Rejoindre la MASO" },
+      "slide7": { "title": "Rejoignez - nous", "description": "Faites partie de la communauté RENAPROV et profitez d'un réseau solide qui soutient vos ambitions. Que vous soyez entrepreneur, salarié ou étudiant.", "cta": "Ouvrir mon compte aujourd'hui" }
+    }
+  },
+  "product": {
+    "title": "MASO : Solidarité, assistance et opportunités pour tous",
+    "description": "La MASO de RENAPROV accompagne les Camerounais pour sortir du cercle vicieux de la pauvreté, en donnant accès à des services sociaux essentiels et à des opportunités uniques.",
+    "benefit1": "Santé et Éducation – Jusqu'à 35% de réduction sur vos frais",
+    "benefit2": "Tombola & communauté – Gagnez des maisons, motos et financements tout en participant à une communauté solidaire",
+    "imageAlt": "MASO - Solidarité, assistance et opportunités pour tous",
+    "cta": "Rejoindre la MASO"
+  },
+  "solutions": {
+    "headerTitle": "Avec la MASO Gagnez votre",
+    "headerHighlight": "prochain",
+    "headerDescription": "Participez à nos tirages au sort et gagnez des véhicules, des villas et bien plus encore. La MASO vous offre la chance de réaliser vos rêves tout en bénéficiant de nos services de solidarité.",
+    "joinMaso": "Rejoindre MASO",
+    "learnMore": "En savoir plus",
+    "prizes": {
+      "prize1": { "title": "Votre financement", "description": "Bénéficiez d'un financement à taux zéro de 100 000 FCFA à 2 000 000 FCFA valeur, grâce à la tombola MASO" },
+      "prize2": { "title": "Véhicules Personnels", "description": "Bénéficiez d'un véhicule personnel d'une valeur de 5,000,000 XAF, grâce à la tombola MASO" },
+      "prize3": { "title": "Taxi à gagner", "description": "Bénéficiez d'un véhicule taxi d'une valeur de 4,000,000 XAF, grâce à la tombola MASO" },
+      "prize4": { "title": "Tricycle", "description": "Bénéficiez d'un tricycle d'une valeur de 1,800,000 XAF, grâce à la tombola MASO" },
+      "prize5": { "title": "Votre Villa", "description": "Bénéficiez d'une villa d'une valeur de 30,000,000 XAF, grâce à la tombola MASO" }
+    }
+  },
+  "advantages": {
+    "title": "Les Avantages de La Maso",
+    "items": {
+      "item1": { "title": "-35% sur les frais de soins hospitaliers à la Mamu", "description": "Effectuez vos dépôts et retraits quand vous le souhaitez, sans contraintes, pour un contrôle total de vos finances.", "imageAlt": "Réduction frais hospitaliers MASO" },
+      "item2": { "title": "Réduisez vos frais d'études et investissez dans votre avenir", "description": "Grâce au partenariat entre RENAPROV et l'IUB, les membres MASO bénéficient de -20% sur les frais universitaires.", "imageAlt": "Réduction frais universitaires MASO" },
+      "item3": { "title": "Gagnez gros avec la Tombola MASO !", "description": "Chaque membre participe automatiquement à notre tombola solidaire et peut remporter des maisons, motos, financements, et bien plus.", "imageAlt": "Tombola MASO" }
+    }
+  },
+  "adhesion": {
+    "title": "Conditions d'Adhésion",
+    "description": "L'adhésion à la MASO est simple et ouverte à tous les Camerounais souhaitant faire partie d'un réseau de solidarité durable.",
+    "benefit1": "Pièce d'identité – CNI, Passeport, Carte de séjour, Carte de réfugié, ou Permis de conduire en cours de validité",
+    "benefit2": "500 FCFA pour le carnet – Frais d'ouverture unique pour votre carnet d'adhérent MASO",
+    "benefit3": "Cotisation: 100 FCFA/jour – Soit 26 000 FCFA/an pour bénéficier de tous nos avantages",
+    "cta": "Remplir le formulaire d'adhésion",
+    "imageAlt": "Conditions d'adhésion MASO"
+  },
+  "newsletter": {
+    "title": "Abonnez-vous à la newsletter",
+    "description": "Recevez nos actualités directement par email.",
+    "placeholder": "Entrez votre email",
+    "button": "S'abonner"
+  },
+  "testimonials": {
+    "titlePart1": "Ils témoignent de leur",
+    "titlePart2": "Expérience MASO",
+    "cta": "En savoir plus sur nos crédits bancaires",
+    "aria": {
+      "cta": "En savoir plus",
+      "goToTestimonial": "Aller au témoignage {{index}}",
+      "prev": "Témoignage précédent",
+      "next": "Témoignage suivant",
+      "prevImage": "Image précédente",
+      "nextImage": "Image suivante"
+    },
+    "items": [
+      { "name": "Clarisse N.", "role": "Commerçante", "company": "CEO de Shop and more", "quote": "Grâce à MASO, j'ai pu lancer ma boutique à Bafoussam. Leur accompagnement m'a permis d'obtenir un crédit adapté et d'apprendre à bien gérer mon activité." },
+      { "name": "Jean-Paul M.", "role": "Entrepreneur", "company": "Fondateur de TechStart", "quote": "MASO m'a accompagné dans le développement de mon entreprise. Leur expertise et leur proximité ont été essentielles pour la réussite de mes projets." },
+      { "name": "Marie K.", "role": "Agricultrice", "company": "Coopérative Agricole", "quote": "Avec le soutien de MASO, j'ai pu moderniser mon exploitation agricole et augmenter mes revenus. Un vrai partenaire de confiance." }
+    ]
+  }
+}

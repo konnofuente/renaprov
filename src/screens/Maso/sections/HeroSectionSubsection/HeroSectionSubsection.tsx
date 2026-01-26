@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ChevronLeft as ChevronLeftIcon,
@@ -6,65 +7,16 @@ import {
 } from "lucide-react";
 import { Button } from "../../../../components/ui/button";
 
-const slides = [
-  {
-    title: "La MASO – Ensemble, sortons du cercle de la pauvreté",
-    description:
-      "Une initiative de RENAPROV FINANCE SA qui redonne du pouvoir aux Camerounais grâce à la solidarité. Avec La MASO, vous bénéficiez d'avantages directs en santé, éducation, assistance sociale et bien-être.",
-    image: "/logo maso solidarite.png",
-    fallbackImage: "/maso/maso1.jpg",
-    cta: "Adhérez dès aujourd'hui",
-  },
-  {
-    title: "Une solidarité camerounaise qui change des vies",
-    description:
-      "La MASO incarne l'esprit de solidarité camerounaise en créant un réseau d'entraide qui permet à chaque membre de bénéficier de services essentiels dans les domaines de la santé, de l'éducation et de l'assistance sociale.",
-    image: "/maso/masovi.jpg",
-    fallbackImage: "/maso/masovi.jpg",
-    cta: "Découvrir nos services",
-  },
-  {
-    title: "Avec la MASO, gagnez votre prochain",
-    description:
-      "Participez à nos tirages au sort et gagnez des véhicules, des villas et bien plus encore. La MASO vous offre la chance de réaliser vos rêves tout en bénéficiant de nos services de solidarité.",
-    image: "/maso/win.png",
-    fallbackImage: "/maso/win.png",
-    cta: "Participer aux tirages",
-  },
-  {
-    title: "Gagnez votre villa avec la MASO",
-    description:
-    "participez à la grande tombola Maso et tentez de gagner votre prochaine villa",
-    image: "/maso/villa.jpg",
-    fallbackImage: "/hero1.png",
-    cta: "Participer à la tombola",
-  },
-  {
-    title: "Conditions d'adhésion simples et accessibles",
-    description:
-      "Rejoignez la MASO avec seulement 500 FCFA pour le carnet et 100 FCFA par jour. Une cotisation accessible qui vous ouvre les portes de tous nos avantages et services.",
-    image: "/maso/masocond.jpg",
-    fallbackImage: "/hero1.png",
-    cta: "S'inscrire maintenant",
-  },
-
-  {
-    title: "Rejoignez notre réseau de solidarité",
-    description:
-      "Devenez membre de la MASO et bénéficiez d'un accompagnement personnalisé, de formations et d'un réseau de solidarité qui vous soutient dans tous vos projets.",
-    image: "/maso/maso10.jpg",
-    fallbackImage: "/maso/maso10.jpg",
-    cta: "Rejoindre la MASO",
-  },
-  {
-    title: "Rejoignez - nous",
-    description:
-      "Faites partie de la communauté RENAPROV et profitez d’un réseau solide qui soutient vos ambitions. Que vous soyez entrepreneur, salarié ou étudiant.",
-    image: "/maso/masorej.jpg",
-    fallbackImage: "/hero1.png",
-    cta: "Ouvrir mon compte aujourd’hui",
-  },
+const SLIDE_IMAGES: { image: string; fallbackImage: string }[] = [
+  { image: "/logo maso solidarite.png", fallbackImage: "/maso/maso1.jpg" },
+  { image: "/maso/masovi.jpg", fallbackImage: "/maso/masovi.jpg" },
+  { image: "/maso/win.png", fallbackImage: "/maso/win.png" },
+  { image: "/maso/villa.jpg", fallbackImage: "/hero1.png" },
+  { image: "/maso/masocond.jpg", fallbackImage: "/hero1.png" },
+  { image: "/maso/maso10.jpg", fallbackImage: "/maso/maso10.jpg" },
+  { image: "/maso/masorej.jpg", fallbackImage: "/hero1.png" },
 ];
+
 
 // Unified soft animation variants for the entire hero section
 const slideVariants = {
@@ -92,6 +44,21 @@ interface HeroSectionSubsectionProps {
 }
 
 export const HeroSectionSubsection: React.FC<HeroSectionSubsectionProps> = ({ onOpenForm }): JSX.Element => {
+  const { t } = useTranslation("maso");
+  const slides = useMemo(
+    () =>
+      [1, 2, 3, 4, 5, 6, 7].map((i) => {
+        const imgs = SLIDE_IMAGES[i - 1];
+        return {
+          title: t(`hero.slides.slide${i}.title`),
+          description: t(`hero.slides.slide${i}.description`),
+          cta: t(`hero.slides.slide${i}.cta`),
+          image: imgs.image,
+          fallbackImage: imgs.fallbackImage,
+        };
+      }),
+    [t]
+  );
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
   const [imageError, setImageError] = useState<boolean[]>(
@@ -193,7 +160,7 @@ export const HeroSectionSubsection: React.FC<HeroSectionSubsectionProps> = ({ on
         size="icon"
         onClick={prevSlide}
         className="hidden 2xl:flex absolute left-4 xl:left-8 top-1/2 -translate-y-1/2 w-14 h-14 xl:w-16 xl:h-16 bg-white hover:bg-white/95 shadow-2xl rounded-full transition-all duration-200 z-50 border-2 border-gray-200 hover:border-foundation-bluenormal"
-        aria-label="Slide précédent"
+        aria-label={t("hero.aria.prevSlide")}
       >
         <ChevronLeftIcon className="w-7 h-7 xl:w-8 xl:h-8 text-foundation-bluenormal" />
       </Button>
@@ -203,7 +170,7 @@ export const HeroSectionSubsection: React.FC<HeroSectionSubsectionProps> = ({ on
         size="icon"
         onClick={nextSlide}
         className="hidden 2xl:flex absolute right-4 xl:right-8 top-1/2 -translate-y-1/2 w-14 h-14 xl:w-16 xl:h-16 bg-white hover:bg-white/95 shadow-2xl rounded-full transition-all duration-200 z-50 border-2 border-gray-200 hover:border-foundation-bluenormal"
-        aria-label="Slide suivant"
+        aria-label={t("hero.aria.nextSlide")}
       >
         <ChevronRightIcon className="w-7 h-7 xl:w-8 xl:h-8 text-foundation-bluenormal" />
       </Button>
@@ -215,11 +182,12 @@ export const HeroSectionSubsection: React.FC<HeroSectionSubsectionProps> = ({ on
               <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-1 sm:gap-1.5 md:gap-2 lg:gap-2.5 xl:gap-3">
                 <div className="text-center sm:text-left flex-1 max-w-2xl">
                   <p className="text-white font-bold text-xs sm:text-xs md:text-sm lg:text-base xl:text-lg leading-tight">
-                    Rejoignez la{" "}
-                    <span className="font-black">MASO</span> - Solidarité et avantages pour tous!
+                    {t("hero.banner.line1")}{" "}
+                    <span className="font-black">{t("hero.banner.line1Bold")}</span>
+                    {t("hero.banner.line1Rest")}
                   </p>
                   <p className="text-white/90 text-xs sm:text-xs md:text-sm lg:text-sm xl:text-base mt-0.5 sm:mt-0.5 md:mt-1 lg:mt-1 xl:mt-1.5">
-                    Adhésion simple : 500 FCFA + 100 FCFA/jour. Bénéficiez de tous nos avantages.
+                    {t("hero.banner.line2")}
                   </p>
                 </div>
                 <div className="flex-shrink-0 w-full sm:w-auto">
@@ -227,7 +195,7 @@ export const HeroSectionSubsection: React.FC<HeroSectionSubsectionProps> = ({ on
                     className="w-full sm:w-auto bg-white text-foundation-bluenormal hover:bg-white/95 font-bold px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 py-1 sm:py-1.5 md:py-2 lg:py-2.5 xl:py-3 transition-all duration-200 shadow-lg hover:shadow-xl text-xs sm:text-xs md:text-sm lg:text-base xl:text-lg"
                     onClick={onOpenForm}
                   >
-                    Adhérer à la MASO
+                    {t("hero.banner.cta")}
                   </Button>
                 </div>
               </div>
@@ -278,35 +246,42 @@ export const HeroSectionSubsection: React.FC<HeroSectionSubsectionProps> = ({ on
 
             {/* Image Section */}
             <div className="relative order-1 lg:order-2 flex justify-center">
-              <div
-                className="relative  overflow-hidden shadow-2xl bg-gray-100
-              
-              
-              
-              
-              w-full xl:w-[579px] h-[200px] sm:h-[250px] md:h-[300px] xl:h-[365px] rounded-[16px] xl:rounded-[23px] object-cover
-              
-              
-              
-              
-              
-              
-              
-              "
-              >
-                <img
-                  src={
-                    imageError[currentSlide]
-                      ? slides[currentSlide].fallbackImage
-                      : slides[currentSlide].image
-                  }
-                  alt={slides[currentSlide].title}
-                  className="w-full h-full object-cover"
-                  onError={() => handleImageError(currentSlide)}
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-              </div>
+              {slides[currentSlide].image.toLowerCase().includes("logo maso") ||
+              slides[currentSlide].image === "/logo maso solidarite.png" ? (
+                <div className="relative overflow-hidden shadow-2xl bg-gray-100 w-full xl:w-[579px] h-[200px] sm:h-[250px] md:h-[300px] xl:h-[365px] rounded-[16px] xl:rounded-[23px]">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-full h-full flex items-center justify-center">
+                      <img
+                        src={
+                          imageError[currentSlide]
+                            ? slides[currentSlide].fallbackImage
+                            : slides[currentSlide].image
+                        }
+                        alt={slides[currentSlide].title}
+                        className="max-h-full object-contain"
+                        style={{ width: "100%" }}
+                        onError={() => handleImageError(currentSlide)}
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="relative overflow-hidden shadow-2xl bg-gray-100 w-full xl:w-[579px] h-[200px] sm:h-[250px] md:h-[300px] xl:h-[365px] rounded-[16px] xl:rounded-[23px]">
+                  <img
+                    src={
+                      imageError[currentSlide]
+                        ? slides[currentSlide].fallbackImage
+                        : slides[currentSlide].image
+                    }
+                    alt={slides[currentSlide].title}
+                    className="w-full h-full object-cover"
+                    onError={() => handleImageError(currentSlide)}
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+              )}
             </div>
           </motion.div>
         </AnimatePresence>

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
+import i18n from '../i18n';
 
 interface SEOProps {
   title?: string;
@@ -11,22 +13,29 @@ interface SEOProps {
 }
 
 export const SEO: React.FC<SEOProps> = ({
-  title = "RENAPROV - Microfinance de Confiance au Cameroun",
-  description = "RENAPROV FINANCE SA - Institution de microfinance au Cameroun. Services financiers accessibles, épargne, crédits, inclusion financière. Devenez propriétaire avec MASO, épargnez avec ORA.",
-  keywords = "microfinance, Cameroun, épargne, crédit, inclusion financière, RENAPROV, MASO, ORA, compte courant, compte épargne, finance, Yaoundé, Douala",
+  title,
+  description,
+  keywords,
   image = "/og-image.jpg",
   url = "https://renaprov.cm",
   type = "website"
 }) => {
+  const { t } = useTranslation('common');
+  
+  const defaultTitle = title || t('seoDefaultTitle');
+  const defaultDescription = description || t('seoDefaultDescription');
+  const defaultKeywords = keywords || t('seoDefaultKeywords');
+  const currentLocale = i18n.language;
+  const ogLocale = currentLocale === 'fr' ? 'fr_CM' : 'en_CM';
   return (
     <Helmet>
       {/* Basic Meta Tags */}
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      <meta name="keywords" content={keywords} />
+      <title>{defaultTitle}</title>
+      <meta name="description" content={defaultDescription} />
+      <meta name="keywords" content={defaultKeywords} />
       <meta name="author" content="RENAPROV FINANCE SA" />
       <meta name="robots" content="index, follow" />
-      <meta name="language" content="fr" />
+      <meta name="language" content={currentLocale} />
       <meta name="revisit-after" content="7 days" />
       
       {/* CamaireTech Developer Credits - SEO Backlinks */}
@@ -37,17 +46,17 @@ export const SEO: React.FC<SEOProps> = ({
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
       <meta property="og:url" content={url} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
+      <meta property="og:title" content={defaultTitle} />
+      <meta property="og:description" content={defaultDescription} />
       <meta property="og:image" content={image} />
       <meta property="og:site_name" content="RENAPROV FINANCE SA" />
-      <meta property="og:locale" content="fr_CM" />
+      <meta property="og:locale" content={ogLocale} />
       
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content={url} />
-      <meta property="twitter:title" content={title} />
-      <meta property="twitter:description" content={description} />
+      <meta property="twitter:title" content={defaultTitle} />
+      <meta property="twitter:description" content={defaultDescription} />
       <meta property="twitter:image" content={image} />
       
       {/* Additional SEO Tags */}
@@ -86,7 +95,7 @@ export const SEO: React.FC<SEOProps> = ({
           "contactPoint": {
             "@type": "ContactPoint",
             "contactType": "customer service",
-            "availableLanguage": ["French"]
+            "availableLanguage": currentLocale === 'fr' ? ["French", "English"] : ["English", "French"]
           },
           "serviceType": [
             "Microfinance",

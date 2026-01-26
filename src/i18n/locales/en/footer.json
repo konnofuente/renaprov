@@ -1,0 +1,37 @@
+{
+  "links": {
+    "title": "Links",
+    "home": "Home",
+    "about": "About",
+    "mission": "Mission",
+    "products": "Products",
+    "maso": "MASO",
+    "renews": "RENEWS",
+    "contact": "Contact"
+  },
+  "services": {
+    "title": "Services",
+    "bankAccounts": "Bank Accounts",
+    "specialisedServices": "Specialised Services",
+    "ora": "ORA - Objective Achievement of Ambitions",
+    "maso": "MASO"
+  },
+  "address": {
+    "title": "Address",
+    "poBox": "P.O. Box: 13809 Messa, Yaoundé",
+    "headquarters": "Headquarters: Montée Elig-Effa, Yaoundé"
+  },
+  "contact": {
+    "title": "Contact",
+    "phone1": "+237 693930231",
+    "phone2": "+237 695133343",
+    "phone3": "+237 690203176",
+    "email": "Email: stephaniebissai@gmail.com"
+  },
+  "social": {
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn",
+    "twitter": "X (Twitter)"
+  }
+}

@@ -1,27 +1,33 @@
 import { CircleCheck as CheckCircle2Icon } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
+import { useTranslation } from "react-i18next";
+import { useNavigate, useParams } from "react-router-dom";
 import { Button } from "../../../../components/ui/button";
 
-const bulletPoints = [
-  {
-    text: (
-      <>
-        Avec son réseau étendu sur l'ensemble du territoire camerounais avec plus de <span className="font-bold">28 Agences</span>
-      </>
-    ),
-  },
-  {
-    text: "Des filiales créées pour la satisfaction de tous",
-  },
-  {
-    text: "Tombola MASO : Gagnez maisons, motos, financements…",
-  },
-];
-
 export const ExperienceSubsection = (): JSX.Element => {
+  const { t } = useTranslation('home');
+  const navigate = useNavigate();
+  const { lang } = useParams<{ lang?: string }>();
+  const currentLang = lang || 'fr';
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+
+  const getLocalizedPath = (path: string) => {
+    return `/${currentLang}${path}`;
+  };
+
+  const bulletPoints = useMemo(() => [
+    {
+      text: t('experience.bullets.bullet1'),
+    },
+    {
+      text: t('experience.bullets.bullet2'),
+    },
+    {
+      text: t('experience.bullets.bullet3'),
+    },
+  ], [t]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -112,16 +118,16 @@ export const ExperienceSubsection = (): JSX.Element => {
         <div className="flex flex-col items-start gap-6 md:gap-8 w-full">
           <div className="flex flex-col items-start gap-2 w-full">
             <h2 className="[font-family:'Bricolage_Grotesque',Helvetica] font-extrabold text-yellow-500 text-4xl sm:text-5xl md:text-6xl lg:text-[64px] tracking-[0] leading-tight md:leading-[70.4px]">
-              + {count} ANNÉES
+              + {count} {t('experience.yearsLabel')}
             </h2>
 
             <p className="[font-family:'Bricolage_Grotesque',Helvetica] font-extrabold text-foundationgreynormal text-3xl sm:text-4xl md:text-5xl tracking-[0] leading-tight md:leading-[52.8px]">
-              D&apos;EXPÉRIENCE
+              {t('experience.experienceLabel')}
             </p>
           </div>
 
           <p className="[font-family:'Karla',Helvetica] font-normal text-foundationgreynormal text-sm sm:text-base md:text-lg tracking-[0] leading-relaxed md:leading-[28.8px]">
-            Depuis sa création, RENAPROV FINANCE S.A à su gagner la confiance de milliers de personnes à travers le monde et spécifiquement au Cameroun de par sa marque de distinction qui est l'Économie solidaire.
+            {t('experience.description')}
           </p>
         </div>
 
@@ -133,15 +139,18 @@ export const ExperienceSubsection = (): JSX.Element => {
             >
               <CheckCircle2Icon className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 text-foundation-bluenormal mt-0.5" />
               <p className="[font-family:'Karla',Helvetica] font-normal text-foundationgreynormal text-sm sm:text-base md:text-lg tracking-[0] leading-relaxed md:leading-[28.8px]">
-                {point.text}
+                {typeof point.text === 'string' ? point.text : point.text}
               </p>
             </div>
           ))}
         </div>
 
-        <Button className="w-full sm:w-auto bg-foundation-bluenormal hover:bg-foundation-bluedark-hover text-white font-semibold px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg min-h-[48px] sm:min-h-[52px] md:min-h-[56px] flex items-center justify-center">
+        <Button 
+          onClick={() => navigate(getLocalizedPath("/contact"))}
+          className="w-full sm:w-auto bg-foundation-bluenormal hover:bg-foundation-bluedark-hover text-white font-semibold px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg min-h-[48px] sm:min-h-[52px] md:min-h-[56px] flex items-center justify-center"
+        >
           <span className="w-full text-center leading-tight">
-            Contactez nous
+            {t('experience.cta')}
           </span>
         </Button>
       </div>

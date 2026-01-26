@@ -1,51 +1,15 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { getLocalizedPath, getLangFromPath } from "../lib/utils";
 
 interface Service {
   title: string;
   route: string;
   category: string;
+  categoryKey: string;
 }
-
-const services: Service[] = [
-  // Comptes Courant
-  { title: "Compte courant individuel", route: "/service/compte-courant-individuel", category: "Comptes Courant" },
-  { title: "Compte courant entreprise", route: "/service/compte-courant-entreprise", category: "Comptes Courant" },
-  { title: "Compte courant association", route: "/service/compte-courant-association", category: "Comptes Courant" },
-  
-  // Comptes Épargne
-  { title: "Compte épargne individuel", route: "/service/compte-epargne-individuel", category: "Comptes Épargne" },
-  { title: "Compte épargne entreprise", route: "/service/compte-epargne-entreprise", category: "Comptes Épargne" },
-  
-  // Comptes Spéciaux
-  { title: "Compte salarié secteur Public ou Privé", route: "/service/compte-cheque-salaire-pension", category: "Comptes Spéciaux" },
-  { title: "Compte pensionné secteur Public ou Privé", route: "/service/compte-pensionne", category: "Comptes Spéciaux" },
-  
-  // ORA
-  { title: "ORA Foncier", route: "/service/ora-foncier", category: "ORA" },
-  { title: "ORA Investissement", route: "/service/ora-investissement", category: "ORA" },
-  { title: "ORA Prévoyance", route: "/service/ora-prevoyance", category: "ORA" },
-  { title: "ORA Scolaire", route: "/service/ora-scolaire", category: "ORA" },
-  { title: "ORA Académique", route: "/service/ora-academique", category: "ORA" },
-  { title: "ORA Équipement", route: "/service/ora-equipement", category: "ORA" },
-  { title: "ORA Islamique", route: "/service/ora-islamique", category: "ORA" },
-  { title: "ORA Santé", route: "/service/ora-sante", category: "ORA" },
-  
-  // Autres Services
-  { title: "MASO", route: "/maso", category: "Autres Services" },
-  { title: "SPMC", route: "/service/spmc", category: "Autres Services" },
-  { title: "Bicard", route: "/service/bicard", category: "Autres Services" },
-];
-
-// Group services by category
-const groupedServices = services.reduce((acc, service) => {
-  if (!acc[service.category]) {
-    acc[service.category] = [];
-  }
-  acc[service.category].push(service);
-  return acc;
-}, {} as Record<string, Service[]>);
 
 interface ServicesDropdownProps {
   isActive: boolean;
@@ -53,9 +17,56 @@ interface ServicesDropdownProps {
 }
 
 export const ServicesDropdown: React.FC<ServicesDropdownProps> = ({ isActive, mainPath }) => {
+  const { t } = useTranslation(["services", "header"]);
+  const pathname = useLocation().pathname;
+  const currentLang = getLangFromPath(pathname) ?? "fr";
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const localized = (path: string) => getLocalizedPath(path, currentLang);
+
+  // Build services array with translations
+  const services: Service[] = useMemo(() => [
+    // Comptes Courant
+    { title: t('services.currentAccountIndividual'), route: "/service/compte-courant-individuel", category: t('categories.currentAccounts'), categoryKey: "currentAccounts" },
+    { title: t('services.currentAccountBusiness'), route: "/service/compte-courant-entreprise", category: t('categories.currentAccounts'), categoryKey: "currentAccounts" },
+    { title: t('services.currentAccountAssociation'), route: "/service/compte-courant-association", category: t('categories.currentAccounts'), categoryKey: "currentAccounts" },
+    
+    // Comptes Épargne
+    { title: t('services.savingsAccountIndividual'), route: "/service/compte-epargne-individuel", category: t('categories.savingsAccounts'), categoryKey: "savingsAccounts" },
+    { title: t('services.savingsAccountBusiness'), route: "/service/compte-epargne-entreprise", category: t('categories.savingsAccounts'), categoryKey: "savingsAccounts" },
+    
+    // Comptes Spéciaux
+    { title: t('services.employeeAccount'), route: "/service/compte-cheque-salaire-pension", category: t('categories.specialAccounts'), categoryKey: "specialAccounts" },
+    { title: t('services.pensionAccount'), route: "/service/compte-pensionne", category: t('categories.specialAccounts'), categoryKey: "specialAccounts" },
+    
+    // ORA
+    { title: t('services.oraFoncier'), route: "/service/ora-foncier", category: t('categories.ora'), categoryKey: "ora" },
+    { title: t('services.oraInvestissement'), route: "/service/ora-investissement", category: t('categories.ora'), categoryKey: "ora" },
+    { title: t('services.oraPrevoyance'), route: "/service/ora-prevoyance", category: t('categories.ora'), categoryKey: "ora" },
+    { title: t('services.oraScolaire'), route: "/service/ora-scolaire", category: t('categories.ora'), categoryKey: "ora" },
+    { title: t('services.oraAcademique'), route: "/service/ora-academique", category: t('categories.ora'), categoryKey: "ora" },
+    { title: t('services.oraEquipement'), route: "/service/ora-equipement", category: t('categories.ora'), categoryKey: "ora" },
+    { title: t('services.oraIslamique'), route: "/service/ora-islamique", category: t('categories.ora'), categoryKey: "ora" },
+    { title: t('services.oraSante'), route: "/service/ora-sante", category: t('categories.ora'), categoryKey: "ora" },
+    
+    // Autres Services
+    { title: t('services.maso'), route: "/maso", category: t('categories.otherServices'), categoryKey: "otherServices" },
+    { title: t('services.spmc'), route: "/service/spmc", category: t('categories.otherServices'), categoryKey: "otherServices" },
+    { title: t('services.bicard'), route: "/service/bicard", category: t('categories.otherServices'), categoryKey: "otherServices" },
+  ], [t]);
+
+  // Group services by category
+  const groupedServices = useMemo(() => {
+    return services.reduce((acc, service) => {
+      if (!acc[service.categoryKey]) {
+        acc[service.categoryKey] = [];
+      }
+      acc[service.categoryKey].push(service);
+      return acc;
+    }, {} as Record<string, Service[]>);
+  }, [services]);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -116,7 +127,7 @@ export const ServicesDropdown: React.FC<ServicesDropdownProps> = ({ isActive, ma
               : "text-black hover:text-foundation-bluenormal"
           }`}
         >
-          Produits
+          {t('header:nav.products')}
         </Link>
         <div className="ml-1 p-1">
           {isOpen ? (
@@ -134,16 +145,18 @@ export const ServicesDropdown: React.FC<ServicesDropdownProps> = ({ isActive, ma
           onMouseLeave={handleDropdownMouseLeave}
         >
           <div className="p-4">
-            {Object.entries(groupedServices).map(([category, categoryServices]) => (
-              <div key={category} className="mb-4 last:mb-0">
+            {Object.entries(groupedServices).map(([categoryKey, categoryServices]) => {
+              const firstService = categoryServices[0];
+              return (
+              <div key={categoryKey} className="mb-4 last:mb-0">
                 <h3 className="font-semibold text-sm text-gray-700 mb-2 border-b border-gray-100 pb-1">
-                  {category}
+                  {firstService.category}
                 </h3>
                 <div className="space-y-1">
                   {categoryServices.map((service) => (
                     <Link
                       key={service.title}
-                      to={service.route}
+                      to={localized(service.route)}
                       className="block px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-foundation-bluenormal rounded-md transition-colors duration-150"
                       onClick={handleServiceClick}
                     >
@@ -152,7 +165,8 @@ export const ServicesDropdown: React.FC<ServicesDropdownProps> = ({ isActive, ma
                   ))}
                 </div>
               </div>
-            ))}
+            );
+            })}
           </div>
         </div>
       )}

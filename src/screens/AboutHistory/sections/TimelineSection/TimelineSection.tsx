@@ -1,50 +1,14 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 
-const timelineData = [
-  {
-    year: "1992 – Origines",
-    items: [
-      "RENAPROV FINANCE SA trouve ses origines en 1992",
-      "Naît d'abord sous forme d'association ayant pour mission de collecter les fonds des petits épargnants pour les redistribuer dans une dynamique de solidarité.",
-    ],
-  },
-  {
-    year: "1994 – Organisation",
-    items: [
-      "Une organisation à but non lucratif, principalement au service des commerçants des marchés",
-      "Afin de leur offrir une solution simple et sécurisée pour l'épargne.",
-    ],
-  },
-  {
-    year: "1996 – Structuration",
-    items: [
-      "La structure prend officiellement le nom de RENAPROV FINANCE SA",
-      "Amorçant alors une phase de structuration plus formelle dans le secteur de la microfinance.",
-    ],
-  },
-  {
-    year: "2000-2010 – Consolidation",
-    items: [
-      "Pendant plus d'une décennie, RENAPROV opère avec seulement deux agences : le siège social à Ekounou et une agence à Edéa.",
-      "Phase de consolidation et de développement des services.",
-    ],
-  },
-  {
-    year: "2010+ – Expansion",
-    items: [
-      "Après plusieurs années de consolidation, RENAPROV amorce une phase d'expansion",
-      "Pour compter aujourd'hui 28 agences à travers le pays.",
-      "En parallèle, RENAPROV FINANCE SA a élargi son impact en mettant sur pied plusieurs filiales, renforçant ainsi son positionnement comme un acteur majeur de la finance inclusive et du développement communautaire.",
-    ],
-  },
-];
+type TimelineEvent = { year: string; items: string[] };
 
 // Composant pour chaque card de timeline
 const TimelineCard: React.FC<{
-  timeline: (typeof timelineData)[0];
+  timeline: TimelineEvent;
   index: number;
 }> = ({ timeline }) => {
   return (
@@ -79,8 +43,51 @@ const TimelineCard: React.FC<{
 };
 
 export const TimelineSection = (): JSX.Element => {
+  const { t } = useTranslation("about");
   const [currentSlide, setCurrentSlide] = useState(0);
   const [cardsToShow, setCardsToShow] = useState(1);
+
+  const timelineData = useMemo<TimelineEvent[]>(
+    () => [
+      {
+        year: t("timeline.events.event1.year"),
+        items: [
+          t("timeline.events.event1.items.0"),
+          t("timeline.events.event1.items.1"),
+        ],
+      },
+      {
+        year: t("timeline.events.event2.year"),
+        items: [
+          t("timeline.events.event2.items.0"),
+          t("timeline.events.event2.items.1"),
+        ],
+      },
+      {
+        year: t("timeline.events.event3.year"),
+        items: [
+          t("timeline.events.event3.items.0"),
+          t("timeline.events.event3.items.1"),
+        ],
+      },
+      {
+        year: t("timeline.events.event4.year"),
+        items: [
+          t("timeline.events.event4.items.0"),
+          t("timeline.events.event4.items.1"),
+        ],
+      },
+      {
+        year: t("timeline.events.event5.year"),
+        items: [
+          t("timeline.events.event5.items.0"),
+          t("timeline.events.event5.items.1"),
+          t("timeline.events.event5.items.2"),
+        ],
+      },
+    ],
+    [t]
+  );
 
   // Responsive cards calculation
   useEffect(() => {
@@ -142,9 +149,9 @@ export const TimelineSection = (): JSX.Element => {
               id="timeline-description"
               className="font-bold text-black text-[40px] leading-[120%]"
             >
-              <span className="block">Historique de la</span>
+              <span className="block">{t("timeline.titlePart1")}</span>
               <span className="block text-foundation-bluenormal">
-                RENAPROV FINANCE S.A
+                {t("timeline.titlePart2")}
               </span>
             </h2>
           </div>
@@ -152,7 +159,7 @@ export const TimelineSection = (): JSX.Element => {
           <div className="xl:max-w-lg">
             <div className="space-y-4" aria-describedby="timeline-description">
               <p className="font-normal text-black text-[18px] leading-[150%]">
-                Depuis plus de 30 ans, RENAPROV FINANCE SA vous accompagne dans vos projets personnels et professionnels.
+                {t("timeline.description")}
               </p>
             </div>
           </div>
@@ -202,7 +209,7 @@ export const TimelineSection = (): JSX.Element => {
                       ? "bg-foundation-bluenormal w-8"
                       : "bg-black opacity-20 hover:opacity-40"
                   }`}
-                  aria-label={`Aller à la page ${index + 1}`}
+                  aria-label={`${t("timeline.ariaGoToPage")} ${index + 1}`}
                 />
               ))}
             </div>
@@ -218,7 +225,7 @@ export const TimelineSection = (): JSX.Element => {
                     ? "bg-gray-100 border-gray-300 cursor-not-allowed opacity-50"
                     : "bg-[#ffffff] border-black hover:bg-[#ffffff]/90"
                 }`}
-                aria-label="Slide précédent"
+                aria-label={t("timeline.ariaPrev")}
               >
                 <ChevronLeftIcon
                   className={`w-5 h-5 ${
@@ -237,7 +244,7 @@ export const TimelineSection = (): JSX.Element => {
                     ? "bg-gray-100 border-gray-300 cursor-not-allowed opacity-50"
                     : "bg-[#ffffff] border-black hover:bg-[#ffffff]/90"
                 }`}
-                aria-label="Slide suivant"
+                aria-label={t("timeline.ariaNext")}
               >
                 <ChevronRightIcon
                   className={`w-5 h-5 ${

@@ -1,0 +1,93 @@
+{
+  "seo": {
+    "title": "Nos Produits - RENAPROV | Services Financiers et Microfinance",
+    "description": "Découvrez tous nos produits financiers RENAPROV : comptes épargne, comptes courant, produits ORA, SPMC, Bicard et bien plus encore.",
+    "keywords": "produits financiers, comptes épargne, ORA, SPMC, Bicard, microfinance, RENAPROV, Cameroun, services financiers"
+  },
+  "hero": {
+    "title": "Nos Produits",
+    "description": "Découvrez notre gamme complète de produits financiers RENAPROV : comptes épargne, comptes courant, produits ORA, SPMC, Bicard et bien plus encore pour répondre à tous vos besoins financiers.",
+    "cta": "Adhérer dès aujourd'hui",
+    "imageAlt": "MASO - Solidarité et assistance pour tous les Camerounais"
+  },
+  "filters": {
+    "filterByBrand": "Filtrer par marque :",
+    "all": "Tous",
+    "renaprov": "Produits RENAPROV",
+    "connexes": "Connexes",
+    "filterDescAll": "Découvrez tous nos produits et services",
+    "filterDescRenaprov": "Services financiers et microfinance",
+    "filterDescConnexes": "Produits de transfert d'argent et paiements mobiles"
+  },
+  "features": {
+    "title": "Tous sur les",
+    "titleHighlight": "Produit Renaprov",
+    "subtitle": "Depuis 1995, Renaprov accompagne les Camerounais en proposant des services financiers accessibles et solidaires. D'une petite institution ancrée dans le secteur informel, nous sommes devenus un réseau national de microfinance, reconnu pour notre proximité avec les clients et notre engagement pour le développement social et économique.",
+    "items": {
+      "item1": { "title": "Intégrité & Transparence", "description": "Nous agissons avec honnêteté dans toutes nos opérations, en garantissant une communication claire, des pratiques loyales et une transparence totale avec nos clients" },
+      "item2": { "title": "Solidarité & Proximité", "description": "Proches des marchés, des familles et des commerçants, nous mettons la solidarité au cœur de nos actions." },
+      "item3": { "title": "Excellence Opérationnelle", "description": "Nous nous engageons à offrir des services de microfinance fiables, efficaces et adaptés, avec un personnel compétent." }
+    }
+  },
+  "categories": {
+    "bankAccounts": {
+      "title": "Comptes Bancaires",
+      "description": "Gérez vos finances quotidiennes et épargnez pour vos projets avec nos comptes adaptés à tous vos besoins.",
+      "products": {
+        "cei": { "name": "Compte épargne individuel", "description": "Épargnez pour vos projets personnels avec des taux attractifs et une gestion simplifiée.", "imageAlt": "Compte épargne individuel RENAPROV" },
+        "cee": { "name": "Compte épargne personne morale", "description": "Épargne pour les entreprises et organisations avec des avantages dédiés.", "imageAlt": "Compte épargne entreprise RENAPROV" },
+        "cci": { "name": "Compte courant individuel", "description": "Gérez vos finances quotidiennes en toute simplicité avec des services complets.", "imageAlt": "Compte courant individuel RENAPROV" },
+        "cce": { "name": "Compte courant personne morale", "description": "Compte professionnel pour entreprises avec des services bancaires complets.", "imageAlt": "Compte courant entreprise RENAPROV" },
+        "cca": { "name": "Compte courant association", "description": "Compte pour associations et ONG avec des conditions préférentielles.", "imageAlt": "Compte courant association RENAPROV" }
+      }
+    },
+    "specialized": {
+      "title": "Services Spécialisés",
+      "description": "Des comptes et services dédiés aux différents profils avec des avantages spécifiques et des conditions adaptées.",
+      "products": {
+        "cs": { "name": "Compte salarié", "description": "Compte dédié aux employés avec des avantages et des services privilégiés.", "imageAlt": "Compte salarié RENAPROV" },
+        "cp": { "name": "Compte privé", "description": "Compte privé avec avantages exclusifs et services personnalisés.", "imageAlt": "Compte privé RENAPROV" },
+        "cpub": { "name": "Compte public", "description": "Compte pour les fonctionnaires avec des conditions spéciales.", "imageAlt": "Compte public RENAPROV" },
+        "cpen": { "name": "Compte pensionné", "description": "Compte pour les retraités avec des avantages dédiés et des services adaptés.", "imageAlt": "Compte pensionné RENAPROV" },
+        "spmc": { "name": "SPMC", "description": "Système de Paiement Mobile Camerounais pour des transactions rapides et sécurisées.", "imageAlt": "SPMC RENAPROV" },
+        "bicard": { "name": "Bicard", "description": "Carte de paiement multi-services pour tous vos achats et retraits.", "imageAlt": "Bicard RENAPROV" }
+      }
+    },
+    "ora": {
+      "title": "ORA - Objectif Réalisation d'Ambitions",
+      "description": "Des produits d'épargne spécialisés pour concrétiser vos projets de vie les plus importants.",
+      "products": {
+        "oraFoncier": { "name": "ORA Foncier", "description": "Plan d'épargne permettant au client de constituer un fond qui permet au client d'acquérir un terrain viabilisé, sécurisé, avec eau et électricité, assorti d'un titre foncier à moindre coût.", "imageAlt": "ORA Foncier RENAPROV" },
+        "oraInvestissement": { "name": "ORA Investissement", "description": "Plan d'épargne permettant au client de constituer un fond pour promouvoir son investissement et réaliser son projet.", "imageAlt": "ORA Investissement RENAPROV" },
+        "oraPrevoyance": { "name": "ORA Prévoyance", "description": "Plan d'épargne permettant au client de constituer un fond afin de prévenir les évènements heureux ou malheureux.", "imageAlt": "ORA Prévoyance RENAPROV" },
+        "oraScolaire": { "name": "ORA Scolaire", "description": "Plan d'épargne permettant au client de constituer un fond à partir de 350 FCFA dans le but de solutionner les problèmes liés à la rentrée scolaire.", "imageAlt": "ORA Scolaire RENAPROV" },
+        "oraAcademique": { "name": "ORA Académique", "description": "Plan d'épargne permettant au client de constituer un fond à partir de 1000 FCFA pour assurer les frais de scolarité pour la rentrée académique au sein de la filiale académique du groupe IUB (Institut Universitaire BISSAÏ).", "imageAlt": "ORA Académique RENAPROV" },
+        "oraEquipement": { "name": "ORA Équipement", "description": "Plan d'épargne permettant au client de constituer un fond pour acquisition des équipements mobiliers, informatiques, électroniques, électroménager, etc.", "imageAlt": "ORA Équipement RENAPROV" },
+        "oraIslamique": { "name": "ORA Islamique", "description": "Plan d'épargne permettant au client de constituer une épargne non rémunérée.", "imageAlt": "ORA Islamique RENAPROV" },
+        "oraSante": { "name": "ORA Santé", "description": "Plan d'épargne permettant de bénéficier à partir de 1000 fcfa/jour d'une couverture sanitaire au Complexe Hospitalier La MAMU.", "imageAlt": "ORA Santé RENAPROV" }
+      }
+    }
+  },
+  "connex": {
+    "title": "Produits Connexes",
+    "subtitle": "Découvrez nos partenaires et produits complémentaires pour une expérience financière complète",
+    "learnMore": "En savoir plus",
+    "products": {
+      "moneygram": { "name": "MoneyGram", "description": "Transferts d'argent internationaux rapides et sécurisés vers plus de 200 pays.", "category": "Transfert International" },
+      "mtn": { "name": "MTN Mobile Money", "description": "Service de paiement mobile pour effectuer des transactions financières via votre téléphone.", "category": "Paiement Mobile" },
+      "orange": { "name": "Orange Money", "description": "Solution de paiement mobile pour gérer vos finances au quotidien.", "category": "Paiement Mobile" },
+      "ria": { "name": "RIA Money Transfer", "description": "Transferts d'argent internationaux avec des taux compétitifs et un service fiable.", "category": "Transfert International" },
+      "wafacash": { "name": "WafaCash", "description": "Service de transfert d'argent et de paiement mobile pour l'Afrique de l'Ouest.", "category": "Transfert Régional" },
+      "westernunion": { "name": "Western Union", "description": "Transferts d'argent internationaux avec plus de 500 000 points de service dans le monde.", "category": "Transfert International" }
+    }
+  },
+  "learnMore": "En savoir plus",
+  "alerts": {
+    "productNotFound": "Produit non trouvé"
+  },
+  "aria": {
+    "goToSlide": "Aller au slide",
+    "prevSlide": "Slide précédent",
+    "nextSlide": "Slide suivant"
+  }
+}

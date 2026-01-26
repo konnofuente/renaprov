@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../../components/ui/card";
 import { Button } from "../../../../components/ui/button";
@@ -61,6 +62,8 @@ const agences = [
 ];
 
 export const AgencesSection = (): JSX.Element => {
+  const { t } = useTranslation("renews");
+
   return (
     <section className="w-full bg-gray-50 py-16 sm:py-20 md:py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
@@ -73,11 +76,11 @@ export const AgencesSection = (): JSX.Element => {
           className="text-center mb-16"
         >
           <h2 className="[font-family:'Bricolage_Grotesque',Helvetica] font-bold text-foundation-bluenormal text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-tight mb-4">
-            AGENCES À LA UNE
+            {t("agences.sectionTitle")}
           </h2>
           <div className="w-24 h-1 bg-foundation-bluenormal mx-auto rounded-full mb-6"></div>
           <p className="[font-family:'Roboto',Helvetica] font-normal text-gray-600 text-lg sm:text-xl max-w-3xl mx-auto">
-            Découvrez nos agences phares et leurs équipes dévouées qui vous accompagnent au quotidien
+            {t("agences.sectionSubtitle")}
           </p>
         </motion.div>
 

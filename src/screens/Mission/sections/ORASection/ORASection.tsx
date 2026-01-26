@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Button } from "../../../../components/ui/button";
 import { MapPin, Phone } from "lucide-react";
 
@@ -87,49 +88,40 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ location, phone }) => {
   );
 };
 
-// Composant modulaire pour la galerie d'images
-const ImageGallery: React.FC = () => {
-  return (
-    <div className="w-full h-64 md:h-80 lg:h-96">
-      <div className="w-full h-full">
-        {/* Image principale */}
-        <img
-          className="w-full h-full rounded-lg md:rounded-xl object-contain bg-white p-8"
-          alt="Royal FM"
-          src="/logo Royal FMRoyal FM.png"
-        />
-      </div>
+const ImageGallery: React.FC<{ alt: string }> = ({ alt }) => (
+  <div className="w-full h-64 md:h-80 lg:h-96">
+    <div className="w-full h-full">
+      <img
+        className="w-full h-full rounded-lg md:rounded-xl object-contain bg-white p-8"
+        alt={alt}
+        src="/logo Royal FMRoyal FM.png"
+      />
     </div>
-  );
-};
+  </div>
+);
 
 export const ORASection = (): JSX.Element => {
+  const { t } = useTranslation("mission");
+  const phones = t("royalFm.phones", { returnObjects: true }) as string[];
+
   return (
     <section
       className={`flex flex-col w-full items-center justify-between ${designTokens.spacing.section} ${designTokens.layout.section} bg-foundation-bluedarker`}
     >
       <div className={`flex flex-col w-full ${designTokens.layout.container}`}>
         <article className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Contenu principal */}
           <div className="flex flex-col order-2 lg:order-1">
             <header className="flex flex-col gap-6 md:gap-8">
               <div className="flex gap-2 flex-wrap">
-              <ContactInfo
-                phone="+237 691 738 357"
-              />
-              <ContactInfo
-                phone="+237 671 157 321"
-              />
-              <ContactInfo
-                phone="+237  620 377 481"
-              />
-
+                {phones.map((phone, i) => (
+                  <ContactInfo key={i} phone={phone} />
+                ))}
               </div>
 
               <h2
                 className={`text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold leading-tight text-grayswhite`}
               >
-                Royal FM
+                {t("royalFm.title")}
               </h2>
             </header>
 
@@ -137,32 +129,30 @@ export const ORASection = (): JSX.Element => {
               <p
                 className={`text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-foundation-greylight-hover`}
               >
-                La radio des auditeurs à Yaoundé. Royal FM vous accompagne avec des programmes variés, 
-                de l'information de qualité et une proximité avec ses auditeurs.
+                {t("royalFm.description")}
               </p>
 
               <div
                 className={`flex flex-col sm:flex-row items-stretch sm:items-center ${designTokens.spacing.buttons}`}
               >
-                <ActionButton 
+                <ActionButton
                   variant="primary"
-                  onClick={() => window.open('https://royalfmcameroun.com/direct', '_blank')}
+                  onClick={() => window.open("https://royalfmcameroun.com/direct", "_blank")}
                 >
-                  Écouter en direct
+                  {t("royalFm.ctaListen")}
                 </ActionButton>
-                <ActionButton 
+                <ActionButton
                   variant="secondary"
-                  onClick={() => window.open('https://royalfmcameroun.com/', '_blank')}
+                  onClick={() => window.open("https://royalfmcameroun.com/", "_blank")}
                 >
-                  Découvrir nos programmes
+                  {t("royalFm.ctaDiscover")}
                 </ActionButton>
               </div>
             </div>
           </div>
 
-          {/* Galerie d'images */}
           <div className="order-1 lg:order-2">
-            <ImageGallery />
+            <ImageGallery alt={t("royalFm.imageAlt")} />
           </div>
         </article>
       </div>

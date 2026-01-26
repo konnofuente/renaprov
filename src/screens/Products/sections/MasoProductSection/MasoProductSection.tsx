@@ -1,10 +1,27 @@
 import React from "react";
 import { Button } from "../../../../components/ui/button";
 import { Check } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
+
+const SUPPORTED_LANGS = ['fr', 'en'] as const;
+const normalizeLang = (l: string | undefined): 'fr' | 'en' => {
+  const base = (l || 'fr').split('-')[0].toLowerCase();
+  return SUPPORTED_LANGS.includes(base as 'fr' | 'en') ? (base as 'fr' | 'en') : 'fr';
+};
 
 export const MasoProductSection = (): JSX.Element => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { lang } = useParams<{ lang?: string }>();
+  
+  const pathSegments = location.pathname.split('/').filter(Boolean);
+  const currentLang = SUPPORTED_LANGS.includes(pathSegments[0] as 'fr' | 'en')
+    ? (pathSegments[0] as 'fr' | 'en')
+    : normalizeLang(lang);
+
+  const getLocalizedPath = (path: string) => {
+    return `/${currentLang}${path === '/' ? '' : path}`;
+  };
   return (
     <section className="w-full bg-gradient-to-br from-white to-foundationbluelight/10 py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
@@ -71,7 +88,7 @@ export const MasoProductSection = (): JSX.Element => {
             {/* CTA Button */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button 
-                onClick={() => navigate("/maso")}
+                onClick={() => navigate(getLocalizedPath("/maso"))}
                 className="bg-[linear-gradient(148deg,rgba(0,172,238,1)_0%,rgba(1,27,38,1)_100%)] text-white hover:opacity-90 px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 rounded-[40px] font-semibold text-lg sm:text-xl md:text-2xl shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
               >
                 Je rejoins MASO dès aujourd'hui

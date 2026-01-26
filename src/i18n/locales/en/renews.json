@@ -1,0 +1,34 @@
+{
+  "seo": {
+    "title": "RENEWS 2024 - RENAPROV | News Magazine",
+    "description": "Discover RENAPROV FINANCE SA's 2024 news: opening of La MAMU Hospital Complex, MASO Lottery Act 4, BISSAÏ University Institute, new branches and more.",
+    "keywords": "RENEWS, RENAPROV, 2024 news, LA MAMU, MASO, BISSAÏ Institute, microfinance, Cameroon, corporate magazine"
+  },
+  "hero": {
+    "title": "RENEWS 2024",
+    "description": "Discover the major news and achievements of RENAPROV FINANCE S.A in 2024: opening of La MAMU Hospital Complex, MASO Lottery Act 4, BISSAÏ University Institute, new branches and more.",
+    "cta": "Discover the news",
+    "imageAlt": "RENEWS 2024 - RENAPROV News Magazine"
+  },
+  "flashNews": {
+    "sectionTitle": "FLASH RENEWS!",
+    "sectionSubtitle": "The important news that marked 2024 for RENAPROV FINANCE S.A"
+  },
+  "agences": {
+    "sectionTitle": "FEATURED BRANCHES",
+    "sectionSubtitle": "Discover our flagship branches and their dedicated teams who support you every day"
+  },
+  "filiales": {
+    "sectionTitle": "GROUP SUBSIDIARIES",
+    "sectionSubtitle": "Discover the complete ecosystem of the RENAPROV Group and its various entities"
+  },
+  "dirigeants": {
+    "sectionTitle": "OUR LEADERS",
+    "sectionSubtitle": "Discover the management team guiding RENAPROV FINANCE S.A towards excellence",
+    "leadershipBadge": "Leadership"
+  },
+  "galerie": {
+    "sectionTitle": "GALLERY",
+    "sectionSubtitle": "Relive the highlights and important events of RENAPROV FINANCE S.A"
+  }
+}

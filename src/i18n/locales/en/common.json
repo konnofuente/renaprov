@@ -1,0 +1,21 @@
+{
+  "openAccount": "Open my account",
+  "contactUs": "Contact us",
+  "submit": "Submit",
+  "close": "Close",
+  "cancel": "Cancel",
+  "save": "Save",
+  "loading": "Loading...",
+  "error": "Error",
+  "success": "Success",
+  "switchLanguage": "Switch language",
+  "whatsappDefaultMessage": "Hello, I would like to get more information about RENAPROV services.",
+  "whatsappAriaLabel": "Contact us on WhatsApp",
+  "whatsappTitle": "Contact us on WhatsApp",
+  "logoAlt": "RENAPROV FINANCE SA - Logo",
+  "logoAltShort": "RENAPROV FINANCE SA Logo",
+  "copyright": "Copyright © 2025 RENAPROV All rights reserved.",
+  "seoDefaultTitle": "RENAPROV - Trusted Microfinance in Cameroon",
+  "seoDefaultDescription": "RENAPROV FINANCE SA - Microfinance institution in Cameroon. Accessible financial services, savings, loans, financial inclusion. Become a homeowner with MASO, save with ORA.",
+  "seoDefaultKeywords": "microfinance, Cameroon, savings, credit, financial inclusion, RENAPROV, MASO, ORA, current account, savings account, finance, Yaoundé, Douala"
+}

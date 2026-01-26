@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
@@ -46,16 +47,28 @@ interface AccountCreationFormProps {
   onClose: () => void;
 }
 
-const accountTypes = [
-  { value: "courant-individuel", label: "Compte Courant Individuel", icon: User },
-  { value: "epargne-individuel", label: "Compte Épargne Individuel", icon: CreditCard },
-  { value: "courant-entreprise", label: "Compte Courant Entreprise", icon: Building },
-  { value: "epargne-entreprise", label: "Compte Épargne Entreprise", icon: Briefcase },
-  { value: "salarie", label: "Compte Salarié", icon: Users },
-  { value: "prive", label: "Compte Privé", icon: Shield },
-];
+const ACCOUNT_TYPE_KEYS = [
+  { value: "courant-individuel", icon: User },
+  { value: "epargne-individuel", icon: CreditCard },
+  { value: "courant-entreprise", icon: Building },
+  { value: "epargne-entreprise", icon: Briefcase },
+  { value: "salarie", icon: Users },
+  { value: "prive", icon: Shield },
+] as const;
+
+const INCOME_OPTION_VALUES = ["0-50000", "50000-100000", "100000-200000", "200000-500000", "500000+"] as const;
 
 export const AccountCreationForm: React.FC<AccountCreationFormProps> = ({ isOpen, onClose }) => {
+  const { t } = useTranslation("forms");
+  const accountTypes = useMemo(
+    () =>
+      ACCOUNT_TYPE_KEYS.map(({ value, icon }) => ({
+        value,
+        label: t(`accountCreation.accountTypes.${value}`),
+        icon,
+      })),
+    [t]
+  );
   const [formData, setFormData] = useState<AccountFormData>({
     nom: '',
     prenom: '',
@@ -168,11 +181,67 @@ export const AccountCreationForm: React.FC<AccountCreationFormProps> = ({ isOpen
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulation d'envoi du formulaire par email
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    try {
+      // Get account type label
+      const accountTypeLabel = accountTypes.find(acc => acc.value === formData.typeCompte)?.label || formData.typeCompte;
+      
+      // Format monthly income
+      const revenusLabel = formData.revenusMensuels
+        ? t(`accountCreation.incomeOptions.${formData.revenusMensuels}` as '0-50000' | '50000-100000' | '100000-200000' | '200000-500000' | '500000+')
+        : t("accountCreation.notSpecified");
+      
+      // Create email subject
+      const subject = encodeURIComponent(`Demande d'ouverture de compte - ${formData.prenom} ${formData.nom}`);
+      
+      // Create email body with all form data
+      const body = encodeURIComponent(`
+DEMANDE D'OUVERTURE DE COMPTE RENAPROV
+
+═══════════════════════════════════════════════════════
+INFORMATIONS PERSONNELLES
+═══════════════════════════════════════════════════════
+Nom: ${formData.nom}
+Prénom: ${formData.prenom}
+Email: ${formData.email}
+Téléphone: ${formData.telephone}
+Date de naissance: ${formData.dateNaissance}
+Lieu de naissance: ${formData.lieuNaissance}
+
+═══════════════════════════════════════════════════════
+INFORMATIONS PROFESSIONNELLES
+═══════════════════════════════════════════════════════
+Profession: ${formData.profession}
+Revenus mensuels: ${revenusLabel}
+Adresse: ${formData.adresse}
+Ville: ${formData.ville}
+
+═══════════════════════════════════════════════════════
+TYPE DE COMPTE SOUHAITÉ
+═══════════════════════════════════════════════════════
+Type de compte: ${accountTypeLabel}
+
+Motif d'ouverture:
+${formData.motifOuverture || t("accountCreation.notSpecified")}
+
+═══════════════════════════════════════════════════════
+      `);
+      
+      // Create mailto link
+      const mailtoLink = `mailto:stephaniebissai@gmail.com?subject=${subject}&body=${body}`;
+      
+      // Open email client
+      window.location.href = mailtoLink;
+      
+      // Show success message after a short delay
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+      }, 500);
+    } catch (error) {
+      console.error("Erreur lors de l'envoi:", error);
+      setIsSubmitting(false);
+      alert(t("accountCreation.error"));
+    }
   };
 
   const resetForm = () => {
@@ -213,8 +282,8 @@ export const AccountCreationForm: React.FC<AccountCreationFormProps> = ({ isOpen
             Demande envoyée !
           </h3>
           <p className="text-gray-600 mb-6 leading-relaxed">
-            Votre demande de création de compte a été transmise avec succès. 
-            Notre équipe vous contactera dans les plus brefs délais pour finaliser votre inscription.
+            Votre client de messagerie va s'ouvrir avec toutes les informations que vous avez renseignées. 
+            Veuillez vérifier les détails et envoyer l'email pour finaliser votre demande d'ouverture de compte.
           </p>
           <Button 
             onClick={handleClose}
@@ -235,10 +304,10 @@ export const AccountCreationForm: React.FC<AccountCreationFormProps> = ({ isOpen
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-2xl font-bold text-foundation-bluenormal">
-                Création de Compte RENAPROV
+                {t("accountCreation.modalTitle")}
               </h2>
               <p className="text-gray-600 mt-1">
-                Ouvrez votre compte en quelques étapes
+                {t("accountCreation.modalSubtitle")}
               </p>
             </div>
             <Button
@@ -254,7 +323,7 @@ export const AccountCreationForm: React.FC<AccountCreationFormProps> = ({ isOpen
           {/* Progress Bar */}
           <div className="mt-4">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm text-gray-600">Étape {currentStep} sur {totalSteps}</span>
+              <span className="text-sm text-gray-600">{t("accountCreation.stepOf", { current: currentStep, total: totalSteps })}</span>
               <span className="text-sm font-medium text-foundation-bluenormal">
                 {Math.round((currentStep / totalSteps) * 100)}%
               </span>
@@ -279,23 +348,23 @@ export const AccountCreationForm: React.FC<AccountCreationFormProps> = ({ isOpen
                     <User className="w-8 h-8 text-foundation-bluenormal" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    Informations personnelles
+                    {t("accountCreation.step1")}
                   </h3>
                   <p className="text-gray-600">
-                    Commençons par vos informations de base
+                    {t("accountCreation.step1Subtitle")}
                   </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label className={`text-sm font-medium ${isFieldInvalid('nom', formData.nom) ? 'text-red-600' : 'text-gray-700'}`}>
-                      Nom *
+                      {t("accountCreation.lastName")} *
                     </label>
                     <Input
                       name="nom"
                       value={formData.nom}
                       onChange={handleInputChange}
-                      placeholder="Votre nom"
+                      placeholder={t("accountCreation.placeholders.lastName")}
                       required
                       className={`h-12 ${isFieldInvalid('nom', formData.nom) ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}`}
                     />
@@ -319,14 +388,14 @@ export const AccountCreationForm: React.FC<AccountCreationFormProps> = ({ isOpen
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label className={`text-sm font-medium ${isFieldInvalid('email', formData.email) ? 'text-red-600' : 'text-gray-700'}`}>
-                      Email *
+                      {t("accountCreation.email")} *
                     </label>
                     <Input
                       name="email"
                       type="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      placeholder="votre@email.com"
+                      placeholder={t("accountCreation.placeholders.email")}
                       required
                       className={`h-12 ${isFieldInvalid('email', formData.email) ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}`}
                     />
@@ -334,13 +403,13 @@ export const AccountCreationForm: React.FC<AccountCreationFormProps> = ({ isOpen
                   
                   <div className="space-y-2">
                     <label className={`text-sm font-medium ${isFieldInvalid('telephone', formData.telephone) ? 'text-red-600' : 'text-gray-700'}`}>
-                      Téléphone *
+                      {t("accountCreation.phone")} *
                     </label>
                     <Input
                       name="telephone"
                       value={formData.telephone}
                       onChange={handleInputChange}
-                      placeholder="+237 6XX XXX XXX"
+                      placeholder={t("accountCreation.placeholders.phone")}
                       required
                       className={`h-12 ${isFieldInvalid('telephone', formData.telephone) ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}`}
                     />
@@ -350,7 +419,7 @@ export const AccountCreationForm: React.FC<AccountCreationFormProps> = ({ isOpen
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label className={`text-sm font-medium ${isFieldInvalid('dateNaissance', formData.dateNaissance) ? 'text-red-600' : 'text-gray-700'}`}>
-                      Date de naissance *
+                      {t("accountCreation.birthDate")} *
                     </label>
                     <Input
                       name="dateNaissance"
@@ -364,13 +433,13 @@ export const AccountCreationForm: React.FC<AccountCreationFormProps> = ({ isOpen
                   
                   <div className="space-y-2">
                     <label className={`text-sm font-medium ${isFieldInvalid('lieuNaissance', formData.lieuNaissance) ? 'text-red-600' : 'text-gray-700'}`}>
-                      Lieu de naissance *
+                      {t("accountCreation.birthPlace")} *
                     </label>
                     <Input
                       name="lieuNaissance"
                       value={formData.lieuNaissance}
                       onChange={handleInputChange}
-                      placeholder="Ville de naissance"
+                      placeholder={t("accountCreation.placeholders.birthPlace")}
                       required
                       className={`h-12 ${isFieldInvalid('lieuNaissance', formData.lieuNaissance) ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}`}
                     />
@@ -387,10 +456,10 @@ export const AccountCreationForm: React.FC<AccountCreationFormProps> = ({ isOpen
                     <Briefcase className="w-8 h-8 text-foundation-bluenormal" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    Informations professionnelles
+                    {t("accountCreation.step2")}
                   </h3>
                   <p className="text-gray-600">
-                    Aidez-nous à mieux vous connaître
+                    {t("accountCreation.step2Subtitle")}
                   </p>
                 </div>
 
@@ -410,7 +479,7 @@ export const AccountCreationForm: React.FC<AccountCreationFormProps> = ({ isOpen
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-gray-700">
-                    Revenus mensuels approximatifs
+                    {t("accountCreation.monthlyIncomeApprox")}
                   </label>
                   <select
                     name="revenusMensuels"
@@ -418,24 +487,24 @@ export const AccountCreationForm: React.FC<AccountCreationFormProps> = ({ isOpen
                     onChange={handleInputChange}
                     className="w-full h-12 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-foundation-bluenormal focus:border-transparent"
                   >
-                    <option value="">Sélectionnez une tranche</option>
-                    <option value="0-50000">0 - 50 000 FCFA</option>
-                    <option value="50000-100000">50 000 - 100 000 FCFA</option>
-                    <option value="100000-200000">100 000 - 200 000 FCFA</option>
-                    <option value="200000-500000">200 000 - 500 000 FCFA</option>
-                    <option value="500000+">Plus de 500 000 FCFA</option>
+                    <option value="">{t("accountCreation.incomeSelectPlaceholder")}</option>
+                    {INCOME_OPTION_VALUES.map((v) => (
+                      <option key={v} value={v}>
+                        {t(`accountCreation.incomeOptions.${v}`)}
+                      </option>
+                    ))}
                   </select>
                 </div>
 
                 <div className="space-y-2">
                   <label className={`text-sm font-medium ${isFieldInvalid('adresse', formData.adresse) ? 'text-red-600' : 'text-gray-700'}`}>
-                    Adresse complète *
+                    {t("accountCreation.fullAddress")} *
                   </label>
                   <Input
                     name="adresse"
                     value={formData.adresse}
                     onChange={handleInputChange}
-                    placeholder="Votre adresse complète"
+                    placeholder={t("accountCreation.placeholders.fullAddress")}
                     required
                     className={`h-12 ${isFieldInvalid('adresse', formData.adresse) ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}`}
                   />
@@ -443,13 +512,13 @@ export const AccountCreationForm: React.FC<AccountCreationFormProps> = ({ isOpen
 
                 <div className="space-y-2">
                   <label className={`text-sm font-medium ${isFieldInvalid('ville', formData.ville) ? 'text-red-600' : 'text-gray-700'}`}>
-                    Ville *
+                    {t("accountCreation.city")} *
                   </label>
                   <Input
                     name="ville"
                     value={formData.ville}
                     onChange={handleInputChange}
-                    placeholder="Votre ville"
+                    placeholder={t("accountCreation.placeholders.city")}
                     required
                     className={`h-12 ${isFieldInvalid('ville', formData.ville) ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}`}
                   />
@@ -465,10 +534,10 @@ export const AccountCreationForm: React.FC<AccountCreationFormProps> = ({ isOpen
                     <CreditCard className="w-8 h-8 text-foundation-bluenormal" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    Type de compte souhaité
+                    {t("accountCreation.step3")}
                   </h3>
                   <p className="text-gray-600">
-                    Choisissez le type de compte qui correspond à vos besoins
+                    {t("accountCreation.step3Subtitle")}
                   </p>
                 </div>
 
@@ -500,18 +569,18 @@ export const AccountCreationForm: React.FC<AccountCreationFormProps> = ({ isOpen
                 </div>
                 
                 {attemptedNext && !formData.typeCompte && (
-                  <p className="text-red-600 text-sm mt-2">Veuillez sélectionner un type de compte</p>
+                  <p className="text-red-600 text-sm mt-2">{t("accountCreation.selectAccountTypeError")}</p>
                 )}
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-gray-700">
-                    Motif d'ouverture du compte
+                    {t("accountCreation.openingReason")}
                   </label>
                   <textarea
                     name="motifOuverture"
                     value={formData.motifOuverture}
                     onChange={handleInputChange}
-                    placeholder="Décrivez brièvement pourquoi vous souhaitez ouvrir ce compte..."
+                    placeholder={t("accountCreation.openingReasonPlaceholder")}
                     className="w-full h-24 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-foundation-bluenormal focus:border-transparent resize-none"
                   />
                 </div>
@@ -526,37 +595,37 @@ export const AccountCreationForm: React.FC<AccountCreationFormProps> = ({ isOpen
                     <Shield className="w-8 h-8 text-foundation-bluenormal" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    Confirmation et conditions
+                    {t("accountCreation.step4")}
                   </h3>
                   <p className="text-gray-600">
-                    Vérifiez vos informations et acceptez nos conditions
+                    {t("accountCreation.step4Subtitle")}
                   </p>
                 </div>
 
                 {/* Récapitulatif */}
                 <div className="bg-gray-50 rounded-xl p-6">
                   <h4 className="font-semibold text-gray-900 mb-4">
-                    Récapitulatif de votre demande
+                    {t("accountCreation.summaryTitle")}
                   </h4>
                   <div className="space-y-3 text-sm text-gray-600">
                     <div className="flex justify-between">
-                      <span>Nom complet:</span>
+                      <span>{t("accountCreation.recapLabels.fullName")}:</span>
                       <span className="font-medium">{formData.prenom} {formData.nom}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Email:</span>
+                      <span>{t("accountCreation.recapLabels.email")}:</span>
                       <span className="font-medium">{formData.email}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Téléphone:</span>
+                      <span>{t("accountCreation.recapLabels.phone")}:</span>
                       <span className="font-medium">{formData.telephone}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Profession:</span>
+                      <span>{t("accountCreation.recapLabels.profession")}:</span>
                       <span className="font-medium">{formData.profession}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Type de compte:</span>
+                      <span>{t("accountCreation.recapLabels.accountType")}:</span>
                       <span className="font-medium">
                         {accountTypes.find(acc => acc.value === formData.typeCompte)?.label}
                       </span>
@@ -576,13 +645,12 @@ export const AccountCreationForm: React.FC<AccountCreationFormProps> = ({ isOpen
                     required
                   />
                   <label className={`text-sm ${attemptedNext && !formData.accepteConditions ? 'text-red-600' : 'text-gray-700'}`}>
-                    J'accepte les conditions générales d'utilisation et confirme que les informations fournies sont exactes. 
-                    Je comprends que mon compte sera finalisé en agence avec les documents originaux. *
+                    {t("accountCreation.acceptConditionsFull")}
                   </label>
                 </div>
-                
+
                 {attemptedNext && !formData.accepteConditions && (
-                  <p className="text-red-600 text-sm mt-2">Vous devez accepter les conditions pour continuer</p>
+                  <p className="text-red-600 text-sm mt-2">{t("accountCreation.acceptRequiredError")}</p>
                 )}
               </div>
             )}
@@ -595,7 +663,7 @@ export const AccountCreationForm: React.FC<AccountCreationFormProps> = ({ isOpen
                     <span className="text-red-600 text-xs font-bold">!</span>
                   </div>
                   <p className="text-red-700 text-sm font-medium">
-                    Veuillez remplir tous les champs obligatoires avant de continuer.
+                    {t("accountCreation.validationError")}
                   </p>
                 </div>
               </div>
@@ -610,7 +678,7 @@ export const AccountCreationForm: React.FC<AccountCreationFormProps> = ({ isOpen
                 disabled={currentStep === 1}
                 className="flex items-center gap-2"
               >
-                Précédent
+                {t("accountCreation.previous")}
               </Button>
 
               <div className="flex items-center gap-2">
@@ -630,7 +698,7 @@ export const AccountCreationForm: React.FC<AccountCreationFormProps> = ({ isOpen
                   onClick={nextStep}
                   className="bg-foundation-bluenormal hover:bg-foundation-bluedark-hover text-white flex items-center gap-2"
                 >
-                  Suivant
+                  {t("accountCreation.next")}
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               ) : (
@@ -639,7 +707,7 @@ export const AccountCreationForm: React.FC<AccountCreationFormProps> = ({ isOpen
                   disabled={isSubmitting || !formData.accepteConditions}
                   className="bg-foundation-bluenormal hover:bg-foundation-bluedark-hover text-white flex items-center gap-2"
                 >
-                  {isSubmitting ? 'Envoi en cours...' : 'Envoyer ma demande'}
+                  {isSubmitting ? t("accountCreation.submitting") : t("accountCreation.submitRequest")}
                 </Button>
               )}
             </div>

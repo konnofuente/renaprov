@@ -1,0 +1,89 @@
+{
+  "seo": {
+    "title": "MASO - RENAPROV | Together, let's break the cycle of poverty",
+    "description": "MASO is an initiative of RENAPROV FINANCE SA that empowers Cameroonians through solidarity. Benefit from direct advantages in health, education and social assistance.",
+    "keywords": "MASO, RENAPROV, solidarity, Cameroon, health, education, social assistance, microfinance, financial inclusion"
+  },
+  "hero": {
+    "banner": {
+      "line1": "Join",
+      "line1Bold": "MASO",
+      "line1Rest": " - Solidarity and benefits for all!",
+      "line2": "Simple membership: 500 FCFA + 100 FCFA/day. Benefit from all our advantages.",
+      "cta": "Join MASO"
+    },
+    "aria": { "prevSlide": "Previous slide", "nextSlide": "Next slide" },
+    "slides": {
+      "slide1": { "title": "MASO – Together, let's break the cycle of poverty", "description": "An initiative of RENAPROV FINANCE SA that empowers Cameroonians through solidarity. With MASO, you benefit from direct advantages in health, education, social assistance and wellbeing.", "cta": "Join today" },
+      "slide2": { "title": "Cameroonian solidarity that changes lives", "description": "MASO embodies the spirit of Cameroonian solidarity by creating a mutual support network that allows each member to benefit from essential services in health, education and social assistance.", "cta": "Discover our services" },
+      "slide3": { "title": "With MASO, win your next prize", "description": "Take part in our draws and win vehicles, villas and more. MASO offers you the chance to achieve your dreams while benefiting from our solidarity services.", "cta": "Take part in the draws" },
+      "slide4": { "title": "Win your villa with MASO", "description": "Take part in the great MASO lottery and try to win your next villa.", "cta": "Take part in the lottery" },
+      "slide5": { "title": "Simple and accessible membership conditions", "description": "Join MASO with just 500 FCFA for the booklet and 100 FCFA per day. An accessible contribution that opens the door to all our benefits and services.", "cta": "Register now" },
+      "slide6": { "title": "Join our solidarity network", "description": "Become a MASO member and benefit from personalised support, training and a solidarity network that supports you in all your projects.", "cta": "Join MASO" },
+      "slide7": { "title": "Join us", "description": "Be part of the RENAPROV community and benefit from a strong network that supports your ambitions. Whether you are an entrepreneur, employee or student.", "cta": "Open my account today" }
+    }
+  },
+  "product": {
+    "title": "MASO: Solidarity, assistance and opportunities for all",
+    "description": "RENAPROV's MASO helps Cameroonians break out of the vicious circle of poverty by providing access to essential social services and unique opportunities.",
+    "benefit1": "Health and Education – Up to 35% reduction on your fees",
+    "benefit2": "Lottery & community – Win houses, motorcycles and funding while participating in a solidarity community",
+    "imageAlt": "MASO - Solidarity, assistance and opportunities for all",
+    "cta": "Join MASO"
+  },
+  "solutions": {
+    "headerTitle": "With MASO Win your",
+    "headerHighlight": "next",
+    "headerDescription": "Take part in our draws and win vehicles, villas and more. MASO offers you the chance to achieve your dreams while benefiting from our solidarity services.",
+    "joinMaso": "Join MASO",
+    "learnMore": "Learn more",
+    "prizes": {
+      "prize1": { "title": "Your funding", "description": "Benefit from zero-rate funding from 100,000 FCFA to 2,000,000 FCFA value, thanks to the MASO lottery" },
+      "prize2": { "title": "Personal Vehicles", "description": "Benefit from a personal vehicle worth 5,000,000 XAF, thanks to the MASO lottery" },
+      "prize3": { "title": "Taxi to win", "description": "Benefit from a taxi vehicle worth 4,000,000 XAF, thanks to the MASO lottery" },
+      "prize4": { "title": "Tricycle", "description": "Benefit from a tricycle worth 1,800,000 XAF, thanks to the MASO lottery" },
+      "prize5": { "title": "Your Villa", "description": "Benefit from a villa worth 30,000,000 XAF, thanks to the MASO lottery" }
+    }
+  },
+  "advantages": {
+    "title": "MASO Benefits",
+    "items": {
+      "item1": { "title": "-35% on hospital care fees at La Mamu", "description": "Make your deposits and withdrawals whenever you want, without constraints, for total control of your finances.", "imageAlt": "MASO hospital fee reduction" },
+      "item2": { "title": "Reduce your study fees and invest in your future", "description": "Thanks to the partnership between RENAPROV and IUB, MASO members benefit from -20% on university fees.", "imageAlt": "MASO university fee reduction" },
+      "item3": { "title": "Win big with the MASO Lottery!", "description": "Each member automatically participates in our solidarity lottery and can win houses, motorcycles, funding and more.", "imageAlt": "MASO Lottery" }
+    }
+  },
+  "adhesion": {
+    "title": "Membership Conditions",
+    "description": "MASO membership is simple and open to all Cameroonians wishing to be part of a sustainable solidarity network.",
+    "benefit1": "Identity document – National ID, Passport, Residence permit, Refugee card, or valid Driver's licence",
+    "benefit2": "500 FCFA for the booklet – One-time opening fee for your MASO member booklet",
+    "benefit3": "Contribution: 100 FCFA/day – Or 26,000 FCFA/year to benefit from all our advantages",
+    "cta": "Fill in the membership form",
+    "imageAlt": "MASO membership conditions"
+  },
+  "newsletter": {
+    "title": "Subscribe to the newsletter",
+    "description": "Receive our news directly by email.",
+    "placeholder": "Enter your email",
+    "button": "Subscribe"
+  },
+  "testimonials": {
+    "titlePart1": "They testify about their",
+    "titlePart2": "MASO Experience",
+    "cta": "Learn more about our bank credit",
+    "aria": {
+      "cta": "Learn more",
+      "goToTestimonial": "Go to testimonial {{index}}",
+      "prev": "Previous testimonial",
+      "next": "Next testimonial",
+      "prevImage": "Previous image",
+      "nextImage": "Next image"
+    },
+    "items": [
+      { "name": "Clarisse N.", "role": "Merchant", "company": "CEO of Shop and more", "quote": "Thanks to MASO, I was able to open my shop in Bafoussam. Their support helped me get suitable financing and learn to manage my business well." },
+      { "name": "Jean-Paul M.", "role": "Entrepreneur", "company": "Founder of TechStart", "quote": "MASO supported me in growing my business. Their expertise and proximity were essential to the success of my projects." },
+      { "name": "Marie K.", "role": "Farmer", "company": "Agricultural Cooperative", "quote": "With MASO's support, I was able to modernize my farm and increase my income. A true trusted partner." }
+    ]
+  }
+}

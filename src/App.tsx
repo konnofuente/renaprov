@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Accueil } from "./screens/Accueil";
 import { AboutHistory } from "./screens/AboutHistory";
 import { Mission } from "./screens/Mission";
@@ -31,47 +32,58 @@ import { HeaderSubsection } from "./screens/Accueil/sections/HeaderSubsection";
 import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { FloatingWhatsAppButton } from "./components/FloatingWhatsAppButton";
+import { LanguageRouter } from "./components/LanguageRouter";
 
-export const App: React.FC = () => {
+const AppContent: React.FC = () => {
+  const { t } = useTranslation('common');
+
   return (
-    <Router>
+    <LanguageRouter>
       <ScrollToTop />
       <HeaderSubsection />
       <Routes>
-        <Route path="/" element={<Accueil />} />
-        <Route path="/accueil" element={<Accueil />} />
-        <Route path="/about" element={<AboutHistory />} />
-        <Route path="/mission" element={<Mission />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/maso" element={<Maso />} />
-        <Route path="/renews" element={<Renews />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/service/compte-courant-individuel" element={<CompteCourantIndividuel />} />
-        <Route path="/service/compte-cheque-salaire-pension" element={<CompteChequeSalairePension />} />
-        <Route path="/service/compte-epargne-individuel" element={<CompteEpargneIndividuel />} />
-        <Route path="/service/depots-a-terme" element={<DepotsATerme />} />
-        <Route path="/service/credit" element={<Credit />} />
-        <Route path="/service/processus-demande-pret" element={<ProcessusDemandePret />} />
-        <Route path="/service/compte-courant-entreprise" element={<CompteCourantEntreprise />} />
-        <Route path="/service/compte-courant-association" element={<CompteCourantAssociation />} />
-        <Route path="/service/compte-epargne-entreprise" element={<CompteEpargneEntreprise />} />
-        <Route path="/service/compte-pensionne" element={<ComptePensionne />} />
-        <Route path="/service/ora-foncier" element={<OraFoncier />} />
-        <Route path="/service/ora-investissement" element={<OraInvestissement />} />
-        <Route path="/service/ora-academique" element={<OraAcademique />} />
-        <Route path="/service/ora-scolaire" element={<OraScolaire />} />
-        <Route path="/service/ora-prevoyance" element={<OraPrevoyance />} />
-        <Route path="/service/ora-equipement" element={<OraEquipement />} />
-        <Route path="/service/ora-islamique" element={<OraIslamique />} />
-        <Route path="/service/ora-sante" element={<OraSante />} />
-        <Route path="/service/spmc" element={<Spmc />} />
+        <Route path="/:lang" element={<Accueil />} />
+        <Route path="/accueil/:lang" element={<Accueil />} />
+        <Route path="/about/:lang" element={<AboutHistory />} />
+        <Route path="/mission/:lang" element={<Mission />} />
+        <Route path="/products/:lang" element={<Products />} />
+        <Route path="/maso/:lang" element={<Maso />} />
+        <Route path="/renews/:lang" element={<Renews />} />
+        <Route path="/contact/:lang" element={<Contact />} />
+        <Route path="/service/compte-courant-individuel/:lang" element={<CompteCourantIndividuel />} />
+        <Route path="/service/compte-cheque-salaire-pension/:lang" element={<CompteChequeSalairePension />} />
+        <Route path="/service/compte-epargne-individuel/:lang" element={<CompteEpargneIndividuel />} />
+        <Route path="/service/depots-a-terme/:lang" element={<DepotsATerme />} />
+        <Route path="/service/credit/:lang" element={<Credit />} />
+        <Route path="/service/processus-demande-pret/:lang" element={<ProcessusDemandePret />} />
+        <Route path="/service/compte-courant-entreprise/:lang" element={<CompteCourantEntreprise />} />
+        <Route path="/service/compte-courant-association/:lang" element={<CompteCourantAssociation />} />
+        <Route path="/service/compte-epargne-entreprise/:lang" element={<CompteEpargneEntreprise />} />
+        <Route path="/service/compte-pensionne/:lang" element={<ComptePensionne />} />
+        <Route path="/service/ora-foncier/:lang" element={<OraFoncier />} />
+        <Route path="/service/ora-investissement/:lang" element={<OraInvestissement />} />
+        <Route path="/service/ora-academique/:lang" element={<OraAcademique />} />
+        <Route path="/service/ora-scolaire/:lang" element={<OraScolaire />} />
+        <Route path="/service/ora-prevoyance/:lang" element={<OraPrevoyance />} />
+        <Route path="/service/ora-equipement/:lang" element={<OraEquipement />} />
+        <Route path="/service/ora-islamique/:lang" element={<OraIslamique />} />
+        <Route path="/service/ora-sante/:lang" element={<OraSante />} />
+        <Route path="/service/spmc/:lang" element={<Spmc />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
       <FloatingWhatsAppButton 
         phoneNumber="237693930231"
-        message="Bonjour, je souhaite obtenir plus d'informations sur les services de RENAPROV."
+        message={t('whatsappDefaultMessage')}
       />
+    </LanguageRouter>
+  );
+};
+
+export const App: React.FC = () => {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 };

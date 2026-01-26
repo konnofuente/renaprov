@@ -1,0 +1,77 @@
+{
+  "common": {
+    "openAccount": "Ouvrir un compte",
+    "openAccountNow": "Ouvrir un compte maintenant",
+    "serviceAvailable": "Service disponible",
+    "featuresTitle": "Fonctionnalités Principales",
+    "benefitsTitle": "Pourquoi Choisir RENAPROV ?",
+    "ctaTitle": "Prêt à Ouvrir Votre Compte ?",
+    "contact": { "website": "Site Web", "phone": "Téléphone", "email": "Email" }
+  },
+  "compteCourantIndividuel": {
+    "seo": { "title": "Compte Courant Individuel - RENAPROV FINANCE SA", "description": "Gérez vos finances quotidiennes avec le compte courant individuel RENAPROV. Virements, dépôts de chèques, retraits et services bancaires complets.", "keywords": "compte courant, individuel, RENAPROV, microfinance, Cameroun, virements, chèques, services bancaires" },
+    "hero": { "title": "Compte Courant Individuel", "subtitle": "Gérez vos finances quotidiennes en toute simplicité avec des services complets", "imageAlt": "Compte Courant Individuel RENAPROV" },
+    "featuresSubtitle": "Le compte courant individuel vous permet d'effectuer toutes vos opérations bancaires quotidiennes avec facilité et sécurité.",
+    "features": [
+      { "title": "Virements inter-institutions", "description": "Émettez et recevez des virements d'autres institutions financières en toute sécurité." },
+      { "title": "Dépôt de chèques", "description": "Déposez vos chèques pour encaissement et/ou pour escompte avec facilité." },
+      { "title": "Retraits sur chèque", "description": "Effectuez vos opérations de retrait sur chèque selon vos besoins." }
+    ],
+    "benefitsSubtitle": "Avec plus de 30 ans d'expérience dans la microfinance au Cameroun, RENAPROV vous offre des services fiables et adaptés à vos besoins.",
+    "benefits": ["Gestion simplifiée de vos finances quotidiennes", "Accès à tous les services bancaires essentiels", "Sécurité et fiabilité garanties", "Support client dédié"],
+    "ctaSubtitle": "Rejoignez des milliers de clients satisfaits et découvrez tous les avantages de RENAPROV.",
+    "benefitsImageAlt": "Avantages du compte courant RENAPROV"
+  },
+  "compteEpargneIndividuel": {
+    "seo": { "title": "Compte Épargne Individuel - RENAPROV FINANCE SA", "description": "Épargnez pour vos projets personnels avec le compte épargne individuel RENAPROV. Dépôts et retraits gratuits, intérêts annuels, gestion simplifiée.", "keywords": "compte épargne, individuel, RENAPROV, microfinance, Cameroun, épargne, intérêts, livret" },
+    "hero": { "title": "Compte Épargne Individuel", "subtitle": "Épargnez pour vos projets personnels avec des taux attractifs et une gestion simplifiée", "imageAlt": "Compte Épargne Individuel RENAPROV", "badge": "Épargne sécurisée" },
+    "featuresSubtitle": "Le compte épargne individuel vous permet de constituer une épargne sécurisée avec des avantages attractifs.",
+    "features": [
+      { "title": "Dépôts et retraits gratuits", "description": "Effectuez des dépôts et des retraits sans aucun frais dans un guichet." },
+      { "title": "Intérêts annuels", "description": "Bénéficiez des intérêts sur les dépôts effectués annuellement." },
+      { "title": "Compte sur livret", "description": "Gérez votre épargne avec un livret traditionnel et sécurisé." },
+      { "title": "Flexibilité totale", "description": "Accédez à votre épargne quand vous en avez besoin." }
+    ],
+    "benefitsTitle": "Pourquoi Épargner avec RENAPROV ?",
+    "benefitsSubtitle": "Avec plus de 30 ans d'expérience dans la microfinance, RENAPROV vous offre des solutions d'épargne fiables et rentables.",
+    "benefits": ["Épargnez pour vos projets personnels avec des taux attractifs", "Gestion simplifiée de votre épargne avec un livret traditionnel", "Aucun frais sur les opérations de base", "Intérêts calculés et versés annuellement"],
+    "benefitsImageAlt": "Avantages du compte épargne RENAPROV",
+    "interestTitle": "Comment Fonctionnent les Intérêts ?",
+    "interestSubtitle": "Vos dépôts génèrent des intérêts calculés et versés annuellement selon des taux attractifs.",
+    "interestCards": [
+      { "title": "Taux Attractifs", "description": "Bénéficiez de taux d'intérêt compétitifs sur vos dépôts" },
+      { "title": "Calcul Annuel", "description": "Les intérêts sont calculés et versés annuellement" },
+      { "title": "Sécurité Garantie", "description": "Votre épargne est protégée et sécurisée" }
+    ],
+    "ctaTitle": "Commencez à Épargner Aujourd'hui",
+    "ctaSubtitle": "Rejoignez des milliers de clients qui font confiance à RENAPROV pour leur épargne.",
+    "ctaButton": "Ouvrir un compte épargne"
+  },
+  "categories": {
+    "currentAccounts": "Comptes Courant",
+    "savingsAccounts": "Comptes Épargne",
+    "specialAccounts": "Comptes Spéciaux",
+    "ora": "ORA",
+    "otherServices": "Autres Services"
+  },
+  "services": {
+    "currentAccountIndividual": "Compte courant individuel",
+    "currentAccountBusiness": "Compte courant entreprise",
+    "currentAccountAssociation": "Compte courant association",
+    "savingsAccountIndividual": "Compte épargne individuel",
+    "savingsAccountBusiness": "Compte épargne entreprise",
+    "employeeAccount": "Compte salarié secteur Public ou Privé",
+    "pensionAccount": "Compte pensionné secteur Public ou Privé",
+    "oraFoncier": "ORA Foncier",
+    "oraInvestissement": "ORA Investissement",
+    "oraPrevoyance": "ORA Prévoyance",
+    "oraScolaire": "ORA Scolaire",
+    "oraAcademique": "ORA Académique",
+    "oraEquipement": "ORA Équipement",
+    "oraIslamique": "ORA Islamique",
+    "oraSante": "ORA Santé",
+    "maso": "MASO",
+    "spmc": "SPMC",
+    "bicard": "Bicard"
+  }
+}

@@ -2,40 +2,20 @@ import {
   ChevronLeft as ChevronLeftIcon,
   ChevronRight as ChevronRightIcon,
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 
-// CSS Classes extraites pour la maintenabilité
 const gradientTextClass =
   "bg-[linear-gradient(148deg,rgba(0,172,238,1)_0%,rgba(1,27,38,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent]";
 
-const masoPrizes = [
-  {
-    title: "Votre financement",
-    description: "bénéficiez d’un financement à taux zéro de 100 000 FCFA à 2 000 000 FCFA valeur, grâce à la tombola MASO",
-    image: "/maso/masoL.jpg",
-  },
-  {
-    title: "Véhicules Personnels",
-    description: "Bénéficiez d’un véhicule personnel d'une valeur de 5,000,000 XAF, grâce à la tombola MASO",
-    image: "/maso gagner vehicule.png",
-  },
-  {
-    title: "Taxi à gagner",
-    description: "Bénéficiez d’un véhicule taxi d'une valeur de 4,000,000 XAF, grâce à la tombola MASO",
-    image: "/maso/masoT.jpg",
-  },
-  {
-    title: "Tricycle",
-    description: "Bénéficiez d’un tricycle d'une valeur de 1,800,000 XAF, grâce à la tombola MASO",
-    image: "/maso/masoTr.jpg",
-  },
-  {
-    title: "Votre Villa",
-    description: "Bénéficiez d’une villa d'une valeur de 30,000,000 XAF, grâce à la tombola MASO",
-    image: "/maso/maso gagner villa.jpg",
-  },
+const PRIZE_IMAGES = [
+  "/maso/masoL.jpg",
+  "/maso gagner vehicule.png",
+  "/maso/masoT.jpg",
+  "/maso/masoTr.jpg",
+  "/maso/maso gagner villa.jpg",
 ];
 
 interface OurSolutionSubsectionProps {
@@ -43,8 +23,19 @@ interface OurSolutionSubsectionProps {
 }
 
 export const OurSolutionSubsection: React.FC<OurSolutionSubsectionProps> = ({ onOpenForm }): JSX.Element => {
+  const { t } = useTranslation("maso");
   const [currentSlide, setCurrentSlide] = useState(0);
   const [cardsToShow, setCardsToShow] = useState(3);
+
+  const masoPrizes = useMemo(
+    () =>
+      [1, 2, 3, 4, 5].map((i) => ({
+        title: t(`solutions.prizes.prize${i}.title`),
+        description: t(`solutions.prizes.prize${i}.description`),
+        image: PRIZE_IMAGES[i - 1],
+      })),
+    [t]
+  );
 
   // Responsive cards calculation
   useEffect(() => {
@@ -128,16 +119,14 @@ export const OurSolutionSubsection: React.FC<OurSolutionSubsectionProps> = ({ on
       <div className="w-full max-w-7xl flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-12 mb-8 sm:mb-12 md:mb-16">
         <div className="w-full lg:max-w-2xl">
           <h2 className="font-bold text-gray-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mb-4 sm:mb-6">
-            Avec la MASO Gagnez votre{" "}
-            <span className={gradientTextClass}>
-              prochain
-            </span>
+            {t("solutions.headerTitle")}{" "}
+            <span className={gradientTextClass}>{t("solutions.headerHighlight")}</span>
           </h2>
         </div>
 
         <div className="w-full lg:max-w-2xl">
           <p className="font-normal text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">
-            Participez à nos tirages au sort et gagnez des véhicules, des villas et bien plus encore. La MASO vous offre la chance de réaliser vos rêves tout en bénéficiant de nos services de solidarité.
+            {t("solutions.headerDescription")}
           </p>
         </div>
       </div>
@@ -190,9 +179,9 @@ export const OurSolutionSubsection: React.FC<OurSolutionSubsectionProps> = ({ on
                       variant="link"
                       onClick={onOpenForm}
                       className="inline-flex items-center justify-start gap-2 p-0 h-auto mt-4 text-sm font-semibold text-foundation-bluenormal hover:text-foundation-bluedark-hover transition-colors duration-200"
-                      aria-label={`Rejoindre MASO pour ${prize.title}`}
+                      aria-label={`${t("solutions.joinMaso")} – ${prize.title}`}
                     >
-                      <span>Rejoindre MASO</span>
+                      <span>{t("solutions.joinMaso")}</span>
                       <ChevronRightIcon className="w-4 h-4" />
                     </Button>
                   </CardContent>

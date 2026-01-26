@@ -1,0 +1,77 @@
+{
+  "common": {
+    "openAccount": "Open an account",
+    "openAccountNow": "Open an account now",
+    "serviceAvailable": "Service available",
+    "featuresTitle": "Main Features",
+    "benefitsTitle": "Why Choose RENAPROV?",
+    "ctaTitle": "Ready to Open Your Account?",
+    "contact": { "website": "Website", "phone": "Phone", "email": "Email" }
+  },
+  "compteCourantIndividuel": {
+    "seo": { "title": "Individual Current Account - RENAPROV FINANCE SA", "description": "Manage your daily finances with the RENAPROV individual current account. Transfers, check deposits, withdrawals and full banking services.", "keywords": "current account, individual, RENAPROV, microfinance, Cameroon, transfers, checks, banking services" },
+    "hero": { "title": "Individual Current Account", "subtitle": "Manage your daily finances with ease and complete services", "imageAlt": "RENAPROV Individual Current Account" },
+    "featuresSubtitle": "The individual current account allows you to carry out all your daily banking operations with ease and security.",
+    "features": [
+      { "title": "Inter-institution transfers", "description": "Send and receive transfers from other financial institutions securely." },
+      { "title": "Check deposits", "description": "Deposit your checks for collection and/or discount with ease." },
+      { "title": "Check withdrawals", "description": "Carry out your check withdrawal operations according to your needs." }
+    ],
+    "benefitsSubtitle": "With over 30 years of experience in microfinance in Cameroon, RENAPROV offers you reliable services adapted to your needs.",
+    "benefits": ["Simplified management of your daily finances", "Access to all essential banking services", "Guaranteed security and reliability", "Dedicated customer support"],
+    "ctaSubtitle": "Join thousands of satisfied customers and discover all RENAPROV benefits.",
+    "benefitsImageAlt": "RENAPROV current account benefits"
+  },
+  "compteEpargneIndividuel": {
+    "seo": { "title": "Individual Savings Account - RENAPROV FINANCE SA", "description": "Save for your personal projects with the RENAPROV individual savings account. Free deposits and withdrawals, annual interest, simplified management.", "keywords": "savings account, individual, RENAPROV, microfinance, Cameroon, savings, interest, passbook" },
+    "hero": { "title": "Individual Savings Account", "subtitle": "Save for your personal projects with attractive rates and simplified management", "imageAlt": "RENAPROV Individual Savings Account", "badge": "Secure savings" },
+    "featuresSubtitle": "The individual savings account allows you to build secure savings with attractive benefits.",
+    "features": [
+      { "title": "Free deposits and withdrawals", "description": "Make deposits and withdrawals at no cost at a counter." },
+      { "title": "Annual interest", "description": "Benefit from interest on deposits paid annually." },
+      { "title": "Passbook account", "description": "Manage your savings with a traditional, secure passbook." },
+      { "title": "Total flexibility", "description": "Access your savings whenever you need it." }
+    ],
+    "benefitsTitle": "Why Save with RENAPROV?",
+    "benefitsSubtitle": "With over 30 years of experience in microfinance, RENAPROV offers you reliable and profitable savings solutions.",
+    "benefits": ["Save for your personal projects with attractive rates", "Simplified management of your savings with a traditional passbook", "No fees on basic operations", "Interest calculated and paid annually"],
+    "benefitsImageAlt": "RENAPROV savings account benefits",
+    "interestTitle": "How Do Interest Rates Work?",
+    "interestSubtitle": "Your deposits generate interest calculated and paid annually at attractive rates.",
+    "interestCards": [
+      { "title": "Attractive Rates", "description": "Benefit from competitive interest rates on your deposits" },
+      { "title": "Annual Calculation", "description": "Interest is calculated and paid annually" },
+      { "title": "Guaranteed Security", "description": "Your savings are protected and secure" }
+    ],
+    "ctaTitle": "Start Saving Today",
+    "ctaSubtitle": "Join thousands of customers who trust RENAPROV for their savings.",
+    "ctaButton": "Open a savings account"
+  },
+  "categories": {
+    "currentAccounts": "Current Accounts",
+    "savingsAccounts": "Savings Accounts",
+    "specialAccounts": "Special Accounts",
+    "ora": "ORA",
+    "otherServices": "Other Services"
+  },
+  "services": {
+    "currentAccountIndividual": "Individual current account",
+    "currentAccountBusiness": "Business current account",
+    "currentAccountAssociation": "Association current account",
+    "savingsAccountIndividual": "Individual savings account",
+    "savingsAccountBusiness": "Business savings account",
+    "employeeAccount": "Employee account (Public or Private sector)",
+    "pensionAccount": "Pensioner account (Public or Private sector)",
+    "oraFoncier": "ORA Land",
+    "oraInvestissement": "ORA Investment",
+    "oraPrevoyance": "ORA Provident",
+    "oraScolaire": "ORA School",
+    "oraAcademique": "ORA Academic",
+    "oraEquipement": "ORA Equipment",
+    "oraIslamique": "ORA Islamic",
+    "oraSante": "ORA Health",
+    "maso": "MASO",
+    "spmc": "SPMC",
+    "bicard": "Bicard"
+  }
+}

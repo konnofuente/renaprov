@@ -1,35 +1,28 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 
-const masoAdvantagesData = [
-  {
-    number: "1",
-    title: "-35% sur les frais de soins hospitaliers à la Mamu",
-    description:
-      "Effectuez vos dépôts et retraits quand vous le souhaitez, sans contraintes, pour un contrôle total de vos finances.",
-    imageSrc: "/chm/mam2.jpg",
-    imageAlt: "Réduction frais hospitaliers MASO",
-  },
-  {
-    number: "2",
-    title: "Réduisez vos frais d'études et investissez dans votre avenir",
-    description:
-      "Grâce au partenariat entre RENAPROV et l'IUB, les membres MASO bénéficient de -20% sur les frais universitaires.",
-    imageSrc: "/image-3.png",
-    imageAlt: "Réduction frais universitaires MASO",
-  },
-  {
-    number: "3",
-    title: "Gagnez gros avec la Tombola MASO !",
-    description:
-      "Chaque membre participe automatiquement à notre tombola solidaire et peut remporter des maisons, motos, financements, et bien plus.",
-    imageSrc: "/Gagnez gros avec la Tombola MASO !.png",
-    imageAlt: "Tombola MASO",
-  },
+const ADVANTAGE_IMAGES = [
+  { imageSrc: "/chm/mam2.jpg" },
+  { imageSrc: "/image-3.png" },
+  { imageSrc: "/Gagnez gros avec la Tombola MASO !.png" },
 ];
 
 export const AdvantagesSubsection = (): JSX.Element => {
+  const { t } = useTranslation("maso");
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const masoAdvantagesData = useMemo(
+    () =>
+      [1, 2, 3].map((i) => ({
+        number: String(i),
+        title: t(`advantages.items.item${i}.title`),
+        description: t(`advantages.items.item${i}.description`),
+        imageSrc: ADVANTAGE_IMAGES[i - 1].imageSrc,
+        imageAlt: t(`advantages.items.item${i}.imageAlt`),
+      })),
+    [t]
+  );
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % masoAdvantagesData.length);
@@ -44,7 +37,7 @@ export const AdvantagesSubsection = (): JSX.Element => {
   return (
     <section className="flex flex-col items-center justify-center gap-10 sm:gap-12 md:gap-16 lg:gap-20 px-6 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-12 sm:py-16 md:py-20 lg:py-[94px] w-full bg-[#011b25]">
       <h2 className="w-full max-w-[707px] [font-family:'Bricolage_Grotesque',Helvetica] text-foundationbluelight text-3xl sm:text-4xl md:text-5xl text-center leading-tight md:leading-[57.6px] font-bold tracking-[0] px-4">
-        Les Avantages de La Maso
+        {t("advantages.title")}
       </h2>
 
       <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-10 md:gap-12 lg:gap-[53px] w-full max-w-[1200px] mx-auto">

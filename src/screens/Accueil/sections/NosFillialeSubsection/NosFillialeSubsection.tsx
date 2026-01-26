@@ -2,49 +2,46 @@ import {
   ChevronLeft as ChevronLeftIcon,
   ChevronRight as ChevronRightIcon,
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 
-const subsidiaries = [
-  {
-    category: "Hôpital",
-    title: "Complexe Hospitalier la MAMU",
-    description:
-      "Un établissement de santé moderne offrant des soins de qualité et accessibles à tous.",
-    imageUrl: "/logo  Complexe Hospitalier la MAMU.png",
-    websiteUrl: "https://www.hopitallamamu.com/",
-  },
-  {
-    category: "Université",
-    title: "Institut Universitaire Bissai",
-    description:
-      "Un centre académique dédié à la formation de qualité et à l'excellence.",
-    imageUrl: "/logo Institut Universitaire Bissai.png",
-    websiteUrl: "https://www.institutbissai.com/",
-  },
-  {
-    category: "Immobilier",
-    title: "La Socagi",
-    description:
-      "Société de gestion et d'investissement qui accompagne le développement économique à travers des solutions financières adaptées.",
-    imageUrl: "/logo La Socagi.png",
-    websiteUrl: "https://www.instagram.com/socagiofficiel_?igsh=MXhhcDJhZzFoOHdxZA==",
-  },
-  {
-    category: "Radio",
-    title: "Royal FM",
-    description:
-      "Société de gestion et d'investissement qui accompagne le développement économique à travers des solutions financières adaptées.",
-    imageUrl: "/logo Royal FMRoyal FM.png",
-    websiteUrl: "https://royalfmcameroun.com/",
-  },
-
-];
-
 export const NosFillialeSubsection = (): JSX.Element => {
+  const { t } = useTranslation('home');
   const [currentSlide, setCurrentSlide] = useState(0);
   const [cardsToShow, setCardsToShow] = useState(1);
+
+  const subsidiaries = useMemo(() => [
+    {
+      category: t('subsidiaries.items.hospital.category'),
+      title: t('subsidiaries.items.hospital.title'),
+      description: t('subsidiaries.items.hospital.description'),
+      imageUrl: "/logo  Complexe Hospitalier la MAMU.png",
+      websiteUrl: "https://www.hopitallamamu.com/",
+    },
+    {
+      category: t('subsidiaries.items.university.category'),
+      title: t('subsidiaries.items.university.title'),
+      description: t('subsidiaries.items.university.description'),
+      imageUrl: "/logo Institut Universitaire Bissai.png",
+      websiteUrl: "https://www.institutbissai.com/",
+    },
+    {
+      category: t('subsidiaries.items.realEstate.category'),
+      title: t('subsidiaries.items.realEstate.title'),
+      description: t('subsidiaries.items.realEstate.description'),
+      imageUrl: "/logo La Socagi.png",
+      websiteUrl: "https://www.instagram.com/socagiofficiel_?igsh=MXhhcDJhZzFoOHdxZA==",
+    },
+    {
+      category: t('subsidiaries.items.radio.category'),
+      title: t('subsidiaries.items.radio.title'),
+      description: t('subsidiaries.items.radio.description'),
+      imageUrl: "/logo Royal FMRoyal FM.png",
+      websiteUrl: "https://royalfmcameroun.com/",
+    },
+  ], [t]);
 
   // Responsive cards calculation - 3 cartes + 1 partiellement visible
   useEffect(() => {
@@ -98,10 +95,10 @@ export const NosFillialeSubsection = (): JSX.Element => {
       {/* Titre principal comme sur l'image */}
       <div className="w-full text-center">
         <h2 className="[font-family:'Bricolage_Grotesque',Helvetica] font-bold text-black text-3xl sm:text-4xl md:text-5xl lg:text-[56px] tracking-[0] leading-tight lg:leading-[70.8px]">
-          Voici nos différentes
+          {t('subsidiaries.titlePart1')}
         </h2>
         <h2 className="[font-family:'Bricolage_Grotesque',Helvetica] font-bold text-foundation-bluenormal text-4xl sm:text-5xl md:text-6xl lg:text-[64px] tracking-[0] leading-tight lg:leading-[70.8px]">
-          filiales
+          {t('subsidiaries.titlePart2')}
         </h2>
       </div>
 
@@ -157,9 +154,9 @@ export const NosFillialeSubsection = (): JSX.Element => {
                     variant="link"
                     onClick={() => window.open(subsidiary.websiteUrl, '_blank')}
                     className="inline-flex items-center justify-start gap-2 p-0 h-auto mt-4 text-sm font-semibold text-white hover:text-gray-300 transition-colors duration-200"
-                    aria-label={`En savoir plus sur ${subsidiary.title}`}
+                    aria-label={`${t('subsidiaries.learnMore')} ${subsidiary.title}`}
                   >
-                    <span>En savoir plus</span>
+                    <span>{t('subsidiaries.learnMore')}</span>
                     <ChevronRightIcon className="w-4 h-4" />
                   </Button>
                 </CardContent>

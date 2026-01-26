@@ -1,43 +1,41 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const advantagesData = [
-  {
-    number: "1",
-    title: "Gérez votre argent à votre rythme",
-    description:
-      "Effectuez vos dépôts et retraits quand vous le souhaitez, sans contraintes, pour un contrôle total de vos finances.",
-    imageSrc: "/other/mon.jpg",
-    imageAlt: "Gérez votre argent à votre rythme",
-  },
-  {
-    number: "2",
-    title: "Profitez de services financiers avantageux",
-    description:
-      "En tant que client RENAPROV, vous accédez à des offres exclusives et à des programmes qui boostent votre pouvoir d'achat et vos projets.",
-    imageSrc: "/benef 1.png",
-    imageAlt: "Services financiers avantageux",
-  },
-  {
-    number: "3",
-    title: "Transparence totale",
-    description:
-      "Ouvrir un compte est simple et abordable, avec des frais transparents et adaptés à tous les budgets.",
-    imageSrc: "/maso/transparence.png",
-    imageAlt: "Transparence totale",
-  },
-  {
-    number: "4",
-    title: "Un accompagnement financier qui vous suit",
-    description:
-      "Nos conseillers vous guident dans vos décisions financières et vous aident à optimiser votre argent au quotidien.",
-    imageSrc: "/other/reach.jpg",
-    imageAlt: "Accompagnement financier",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export const AdvantagesSubsection = (): JSX.Element => {
+  const { t } = useTranslation('home');
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const advantagesData = useMemo(() => [
+    {
+      number: "1",
+      title: t('advantages.items.item1.title'),
+      description: t('advantages.items.item1.description'),
+      imageSrc: "/other/mon.jpg",
+      imageAlt: t('advantages.items.item1.title'),
+    },
+    {
+      number: "2",
+      title: t('advantages.items.item2.title'),
+      description: t('advantages.items.item2.description'),
+      imageSrc: "/benef 1.png",
+      imageAlt: t('advantages.items.item2.title'),
+    },
+    {
+      number: "3",
+      title: t('advantages.items.item3.title'),
+      description: t('advantages.items.item3.description'),
+      imageSrc: "/maso/transparence.png",
+      imageAlt: t('advantages.items.item3.title'),
+    },
+    {
+      number: "4",
+      title: t('advantages.items.item4.title'),
+      description: t('advantages.items.item4.description'),
+      imageSrc: "/other/reach.jpg",
+      imageAlt: t('advantages.items.item4.title'),
+    },
+  ], [t]);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % advantagesData.length);
@@ -52,7 +50,7 @@ export const AdvantagesSubsection = (): JSX.Element => {
   return (
     <section className="flex flex-col items-center justify-center gap-10 sm:gap-12 md:gap-16 lg:gap-20 px-6 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-12 sm:py-16 md:py-20 lg:py-[94px] w-full bg-[#011b25]">
       <h2 className="w-full max-w-[707px] [font-family:'Bricolage_Grotesque',Helvetica] text-foundationbluelight text-3xl sm:text-4xl md:text-5xl text-center leading-tight md:leading-[57.6px] font-bold tracking-[0] px-4">
-        Bénéfices clients
+        {t('advantages.title')}
       </h2>
 
       <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-10 md:gap-12 lg:gap-[53px] w-full max-w-[1200px] mx-auto">

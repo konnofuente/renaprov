@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { SEO } from "../../components/SEO";
 import { Button } from "../../components/ui/button";
@@ -6,42 +7,38 @@ import { Card, CardContent } from "../../components/ui/card";
 import { CheckCircle, ArrowRight, Phone, Mail, Globe, PiggyBank, TrendingUp } from "lucide-react";
 
 export const CompteEpargneIndividuel: React.FC = () => {
-  const features = [
-    {
-      icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
-      title: "Dépôts et retraits gratuits",
-      description: "Effectuez des dépôts et des retraits sans aucun frais dans un guichet."
-    },
-    {
-      icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
-      title: "Intérêts annuels",
-      description: "Bénéficiez des intérêts sur les dépôts effectués annuellement."
-    },
-    {
-      icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
-      title: "Compte sur livret",
-      description: "Gérez votre épargne avec un livret traditionnel et sécurisé."
-    },
-    {
-      icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
-      title: "Flexibilité totale",
-      description: "Accédez à votre épargne quand vous en avez besoin."
-    }
-  ];
+  const { t } = useTranslation("services");
 
-  const benefits = [
-    "Épargnez pour vos projets personnels avec des taux attractifs",
-    "Gestion simplifiée de votre épargne avec un livret traditionnel",
-    "Aucun frais sur les opérations de base",
-    "Intérêts calculés et versés annuellement"
-  ];
+  const features = useMemo(
+    () =>
+      [0, 1, 2, 3].map((i) => ({
+        icon: <CheckCircle className="w-6 h-6 text-foundation-bluenormal" />,
+        title: t(`compteEpargneIndividuel.features.${i}.title`),
+        description: t(`compteEpargneIndividuel.features.${i}.description`),
+      })),
+    [t]
+  );
+
+  const benefits = useMemo(
+    () => [0, 1, 2, 3].map((i) => t(`compteEpargneIndividuel.benefits.${i}`)),
+    [t]
+  );
+
+  const interestCards = useMemo(
+    () =>
+      [0, 1, 2].map((i) => ({
+        title: t(`compteEpargneIndividuel.interestCards.${i}.title`),
+        description: t(`compteEpargneIndividuel.interestCards.${i}.description`),
+      })),
+    [t]
+  );
 
   return (
     <>
       <SEO
-        title="Compte Épargne Individuel - RENAPROV FINANCE SA"
-        description="Épargnez pour vos projets personnels avec le compte épargne individuel RENAPROV. Dépôts et retraits gratuits, intérêts annuels, gestion simplifiée."
-        keywords="compte épargne, individuel, RENAPROV, microfinance, Cameroun, épargne, intérêts, livret"
+        title={t("compteEpargneIndividuel.seo.title")}
+        description={t("compteEpargneIndividuel.seo.description")}
+        keywords={t("compteEpargneIndividuel.seo.keywords")}
       />
       
       <motion.main
@@ -60,16 +57,16 @@ export const CompteEpargneIndividuel: React.FC = () => {
                 transition={{ duration: 0.8 }}
               >
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-                  Compte Épargne Individuel
+                  {t("compteEpargneIndividuel.hero.title")}
                 </h1>
                 <p className="text-xl lg:text-2xl mb-8 text-blue-100">
-                  Épargnez pour vos projets personnels avec des taux attractifs et une gestion simplifiée
+                  {t("compteEpargneIndividuel.hero.subtitle")}
                 </p>
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="bg-white text-foundation-bluenormal hover:bg-gray-100"
                 >
-                  Ouvrir un compte
+                  {t("common.openAccount")}
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </motion.div>
@@ -82,13 +79,13 @@ export const CompteEpargneIndividuel: React.FC = () => {
               >
                 <img
                   src="/service/Compte epargne individuel.jpg"
-                  alt="Compte Épargne Individuel RENAPROV"
+                  alt={t("compteEpargneIndividuel.hero.imageAlt")}
                   className="w-full h-auto rounded-lg shadow-2xl"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg">
                   <div className="flex items-center space-x-2">
                     <PiggyBank className="w-5 h-5 text-green-500" />
-                    <span className="text-sm font-medium text-gray-700">Épargne sécurisée</span>
+                    <span className="text-sm font-medium text-gray-700">{t("compteEpargneIndividuel.hero.badge")}</span>
                   </div>
                 </div>
               </motion.div>
@@ -107,10 +104,10 @@ export const CompteEpargneIndividuel: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                Fonctionnalités Principales
+                {t("common.featuresTitle")}
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Le compte épargne individuel vous permet de constituer une épargne sécurisée avec des avantages attractifs.
+                {t("compteEpargneIndividuel.featuresSubtitle")}
               </p>
             </motion.div>
 
@@ -155,10 +152,10 @@ export const CompteEpargneIndividuel: React.FC = () => {
                 transition={{ duration: 0.8 }}
               >
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                  Pourquoi Épargner avec RENAPROV ?
+                  {t("compteEpargneIndividuel.benefitsTitle")}
                 </h2>
                 <p className="text-lg text-gray-600 mb-8">
-                  Avec plus de 30 ans d'expérience dans la microfinance, RENAPROV vous offre des solutions d'épargne fiables et rentables.
+                  {t("compteEpargneIndividuel.benefitsSubtitle")}
                 </p>
                 <ul className="space-y-4">
                   {benefits.map((benefit, index) => (
@@ -186,7 +183,7 @@ export const CompteEpargneIndividuel: React.FC = () => {
               >
                 <img
                   src="/service/Compte epargne individuel.jpg"
-                  alt="Avantages du compte épargne RENAPROV"
+                  alt={t("compteEpargneIndividuel.benefitsImageAlt")}
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
               </motion.div>
@@ -205,61 +202,30 @@ export const CompteEpargneIndividuel: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                Comment Fonctionnent les Intérêts ?
+                {t("compteEpargneIndividuel.interestTitle")}
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Vos dépôts génèrent des intérêts calculés et versés annuellement selon des taux attractifs.
+                {t("compteEpargneIndividuel.interestSubtitle")}
               </p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="text-center"
-              >
-                <div className="bg-foundation-bluenormal w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <TrendingUp className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Taux Attractifs</h3>
-                <p className="text-gray-600">
-                  Bénéficiez de taux d'intérêt compétitifs sur vos dépôts
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-center"
-              >
-                <div className="bg-foundation-bluenormal w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <PiggyBank className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Calcul Annuel</h3>
-                <p className="text-gray-600">
-                  Les intérêts sont calculés et versés annuellement
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-center"
-              >
-                <div className="bg-foundation-bluenormal w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <CheckCircle className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Sécurité Garantie</h3>
-                <p className="text-gray-600">
-                  Votre épargne est protégée et sécurisée
-                </p>
-              </motion.div>
+              {interestCards.map((card, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: idx * 0.1 }}
+                  className="text-center"
+                >
+                  <div className="bg-foundation-bluenormal w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                    {idx === 0 ? <TrendingUp className="w-8 h-8 text-white" /> : idx === 1 ? <PiggyBank className="w-8 h-8 text-white" /> : <CheckCircle className="w-8 h-8 text-white" />}
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{card.title}</h3>
+                  <p className="text-gray-600">{card.description}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -274,16 +240,16 @@ export const CompteEpargneIndividuel: React.FC = () => {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                Commencez à Épargner Aujourd'hui
+                {t("compteEpargneIndividuel.ctaTitle")}
               </h2>
               <p className="text-xl mb-8 text-blue-100">
-                Rejoignez des milliers de clients qui font confiance à RENAPROV pour leur épargne.
+                {t("compteEpargneIndividuel.ctaSubtitle")}
               </p>
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-white text-foundation-bluenormal hover:bg-gray-100"
               >
-                Ouvrir un compte épargne
+                {t("compteEpargneIndividuel.ctaButton")}
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </motion.div>
@@ -304,7 +270,7 @@ export const CompteEpargneIndividuel: React.FC = () => {
                 <div className="bg-foundation-bluenormal w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Globe className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Site Web</h3>
+                <h3 className="text-xl font-semibold mb-2">{t("common.contact.website")}</h3>
                 <p className="text-gray-300">renaprov.net</p>
               </motion.div>
               
@@ -318,7 +284,7 @@ export const CompteEpargneIndividuel: React.FC = () => {
                 <div className="bg-foundation-bluenormal w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Phone className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Téléphone</h3>
+                <h3 className="text-xl font-semibold mb-2">{t("common.contact.phone")}</h3>
                 <p className="text-gray-300">+237 693 930 231</p>
               </motion.div>
               
@@ -332,7 +298,7 @@ export const CompteEpargneIndividuel: React.FC = () => {
                 <div className="bg-foundation-bluenormal w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Mail className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Email</h3>
+                <h3 className="text-xl font-semibold mb-2">{t("common.contact.email")}</h3>
                 <p className="text-gray-300">stephaniebissai@gmail.com</p>
               </motion.div>
             </div>

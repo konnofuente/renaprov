@@ -1,0 +1,34 @@
+{
+  "seo": {
+    "title": "RENEWS 2024 - RENAPROV | Magazine d'actualités",
+    "description": "Découvrez les actualités 2024 de RENAPROV FINANCE SA : ouverture du Complexe Hospitalier LA MAMU, Tombola MASO Acte 4, Institut Universitaire BISSAÏ, nouvelles agences et bien plus.",
+    "keywords": "RENEWS, RENAPROV, actualités 2024, LA MAMU, MASO, Institut BISSAÏ, microfinance, Cameroun, magazine d'entreprise"
+  },
+  "hero": {
+    "title": "RENEWS 2024",
+    "description": "Découvrez les actualités et réalisations marquantes de RENAPROV FINANCE S.A en 2024 : ouverture du Complexe Hospitalier LA MAMU, Tombola MASO Acte 4, Institut Universitaire BISSAÏ, nouvelles agences et bien plus encore.",
+    "cta": "Découvrir les actualités",
+    "imageAlt": "RENEWS 2024 - Magazine d'actualités RENAPROV"
+  },
+  "flashNews": {
+    "sectionTitle": "FLASH RENEWS !",
+    "sectionSubtitle": "Les actualités importantes qui marquent l'année 2024 pour RENAPROV FINANCE S.A"
+  },
+  "agences": {
+    "sectionTitle": "AGENCES À LA UNE",
+    "sectionSubtitle": "Découvrez nos agences phares et leurs équipes dévouées qui vous accompagnent au quotidien"
+  },
+  "filiales": {
+    "sectionTitle": "FILIALES DU GROUPE",
+    "sectionSubtitle": "Découvrez l'écosystème complet du Groupe RENAPROV et ses différentes entités"
+  },
+  "dirigeants": {
+    "sectionTitle": "NOS DIRIGEANTS",
+    "sectionSubtitle": "Découvrez l'équipe dirigeante qui guide RENAPROV FINANCE S.A vers l'excellence",
+    "leadershipBadge": "Leadership"
+  },
+  "galerie": {
+    "sectionTitle": "GALÉRIE",
+    "sectionSubtitle": "Revivez les moments marquants et les événements importants de RENAPROV FINANCE S.A"
+  }
+}

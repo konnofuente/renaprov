@@ -1,62 +1,12 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ChevronLeft as ChevronLeftIcon,
   ChevronRight as ChevronRightIcon,
 } from "lucide-react";
 import { Button } from "../../../../components/ui/button";
-import { useNavigate } from "react-router-dom";
-
-const slides = [
-  {
-    title: "Bienvenue à RENAPROV FINANCE S.A",
-    description:
-      "ORA Académique, Scolaire, Habitat, Équipement... Préparez vos ambitions ! Que vous soyez salarié, pensionné, entrepreneur, commerçant ou étudiant, RENAPROV FINANCE S.A met à votre disposition une gamme de produits adaptés à vos besoins.",
-    image: "/Bienvenu  RENAPROV.png",
-    fallbackImage: "Bienvenu a RENAPROV.png",
-    cta: "Ouvrir mon compte aujourd'hui",
-  },
-  {
-    title: "Un compte simple et sécurisé, accessible à tous",
-    description:
-      "Chez RENAPROV, ouvrez un compte en quelques minutes et profitez de services adaptés à votre quotidien : dépôts, retraits, transferts et épargne, où que vous soyez.",
-    image: "/other/condition.jpg",
-    fallbackImage: "/hero1.png",
-    cta: "Ouvrir mon compte aujourd'hui",
-  },
-  {
-    title: "MASO",
-    description:
-      "MASO (Mutuelle d'Assistance et de Solidarité) est un produit solidaire mis en place par RENAPROV FINANCE SA qui vous permet de couvrir les besoins sociaux de base.",
-    image: "/logo maso solidarite.png",
-    fallbackImage: "/hero1.png",
-    cta: "Découvrir MASO",
-  },
-  {
-    title: "Faites grandir vos projets, nous finançons vos ambitions",
-    description:
-      "Profitez d'une gamme complète de services bancaires conçus pour simplifier votre vie financière au quotidien.",
-    image: "/maso/win.png",
-    fallbackImage: "/hero1.png",
-    cta: "Nos solutions",
-  },
-  {
-    title: "Rendez-vous en agence",
-    description:
-      "Nos équipes vous accueillent dans toutes nos agences pour vous conseiller et vous aider à atteindre vos objectifs financiers.",
-    image: "/Rendes-vous en Agence.png",
-    fallbackImage: "/hero1.png",
-    cta: "Ouvrir mon compte aujourd’hui",
-  },
-  {
-    title: "Rejoignez - nous",
-    description:
-      "Faites partie de la communauté RENAPROV et profitez d’un réseau solide qui soutient vos ambitions. Que vous soyez entrepreneur, salarié ou étudiant.",
-    image: "/other/join.jpg",
-    fallbackImage: "/hero1.png",
-    cta: "Ouvrir mon compte aujourd’hui",
-  },
-];
+import { useNavigate, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 // Unified soft animation variants for the entire hero section
 const slideVariants = {
@@ -85,6 +35,59 @@ interface HeroSectionSubsectionProps {
 
 export const HeroSectionSubsection: React.FC<HeroSectionSubsectionProps> = ({ onOpenAccountForm }): JSX.Element => {
   const navigate = useNavigate();
+  const { t } = useTranslation('home');
+  const { lang } = useParams<{ lang?: string }>();
+  const currentLang = lang || 'fr';
+  
+  const getLocalizedPath = (path: string) => {
+    return `/${currentLang}${path}`;
+  };
+
+  const slides = useMemo(() => [
+    {
+      title: t('hero.slide1.title'),
+      description: t('hero.slide1.description'),
+      image: "/Bienvenu  RENAPROV.png",
+      fallbackImage: "Bienvenu a RENAPROV.png",
+      cta: t('hero.slide1.cta'),
+    },
+    {
+      title: t('hero.slide2.title'),
+      description: t('hero.slide2.description'),
+      image: "/other/condition.jpg",
+      fallbackImage: "/hero1.png",
+      cta: t('hero.slide2.cta'),
+    },
+    {
+      title: t('hero.slide3.title'),
+      description: t('hero.slide3.description'),
+      image: "/logo maso solidarite.png",
+      fallbackImage: "/hero1.png",
+      cta: t('hero.slide3.cta'),
+    },
+    {
+      title: t('hero.slide4.title'),
+      description: t('hero.slide4.description'),
+      image: "/maso/win.png",
+      fallbackImage: "/hero1.png",
+      cta: t('hero.slide4.cta'),
+    },
+    {
+      title: t('hero.slide5.title'),
+      description: t('hero.slide5.description'),
+      image: "/Rendes-vous en Agence.png",
+      fallbackImage: "/hero1.png",
+      cta: t('hero.slide5.cta'),
+    },
+    {
+      title: t('hero.slide6.title'),
+      description: t('hero.slide6.description'),
+      image: "/other/join.jpg",
+      fallbackImage: "/hero1.png",
+      cta: t('hero.slide6.cta'),
+    },
+  ], [t]);
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
   const [imageError, setImageError] = useState<boolean[]>(
@@ -151,38 +154,35 @@ export const HeroSectionSubsection: React.FC<HeroSectionSubsectionProps> = ({ on
   };
 
   // Top information bar offers
-  const topOffers = [
+  const topOffers = useMemo(() => [
     {
-      title: "Devenez propriétaire de votre future Villa avec MASO!",
-      subtitle: "Inscriptions ouvertes jusqu'au 29 juin. Ne manquez pas cette opportunité.",
-      cta: "Je m'inscris dès maintenant",
-      action: () => navigate("/maso"), // Navigate to MASO page
+      title: t('topBar.offer1.title'),
+      subtitle: t('topBar.offer1.subtitle'),
+      cta: t('topBar.offer1.cta'),
+      action: () => navigate(getLocalizedPath("/maso")),
     },
     {
-      title: "Épargnez avec ORA pour vos projets d'avenir",
-      subtitle: "ORA Académie, Scolaire, Habitat, Équipement... Préparez vos ambitions!",
-      cta: "Découvrir ORA",
-      action: () => {
-        const element = document.querySelector("#produits");
-        if (element) element.scrollIntoView({ behavior: "smooth" });
-      }, // Scroll to products section
+      title: t('topBar.offer2.title'),
+      subtitle: t('topBar.offer2.subtitle'),
+      cta: t('topBar.offer2.cta'),
+      action: () => navigate(getLocalizedPath("/products#ora-section")),
     },
     {
-      title: "Ouvrez votre compte RENAPROV en quelques minutes",
-      subtitle: "Compte courant, épargne, SPMC, Bicard... Tous nos services à portée de main!",
-      cta: "Créer mon compte",
-      action: () => onOpenAccountForm(), // Open account creation form
+      title: t('topBar.offer3.title'),
+      subtitle: t('topBar.offer3.subtitle'),
+      cta: t('topBar.offer3.cta'),
+      action: () => onOpenAccountForm(),
     },
     {
-      title: "Rejoignez notre réseau d'agences partout au Cameroun",
-      subtitle: "Plus de 30 agences pour vous accompagner dans vos projets financiers.",
-      cta: "Trouvez une agence",
+      title: t('topBar.offer4.title'),
+      subtitle: t('topBar.offer4.subtitle'),
+      cta: t('topBar.offer4.cta'),
       action: () => {
         const element = document.querySelector("#agences");
         if (element) element.scrollIntoView({ behavior: "smooth" });
-      }, // Scroll to agencies section
+      },
     },
-  ];
+  ], [t, navigate, currentLang, onOpenAccountForm]);
 
   const handleImageError = (index: number) => {
     setImageError((prev) => {
@@ -237,7 +237,7 @@ export const HeroSectionSubsection: React.FC<HeroSectionSubsectionProps> = ({ on
         size="icon"
         onClick={prevSlide}
         className="hidden 2xl:flex absolute left-4 xl:left-8 top-1/2 -translate-y-1/2 w-14 h-14 xl:w-16 xl:h-16 bg-white hover:bg-white/95 shadow-2xl rounded-full transition-all duration-200 z-50 border-2 border-gray-200 hover:border-foundation-bluenormal"
-        aria-label="Slide précédent"
+        aria-label={t('hero.previousSlide') || "Slide précédent"}
       >
         <ChevronLeftIcon className="w-7 h-7 xl:w-8 xl:h-8 text-foundation-bluenormal" />
       </Button>
@@ -247,7 +247,7 @@ export const HeroSectionSubsection: React.FC<HeroSectionSubsectionProps> = ({ on
         size="icon"
         onClick={nextSlide}
         className="hidden 2xl:flex absolute right-4 xl:right-8 top-1/2 -translate-y-1/2 w-14 h-14 xl:w-16 xl:h-16 bg-white hover:bg-white/95 shadow-2xl rounded-full transition-all duration-200 z-50 border-2 border-gray-200 hover:border-foundation-bluenormal"
-        aria-label="Slide suivant"
+        aria-label={t('hero.nextSlide') || "Slide suivant"}
       >
         <ChevronRightIcon className="w-7 h-7 xl:w-8 xl:h-8 text-foundation-bluenormal" />
       </Button>
@@ -319,20 +319,7 @@ export const HeroSectionSubsection: React.FC<HeroSectionSubsectionProps> = ({ on
               <div className="w-auto flex justify-center lg:justify-start">
                 <Button
                   className="w-auto  bg-foundation-bluenormal hover:bg-foundation-bluedark-hover text-white font-semibold px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg min-h-[48px] sm:min-h-[52px] md:min-h-[56px] flex items-center justify-center"
-                  onClick={() => {
-                    if (currentSlide === 2) {
-                      // "Découvrir MASO" button - navigate to MASO page
-                      navigate("/maso");
-                    } else if (currentSlide === 0 || currentSlide === 1 || currentSlide === 4 || currentSlide === 5) {
-                      // "Ouvrir mon compte" buttons - open account creation form
-                      onOpenAccountForm();
-                    } else if (currentSlide === 3) {
-                      // "Nos solutions" button - scroll to products section
-                      const element = document.querySelector("#produits");
-                      if (element)
-                        element.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
+                  onClick={onOpenAccountForm}
                 >
                   <span className=" w-full text-center leading-tight">
                     {slides[currentSlide].cta}
@@ -343,30 +330,42 @@ export const HeroSectionSubsection: React.FC<HeroSectionSubsectionProps> = ({ on
 
             {/* Image Section */}
             <div className="relative order-1 lg:order-2 flex justify-center">
-              <div
-                className="relative overflow-hidden shadow-2xl bg-gray-100 w-full xl:w-[579px] h-[200px] sm:h-[250px] md:h-[300px] xl:h-[365px] rounded-[16px] xl:rounded-[23px]"
-              >
-                <img
-                  src={
-                    imageError[currentSlide]
-                      ? slides[currentSlide].fallbackImage
-                      : slides[currentSlide].image
-                  }
-                  alt={slides[currentSlide].title}
-                  className={`w-full h-full ${
-                    slides[currentSlide].image.toLowerCase().includes("logo") || 
-                    slides[currentSlide].image.toLowerCase().includes("maso")
-                      ? "object-contain"
-                      : "object-cover"
-                  }`}
-                  onError={() => handleImageError(currentSlide)}
-                  loading="lazy"
-                />
-                {!slides[currentSlide].image.toLowerCase().includes("logo") && 
-                 !slides[currentSlide].image.toLowerCase().includes("maso") && (
+              {slides[currentSlide].image.toLowerCase().includes("logo maso") ||
+              slides[currentSlide].image === "/logo maso solidarite.png" ? (
+                <div className="relative overflow-hidden shadow-2xl bg-gray-100 w-full xl:w-[579px] h-[200px] sm:h-[250px] md:h-[300px] xl:h-[365px] rounded-[16px] xl:rounded-[23px]">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-full h-full flex items-center justify-center">
+                      <img
+                        src={
+                          imageError[currentSlide]
+                            ? slides[currentSlide].fallbackImage
+                            : slides[currentSlide].image
+                        }
+                        alt={slides[currentSlide].title}
+                        className="max-h-full object-contain"
+                        style={{ width: "100%" }}
+                        onError={() => handleImageError(currentSlide)}
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="relative overflow-hidden shadow-2xl bg-gray-100 w-full xl:w-[579px] h-[200px] sm:h-[250px] md:h-[300px] xl:h-[365px] rounded-[16px] xl:rounded-[23px]">
+                  <img
+                    src={
+                      imageError[currentSlide]
+                        ? slides[currentSlide].fallbackImage
+                        : slides[currentSlide].image
+                    }
+                    alt={slides[currentSlide].title}
+                    className="w-full h-full object-cover"
+                    onError={() => handleImageError(currentSlide)}
+                    loading="lazy"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                )}
-              </div>
+                </div>
+              )}
             </div>
           </motion.div>
         </AnimatePresence>
@@ -382,7 +381,7 @@ export const HeroSectionSubsection: React.FC<HeroSectionSubsectionProps> = ({ on
                   ? "bg-foundation-bluenormal w-8 sm:w-10"
                   : "bg-gray-300 hover:bg-gray-400"
               }`}
-              aria-label={`Aller au slide ${index + 1}`}
+              aria-label={`${t('hero.goToSlide') || 'Aller au slide'} ${index + 1}`}
             />
           ))}
         </div>

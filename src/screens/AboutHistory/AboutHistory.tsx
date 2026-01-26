@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { HeroSection } from "./sections/HeroSection";
 import { StatsSection } from "./sections/StatsSection";
 import { TimelineSection } from "./sections/TimelineSection";
@@ -8,17 +10,21 @@ import { CallToActionSubsection } from "../Accueil/sections/CallToActionSubsecti
 import { OurAgencySubsection } from "../Accueil/sections/OurAgencySubsection";
 import { MapSection } from "./sections/MapSection";
 import { TestimonialSection } from "../../components/TestimonialSection";
+import { AccountCreationForm } from "../../components/AccountCreationForm";
 
 export const AboutHistory = (): JSX.Element => {
+  const { t } = useTranslation("about");
+  const [isAccountFormOpen, setIsAccountFormOpen] = useState(false);
+
   return (
     <>
       <SEO
-        title="RENAPROV FINANCE S.A - Microfinance de Confiance au Cameroun"
-        description="RENAPROV FINANCE SA - Institution de microfinance au Cameroun. Services financiers accessibles, épargne, crédits, inclusion financière. Devenez propriétaire avec MASO, épargnez avec ORA."
-        keywords="microfinance, Cameroun, épargne, crédit, inclusion financière, RENAPROV, MASO, ORA, compte courant, compte épargne, finance, Yaoundé, Douala"
+        title={t("seo.title")}
+        description={t("seo.description")}
+        keywords={t("seo.keywords")}
       />
       <main className="flex flex-col w-full relative overflow-hidden">
-        <HeroSection />
+        <HeroSection onOpenAccountForm={() => setIsAccountFormOpen(true)} />
         <StatsSection />
         <TimelineSection />
         <MessageSection />
@@ -28,6 +34,12 @@ export const AboutHistory = (): JSX.Element => {
         <OurAgencySubsection />
         <CallToActionSubsection />
       </main>
+      
+      {/* Account Creation Form Modal */}
+      <AccountCreationForm 
+        isOpen={isAccountFormOpen} 
+        onClose={() => setIsAccountFormOpen(false)} 
+      />
     </>
   );
 };

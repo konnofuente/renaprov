@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { SEO } from "../../components/SEO";
 import { AdvantagesSubsection } from "./sections/AdvantagesSubsection";
 import { CallToActionSubsection } from "./sections/CallToActionSubsection";
@@ -13,13 +14,14 @@ import { AccountCreationForm } from "../../components/AccountCreationForm";
 
 export const Accueil = (): JSX.Element => {
   const [isAccountFormOpen, setIsAccountFormOpen] = useState(false);
+  const { t } = useTranslation('home');
 
   return (
     <>
       <SEO
-        title="RENAPROV FINANCE S.A - Microfinance de Confiance au Cameroun"
-        description="RENAPROV FINANCE S.A - Institution de microfinance au Cameroun. Services financiers accessibles, épargne, crédits, inclusion financière. Devenez propriétaire avec MASO, épargnez avec ORA."
-        keywords="microfinance, Cameroun, épargne, crédit, inclusion financière, RENAPROV, MASO, ORA, compte courant, compte épargne, finance, Yaoundé, Douala"
+        title={t('seo.title')}
+        description={t('seo.description')}
+        keywords={t('seo.keywords')}
       />
       <main className="flex flex-col w-full bg-[#ffffff]">
         <HeroSectionSubsection onOpenAccountForm={() => setIsAccountFormOpen(true)} />

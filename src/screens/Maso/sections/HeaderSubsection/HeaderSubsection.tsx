@@ -1,21 +1,37 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Button } from "../../../../components/ui/button";
 import { Menu, X } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 
-const navigationItems = [
-  { label: "Accueil", path: "/" },
-  { label: "À propos", path: "/about" },
-  { label: "Mission", path: "/mission" },
-  { label: "Produits", path: "/products" },
-  { label: "MASO", path: "/maso" },
-  { label: "RENEWS", path: "/renews" },
-  // { label: "Notre réseau", href: "#reseau" },
-];
+const SUPPORTED_LANGS = ['fr', 'en'] as const;
+const normalizeLang = (l: string | undefined): 'fr' | 'en' => {
+  const base = (l || 'fr').split('-')[0].toLowerCase();
+  return SUPPORTED_LANGS.includes(base as 'fr' | 'en') ? (base as 'fr' | 'en') : 'fr';
+};
 
 export const HeaderSubsection = (): JSX.Element => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { lang } = useParams<{ lang?: string }>();
+  
+  const pathSegments = location.pathname.split('/').filter(Boolean);
+  const currentLang = SUPPORTED_LANGS.includes(pathSegments[0] as 'fr' | 'en')
+    ? (pathSegments[0] as 'fr' | 'en')
+    : normalizeLang(lang);
+
+  const getLocalizedPath = (path: string) => {
+    return `/${currentLang}${path === '/' ? '' : path}`;
+  };
+
+  const navigationItems = useMemo(() => [
+    { label: "Accueil", path: getLocalizedPath("/") },
+    { label: "À propos", path: getLocalizedPath("/about") },
+    { label: "Mission", path: getLocalizedPath("/mission") },
+    { label: "Produits", path: getLocalizedPath("/products") },
+    { label: "MASO", path: getLocalizedPath("/maso") },
+    { label: "RENEWS", path: getLocalizedPath("/renews") },
+    // { label: "Notre réseau", href: "#reseau" },
+  ], [currentLang]);
 
   const handleNavClick = (href: string) => {
     setMobileMenuOpen(false);
@@ -27,18 +43,19 @@ export const HeaderSubsection = (): JSX.Element => {
   };
 
   const isActivePath = (path: string) => {
-    if (path === "/") {
-      return location.pathname === "/" || location.pathname === "/accueil";
+    const currentPath = location.pathname;
+    if (path === `/${currentLang}` || path === `/${currentLang}/`) {
+      return currentPath === `/${currentLang}` || currentPath === `/${currentLang}/` || currentPath === `/${currentLang}/accueil`;
     }
-    return location.pathname === path;
+    return currentPath === path || currentPath.startsWith(path + '/');
   };
 
   return (
     <header className="w-full bg-foundationbluelight sticky top-0 z-50 shadow-sm">
-      <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-1 sm:px-2 lg:px-3">
         <div className="flex items-center justify-between h-16 sm:h-18 md:h-20">
           {/* Logo and Company Name */}
-          <Link to="/" className="flex items-center gap-2 sm:gap-3 flex-shrink-0 hover:opacity-80 transition-opacity duration-200">
+          <Link to={getLocalizedPath("/")} className="flex items-center gap-2 sm:gap-3 flex-shrink-0 hover:opacity-80 transition-opacity duration-200">
             <img
               src="/logo.png"
               alt="RENAPROV FINANCE SA - Logo"

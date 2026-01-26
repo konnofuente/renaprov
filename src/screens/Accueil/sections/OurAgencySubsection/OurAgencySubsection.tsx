@@ -3,6 +3,7 @@ import {
   ChevronRight as ChevronRightIcon,
 } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 
@@ -21,7 +22,8 @@ const generateCityTabs = (
     name: string;
     address: string;
     coordinates: { lat: number; lng: number };
-  }>
+  }>,
+  t: (key: string) => string
 ): CityTab[] => {
   // Compter les agences par ville
   const cityCount = agenciesList.reduce(
@@ -65,7 +67,7 @@ const generateCityTabs = (
   if (doualaCities.length > 0) {
     tabs.push({
       id: "douala-et-environs",
-      label: "Douala et Environs",
+      label: t('agencies.tabs.douala'),
       cities: doualaCities,
     });
   }
@@ -74,7 +76,7 @@ const generateCityTabs = (
   if (otherCities.length > 0) {
     tabs.push({
       id: "autres",
-      label: "Autres Villes",
+      label: t('agencies.tabs.otherCities'),
       cities: otherCities,
     });
   }
@@ -261,8 +263,9 @@ const agencies = [
 ];
 
 export const OurAgencySubsection = (): JSX.Element => {
+  const { t } = useTranslation('home');
   // Générer les onglets dynamiquement
-  const cityTabsData = generateCityTabs(agencies);
+  const cityTabsData = generateCityTabs(agencies, t);
 
   // Définir l'onglet par défaut (premier onglet généré)
   const defaultTab = cityTabsData.length > 0 ? cityTabsData[0].id : "";
@@ -419,9 +422,9 @@ export const OurAgencySubsection = (): JSX.Element => {
       {/* Titre de la section */}
       <div className="flex flex-col items-center text-center mb-4">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
-          <div className="text-black">Trouvez une agence</div>
+          <div className="text-black">{t('agencies.titlePart1')}</div>
           <div className="bg-[linear-gradient(148deg,rgba(0,172,238,1)_0%,rgba(1,27,38,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent]">
-            RENAPROV FINANCE SA
+            {t('agencies.titlePart2')}
           </div>
         </h2>
       </div>
@@ -536,7 +539,7 @@ export const OurAgencySubsection = (): JSX.Element => {
                         }}
                       >
                         <span className="[font-family:'Karla',Helvetica] w-auto font-semibold text-light-text text-sm text-center tracking-[0.20px] leading-5 whitespace-nowrap">
-                          Voir sur Google Map
+                          {t('agencies.viewOnMap')}
                         </span>
                       </Button>
                     </div>
@@ -560,7 +563,7 @@ export const OurAgencySubsection = (): JSX.Element => {
                         ? "bg-foundation-bluenormal w-8"
                         : "bg-black opacity-20 hover:opacity-40"
                     }`}
-                    aria-label={`Aller à la page ${index + 1}`}
+                    aria-label={`${t('agencies.ariaLabels.goToSlide')} ${index + 1}`}
                   />
                 ))}
               </div>
@@ -576,7 +579,7 @@ export const OurAgencySubsection = (): JSX.Element => {
                       ? "bg-gray-100 border-gray-300 cursor-not-allowed opacity-50"
                       : "bg-[#ffffff] border-black hover:bg-[#ffffff]/90"
                   }`}
-                  aria-label="Slide précédent"
+                  aria-label={t('agencies.ariaLabels.previousSlide')}
                 >
                   <ChevronLeftIcon
                     className={`w-5 h-5 ${
@@ -595,7 +598,7 @@ export const OurAgencySubsection = (): JSX.Element => {
                       ? "bg-gray-100 border-gray-300 cursor-not-allowed opacity-50"
                       : "bg-[#ffffff] border-black hover:bg-[#ffffff]/90"
                   }`}
-                  aria-label="Slide suivant"
+                  aria-label={t('agencies.ariaLabels.nextSlide')}
                 >
                   <ChevronRightIcon
                     className={`w-5 h-5 ${

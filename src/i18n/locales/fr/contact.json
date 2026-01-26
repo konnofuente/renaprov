@@ -1,0 +1,47 @@
+{
+  "seo": {
+    "title": "Contactez-nous - RENAPROV FINANCE SA",
+    "description": "Contactez RENAPROV FINANCE SA pour toutes vos questions sur nos services de microfinance au Cameroun. Notre équipe est à votre disposition.",
+    "keywords": "contact, RENAPROV, microfinance, Cameroun, service client, assistance"
+  },
+  "hero": {
+    "title": "Contactez Nous",
+    "description": "Notre équipe est à votre disposition pour répondre à toutes vos questions sur nos services de microfinance au Cameroun.",
+    "cta": "Envoyer un message",
+    "imageAlt": "Équipe RENAPROV - Contactez-nous"
+  },
+  "form": {
+    "title": "Envoyer votre question",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "message": "Message",
+    "submit": "Envoyer",
+    "submitting": "Envoi en cours...",
+    "firstNamePlaceholder": "Votre prénom",
+    "lastNamePlaceholder": "Votre nom",
+    "emailPlaceholder": "yourmail@gmail.com",
+    "phonePlaceholder": "+237 684 350 501",
+    "messagePlaceholder": "Votre message",
+    "emailSubject": "Message de contact de",
+    "emailBody": {
+      "name": "Nom",
+      "firstName": "Prénom",
+      "email": "Email",
+      "phone": "Téléphone",
+      "message": "Message"
+    },
+    "successMessage": "Votre client email s'ouvre pour envoyer votre message à stephaniebissai@gmail.com",
+    "errorMessage": "Une erreur s'est produite. Veuillez réessayer."
+  },
+  "address": {
+    "title": "Adresse",
+    "line1": "BP : 13809 Messa, Yaoundé",
+    "line2": "Siège social : Montée Elig-Effa, Yaoundé"
+  },
+  "contactInfo": {
+    "title": "Contact",
+    "mapTitle": "Localisation RENAPROV FINANCE SA"
+  }
+}

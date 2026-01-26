@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Button } from './ui/button';
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { Button } from "./ui/button";
 import { Input } from './ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { 
@@ -38,6 +39,7 @@ interface MasoAdhesionFormProps {
 }
 
 export const MasoAdhesionForm: React.FC<MasoAdhesionFormProps> = ({ isOpen, onClose }) => {
+  const { t } = useTranslation("forms");
   const [formData, setFormData] = useState<FormData>({
     nom: '',
     prenom: '',
@@ -103,11 +105,61 @@ export const MasoAdhesionForm: React.FC<MasoAdhesionFormProps> = ({ isOpen, onCl
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulation d'envoi du formulaire
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    try {
+      // Get ID type label
+      const idTypeLabel = formData.pieceIdentite 
+        ? t(`masoAdhesion.idOptions.${formData.pieceIdentite}` as 'cni' | 'passeport' | 'carte-sejour' | 'carte-refugie' | 'permis-conduire')
+        : 'Non spécifié';
+      
+      // Create email subject
+      const subject = encodeURIComponent(`Demande d'adhésion MASO - ${formData.prenom} ${formData.nom}`);
+      
+      // Create email body with all form data
+      const body = encodeURIComponent(`
+DEMANDE D'ADHÉSION MASO
+
+═══════════════════════════════════════════════════════
+INFORMATIONS PERSONNELLES
+═══════════════════════════════════════════════════════
+Nom: ${formData.nom}
+Prénom: ${formData.prenom}
+Date de naissance: ${formData.dateNaissance}
+Adresse complète: ${formData.adresse}
+
+═══════════════════════════════════════════════════════
+INFORMATIONS DE CONTACT
+═══════════════════════════════════════════════════════
+Email: ${formData.email}
+Téléphone: ${formData.telephone}
+
+═══════════════════════════════════════════════════════
+PIÈCE D'IDENTITÉ
+═══════════════════════════════════════════════════════
+Type de pièce d'identité: ${idTypeLabel}
+Numéro de la pièce: ${formData.numeroPiece}
+Photo de la pièce d'identité: ${formData.identityCard ? formData.identityCard.name : 'Non téléchargée'}
+
+═══════════════════════════════════════════════════════
+NOTE: La photo de la pièce d'identité doit être envoyée séparément en pièce jointe si nécessaire.
+═══════════════════════════════════════════════════════
+      `);
+      
+      // Create mailto link
+      const mailtoLink = `mailto:stephaniebissai@gmail.com?subject=${subject}&body=${body}`;
+      
+      // Open email client
+      window.location.href = mailtoLink;
+      
+      // Show success message after a short delay
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+      }, 500);
+    } catch (error) {
+      console.error("Erreur lors de l'envoi:", error);
+      setIsSubmitting(false);
+      alert(t("masoAdhesion.error"));
+    }
   };
 
   const resetForm = () => {
@@ -142,17 +194,16 @@ export const MasoAdhesionForm: React.FC<MasoAdhesionFormProps> = ({ isOpen, onCl
             <CheckCircle className="w-10 h-10 text-green-600" />
           </div>
           <h3 className="text-2xl font-bold text-foundation-bluenormal mb-4">
-            Demande envoyée !
+            {t("masoAdhesion.successTitle")}
           </h3>
           <p className="text-gray-600 mb-6 leading-relaxed">
-            Votre demande d'adhésion à la MASO a été transmise avec succès. 
-            Notre équipe vous contactera dans les plus brefs délais.
+            {t("masoAdhesion.successMessage")}
           </p>
-          <Button 
+          <Button
             onClick={handleClose}
             className="bg-foundation-bluenormal hover:bg-foundation-bluedark-hover text-white w-full"
           >
-            Fermer
+            {t("masoAdhesion.close")}
           </Button>
         </div>
       </div>
@@ -186,7 +237,7 @@ export const MasoAdhesionForm: React.FC<MasoAdhesionFormProps> = ({ isOpen, onCl
           {/* Progress Bar */}
           <div className="mt-4">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm text-gray-600">Étape {currentStep} sur {totalSteps}</span>
+              <span className="text-sm text-gray-600">{t("masoAdhesion.stepOf", { current: currentStep, total: totalSteps })}</span>
               <span className="text-sm font-medium text-foundation-bluenormal">
                 {Math.round((currentStep / totalSteps) * 100)}%
               </span>
@@ -211,23 +262,23 @@ export const MasoAdhesionForm: React.FC<MasoAdhesionFormProps> = ({ isOpen, onCl
                     <User className="w-8 h-8 text-foundation-bluenormal" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    Informations personnelles
+                    {t("masoAdhesion.step1")}
                   </h3>
                   <p className="text-gray-600">
-                    Commençons par vos informations de base
+                    {t("masoAdhesion.step1Subtitle")}
                   </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-gray-700">
-                      Nom *
+                      {t("masoAdhesion.lastName")} *
                     </label>
                     <Input
                       name="nom"
                       value={formData.nom}
                       onChange={handleInputChange}
-                      placeholder="Votre nom"
+                      placeholder={t("masoAdhesion.placeholders.lastName")}
                       required
                       className="h-12"
                     />
@@ -235,13 +286,13 @@ export const MasoAdhesionForm: React.FC<MasoAdhesionFormProps> = ({ isOpen, onCl
                   
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-gray-700">
-                      Prénom *
+                      {t("masoAdhesion.firstName")} *
                     </label>
                     <Input
                       name="prenom"
                       value={formData.prenom}
                       onChange={handleInputChange}
-                      placeholder="Votre prénom"
+                      placeholder={t("masoAdhesion.placeholders.firstName")}
                       required
                       className="h-12"
                     />
@@ -250,7 +301,7 @@ export const MasoAdhesionForm: React.FC<MasoAdhesionFormProps> = ({ isOpen, onCl
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-gray-700">
-                    Date de naissance *
+                    {t("masoAdhesion.birthDate")} *
                   </label>
                   <Input
                     name="dateNaissance"
@@ -264,13 +315,13 @@ export const MasoAdhesionForm: React.FC<MasoAdhesionFormProps> = ({ isOpen, onCl
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-gray-700">
-                    Adresse complète *
+                    {t("masoAdhesion.fullAddress")} *
                   </label>
                   <Input
                     name="adresse"
                     value={formData.adresse}
                     onChange={handleInputChange}
-                    placeholder="Votre adresse complète"
+                    placeholder={t("masoAdhesion.placeholders.fullAddress")}
                     required
                     className="h-12"
                   />
@@ -286,23 +337,23 @@ export const MasoAdhesionForm: React.FC<MasoAdhesionFormProps> = ({ isOpen, onCl
                     <Phone className="w-8 h-8 text-foundation-bluenormal" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    Informations de contact
+                    {t("masoAdhesion.step2")}
                   </h3>
                   <p className="text-gray-600">
-                    Comment pouvons-nous vous joindre ?
+                    {t("masoAdhesion.step2Subtitle")}
                   </p>
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-gray-700">
-                    Email *
+                    {t("masoAdhesion.email")} *
                   </label>
                   <Input
                     name="email"
                     type="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    placeholder="votre@email.com"
+                    placeholder={t("masoAdhesion.placeholders.email")}
                     required
                     className="h-12"
                   />
@@ -326,20 +377,20 @@ export const MasoAdhesionForm: React.FC<MasoAdhesionFormProps> = ({ isOpen, onCl
                 <div className="bg-gradient-to-r from-foundation-bluenormal/5 to-foundation-bluedarker/5 rounded-xl p-6 mt-8">
                   <h4 className="font-semibold text-foundation-bluenormal mb-4 flex items-center gap-2">
                     <Heart className="w-5 h-5" />
-                    Vos avantages MASO
+                    {t("masoAdhesion.benefitsTitle")}
                   </h4>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="flex items-center gap-3">
                       <Shield className="w-5 h-5 text-green-600" />
-                      <span className="text-sm text-gray-700">-35% frais hospitaliers</span>
+                      <span className="text-sm text-gray-700">{t("masoAdhesion.benefit1")}</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <Users className="w-5 h-5 text-blue-600" />
-                      <span className="text-sm text-gray-700">-20% frais universitaires</span>
+                      <span className="text-sm text-gray-700">{t("masoAdhesion.benefit2")}</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <Heart className="w-5 h-5 text-red-600" />
-                      <span className="text-sm text-gray-700">Tombola exclusive</span>
+                      <span className="text-sm text-gray-700">{t("masoAdhesion.benefit3")}</span>
                     </div>
                   </div>
                 </div>
@@ -354,17 +405,17 @@ export const MasoAdhesionForm: React.FC<MasoAdhesionFormProps> = ({ isOpen, onCl
                     <FileText className="w-8 h-8 text-foundation-bluenormal" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    Pièce d'identité
+                    {t("masoAdhesion.step3")}
                   </h3>
                   <p className="text-gray-600">
-                    Dernière étape pour finaliser votre adhésion
+                    {t("masoAdhesion.step3Subtitle")}
                   </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-gray-700">
-                      Type de pièce d'identité *
+                      {t("masoAdhesion.idTypeLabel")}
                     </label>
                     <select
                       name="pieceIdentite"
@@ -373,24 +424,24 @@ export const MasoAdhesionForm: React.FC<MasoAdhesionFormProps> = ({ isOpen, onCl
                       className="w-full h-12 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-foundation-bluenormal focus:border-transparent"
                       required
                     >
-                      <option value="">Sélectionnez...</option>
-                      <option value="cni">Carte Nationale d'Identité</option>
-                      <option value="passeport">Passeport</option>
-                      <option value="carte-sejour">Carte de Séjour</option>
-                      <option value="carte-refugie">Carte de Réfugié</option>
-                      <option value="permis-conduire">Permis de Conduire</option>
+                      <option value="">{t("masoAdhesion.idSelectPlaceholder")}</option>
+                      <option value="cni">{t("masoAdhesion.idOptions.cni")}</option>
+                      <option value="passeport">{t("masoAdhesion.idOptions.passeport")}</option>
+                      <option value="carte-sejour">{t("masoAdhesion.idOptions.carte-sejour")}</option>
+                      <option value="carte-refugie">{t("masoAdhesion.idOptions.carte-refugie")}</option>
+                      <option value="permis-conduire">{t("masoAdhesion.idOptions.permis-conduire")}</option>
                     </select>
                   </div>
-                  
+
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-gray-700">
-                      Numéro de la pièce *
+                      {t("masoAdhesion.idNumberLabel")}
                     </label>
                     <Input
                       name="numeroPiece"
                       value={formData.numeroPiece}
                       onChange={handleInputChange}
-                      placeholder="Numéro de votre pièce d'identité"
+                      placeholder={t("masoAdhesion.placeholders.idNumber")}
                       required
                       className="h-12"
                     />
@@ -400,7 +451,7 @@ export const MasoAdhesionForm: React.FC<MasoAdhesionFormProps> = ({ isOpen, onCl
                 {/* Upload de la pièce d'identité */}
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-gray-700">
-                    Photo de votre pièce d'identité *
+                    {t("masoAdhesion.idPhotoLabel")}
                   </label>
                   <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-foundation-bluenormal transition-colors duration-200">
                     <input
@@ -422,17 +473,17 @@ export const MasoAdhesionForm: React.FC<MasoAdhesionFormProps> = ({ isOpen, onCl
                             {formData.identityCard.name}
                           </p>
                           <p className="text-xs text-gray-500">
-                            Cliquez pour changer
+                            {t("masoAdhesion.clickToChange")}
                           </p>
                         </div>
                       ) : (
                         <div className="flex flex-col items-center gap-2">
                           <Upload className="w-8 h-8 text-gray-400" />
                           <p className="text-sm text-gray-600">
-                            Cliquez pour télécharger votre pièce d'identité
+                            {t("masoAdhesion.clickToUpload")}
                           </p>
                           <p className="text-xs text-gray-500">
-                            Formats acceptés: JPG, PNG, PDF (max 5MB)
+                            {t("masoAdhesion.formatsAccepted")}
                           </p>
                         </div>
                       )}
@@ -443,20 +494,20 @@ export const MasoAdhesionForm: React.FC<MasoAdhesionFormProps> = ({ isOpen, onCl
                 {/* Conditions */}
                 <div className="bg-gray-50 rounded-xl p-6">
                   <h4 className="font-semibold text-gray-900 mb-4">
-                    Conditions d'adhésion
+                    {t("masoAdhesion.conditionsTitle")}
                   </h4>
                   <div className="space-y-3 text-sm text-gray-600">
                     <div className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                      <span>Pièce d'identité valide (CNI, Passeport, etc.)</span>
+                      <span>{t("masoAdhesion.condition1")}</span>
                     </div>
                     <div className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                      <span>500 FCFA pour le carnet d'adhérent</span>
+                      <span>{t("masoAdhesion.condition2")}</span>
                     </div>
                     <div className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                      <span>Cotisation: 100 FCFA/jour (26 000 FCFA/an)</span>
+                      <span>{t("masoAdhesion.condition3")}</span>
                     </div>
                   </div>
                 </div>
@@ -471,7 +522,7 @@ export const MasoAdhesionForm: React.FC<MasoAdhesionFormProps> = ({ isOpen, onCl
                     required
                   />
                   <label className="text-sm text-gray-700">
-                    J'accepte les conditions d'adhésion à la MASO et confirme que les informations fournies sont exactes. *
+                    {t("masoAdhesion.acceptCheckbox")}
                   </label>
                 </div>
               </div>
@@ -486,7 +537,7 @@ export const MasoAdhesionForm: React.FC<MasoAdhesionFormProps> = ({ isOpen, onCl
                 disabled={currentStep === 1}
                 className="flex items-center gap-2"
               >
-                Précédent
+                {t("masoAdhesion.previous")}
               </Button>
 
               <div className="flex items-center gap-2">
@@ -506,7 +557,7 @@ export const MasoAdhesionForm: React.FC<MasoAdhesionFormProps> = ({ isOpen, onCl
                   onClick={nextStep}
                   className="bg-foundation-bluenormal hover:bg-foundation-bluedark-hover text-white flex items-center gap-2"
                 >
-                  Suivant
+                  {t("masoAdhesion.next")}
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               ) : (
@@ -515,7 +566,7 @@ export const MasoAdhesionForm: React.FC<MasoAdhesionFormProps> = ({ isOpen, onCl
                   disabled={isSubmitting}
                   className="bg-foundation-bluenormal hover:bg-foundation-bluedark-hover text-white flex items-center gap-2"
                 >
-                  {isSubmitting ? 'Envoi en cours...' : 'Finaliser l\'adhésion'}
+                  {isSubmitting ? t("masoAdhesion.submitting") : t("masoAdhesion.submitButton")}
                 </Button>
               )}
             </div>

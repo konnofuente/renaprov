@@ -1,0 +1,21 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "mission": "Mission",
+    "products": "Products",
+    "maso": "MASO",
+    "renews": "RENEWS",
+    "contact": "Contact"
+  },
+  "logoTagline": "National Savings and Provision Reserve",
+  "openAccount": "Open my account",
+  "mobileMenu": {
+    "open": "Open menu",
+    "close": "Close menu",
+    "ariaLabel": "Mobile navigation"
+  },
+  "desktopNav": {
+    "ariaLabel": "Main navigation"
+  }
+}

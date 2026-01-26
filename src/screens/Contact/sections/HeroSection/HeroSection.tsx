@@ -1,21 +1,24 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { Button } from "../../../../components/ui/button";
 
 export const HeroSection: React.FC = () => {
+  const { t } = useTranslation("contact");
+
   return (
     <motion.section
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="flex flex-col w-full items-center justify-between px-4 sm:px-6 md:px-8 lg:px-[102px] py-8 sm:py-12 md:py-16 lg:py-[54px] bg-foundationbluelight min-h-[70vh] sm:min-h-auto"
+      className="flex flex-col w-full items-center justify-between px-4 sm:px-6 md:px-8 lg:px-[102px] py-8 sm:py-12 md:py-16 lg:py-[54px] bg-foundationbluelight min-h-[40vh]"
     >
       <div className="flex flex-col xl:flex-row items-center xl:items-center justify-center xl:justify-between w-full max-w-[1236px] gap-6 sm:gap-8">
         {/* Image first on mobile/tablet, stays inline with text on desktop */}
         <div className="w-full xl:w-auto flex-shrink-0 order-1 xl:order-2 h-full min-h-[300px]">
           <img
             className="w-full xl:w-[579px] h-full min-h-[300px] rounded-[16px] xl:rounded-[23px] object-cover object-center"
-            alt="Équipe RENAPROV - Contactez-nous"
+            alt={t("hero.imageAlt")}
             src="/contact us.png"
           />
         </div>
@@ -29,7 +32,7 @@ export const HeroSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="[font-family:'Bricolage_Grotesque',Helvetica] font-bold text-foundation-bluenormal text-3xl sm:text-4xl md:text-5xl lg:text-[59px] tracking-[0] leading-tight lg:leading-[70.8px]"
             >
-              Contactez Nous
+              {t("hero.title")}
             </motion.h1>
 
             <motion.p
@@ -38,7 +41,7 @@ export const HeroSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="[font-family:'Bricolage_Grotesque',Helvetica] font-medium text-foundationgreylight-active text-sm sm:text-base lg:text-[17px] tracking-[0] leading-[1.35] lg:leading-[20.4px]"
             >
-              Notre équipe est à votre disposition pour répondre à toutes vos questions sur nos services de microfinance au Cameroun.
+              {t("hero.description")}
             </motion.p>
           </div>
 
@@ -47,8 +50,22 @@ export const HeroSection: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <Button className="h-12 sm:h-[50px] px-5 sm:px-6 bg-foundation-bluenormal hover:bg-foundation-bluedark-hover rounded-[35px] [font-family:'Karla',Helvetica] font-semibold text-white text-sm sm:text-[17px] tracking-[0.20px] leading-5 w-full sm:w-auto">
-              Envoyer un message
+            <Button 
+              onClick={() => {
+                const element = document.getElementById("contact-form");
+                if (element) {
+                  const headerOffset = 100;
+                  const elementPosition = element.getBoundingClientRect().top;
+                  const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                  window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth",
+                  });
+                }
+              }}
+              className="h-12 sm:h-[50px] px-5 sm:px-6 bg-foundation-bluenormal hover:bg-foundation-bluedark-hover rounded-[35px] [font-family:'Karla',Helvetica] font-semibold text-white text-sm sm:text-[17px] tracking-[0.20px] leading-5 w-full sm:w-auto"
+            >
+              {t("hero.cta")}
             </Button>
           </motion.div>
         </div>

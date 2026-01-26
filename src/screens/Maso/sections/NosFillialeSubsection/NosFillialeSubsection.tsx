@@ -8,14 +8,14 @@ import { Card, CardContent } from "../../../../components/ui/card";
 
 const subsidiaries = [
   {
-    category: "Hospitalier",
+    category: "Hôpital",
     title: "Complexe Hospitalier la MAMU",
     description:
       "Un établissement de santé moderne offrant des soins de qualité et accessibles à tous.",
     imageUrl: "/logo  Complexe Hospitalier la MAMU.png",
   },
   {
-    category: "Universitaire",
+    category: "Université",
     title: "Institut Universitaire Bissai",
     description:
       "Un centre académique dédié à la formation de qualité et à l'excellence.",
@@ -25,18 +25,18 @@ const subsidiaries = [
     category: "investissement",
     title: "La Socagi",
     description:
-      "Société de gestion et d'investissement qui accompagne le développement économique à travers des solutions financières adaptées.",
+      "La radio des auditeurs à Yaoundé. Royal FM vous accompagne avec des programmes variés, de l'information de qualité et une proximité avec ses auditeurs.",
     imageUrl: "/logo La Socagi.png",
   },
   {
-    category: "Investissement",
+    category: "Radio",
     title: "Royal FM",
     description:
       "Société de gestion et d’investissement qui accompagne le développement économique à travers des solutions financières adaptées.",
     imageUrl: "/logo Royal FMRoyal FM.png",
   },
   {
-    category: "Solidarite",
+    category: "Solidarité",
     title: "Maso",
     description: "Pour la valorisation de la solidarité africaine",
     imageUrl: "/logo maso solidarite.png",

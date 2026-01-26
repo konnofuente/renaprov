@@ -3,9 +3,16 @@ import {
   ChevronRight as ChevronRightIcon,
 } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
+
+const SUPPORTED_LANGS = ['fr', 'en'] as const;
+const normalizeLang = (l: string | undefined): 'fr' | 'en' => {
+  const base = (l || 'fr').split('-')[0].toLowerCase();
+  return SUPPORTED_LANGS.includes(base as 'fr' | 'en') ? (base as 'fr' | 'en') : 'fr';
+};
 
 // CSS Classes extraites pour la maintenabilité
 const getGradientTextClass = (productType: 'renaprov' | 'coneexxe') => {
@@ -53,12 +60,25 @@ export const ReusableSliderSection: React.FC<ReusableSliderSectionProps> = ({
   description,
   products,
   onProductClick,
-  productType = 'renaprov',
-  brand = 'RENAPROV',
+  productType = "renaprov",
+  brand = "RENAPROV",
 }) => {
+  const { t } = useTranslation("products");
   const navigate = useNavigate();
+  const location = useLocation();
+  const { lang } = useParams<{ lang?: string }>();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [cardsToShow, setCardsToShow] = useState(3);
+
+  // Language detection logic
+  const pathSegments = location.pathname.split('/').filter(Boolean);
+  const currentLang = SUPPORTED_LANGS.includes(pathSegments[0] as 'fr' | 'en')
+    ? (pathSegments[0] as 'fr' | 'en')
+    : normalizeLang(lang);
+
+  const getLocalizedPath = (path: string) => {
+    return `/${currentLang}${path === '/' ? '' : path}`;
+  };
 
   // Responsive cards calculation
   useEffect(() => {
@@ -223,17 +243,11 @@ export const ReusableSliderSection: React.FC<ReusableSliderSectionProps> = ({
 
                     <Button
                       variant="link"
-                      onClick={() => {
-                        if (product.name.toLowerCase().includes('maso')) {
-                          navigate("/maso");
-                        } else {
-                          onProductClick(product);
-                        }
-                      }}
+                      onClick={() => onProductClick(product)}
                       className="inline-flex items-center justify-start gap-2 p-0 h-auto mt-4 text-sm font-semibold text-foundation-bluenormal hover:text-foundation-bluedark-hover transition-colors duration-200"
-                      aria-label={`En savoir plus sur ${product.name}`}
+                      aria-label={`${t("learnMore")} ${product.name}`}
                     >
-                      <span>En savoir plus</span>
+                      <span>{t("learnMore")}</span>
                       <ChevronRightIcon className="w-4 h-4" />
                     </Button>
                   </CardContent>
@@ -260,7 +274,7 @@ export const ReusableSliderSection: React.FC<ReusableSliderSectionProps> = ({
                   backgroundColor: currentSlide === index ? brandColors.primary : undefined,
                   focusRingColor: brandColors.primary
                 }}
-                aria-label={`Aller au slide ${index + 1}`}
+                aria-label={`${t("aria.goToSlide")} ${index + 1}`}
                 aria-current={currentSlide === index ? "true" : "false"}
               />
             ))}
@@ -282,7 +296,7 @@ export const ReusableSliderSection: React.FC<ReusableSliderSectionProps> = ({
                 '--hover-border-color': brandColors.primary,
                 '--hover-bg-color': `${brandColors.primary}05`
               } as React.CSSProperties}
-              aria-label="Slide précédent"
+              aria-label={t("aria.prevSlide")}
             >
               <ChevronLeftIcon
                 className={`w-5 h-5 sm:w-6 sm:h-6 ${
@@ -305,7 +319,7 @@ export const ReusableSliderSection: React.FC<ReusableSliderSectionProps> = ({
                 '--hover-border-color': brandColors.primary,
                 '--hover-bg-color': `${brandColors.primary}05`
               } as React.CSSProperties}
-              aria-label="Slide suivant"
+              aria-label={t("aria.nextSlide")}
             >
               <ChevronRightIcon
                 className={`w-5 h-5 sm:w-6 sm:h-6 ${

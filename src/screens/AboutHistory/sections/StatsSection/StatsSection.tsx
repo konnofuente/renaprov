@@ -1,37 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
-
-const statsData = [
-  {
-    icon: "/icon.svg",
-    iconWidth: "w-[84px]",
-    iconHeight: "h-[84px]",
-    iconTop: "top-0",
-    iconLeft: "left-0",
-    number: 29,
-    suffix: "+",
-    description: "Années d'expérience",
-  },
-  {
-    icon: "/layer-1.svg",
-    iconWidth: "w-[79px]",
-    iconHeight: "h-[78px]",
-    iconTop: "top-0",
-    iconLeft: "-left-px",
-    number: 10000,
-    suffix: "+",
-    description: "Client satisfait au Cameroon",
-  },
-  {
-    icon: "/layer-1-2.svg",
-    iconWidth: "w-[89.00%]",
-    iconHeight: "h-[86.17%]",
-    iconTop: "top-0",
-    iconLeft: "left-0",
-    number: 28,
-    suffix: "+",
-    description: "Agences au Cameroon",
-  },
-];
+import React, { useState, useEffect, useRef, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
 // Hook pour l'animation des chiffres (avec progression pour transitions douces)
 const useCountUp = (
@@ -84,8 +52,19 @@ const useCountUp = (
   return { count, progress, ref };
 };
 
+type StatItemType = {
+  icon: string;
+  iconWidth: string;
+  iconHeight: string;
+  iconTop: string;
+  iconLeft: string;
+  number: number;
+  suffix: string;
+  description: string;
+};
+
 // Composant pour chaque stat avec animation
-const StatItem: React.FC<{ stat: (typeof statsData)[0]; index: number }> = ({
+const StatItem: React.FC<{ stat: StatItemType; index: number }> = ({
   stat,
   index,
 }) => {
@@ -133,6 +112,44 @@ const StatItem: React.FC<{ stat: (typeof statsData)[0]; index: number }> = ({
 };
 
 export const StatsSection = (): JSX.Element => {
+  const { t } = useTranslation("about");
+
+  const statsData = useMemo<StatItemType[]>(
+    () => [
+      {
+        icon: "/icon.svg",
+        iconWidth: "w-[84px]",
+        iconHeight: "h-[84px]",
+        iconTop: "top-0",
+        iconLeft: "left-0",
+        number: 29,
+        suffix: "+",
+        description: t("stats.yearsExperience"),
+      },
+      {
+        icon: "/layer-1.svg",
+        iconWidth: "w-[79px]",
+        iconHeight: "h-[78px]",
+        iconTop: "top-0",
+        iconLeft: "-left-px",
+        number: 10000,
+        suffix: "+",
+        description: t("stats.satisfiedClients"),
+      },
+      {
+        icon: "/layer-1-2.svg",
+        iconWidth: "w-[89.00%]",
+        iconHeight: "h-[86.17%]",
+        iconTop: "top-0",
+        iconLeft: "left-0",
+        number: 28,
+        suffix: "+",
+        description: t("stats.agencies"),
+      },
+    ],
+    [t]
+  );
+
   return (
     <section className="flex flex-col w-full items-center justify-center gap-6 sm:gap-8 px-4 sm:px-6 lg:px-8 py-10 sm:py-14 lg:py-[21px] bg-white">
       <div className="w-full max-w-[1211px]">

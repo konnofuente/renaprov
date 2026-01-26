@@ -1,0 +1,238 @@
+{
+  "seo": {
+    "title": "RENAPROV FINANCE S.A - Trusted Microfinance in Cameroon",
+    "description": "RENAPROV FINANCE S.A - Microfinance institution in Cameroon. Accessible financial services, savings, loans, financial inclusion. Become a homeowner with MASO, save with ORA.",
+    "keywords": "microfinance, Cameroon, savings, credit, financial inclusion, RENAPROV, MASO, ORA, current account, savings account, finance, Yaoundé, Douala"
+  },
+  "hero": {
+    "slide1": {
+      "title": "Welcome to RENAPROV FINANCE S.A",
+      "description": "ORA Academic, School, Housing, Equipment... Prepare your ambitions! Whether you are an employee, retiree, entrepreneur, merchant or student, RENAPROV FINANCE S.A offers you a range of products tailored to your needs.",
+      "cta": "Open my account today"
+    },
+    "slide2": {
+      "title": "A simple and secure account, accessible to everyone",
+      "description": "At RENAPROV, open an account in minutes and enjoy services tailored to your daily life: deposits, withdrawals, transfers and savings, wherever you are.",
+      "cta": "Open my account today"
+    },
+    "slide3": {
+      "title": "MASO",
+      "description": "MASO (Mutual Assistance and Solidarity) is a solidarity product set up by RENAPROV FINANCE SA that allows you to cover basic social needs.",
+      "cta": "Discover MASO"
+    },
+    "slide4": {
+      "title": "Grow your projects, we finance your ambitions",
+      "description": "Enjoy a complete range of banking services designed to simplify your daily financial life.",
+      "cta": "Our solutions"
+    },
+    "slide5": {
+      "title": "Visit our branch",
+      "description": "Our teams welcome you in all our branches to advise you and help you achieve your financial goals.",
+      "cta": "Open my account today"
+    },
+    "slide6": {
+      "title": "Join us",
+      "description": "Be part of the RENAPROV community and enjoy a strong network that supports your ambitions. Whether you are an entrepreneur, employee or student.",
+      "cta": "Open my account today"
+    }
+  },
+  "topBar": {
+    "offer1": {
+      "title": "Become the owner of your future Villa with MASO!",
+      "subtitle": "Registrations open until June 29. Don't miss this opportunity.",
+      "cta": "Register now"
+    },
+    "offer2": {
+      "title": "Save with ORA for your future projects",
+      "subtitle": "ORA Academic, School, Housing, Equipment... Prepare your ambitions!",
+      "cta": "Discover ORA"
+    },
+    "offer3": {
+      "title": "Open your RENAPROV account in minutes",
+      "subtitle": "Current account, savings, SPMC, Bicard... All our services at your fingertips!",
+      "cta": "Create my account"
+    },
+    "offer4": {
+      "title": "Join our network of branches throughout Cameroon",
+      "subtitle": "More than 30 branches to support you in your financial projects.",
+      "cta": "Find a branch"
+    }
+  },
+  "solutions": {
+    "title": "Our financial solutions for",
+    "titleHighlight": "individuals and businesses",
+    "subtitle": "Whether you are an employee, entrepreneur, merchant or student, RENAPROV offers you a range of products designed for your needs",
+    "learnMore": "Learn more",
+    "products": {
+      "currentAccountIndividual": {
+        "title": "Individual current account",
+        "description": "Manage your daily transactions with ease."
+      },
+      "currentAccountBusiness": {
+        "title": "Business current account",
+        "description": "Manage your business transactions with ease."
+      },
+      "currentAccountAssociation": {
+        "title": "Association current account",
+        "description": "Bank account for non-profit associations (cultural, sports, religious, humanitarian, etc.)."
+      },
+      "savingsAccountIndividual": {
+        "title": "Individual savings account",
+        "description": "Save for your personal projects with preferential interest rates and simplified management."
+      },
+      "savingsAccountBusiness": {
+        "title": "Business savings account",
+        "description": "Save for your business projects with dedicated benefits."
+      },
+      "employeeAccount": {
+        "title": "Public or Private sector employee account",
+        "description": "Account dedicated to employees with benefits and privileged services."
+      },
+      "pensionAccount": {
+        "title": "Public or Private sector pensioner account",
+        "description": "Account for public or private sector retirees with dedicated benefits and adapted services."
+      },
+      "oraFoncier": {
+        "title": "ORA Land",
+        "description": "Savings plan to acquire a serviced, secure land with water and electricity, with a land title at a lower cost."
+      },
+      "oraInvestissement": {
+        "title": "ORA Investment",
+        "description": "Savings plan to build a fund for project implementation."
+      },
+      "oraPrevoyance": {
+        "title": "ORA Provident",
+        "description": "Savings plan to build a fund to prevent happy or unfortunate events."
+      },
+      "oraScolaire": {
+        "title": "ORA School",
+        "description": "Savings plan from 350 FCFA to guarantee the start of the school year."
+      },
+      "oraAcademique": {
+        "title": "ORA Academic",
+        "description": "Savings plan from 1000 FCFA to cover tuition fees at BISSAÏ University Institute."
+      },
+      "oraEquipement": {
+        "title": "ORA Equipment",
+        "description": "Savings plan for the acquisition of furniture, computer, electronic, household appliances, etc."
+      },
+      "oraIslamique": {
+        "title": "ORA Islamic",
+        "description": "Savings plan to build a non-remunerated savings compliant with Sharia."
+      },
+      "oraSante": {
+        "title": "ORA Health",
+        "description": "Savings plan to benefit from 1000 FCFA/day health coverage at La MAMU Hospital Complex."
+      },
+      "maso": {
+        "title": "MASO",
+        "description": "MASO (Mutual Assistance and Solidarity) is a solidarity product set up by RENAPROV FINANCE SA that allows you to cover basic social needs."
+      },
+      "spmc": {
+        "title": "SPMC",
+        "description": "Current account adapted to small trades and small traders with simplified management fees and possibility of credit granting."
+      },
+      "bicard": {
+        "title": "Bicard",
+        "description": "Bank card that facilitates your financial transactions."
+      }
+    }
+  },
+  "experience": {
+    "yearsLabel": "YEARS",
+    "experienceLabel": "OF EXPERIENCE",
+    "description": "Since its creation, RENAPROV FINANCE S.A has managed to gain the trust of thousands of people around the world and specifically in Cameroon through its distinctive brand which is the Solidarity Economy.",
+    "bullets": {
+      "bullet1": "With its extensive network across the entire Cameroonian territory with more than 28 Branches",
+      "bullet2": "Subsidiaries created for everyone's satisfaction",
+      "bullet3": "MASO Lottery: Win houses, motorcycles, funding…"
+    },
+    "cta": "Contact us"
+  },
+  "advantages": {
+    "title": "Client benefits",
+    "items": {
+      "item1": {
+        "title": "Manage your money at your own pace",
+        "description": "Make your deposits and withdrawals whenever you want, without constraints, for total control of your finances."
+      },
+      "item2": {
+        "title": "Enjoy advantageous financial services",
+        "description": "As a RENAPROV client, you have access to exclusive offers and programs that boost your purchasing power and your projects."
+      },
+      "item3": {
+        "title": "Total transparency",
+        "description": "Opening an account is simple and affordable, with transparent fees adapted to all budgets."
+      },
+      "item4": {
+        "title": "Financial support that follows you",
+        "description": "Our advisors guide you in your financial decisions and help you optimize your money on a daily basis."
+      }
+    }
+  },
+  "subsidiaries": {
+    "titlePart1": "Here are our different",
+    "titlePart2": "subsidiaries",
+    "learnMore": "Learn more",
+    "items": {
+      "hospital": {
+        "category": "Hospital",
+        "title": "La MAMU Hospital Complex",
+        "description": "A modern health facility offering quality and accessible care to all."
+      },
+      "university": {
+        "category": "University",
+        "title": "Bissai University Institute",
+        "description": "An academic center dedicated to quality training and excellence."
+      },
+      "realEstate": {
+        "category": "Real Estate",
+        "title": "La Socagi",
+        "description": "Management and investment company that supports economic development through adapted financial solutions."
+      },
+      "radio": {
+        "category": "Radio",
+        "title": "Royal FM",
+        "description": "Management and investment company that supports economic development through adapted financial solutions."
+      }
+    }
+  },
+  "agencies": {
+    "titlePart1": "Find a branch",
+    "titlePart2": "RENAPROV FINANCE SA",
+    "tabs": {
+      "douala": "Douala and Surroundings",
+      "otherCities": "Other Cities"
+    },
+    "viewOnMap": "View on Google Map",
+    "ariaLabels": {
+      "previousSlide": "Previous slide",
+      "nextSlide": "Next slide",
+      "goToSlide": "Go to page"
+    }
+  },
+  "newsletter": {
+    "title": "Subscribe to the newsletter",
+    "description": "Receive our news directly by email.",
+    "placeholder": "Enter your email",
+    "button": "Subscribe"
+  },
+  "products": {
+    "title": "Our Products",
+    "maso": {
+      "title": "MASO: Solidarity, assistance and opportunities for all",
+      "description": "RENAPROV FINANCE S.A's MASO helps Cameroonians break out of the vicious circle of poverty by providing access to essential social services and unique opportunities.",
+      "benefit1": "Education – Up to 20% discount on your fees",
+      "benefit2": "Health – Up to 35% discount on your fees",
+      "benefit3": "Lottery & community – Win houses, motorcycles and funding while participating in a solidarity community",
+      "cta": "Join MASO today"
+    },
+    "ora": {
+      "title": "ORA: Save today, realize your projects tomorrow",
+      "description": "ORA is RENAPROV FINANCE S.A's savings plan that allows you to prepare your personal and professional projects with security and flexibility.",
+      "benefit1": "Multiple objectives – savings for land, studies, business or equipment",
+      "benefit2": "Security and returns – your funds are secured and grow according to your plan",
+      "cta": "Discover ORA"
+    }
+  }
+}

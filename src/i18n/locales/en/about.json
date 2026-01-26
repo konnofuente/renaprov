@@ -1,0 +1,98 @@
+{
+  "seo": {
+    "title": "RENAPROV FINANCE S.A - Trusted Microfinance in Cameroon",
+    "description": "RENAPROV FINANCE SA - Microfinance institution in Cameroon. Accessible financial services, savings, loans, financial inclusion. Become a homeowner with MASO, save with ORA.",
+    "keywords": "microfinance, Cameroon, savings, credit, financial inclusion, RENAPROV, MASO, ORA, current account, savings account, finance, Yaoundé, Douala"
+  },
+  "hero": {
+    "title": "Microfinance at the service of development",
+    "description": "For over 30 years, RENAPROV FINANCE SA has been supporting Cameroonians in their personal and professional projects.",
+    "cta": "Open my account today"
+  },
+  "stats": {
+    "yearsExperience": "Years of experience",
+    "satisfiedClients": "Satisfied clients in Cameroon",
+    "agencies": "Branches in Cameroon"
+  },
+  "timeline": {
+    "titlePart1": "History of",
+    "titlePart2": "RENAPROV FINANCE S.A",
+    "description": "For over 30 years, RENAPROV FINANCE SA has been supporting you in your personal and professional projects.",
+    "ariaGoToPage": "Go to page",
+    "ariaPrev": "Previous slide",
+    "ariaNext": "Next slide",
+    "events": {
+      "event1": {
+        "year": "1992 – Origins",
+        "items": [
+          "RENAPROV FINANCE SA has its origins in 1992",
+          "It was first born as an association whose mission was to collect funds from small savers and redistribute them in a spirit of solidarity."
+        ]
+      },
+      "event2": {
+        "year": "1994 – Organisation",
+        "items": [
+          "A non-profit organisation, mainly serving market traders",
+          "To offer them a simple and secure solution for savings."
+        ]
+      },
+      "event3": {
+        "year": "1996 – Structuring",
+        "items": [
+          "The structure officially took the name RENAPROV FINANCE SA",
+          "Then began a phase of more formal structuring in the microfinance sector."
+        ]
+      },
+      "event4": {
+        "year": "2000-2010 – Consolidation",
+        "items": [
+          "For more than a decade, RENAPROV operated with only two branches: headquarters in Ekounou and a branch in Edéa.",
+          "Phase of consolidation and development of services."
+        ]
+      },
+      "event5": {
+        "year": "2010+ – Expansion",
+        "items": [
+          "After several years of consolidation, RENAPROV began an expansion phase",
+          "To now count 28 branches across the country.",
+          "In parallel, RENAPROV FINANCE SA has expanded its impact by setting up several subsidiaries, thus strengthening its position as a major player in inclusive finance and community development."
+        ]
+      }
+    }
+  },
+  "message": {
+    "titlePrefix": "Reverend Pastor",
+    "titleName": "Emmanuel Noël Bissai",
+    "content": "For nearly three decades, RENAPROV FINANCE S.A has been committed to staying close to its clients and offering them solidarity-based financial solutions. Our ambition is to consolidate this proximity by developing modern services adapted to the needs of families, businesses and communities. Together, let us build inclusive and sustainable finance for Cameroon.",
+    "imageAlt": "Portrait of Mr M. Emmanuel Noël Bissai, Director General of RENAPROV",
+    "decorationAlt": "RENAPROV graphic decoration"
+  },
+  "team": {
+    "title": "Top Management",
+    "members": {
+      "member1": { "name": "Rev. Pastor BISSAI EMMANUEL NOEL", "title": "CHAIRMAN OF THE BOARD OF DIRECTORS Rev. Pastor BISSAI" },
+      "member2": { "name": "EMMANUELLE NATACHA EPSE NYA", "title": "MANAGING DIRECTOR" },
+      "member3": { "name": "MBALA NDONGO FERDINAND", "title": "DEPUTY MANAGING DIRECTOR" },
+      "member4": { "name": "DZOKOUO KENGNE ALEX FRIEDMAN", "title": "ASSISTANT GENERAL MANAGER" },
+      "member5": { "name": "Mrs Bissai Stephanie", "title": "DIRECTOR OF OPERATIONS AND PRODUCTION" },
+      "member6": { "name": "Mr. NYEMB MESSINGA CYRILLE", "title": "NETWORK ADMINISTRATION DIRECTOR" }
+    }
+  },
+  "values": {
+    "title": "Our values",
+    "items": {
+      "item1": {
+        "title": "Integrity & Transparency",
+        "description": "We act with honesty in all our operations, ensuring clear communication, fair practices and total transparency with our clients"
+      },
+      "item2": {
+        "title": "Solidarity & Proximity",
+        "description": "Close to markets, families and traders, we place solidarity at the heart of our actions."
+      },
+      "item3": {
+        "title": "Operational Excellence",
+        "description": "We are committed to offering reliable, effective and adapted microfinance services, with competent staff."
+      }
+    }
+  }
+}

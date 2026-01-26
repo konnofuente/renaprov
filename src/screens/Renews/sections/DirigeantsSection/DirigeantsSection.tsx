@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../../components/ui/card";
 import { Badge } from "../../../../components/ui/badge";
@@ -17,7 +18,7 @@ const dirigeants = [
     id: 1,
     name: "EMMANUEL NOËL BISSAÏ",
     position: "PRÉSIDENT DU CONSEIL D'ADMINISTRATION",
-    image: "/other/dg.jpg",
+    image: "/frame-2087326088.png",
     description: "Visionnaire et leader spirituel, le Révérend Pasteur Emmanuel Noël BISSAÏ guide le Groupe RENAPROV depuis sa création en 1996 avec une vision claire de l'économie solidaire.",
     icon: Crown,
     featured: true
@@ -26,7 +27,7 @@ const dirigeants = [
     id: 2,
     name: "EMMANUELLE NATASHA BISSAÏ",
     position: "ADMINISTRATEUR DIRECTEUR GÉNÉRAL",
-    image: "/hero1.png",
+    image: "/frame-2087326092.png",
     description: "À la tête de la direction générale, Emmanuelle Natasha BISSAÏ assure la mise en œuvre stratégique des orientations du groupe avec expertise et détermination.",
     icon: Briefcase,
     featured: true
@@ -35,7 +36,7 @@ const dirigeants = [
     id: 3,
     name: "STÉPHANIE BISSAÏ",
     position: "DIRECTRICE DE L'EXPLOITATION ET DE LA PRODUCTION",
-    image: "/hero1.png",
+    image: "/frame-2087326089.png",
     description: "Responsable de l'exploitation et de la production, Stéphanie BISSAÏ optimise les processus opérationnels pour garantir l'excellence des services.",
     icon: TrendingUp,
     featured: false
@@ -44,7 +45,7 @@ const dirigeants = [
     id: 4,
     name: "MBALA NDONGO FERDINAND",
     position: "DIRECTEUR GÉNÉRAL DÉLÉGUÉ",
-    image: "/hero1.png",
+    image: "/frame-2087326090.png",
     description: "Directeur Général Délégué, MBALA NDONGO FERDINAND apporte son expertise managériale pour accompagner la croissance du groupe.",
     icon: Building2,
     featured: false
@@ -53,7 +54,7 @@ const dirigeants = [
     id: 5,
     name: "NYEMB MESSINGA CYRILLE",
     position: "DIRECTEUR DE L'ADMINISTRATION DU RÉSEAU",
-    image: "/hero1.png",
+    image: "/frame-2087326093.png",
     description: "En charge de l'administration du réseau, NYEMB MESSINGA CYRILLE assure la coordination et l'efficacité opérationnelle de toutes les agences.",
     icon: Users,
     featured: false
@@ -62,7 +63,7 @@ const dirigeants = [
     id: 6,
     name: "DZOKOUO KENGNE ALEX FRIEDMAN",
     position: "DIRECTEUR GÉNÉRAL ADJOINT",
-    image: "/hero1.png",
+    image: "/frame-2087326091.png",
     description: "Directeur Général Adjoint, DZOKOUO KENGNE ALEX FRIEDMAN contribue à la stratégie globale et au développement des activités du groupe.",
     icon: Award,
     featured: false
@@ -70,6 +71,8 @@ const dirigeants = [
 ];
 
 export const DirigeantsSection = (): JSX.Element => {
+  const { t } = useTranslation("renews");
+
   return (
     <section className="w-full bg-gray-50 py-16 sm:py-20 md:py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
@@ -82,11 +85,11 @@ export const DirigeantsSection = (): JSX.Element => {
           className="text-center mb-16"
         >
           <h2 className="[font-family:'Bricolage_Grotesque',Helvetica] font-bold text-foundation-bluenormal text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-tight mb-4">
-            NOS DIRIGEANTS
+            {t("dirigeants.sectionTitle")}
           </h2>
           <div className="w-24 h-1 bg-foundation-bluenormal mx-auto rounded-full mb-6"></div>
           <p className="[font-family:'Roboto',Helvetica] font-normal text-gray-600 text-lg sm:text-xl max-w-3xl mx-auto">
-            Découvrez l'équipe dirigeante qui guide RENAPROV FINANCE S.A vers l'excellence
+            {t("dirigeants.sectionSubtitle")}
           </p>
         </motion.div>
 
@@ -121,7 +124,7 @@ export const DirigeantsSection = (): JSX.Element => {
                     <div className="absolute top-4 left-4">
                       <Badge className="bg-yellow-500 text-white px-3 py-1 text-sm font-semibold">
                         <Star className="w-4 h-4 mr-2" />
-                        Leadership
+                        {t("dirigeants.leadershipBadge")}
                       </Badge>
                     </div>
                   )}

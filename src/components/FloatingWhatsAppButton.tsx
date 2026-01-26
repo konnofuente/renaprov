@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface FloatingWhatsAppButtonProps {
   phoneNumber: string;
@@ -7,10 +8,12 @@ interface FloatingWhatsAppButtonProps {
 
 export const FloatingWhatsAppButton: React.FC<FloatingWhatsAppButtonProps> = ({
   phoneNumber,
-  message = "Bonjour, je souhaite obtenir plus d'informations sur les services de RENAPROV."
+  message
 }) => {
+  const { t } = useTranslation('common');
+  const defaultMessage = message || t('whatsappDefaultMessage');
   const handleWhatsAppClick = () => {
-    const encodedMessage = encodeURIComponent(message);
+    const encodedMessage = encodeURIComponent(defaultMessage);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -20,8 +23,8 @@ export const FloatingWhatsAppButton: React.FC<FloatingWhatsAppButtonProps> = ({
       <button
         onClick={handleWhatsAppClick}
         className="relative w-16 h-16 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 group overflow-hidden"
-        aria-label="Contactez-nous sur WhatsApp"
-        title="Contactez-nous sur WhatsApp"
+        aria-label={t('whatsappAriaLabel')}
+        title={t('whatsappTitle')}
       >
         <img
           src="/whatsap.png"
@@ -48,7 +51,7 @@ export const FloatingWhatsAppButton: React.FC<FloatingWhatsAppButtonProps> = ({
         
         {/* Tooltip */}
         <div className="absolute bottom-full right-0 mb-2 px-3 py-2 bg-gray-800 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-          Contactez-nous sur WhatsApp
+          {t('whatsappTitle')}
           <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
         </div>
       </button>

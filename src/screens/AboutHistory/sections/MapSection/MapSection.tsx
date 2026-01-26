@@ -1,32 +1,31 @@
+import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { Card, CardContent } from "../../../../components/ui/card";
 
-const valuesData = [
-  {
-    icon: "/layer-1-1.svg",
-    title: "Intégrité & Transparence",
-    description:
-      "Nous agissons avec honnêteté dans toutes nos opérations, en garantissant une communication claire, des pratiques loyales et une transparence totale avec nos clients",
-  },
-  {
-    icon: "/frame-1618873126.svg",
-    title: "Solidarité & Proximité",
-    description:
-      "Proches des marchés, des familles et des commerçants, nous mettons la solidarité au cœur de nos actions .",
-  },
-  {
-    icon: "/frame-1618873126-1.svg",
-    title: "Excellence Opérationnelle",
-    description:
-      "Nous nous engageons à offrir des services de microfinance fiables, efficaces et adaptés, avec un personnel compétent.",
-  },
+const VALUES_ICONS = [
+  "/layer-1-1.svg",
+  "/frame-1618873126.svg",
+  "/frame-1618873126-1.svg",
 ];
 
 export const MapSection = (): JSX.Element => {
+  const { t } = useTranslation("about");
+
+  const valuesData = useMemo(
+    () =>
+      [1, 2, 3].map((i) => ({
+        icon: VALUES_ICONS[i - 1],
+        title: t(`values.items.item${i}.title`),
+        description: t(`values.items.item${i}.description`),
+      })),
+    [t]
+  );
+
   return (
     <section className="flex flex-col w-full items-center gap-8 md:gap-16 lg:gap-[71px] py-12 md:py-16 lg:py-[91px] px-4 md:px-8 lg:px-[103px] bg-white">
       <div className="flex flex-col w-full max-w-[1280px] items-center">
         <h2 className="bg-gradient-to-br from-blue-400 to-slate-800 bg-clip-text text-transparent font-bold text-3xl md:text-4xl lg:text-5xl text-center tracking-tight leading-tight">
-          Nos valeurs
+          {t("values.title")}
         </h2>
       </div>
 

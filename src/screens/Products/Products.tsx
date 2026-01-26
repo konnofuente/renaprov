@@ -1,112 +1,88 @@
-import { useState } from "react";
+import { useState, useMemo, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 import { SEO } from "../../components/SEO";
 import { CallToActionSubsection } from "../Accueil/sections/CallToActionSubsection";
 import { HeroSection } from "./sections/HeroSection";
 import { FeatureCardsSection } from "./sections/FeatureCardsSection";
 import { ReusableSliderSection } from "./sections/ReusableSliderSection";
 import { ProductFilter } from "./components/ProductFilter";
-import { productCategories, Product, ProductFilter as FilterType, filterProductsByType } from "./data/productsData";
+import {
+  productCategoriesStructure,
+  Product,
+  ProductCategory,
+  ProductFilter as FilterType,
+  filterProductsByType,
+} from "./data/productsData";
 import { TestimonialSection } from "../../components/TestimonialSection";
 import { ConnexProductsSection } from "../../components/ConnexProductsSection";
-import { useNavigate } from "react-router-dom";
+
+const SUPPORTED_LANGS = ["fr", "en"] as const;
+const normalizeLang = (l: string | undefined): "fr" | "en" => {
+  const base = (l || "fr").split("-")[0].toLowerCase();
+  return SUPPORTED_LANGS.includes(base as "fr" | "en") ? (base as "fr" | "en") : "fr";
+};
 
 export const Products = (): JSX.Element => {
-  const [activeFilter, setActiveFilter] = useState<FilterType>('all');
-  const navigate = useNavigate(); // Navigation hook
+  const { t } = useTranslation("products");
+  const [activeFilter, setActiveFilter] = useState<FilterType>("all");
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { lang } = useParams<{ lang?: string }>();
 
-  const productShow = [
-    {
-      productName: 'Compte épargne individuel',
-      productLink: '/service/compte-epargne-individuel',
-    },
-    {
-      productName: 'Compte épargne personne morale',
-      productLink: '/service/compte-epargne-entreprise',
-    },
-    {
-      productName: 'Compte courant individuel',
-      productLink: '/service/compte-courant-individuel',
-    },
-    {
-      productName: 'Compte courant personne morale',
-      productLink: '/service/compte-courant-entreprise',
-    },
-    {
-      productName: 'Compte courant association',
-      productLink: '/service/compte-courant-association',
-    },
-    {
-      productName :'Compte salarié',
-      productLink: '/service/compte-cheque-salaire-pension',
-    },
-    {
-      productName: 'Compte privé',
-      productLink: '/service/compte-prive',
-    },
-    {
-      productName: 'Compte public',
-      productLink: '/service/compte-public',
-    },
-    {
-      productName: 'Compte pensionné',
-      productLink: '/service/compte-pensionne',
-    },
-    {
-      productName: 'SPMC',
-      productLink: '/service/spmc',
-    },
-    {
-      productName: 'Bicard',
-      productLink: '/service/bicard',
-    },
-    {
-      productName: 'ORA Foncier',
-      productLink: '/service/ora-foncier',
-    },
-    {
-      productName: 'ORA Investissement',
-      productLink: '/service/ora-investissement',
-    },
-    {
-      productName: 'ORA Prévoyance',
-      productLink: '/service/ora-prevoyance',
-    },
-    {
-      productName: 'ORA Scolaire',
-      productLink: '/service/ora-scolaire',
-    },
-    {
-      productName: 'ORA Académique',
-      productLink: '/service/ora-academique',
-    },
-    {
-      productName: 'ORA Équipement',
-      productLink: '/service/ora-equipement',
-    },
-    {
-      productName: 'ORA Islamique',
-      productLink: '/service/ora-islamique',
-    },
-    {
-      productName: 'ORA Santé',
-      productLink: '/service/ora-sante',
-    },
-    {
-      productName: 'MASO',
-      productLink: '/maso',
-    },
-  ]
+  const pathSegments = location.pathname.split("/").filter(Boolean);
+  const currentLang = SUPPORTED_LANGS.includes(pathSegments[0] as "fr" | "en")
+    ? (pathSegments[0] as "fr" | "en")
+    : normalizeLang(lang);
+
+  const getLocalizedPath = (path: string) => {
+    return `/${currentLang}${path === "/" ? "" : path}`;
+  };
+
+  // Create a map of categoryKey to section ID for easy lookup
+  const categoryKeyToSectionId: Record<string, string> = {
+    bankAccounts: "bank-accounts",
+    specialized: "specialised-services",
+    ora: "ora-section",
+  };
+
+  const productCategories = useMemo<ProductCategory[]>(() => {
+    return productCategoriesStructure.map((cat) => ({
+      title: t(`categories.${cat.categoryKey}.title`),
+      description: t(`categories.${cat.categoryKey}.description`),
+      productType: cat.productType,
+      brand: cat.brand,
+      products: cat.products.map((p) => ({
+        name: t(`categories.${cat.categoryKey}.products.${p.key}.name`),
+        description: t(`categories.${cat.categoryKey}.products.${p.key}.description`),
+        imageAlt: t(`categories.${cat.categoryKey}.products.${p.key}.imageAlt`),
+        imageSrc: p.imageSrc,
+        productType: cat.productType,
+        brand: cat.brand,
+        route: p.route,
+        key: p.key,
+      })) as Product[],
+    }));
+  }, [t]);
+
+  // Create a map from category title to categoryKey for filtered categories
+  const titleToCategoryKey = useMemo(() => {
+    const map: Record<string, string> = {};
+    productCategoriesStructure.forEach((cat, index) => {
+      const category = productCategories[index];
+      if (category) {
+        map[category.title] = cat.categoryKey;
+      }
+    });
+    return map;
+  }, [productCategories]);
 
   const handleProductClick = (product: Product) => {
-    // Handle product click - could open modal, navigate to detail page, etc.
-    console.log(`Clicked on product: ${product.name} (${product.brand})`);
-    const productLink = productShow.find((p) => p.productName === product.name)?.productLink;
-    if (productLink) {
-      navigate(productLink);
-    }
-    else{
-      alert('Produit non trouvé');
+    if (product.route) {
+      navigate(getLocalizedPath(product.route));
+    } else {
+      alert(t("alerts.productNotFound"));
     }
   };
 
@@ -114,29 +90,71 @@ export const Products = (): JSX.Element => {
     setActiveFilter(filter);
   };
 
-  // Filter categories based on active filter
   const filteredCategories = filterProductsByType(productCategories, activeFilter);
+
+  // Handle hash navigation and scroll to section
+  useEffect(() => {
+    const hash = location.hash.replace("#", "");
+    if (hash && (hash === "bank-accounts" || hash === "specialised-services" || hash === "ora-section")) {
+      // If we have a hash for a main section and filter is not "all", set it to "all" to show all sections
+      if (activeFilter !== "all") {
+        setActiveFilter("all");
+        // Wait for filter change to render, then scroll
+        setTimeout(() => {
+          const element = document.getElementById(hash);
+          if (element) {
+            const headerOffset = 100; // Offset for fixed header if any
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth",
+            });
+          }
+        }, 600);
+      } else {
+        // Filter is already "all", just scroll
+        setTimeout(() => {
+          const element = document.getElementById(hash);
+          if (element) {
+            const headerOffset = 100; // Offset for fixed header if any
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth",
+            });
+          }
+        }, 300);
+      }
+    }
+  }, [location.hash, activeFilter]);
+
+  // Helper function to get section ID from category key
+  const getSectionId = (categoryKey: string): string => {
+    return categoryKeyToSectionId[categoryKey] || categoryKey;
+  };
 
   return (
     <>
       <SEO
-        title="Nos Produits - RENAPROV | Services Financiers et Microfinance"
-        description="Découvrez tous nos produits financiers RENAPROV : comptes épargne, comptes courant, produits ORA, SPMC, Bicard et bien plus encore."
-        keywords="produits financiers, comptes épargne, ORA, SPMC, Bicard, microfinance, RENAPROV, Cameroun, services financiers"
+        title={t("seo.title")}
+        description={t("seo.description")}
+        keywords={t("seo.keywords")}
       />
       <main className="flex flex-col w-full bg-[#ffffff]">
         <HeroSection />
         <FeatureCardsSection />
-        
-        {/* Product Filter */}
+
         <section className="w-full bg-gray-50 py-8 sm:py-12">
-          <ProductFilter 
-            activeFilter={activeFilter} 
-            onFilterChange={handleFilterChange} 
+          <ProductFilter
+            activeFilter={activeFilter}
+            onFilterChange={handleFilterChange}
           />
         </section>
-        
-        {/* Product Categories Sections */}
+
         <AnimatePresence mode="wait">
           <motion.div
             key={activeFilter}
@@ -145,36 +163,47 @@ export const Products = (): JSX.Element => {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
           >
-            {activeFilter === 'all' && (
+            {activeFilter === "all" && (
               <>
-                {productCategories.map((category, index) => (
-                  <ReusableSliderSection
-                    key={`${category.productType}-${index}`}
-                    title={category.title}
-                    description={category.description}
-                    products={category.products}
-                    onProductClick={(product) => handleProductClick(product as any)}
-                    productType={category.productType}
-                    brand={category.brand}
-                  />
-                ))}
+                {productCategories.map((category, index) => {
+                  const categoryKey = productCategoriesStructure[index]?.categoryKey || "";
+                  const sectionId = getSectionId(categoryKey);
+                  return (
+                    <div key={`${category.productType}-${index}`} id={sectionId}>
+                      <ReusableSliderSection
+                        title={category.title}
+                        description={category.description}
+                        products={category.products}
+                        onProductClick={(product) => handleProductClick(product)}
+                        productType={category.productType}
+                        brand={category.brand}
+                      />
+                    </div>
+                  );
+                })}
                 <ConnexProductsSection />
               </>
             )}
-            
-            {activeFilter === 'renaprov' && filteredCategories.map((category, index) => (
-              <ReusableSliderSection
-                key={`${category.productType}-${index}`}
-                title={category.title}
-                description={category.description}
-                products={category.products}
-                onProductClick={(product) => handleProductClick(product as any)}
-                productType={category.productType}
-                brand={category.brand}
-              />
-            ))}
-            
-            {activeFilter === 'connexes' && <ConnexProductsSection />}
+
+            {activeFilter === "renaprov" &&
+              filteredCategories.map((category, index) => {
+                const categoryKey = titleToCategoryKey[category.title] || "";
+                const sectionId = getSectionId(categoryKey);
+                return (
+                  <div key={`${category.productType}-${index}`} id={sectionId}>
+                    <ReusableSliderSection
+                      title={category.title}
+                      description={category.description}
+                      products={category.products}
+                      onProductClick={(product) => handleProductClick(product)}
+                      productType={category.productType}
+                      brand={category.brand}
+                    />
+                  </div>
+                );
+              })}
+
+            {activeFilter === "connexes" && <ConnexProductsSection />}
           </motion.div>
         </AnimatePresence>
         <TestimonialSection />
